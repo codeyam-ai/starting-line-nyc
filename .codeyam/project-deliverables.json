@@ -77,9 +77,9 @@
       "id": "my-races",
       "text": "My Races view with upcoming races, registration milestones, notes and status changes",
       "status": "delivered",
-      "resolvedAt": "2026-11-02T18:24:06.841046127+00:00",
-      "resolvedInFeature": "My Races page with notes and status changes",
-      "planSlug": null,
+      "resolvedAt": "2026-11-02T19:33:52.922992685+00:00",
+      "resolvedInFeature": null,
+      "planSlug": "my-races-view-with-upcoming-races-registration-milestones-notes-and-status-changes",
       "note": "My Races page lists saved races grouped by status with upcoming registration milestones, an editable note per race, and a 'changed since you saved' notice; kept in this browser only. Approved at the demo and save gates. Races saved before this update never show the change notice.",
       "decidedBy": "user"
     },

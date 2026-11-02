@@ -279,11 +279,14 @@
       "severity": 3,
       "source": "deferred-deliverable",
       "deliverableId": "my-races",
-      "status": "pending",
+      "status": "written",
+      "planSlug": "my-races-view-with-upcoming-races-registration-milestones-notes-and-status-changes",
       "proposedAt": "2026-10-26T20:11:03.258662184+00:00",
       "kind": "feature",
       "rank": 5,
-      "sightings": 6
+      "sightings": 6,
+      "decidedAt": "2026-11-02T19:33:52Z",
+      "sightingsAtDecision": 6
     },
     {
       "id": "reminders-for-registration-openings-and-deadlines-with-custom-times-and-presets",
