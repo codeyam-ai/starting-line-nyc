@@ -37,11 +37,11 @@
       "id": "race-detail-page",
       "text": "Race detail page with date, location, distance, terrain, organizer, price and official registration link",
       "status": "delivered",
-      "resolvedAt": "2026-10-26T21:53:40.360737457+00:00",
-      "resolvedInFeature": "Race detail pages with real race data",
-      "planSlug": null,
+      "resolvedAt": "2026-11-02T19:33:54.980949566+00:00",
+      "resolvedInFeature": null,
+      "planSlug": "race-detail-page-with-date-location-distance-terrain-organizer-price-and-official-registration-link",
       "note": "Race page at /races/<race> with date, place, distance, terrain, organizer, price when listed and the official registration link.",
-      "decidedBy": "agent"
+      "decidedBy": "user"
     },
     {
       "id": "entry-requirements",

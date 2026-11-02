@@ -226,11 +226,14 @@
       "severity": 3,
       "source": "deferred-deliverable",
       "deliverableId": "race-detail-page",
-      "status": "pending",
+      "status": "written",
+      "planSlug": "race-detail-page-with-date-location-distance-terrain-organizer-price-and-official-registration-link",
       "proposedAt": "2026-10-26T20:11:03.258662184+00:00",
       "kind": "feature",
       "rank": 6,
-      "sightings": 1
+      "sightings": 1,
+      "decidedAt": "2026-11-02T19:33:54Z",
+      "sightingsAtDecision": 1
     },
     {
       "id": "distinguish-open-registration-lotteries-time-qualification-charity-and-membership-entry-with-qualification-windows-per-edition",
