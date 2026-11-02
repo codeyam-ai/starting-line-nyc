@@ -603,9 +603,12 @@
       "body": "## Summary\n\nOn a wide screen the longer sort control pushes the More filters button onto a second line of the toolbar.\n\nAt the approval gate for \"More ways to sort the race list\" the user approved the built work past this gap: it differs from what the plan asked for. Built from plan `more-ways-to-sort-the-race-list` (now at `.codeyam/plans/completed/more-ways-to-sort-the-race-list.md`).\n\nYou can now choose how the race list is ordered, instead of always seeing it by next deadline.\n\n## What you can now do\n- Sort by **Next deadline** (still the default)\n- Sort by **Race day** to see races in calendar order\n- Sort by **Registration opens** to plan sign-ups ahead\n- Sort by **Distance** to compare races by length\n\nRead that plan and the code it changed before planning how to close the gap.",
       "reason": "Approved past at the approval gate for \"More ways to sort the race list\".",
       "source": "session-review",
-      "status": "pending",
+      "status": "written",
+      "planSlug": "on-a-wide-screen-the-longer-sort-control-pushes-the-more-filters-button-onto-a-second-line-of-the-toolbar",
       "proposedAt": "2026-11-02T19:25:07.286550099+00:00",
-      "sightings": 1
+      "sightings": 1,
+      "decidedAt": "2026-11-02T19:34:09Z",
+      "sightingsAtDecision": 1
     },
     {
       "id": "the-plan-did-not-say-how-to-order-races-under-registration-opens-i-chose-openings-still-ahead-first-soonest-first-then-races-you-can-already-enter-then-races-with-no-opening-date-announced-only-four-races-in-the-current-data-have-an",
