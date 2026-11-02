@@ -135,9 +135,12 @@
       "body": "",
       "reason": "Disclosed at the approval gate: the built work differs from the plan here.",
       "source": "session-review",
-      "status": "pending",
+      "status": "written",
+      "planSlug": "the-nyc-half-lottery-deadline-is-22-days-away-so-it-is-not-highlighted-the-mockup-highlighted-it",
       "proposedAt": "2026-10-26T20:10:25.299052082+00:00",
-      "sightings": 2
+      "sightings": 2,
+      "decidedAt": "2026-11-02T19:34:00Z",
+      "sightingsAtDecision": 2
     },
     {
       "id": "save-log-in-sign-up-and-more-filters-do-not-work-yet-there-are-no-accounts-and-the-page-says-so",
