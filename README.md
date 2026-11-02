@@ -32,6 +32,13 @@ npm run dev     # http://localhost:3000
 Race data lives in `prisma/race-data.json`; edit it and run `npm run setup`
 again to reload.
 
+Every race comes from its organizer's own page or official registration page
+(RunSignup, UltraSignup, Elite Feats), with the source and last-verified date
+stored on each edition. New York Road Runners races (TCS NYC Marathon, NYC Half,
+Brooklyn Half) are not listed yet: nyrr.org sends automated readers to a
+waiting-room queue, so their dates and entry rules could not be checked and
+were left out rather than copied from third-party sites.
+
 - `GET /api/races` returns the filtered race list (same query parameters as the home page).
 - `GET /api/races/<slug>/calendar` downloads an `.ics` for the next registration
   date; add `?milestone=<id>` for a specific date or `?event=raceday` for race day.

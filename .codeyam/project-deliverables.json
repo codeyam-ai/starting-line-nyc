@@ -17,9 +17,9 @@
       "id": "sort-options",
       "text": "Sort by race date, registration opening date, entry deadline, or distance",
       "status": "deferred",
-      "resolvedAt": "2026-10-26T20:26:41.951895712+00:00",
-      "resolvedInFeature": "Race detail pages with real race data",
-      "planSlug": null,
+      "resolvedAt": "2026-10-28T13:39:08.515934006+00:00",
+      "resolvedInFeature": null,
+      "planSlug": "sort-by-race-date-registration-opening-date-entry-deadline-or-distance",
       "note": "Deferred at the race detail page plan gate; approved by the user.",
       "decidedBy": "user"
     },

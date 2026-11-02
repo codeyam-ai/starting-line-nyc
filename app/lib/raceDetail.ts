@@ -35,12 +35,13 @@ export function buildTimeline(
   raceDate: Date | null,
   raceDateTentative: boolean,
   now: Date,
+  raceTimeKnown = true,
 ): TimelineEntry[] {
   const rows: Omit<TimelineEntry, 'state'>[] = [...milestones]
     .sort((a, b) => a.at.getTime() - b.at.getTime())
     .map((m) => ({ id: m.id, kind: m.kind, at: m.at.toISOString(), timeKnown: m.timeKnown, tentative: m.tentative, note: m.note }));
   if (raceDate) {
-    rows.push({ id: null, kind: 'race_day', at: raceDate.toISOString(), timeKnown: true, tentative: raceDateTentative, note: null });
+    rows.push({ id: null, kind: 'race_day', at: raceDate.toISOString(), timeKnown: raceTimeKnown, tentative: raceDateTentative, note: null });
   }
   let nextFound = false;
   return rows.map((r) => {

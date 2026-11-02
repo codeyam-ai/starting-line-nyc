@@ -12,6 +12,7 @@ export type CalendarRace = {
   editions: {
     year: number;
     raceDate: Date | null;
+    raceTimeKnown?: boolean;
     registrationUrl: string | null;
     isSample: boolean;
     milestones: (MilestoneRecord & { id?: number })[];
@@ -40,6 +41,7 @@ export function raceCalendarEvent(race: CalendarRace, kind: CalendarEventKind, n
     title = `${race.name} (race day)`;
     start = edition.raceDate;
     durationMinutes = RACE_DAY_MINUTES;
+    timeKnown = edition.raceTimeKnown ?? true;
   } else {
     const m =
       kind === 'next'

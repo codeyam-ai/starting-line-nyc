@@ -43,6 +43,7 @@
       { "name": "year", "type": "number", "required": true },
       { "name": "raceDate", "type": "string", "required": false },
       { "name": "raceDateTentative", "type": "boolean", "required": true },
+      { "name": "raceTimeKnown", "type": "boolean", "required": true },
       { "name": "registrationStatus", "type": "string", "required": true },
       { "name": "entryMethod", "type": "string", "required": true },
       { "name": "entryNote", "type": "string", "required": false },

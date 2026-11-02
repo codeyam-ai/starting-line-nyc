@@ -208,11 +208,14 @@
       "severity": 3,
       "source": "deferred-deliverable",
       "deliverableId": "sort-options",
-      "status": "pending",
+      "status": "written",
+      "planSlug": "sort-by-race-date-registration-opening-date-entry-deadline-or-distance",
       "proposedAt": "2026-10-26T20:11:03.258662184+00:00",
       "kind": "feature",
       "rank": 3,
-      "sightings": 6
+      "sightings": 6,
+      "decidedAt": "2026-10-28T13:39:08Z",
+      "sightingsAtDecision": 2
     },
     {
       "id": "race-detail-page-with-date-location-distance-terrain-organizer-price-and-official-registration-link",

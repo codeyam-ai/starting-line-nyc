@@ -6,6 +6,7 @@ import type { TimelineEntry } from '@/app/lib/raceDetail';
 
 export default function AtAGlance({
   raceDate,
+  raceTimeKnown = true,
   distanceMiles,
   elevationGainFt,
   entryTitle,
@@ -17,6 +18,7 @@ export default function AtAGlance({
   save,
 }: {
   raceDate: string | null;
+  raceTimeKnown?: boolean;
   distanceMiles: number;
   elevationGainFt: number | null;
   entryTitle: string;
@@ -33,7 +35,7 @@ export default function AtAGlance({
         <GlanceItem
           label="Race day"
           value={raceDate ? formatDay(raceDate) : 'Not announced'}
-          sub={raceDate ? `${formatTime(raceDate)} start` : null}
+          sub={raceDate ? (raceTimeKnown ? `${formatTime(raceDate)} start` : 'start time not stated') : null}
         />
         <GlanceItem
           label="Distance"

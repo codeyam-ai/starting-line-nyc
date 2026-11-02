@@ -57,6 +57,7 @@ model RaceEdition {
   year               Int
   raceDate           DateTime? // null = not announced
   raceDateTentative  Boolean   @default(false)
+  raceTimeKnown      Boolean   @default(true) // false = organizer gives the date but no start time
   // "opening_soon" | "open" | "lottery_open" | "waitlist" | "sold_out" | "closed" | "not_announced"
   registrationStatus String
   // "open" | "lottery" | "qualification" | "charity" | "membership"

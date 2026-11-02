@@ -43,6 +43,7 @@ export default async function RacePage({ params }: { params: Promise<{ slug: str
         <>
           <AtAGlance
             raceDate={edition.raceDate?.toISOString() ?? null}
+            raceTimeKnown={edition.raceTimeKnown}
             distanceMiles={race.distanceMiles}
             elevationGainFt={race.elevationGainFt}
             entryTitle={entry.title}

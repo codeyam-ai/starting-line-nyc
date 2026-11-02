@@ -25,7 +25,7 @@ export async function findRaceDetail(slug: string, now = new Date()) {
     race,
     edition,
     weeksToTrain: edition ? weeksToTrain(edition.raceDate, now) : null,
-    timeline: edition ? buildTimeline(edition.milestones, edition.raceDate, edition.raceDateTentative, now) : [],
+    timeline: edition ? buildTimeline(edition.milestones, edition.raceDate, edition.raceDateTentative, now, edition.raceTimeKnown) : [],
   };
 }
 
