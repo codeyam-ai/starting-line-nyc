@@ -309,11 +309,14 @@
       "severity": 3,
       "source": "deferred-deliverable",
       "deliverableId": "google-calendar",
-      "status": "pending",
+      "status": "written",
+      "planSlug": "prioritise-google-calendar-for-adding-events",
       "proposedAt": "2026-10-26T20:11:03.258662184+00:00",
       "kind": "feature",
       "rank": 3,
-      "sightings": 4
+      "sightings": 4,
+      "decidedAt": "2026-11-02T19:33:48Z",
+      "sightingsAtDecision": 4
     },
     {
       "id": "show-official-source-links-and-last-verified-dates-label-unknown-or-tentative-dates-and-keep-each-annual-edition-separate",

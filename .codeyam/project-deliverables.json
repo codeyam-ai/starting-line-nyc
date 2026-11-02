@@ -107,9 +107,9 @@
       "id": "google-calendar",
       "text": "Prioritise Google Calendar for adding events",
       "status": "delivered",
-      "resolvedAt": "2026-10-27T16:31:47.478092417+00:00",
-      "resolvedInFeature": "Google Calendar first for Add to calendar",
-      "planSlug": null,
+      "resolvedAt": "2026-11-02T19:33:48.872406090+00:00",
+      "resolvedInFeature": null,
+      "planSlug": "prioritise-google-calendar-for-adding-events",
       "note": "Add to calendar opens a menu with Google Calendar first (prefilled create-event link) and the .ics for Apple / Outlook second.",
       "decidedBy": "user"
     },
