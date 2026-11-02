@@ -47,11 +47,11 @@
       "id": "entry-requirements",
       "text": "Distinguish open registration, lotteries, time qualification, charity and membership entry, with qualification windows per edition",
       "status": "delivered",
-      "resolvedAt": "2026-10-26T21:53:40.410192939+00:00",
-      "resolvedInFeature": "Race detail pages with real race data",
-      "planSlug": null,
+      "resolvedAt": "2026-11-02T19:33:39.815719465+00:00",
+      "resolvedInFeature": null,
+      "planSlug": "distinguish-open-registration-lotteries-time-qualification-charity-and-membership-entry-with-qualification-windows-per",
       "note": "Plain-language entry method and status on every race page; no verified race uses a lottery yet.",
-      "decidedBy": "agent"
+      "decidedBy": "user"
     },
     {
       "id": "registration-status",

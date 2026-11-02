@@ -179,8 +179,8 @@
       "proposedAt": "2026-10-26T20:10:25.299052082+00:00",
       "rank": 2,
       "sightings": 2,
-      "offeredCount": 1,
-      "lastOfferedAt": "2026-11-02T18:37:06.349213520+00:00"
+      "offeredCount": 2,
+      "lastOfferedAt": "2026-11-02T19:25:19.845598602+00:00"
     },
     {
       "id": "one-of-46-component-screenshots-kept-an-older-capture-showing-the-next-js-dev-badge",
@@ -235,13 +235,16 @@
       "severity": 3,
       "source": "deferred-deliverable",
       "deliverableId": "entry-requirements",
-      "status": "pending",
+      "status": "written",
+      "planSlug": "distinguish-open-registration-lotteries-time-qualification-charity-and-membership-entry-with-qualification-windows-per",
       "proposedAt": "2026-10-26T20:11:03.258662184+00:00",
       "kind": "feature",
       "rank": 1,
       "sightings": 1,
-      "offeredCount": 1,
-      "lastOfferedAt": "2026-11-02T18:37:06.349213520+00:00"
+      "decidedAt": "2026-11-02T19:33:39Z",
+      "sightingsAtDecision": 1,
+      "offeredCount": 2,
+      "lastOfferedAt": "2026-11-02T19:25:19.845598602+00:00"
     },
     {
       "id": "save-races-as-interested-considering-or-signed-up",
