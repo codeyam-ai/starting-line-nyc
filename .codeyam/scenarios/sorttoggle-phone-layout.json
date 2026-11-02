@@ -1,0 +1,12 @@
+{
+  "name": "SortToggle - Phone Layout",
+  "id": "63476bfe-ef1f-4cd3-ba4a-def89991598d",
+  "url": "/isolated-components/SortToggle?s=RegistrationOpens",
+  "dimensions": [
+    "Mobile"
+  ],
+  "mocks": {},
+  "componentName": "SortToggle",
+  "scenarioType": "component",
+  "description": "On a phone the four sort options wrap into a two by two grid instead of one long row."
+}

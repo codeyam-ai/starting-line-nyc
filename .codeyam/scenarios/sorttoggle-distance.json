@@ -1,0 +1,12 @@
+{
+  "name": "SortToggle - Distance",
+  "id": "c70edd0b-c5e7-4db2-ab43-7a4f1689a9a4",
+  "url": "/isolated-components/SortToggle?s=Distance",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "SortToggle",
+  "scenarioType": "component",
+  "description": "The sort control with the new Distance option selected."
+}

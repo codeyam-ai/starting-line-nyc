@@ -185,7 +185,9 @@
       "status": "pending",
       "proposedAt": "2026-10-26T20:10:25.299052082+00:00",
       "rank": 2,
-      "sightings": 2
+      "sightings": 2,
+      "offeredCount": 1,
+      "lastOfferedAt": "2026-11-02T18:37:06.349213520+00:00"
     },
     {
       "id": "one-of-46-component-screenshots-kept-an-older-capture-showing-the-next-js-dev-badge",
@@ -245,7 +247,9 @@
       "proposedAt": "2026-10-26T20:11:03.258662184+00:00",
       "kind": "feature",
       "rank": 1,
-      "sightings": 1
+      "sightings": 1,
+      "offeredCount": 1,
+      "lastOfferedAt": "2026-11-02T18:37:06.349213520+00:00"
     },
     {
       "id": "save-races-as-interested-considering-or-signed-up",

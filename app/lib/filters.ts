@@ -36,7 +36,14 @@ export type DistanceKey = keyof typeof DISTANCES;
 export type WindowKey = keyof typeof WINDOWS;
 export type TerrainKey = keyof typeof TERRAINS;
 export type StatusChip = keyof typeof STATUS_CHIPS;
-export type SortKey = 'deadline' | 'raceday';
+export const SORTS = {
+  deadline: 'Next deadline',
+  raceday: 'Race day',
+  opens: 'Registration opens',
+  distance: 'Distance',
+} as const;
+
+export type SortKey = keyof typeof SORTS;
 
 export type RaceFilters = {
   q: string;
@@ -77,7 +84,7 @@ export function parseFilters(params: SearchParams): RaceFilters {
     when: pick(one('when'), Object.keys(WINDOWS) as WindowKey[], DEFAULT_FILTERS.when),
     terrain: pick(one('terrain'), Object.keys(TERRAINS) as TerrainKey[], DEFAULT_FILTERS.terrain),
     status: Array.from(new Set(statusList)),
-    sort: pick(one('sort'), ['deadline', 'raceday'] as const, DEFAULT_FILTERS.sort),
+    sort: pick(one('sort'), Object.keys(SORTS) as SortKey[], DEFAULT_FILTERS.sort),
   };
 }
 

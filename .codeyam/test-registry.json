@@ -1,11 +1,29 @@
 {
   "tests": [
     {
+      "description": "The default sort is one of the offered sorts.",
+      "file": "app/lib/filters.test.ts",
+      "format": "vitest",
+      "key": "SORTS › includes the default sort",
+      "line": 145,
+      "registeredAt": "2026-11-02T19:06:41Z",
+      "runner": "tests"
+    },
+    {
+      "description": "The sort toggle shows these labels in this order, next deadline first.",
+      "file": "app/lib/filters.test.ts",
+      "format": "vitest",
+      "key": "SORTS › lists the four sorts in display order",
+      "line": 135,
+      "registeredAt": "2026-11-02T19:06:41Z",
+      "runner": "tests"
+    },
+    {
       "description": "Search text and terrain also become chips; nothing shows when all are any.",
       "file": "app/lib/filters.test.ts",
       "format": "vitest",
       "key": "activeFilterChips › includes query and terrain, and is empty when nothing narrows",
-      "line": 94,
+      "line": 102,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -14,7 +32,7 @@
       "file": "app/lib/filters.test.ts",
       "format": "vitest",
       "key": "activeFilterChips › lists distance and window for the defaults",
-      "line": 86,
+      "line": 94,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -230,7 +248,7 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "filterAndSortRaces › applies distance and six month window by default",
-      "line": 230,
+      "line": 328,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -239,7 +257,7 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "filterAndSortRaces › filters by status chips",
-      "line": 252,
+      "line": 350,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -248,7 +266,7 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "filterAndSortRaces › filters by terrain and by search text across name, place and organizer",
-      "line": 245,
+      "line": 343,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -257,7 +275,7 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "filterAndSortRaces › matches ultras beyond marathon distance",
-      "line": 240,
+      "line": 338,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -266,7 +284,7 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "filterAndSortRaces › returns everything with any distance and any time",
-      "line": 235,
+      "line": 333,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -275,7 +293,7 @@
       "file": "app/lib/filters.test.ts",
       "format": "vitest",
       "key": "filterHref › always writes distance and window and omits defaults otherwise",
-      "line": 54,
+      "line": 62,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -284,7 +302,7 @@
       "file": "app/lib/filters.test.ts",
       "format": "vitest",
       "key": "filterHref › applies a change over the current filters",
-      "line": 59,
+      "line": 67,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -293,7 +311,7 @@
       "file": "app/lib/filters.test.ts",
       "format": "vitest",
       "key": "filterHref › round trips through parseFilters",
-      "line": 65,
+      "line": 73,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -721,11 +739,20 @@
       "runner": "tests"
     },
     {
+      "description": "Every sort the toggle offers can be read back from the address.",
+      "file": "app/lib/filters.test.ts",
+      "format": "vitest",
+      "key": "parseFilters › accepts each of the four sorts",
+      "line": 41,
+      "registeredAt": "2026-11-02T19:06:41Z",
+      "runner": "tests"
+    },
+    {
       "description": "Unknown values fall back to defaults instead of breaking the page.",
       "file": "app/lib/filters.test.ts",
       "format": "vitest",
       "key": "parseFilters › falls back to defaults for unknown values",
-      "line": 31,
+      "line": 32,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -734,7 +761,7 @@
       "file": "app/lib/filters.test.ts",
       "format": "vitest",
       "key": "parseFilters › parses comma separated status chips, dropping unknown and duplicates",
-      "line": 40,
+      "line": 48,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -743,7 +770,7 @@
       "file": "app/lib/filters.test.ts",
       "format": "vitest",
       "key": "parseFilters › reads valid values and trims the query",
-      "line": 19,
+      "line": 20,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -752,7 +779,7 @@
       "file": "app/lib/filters.test.ts",
       "format": "vitest",
       "key": "parseFilters › returns the defaults for empty params",
-      "line": 14,
+      "line": 15,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -761,7 +788,7 @@
       "file": "app/lib/filters.test.ts",
       "format": "vitest",
       "key": "parseFilters › uses the first value of repeated single fields and all values of status",
-      "line": 45,
+      "line": 53,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -905,7 +932,7 @@
       "file": "app/lib/filters.test.ts",
       "format": "vitest",
       "key": "raceCountLabel › pluralises correctly",
-      "line": 118,
+      "line": 126,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -986,7 +1013,7 @@
       "file": "app/lib/filters.test.ts",
       "format": "vitest",
       "key": "resultsHeading › names the distance and the window",
-      "line": 74,
+      "line": 82,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -995,7 +1022,7 @@
       "file": "app/lib/filters.test.ts",
       "format": "vitest",
       "key": "resultsHeading › omits the window when it is any time",
-      "line": 79,
+      "line": 87,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -1063,11 +1090,65 @@
       "runner": "tests"
     },
     {
+      "description": "Full ties fall back to name so the order never jumps around.",
+      "file": "app/lib/raceList.test.ts",
+      "format": "vitest",
+      "key": "sortRaces › breaks full ties by name",
+      "line": 302,
+      "registeredAt": "2026-11-02T19:06:41Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Sold out, closed and opening soon with no date all go last, by race day.",
+      "file": "app/lib/raceList.test.ts",
+      "format": "vitest",
+      "key": "sortRaces › orders races with no opening date by race day at the end",
+      "line": 274,
+      "registeredAt": "2026-11-02T19:06:41Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Races already open sit after upcoming openings and before unannounced ones.",
+      "file": "app/lib/raceList.test.ts",
+      "format": "vitest",
+      "key": "sortRaces › places already open races between upcoming and unannounced",
+      "line": 249,
+      "registeredAt": "2026-11-02T19:06:41Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Openings still ahead come first, soonest first, even when the race is later.",
+      "file": "app/lib/raceList.test.ts",
+      "format": "vitest",
+      "key": "sortRaces › puts upcoming registration openings first, soonest first",
+      "line": 239,
+      "registeredAt": "2026-11-02T19:06:41Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Sorting never mutates the list it was given.",
+      "file": "app/lib/raceList.test.ts",
+      "format": "vitest",
+      "key": "sortRaces › returns a new array and leaves the input untouched",
+      "line": 308,
+      "registeredAt": "2026-11-02T19:06:41Z",
+      "runner": "tests"
+    },
+    {
+      "description": "By distance, shortest first; equal distances fall back to race day.",
+      "file": "app/lib/raceList.test.ts",
+      "format": "vitest",
+      "key": "sortRaces › sorts by distance shortest first with race day as tie break",
+      "line": 291,
+      "registeredAt": "2026-11-02T19:06:41Z",
+      "runner": "tests"
+    },
+    {
       "description": "By next deadline, unknown deadlines go last and ties fall back to race day.",
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "sortRaces › sorts by next deadline with unknown last",
-      "line": 203,
+      "line": 220,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -1076,8 +1157,26 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "sortRaces › sorts by race day with unknown last",
-      "line": 212,
+      "line": 229,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "Lottery and waitlist races count as already enterable.",
+      "file": "app/lib/raceList.test.ts",
+      "format": "vitest",
+      "key": "sortRaces › treats lottery open and waitlist as already enterable",
+      "line": 264,
+      "registeredAt": "2026-11-02T19:06:41Z",
+      "runner": "tests"
+    },
+    {
+      "description": "The cutoff between upcoming and past openings is the given time, not the real clock.",
+      "file": "app/lib/raceList.test.ts",
+      "format": "vitest",
+      "key": "sortRaces › uses the passed in time to decide which openings are ahead",
+      "line": 284,
+      "registeredAt": "2026-11-02T19:06:41Z",
       "runner": "tests"
     },
     {
@@ -1180,12 +1279,30 @@
       "runner": "tests"
     },
     {
+      "description": "The opening date is kept even once it has passed, using the earliest one.",
+      "file": "app/lib/raceList.test.ts",
+      "format": "vitest",
+      "key": "toListItem › keeps the earliest registration opening, past or future",
+      "line": 193,
+      "registeredAt": "2026-11-02T19:06:41Z",
+      "runner": "tests"
+    },
+    {
       "description": "A race with no upcoming edition is left off the list.",
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "toListItem › returns null when the race has no upcoming edition",
-      "line": 193,
+      "line": 210,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "No opening milestone means the opening date is not announced.",
+      "file": "app/lib/raceList.test.ts",
+      "format": "vitest",
+      "key": "toListItem › sets registration opens to null when no opening is announced",
+      "line": 205,
+      "registeredAt": "2026-11-02T19:06:41Z",
       "runner": "tests"
     },
     {
@@ -1193,7 +1310,7 @@
       "file": "app/lib/filters.test.ts",
       "format": "vitest",
       "key": "toggleStatus › adds a chip that is not selected",
-      "line": 103,
+      "line": 111,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -1202,7 +1319,7 @@
       "file": "app/lib/filters.test.ts",
       "format": "vitest",
       "key": "toggleStatus › removes a selected chip without mutating the input",
-      "line": 108,
+      "line": 116,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },

@@ -1,0 +1,12 @@
+{
+  "name": "SortToggle - Registration Opens",
+  "id": "d6b249cf-499e-4783-b337-0239b78b1ef4",
+  "url": "/isolated-components/SortToggle?s=RegistrationOpens",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "SortToggle",
+  "scenarioType": "component",
+  "description": "The sort control with the new Registration opens option selected, shown alongside all four sort options."
+}

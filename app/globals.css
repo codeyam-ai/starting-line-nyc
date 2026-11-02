@@ -303,4 +303,10 @@ img.thumb { display: block; object-fit: cover; }
   .lane b { font-size: 13px; }
   .preview { padding: 16px; }
   .panel { padding: 10px 10px 6px; }
+  .sort { flex-direction: column; align-items: stretch; gap: 6px; width: 100%; white-space: normal; }
+  .seg { display: grid; grid-template-columns: 1fr 1fr; }
+  .seg a { text-align: center; padding: 8px 10px; }
+  .seg a + a { border-left: none; }
+  .seg a:nth-child(even) { border-left: 1px solid var(--ink); }
+  .seg a:nth-child(n + 3) { border-top: 1px solid var(--ink); }
 }

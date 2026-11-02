@@ -8,7 +8,7 @@ export const NOW = new Date("2026-10-26T20:00:00Z");
 
 export const defaultFilters: RaceFilters = { q: "", distance: "half", when: "6m", terrain: "any", status: [], sort: "deadline" };
 
-const base = { elevationGainFt: null, photoUrl: null, photoAlt: null, raceDateTentative: false, entryMethod: "open", isSample: false };
+const base = { elevationGainFt: null, photoUrl: null, photoAlt: null, raceDateTentative: false, entryMethod: "open", isSample: false, registrationOpens: null };
 
 export const bigAppleHalf: RaceListItem = {
   ...base, slug: "nycruns-big-apple-half-marathon", name: "Big Apple Half Marathon", terrain: "road", distanceMiles: 13.1,

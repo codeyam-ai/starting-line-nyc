@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import {
   DEFAULT_FILTERS,
+  SORTS,
   activeFilterChips,
   filterHref,
   parseFilters,
@@ -34,6 +35,13 @@ describe('parseFilters', () => {
     expect(f.when).toBe('6m');
     expect(f.terrain).toBe('any');
     expect(f.sort).toBe('deadline');
+  });
+
+  // Every sort the toggle offers can be read back from the address.
+  it('accepts each of the four sorts', () => {
+    for (const sort of ['deadline', 'raceday', 'opens', 'distance'] as const) {
+      expect(parseFilters({ sort }).sort).toBe(sort);
+    }
   });
 
   // Status chips come comma-separated; unknown and repeated chips are dropped.
@@ -119,5 +127,22 @@ describe('raceCountLabel', () => {
     expect(raceCountLabel(0)).toBe('0 races');
     expect(raceCountLabel(1)).toBe('1 race');
     expect(raceCountLabel(5)).toBe('5 races');
+  });
+});
+
+describe('SORTS', () => {
+  // The sort toggle shows these labels in this order, next deadline first.
+  it('lists the four sorts in display order', () => {
+    expect(Object.entries(SORTS)).toEqual([
+      ['deadline', 'Next deadline'],
+      ['raceday', 'Race day'],
+      ['opens', 'Registration opens'],
+      ['distance', 'Distance'],
+    ]);
+  });
+
+  // The default sort is one of the offered sorts.
+  it('includes the default sort', () => {
+    expect(Object.keys(SORTS)).toContain(DEFAULT_FILTERS.sort);
   });
 });

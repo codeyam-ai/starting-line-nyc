@@ -189,6 +189,23 @@ describe('toListItem', () => {
     });
   });
 
+  // The opening date is kept even once it has passed, using the earliest one.
+  it('keeps the earliest registration opening, past or future', () => {
+    const r = withEdition(race({ slug: 'r' }), {
+      milestones: [
+        { kind: 'registration_closes', at: d('2026-12-01T17:00:00Z'), timeKnown: true, tentative: false },
+        { kind: 'registration_opens', at: d('2026-11-20T17:00:00Z'), timeKnown: true, tentative: false },
+        { kind: 'registration_opens', at: d('2026-09-01T17:00:00Z'), timeKnown: true, tentative: false },
+      ],
+    });
+    expect(toListItem(r, NOW)?.registrationOpens).toBe('2026-09-01T17:00:00.000Z');
+  });
+
+  // No opening milestone means the opening date is not announced.
+  it('sets registration opens to null when no opening is announced', () => {
+    expect(toListItem(race({ slug: 'r' }), NOW)?.registrationOpens).toBeNull();
+  });
+
   // A race with no upcoming edition is left off the list.
   it('returns null when the race has no upcoming edition', () => {
     expect(toListItem(withEdition(race({ slug: 'old' }), { raceDate: d('2026-01-01T12:00:00Z') }), NOW)).toBeNull();
@@ -212,6 +229,87 @@ describe('sortRaces', () => {
   it('sorts by race day with unknown last', () => {
     const sorted = sortRaces([item('a', null, null), item('b', '2027-03-01', null), item('c', '2027-02-01', null)], 'raceday');
     expect(sorted.map((s: { slug: string }) => s.slug)).toEqual(['c', 'b', 'a']);
+  });
+
+  const opener = (slug: string, raceDate: string, opens: string | null, registrationStatus = 'not_announced') =>
+    ({ slug, name: slug, raceDate, registrationOpens: opens, registrationStatus, nextMilestone: null, distanceMiles: 13.1 }) as never;
+  const slugs = (xs: { slug: string }[]) => xs.map((s) => s.slug);
+
+  // Openings still ahead come first, soonest first, even when the race is later.
+  it('puts upcoming registration openings first, soonest first', () => {
+    const sorted = sortRaces(
+      [opener('late', '2027-01-01', '2026-12-20T17:00:00Z'), opener('soon', '2027-06-01', '2026-11-05T17:00:00Z')],
+      'opens',
+      NOW,
+    );
+    expect(slugs(sorted)).toEqual(['soon', 'late']);
+  });
+
+  // Races already open sit after upcoming openings and before unannounced ones.
+  it('places already open races between upcoming and unannounced', () => {
+    const sorted = sortRaces(
+      [
+        opener('unannounced', '2026-11-20', null),
+        opener('open-now', '2027-03-01', null, 'open'),
+        opener('opened-earlier', '2027-02-01', '2026-09-01T17:00:00Z', 'opening_soon'),
+        opener('upcoming', '2027-05-01', '2026-11-30T17:00:00Z'),
+      ],
+      'opens',
+      NOW,
+    );
+    expect(slugs(sorted)).toEqual(['upcoming', 'opened-earlier', 'open-now', 'unannounced']);
+  });
+
+  // Lottery and waitlist races count as already enterable.
+  it('treats lottery open and waitlist as already enterable', () => {
+    const sorted = sortRaces(
+      [opener('closed', '2026-12-01', null, 'closed'), opener('lottery', '2027-04-01', null, 'lottery_open'), opener('waitlist', '2027-03-01', null, 'waitlist')],
+      'opens',
+      NOW,
+    );
+    expect(slugs(sorted)).toEqual(['waitlist', 'lottery', 'closed']);
+  });
+
+  // Sold out, closed and opening soon with no date all go last, by race day.
+  it('orders races with no opening date by race day at the end', () => {
+    const sorted = sortRaces(
+      [opener('b', '2027-02-01', null, 'sold_out'), opener('a', '2026-12-01', null, 'opening_soon'), opener('c', '2027-03-01', null, 'closed')],
+      'opens',
+      NOW,
+    );
+    expect(slugs(sorted)).toEqual(['a', 'b', 'c']);
+  });
+
+  // The cutoff between upcoming and past openings is the given time, not the real clock.
+  it('uses the passed in time to decide which openings are ahead', () => {
+    const items = [opener('x', '2027-03-01', '2026-11-05T17:00:00Z'), opener('y', '2027-01-01', null, 'open')];
+    expect(slugs(sortRaces(items, 'opens', NOW))).toEqual(['x', 'y']);
+    expect(slugs(sortRaces(items, 'opens', new Date('2026-12-01T00:00:00Z')))).toEqual(['y', 'x']);
+  });
+
+  // By distance, shortest first; equal distances fall back to race day.
+  it('sorts by distance shortest first with race day as tie break', () => {
+    const run = (slug: string, miles: number, raceDate: string) =>
+      ({ slug, name: slug, raceDate, distanceMiles: miles, nextMilestone: null, registrationOpens: null, registrationStatus: 'open' }) as never;
+    const sorted = sortRaces(
+      [run('ultra', 31.1, '2027-01-01'), run('half-late', 13.1, '2027-04-01'), run('5k', 3.1, '2027-06-01'), run('half-early', 13.1, '2027-02-01')],
+      'distance',
+    );
+    expect(slugs(sorted)).toEqual(['5k', 'half-early', 'half-late', 'ultra']);
+  });
+
+  // Full ties fall back to name so the order never jumps around.
+  it('breaks full ties by name', () => {
+    const sorted = sortRaces([opener('Zebra Run', '2027-01-01', null), opener('Apple Run', '2027-01-01', null)], 'opens', NOW);
+    expect(slugs(sorted)).toEqual(['Apple Run', 'Zebra Run']);
+  });
+
+  // Sorting never mutates the list it was given.
+  it('returns a new array and leaves the input untouched', () => {
+    const items = [opener('b', '2027-02-01', null), opener('a', '2027-01-01', null)];
+    const sorted = sortRaces(items, 'raceday');
+    expect(sorted).not.toBe(items);
+    expect(slugs(items)).toEqual(['b', 'a']);
   });
 });
 

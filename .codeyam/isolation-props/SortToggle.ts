@@ -8,6 +8,8 @@ type Props = ComponentProps<typeof Component>;
 export const scenarios: Record<string, Props> = {
   NextDeadline: { filters: defaultFilters },
   RaceDay: { filters: { ...defaultFilters, sort: "raceday" } },
+  RegistrationOpens: { filters: { ...defaultFilters, sort: "opens" } },
+  Distance: { filters: { ...defaultFilters, sort: "distance" } },
 };
 
 // Capture width matches the component's container on the home page.

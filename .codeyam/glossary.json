@@ -679,12 +679,15 @@
     ]
   },
   {
-    "description": "Segmented Next deadline / Race day sort control built from links.",
+    "description": "Segmented sort control built from links: Next deadline, Race day, Registration opens, Distance. Wraps to a two by two grid on phones.",
     "filePath": "app/components/SortToggle.tsx",
     "name": "SortToggle",
     "scenarios": [
       "sorttoggle-next-deadline",
-      "sorttoggle-race-day"
+      "sorttoggle-race-day",
+      "sorttoggle-registration-opens",
+      "sorttoggle-distance",
+      "sorttoggle-phone-layout"
     ],
     "tags": [
       "race-discovery"
@@ -782,6 +785,15 @@
       "calendar-export"
     ],
     "testFile": "app/lib/raceCalendar.test.ts"
+  },
+  {
+    "description": "Compares two list items by the chosen sort key: next deadline, race day, registration opens, or distance. Returns 0 for a tie so sortRaces can fall back to race day and then name.",
+    "filePath": "app/lib/raceList.ts",
+    "name": "compareBy",
+    "tags": [
+      "race-list-sort"
+    ],
+    "testFile": "app/lib/raceList.test.ts"
   },
   {
     "description": "Plain-language title and explanation for an entry method (open, lottery, qualifying standard, charity, membership), falling back to the raw value.",
@@ -1117,6 +1129,15 @@
     "testFile": "app/lib/raceDetail.test.ts"
   },
   {
+    "description": "Ranks a race for the Registration opens sort: openings still ahead first, by date; then races already enterable; then races with no opening date announced.",
+    "filePath": "app/lib/raceList.ts",
+    "name": "opensRank",
+    "tags": [
+      "race-list-sort"
+    ],
+    "testFile": "app/lib/raceList.test.ts"
+  },
+  {
     "description": "Turns a filter option table into dropdown options for the hero search.",
     "filePath": "app/components/HeroSearch.tsx",
     "name": "options",
@@ -1274,7 +1295,7 @@
     "testFile": "app/lib/savedRaces.test.ts"
   },
   {
-    "description": "Sorts results by next deadline, unknown last with race day as tiebreak, or by race day.",
+    "description": "Sorts list items by next deadline, race day, registration opening, or distance. Unknown dates go last; ties fall back to race day, then name. Takes the current time so the opening sort is testable.",
     "filePath": "app/lib/raceList.ts",
     "name": "sortRaces",
     "tags": [

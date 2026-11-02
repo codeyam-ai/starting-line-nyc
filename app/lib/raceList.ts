@@ -1,6 +1,6 @@
 // Turns stored races into the home page's filtered, sorted list. Pure — the
 // database read lives in races.ts.
-import { DISTANCES, WINDOWS, type RaceFilters } from '@/app/lib/filters';
+import { DISTANCES, WINDOWS, type RaceFilters, type SortKey } from '@/app/lib/filters';
 
 export type MilestoneRecord = { kind: string; at: Date; timeKnown: boolean; tentative: boolean; note?: string | null };
 
@@ -44,6 +44,8 @@ export type RaceListItem = {
   entryMethod: string;
   isSample: boolean;
   nextMilestone: { kind: string; at: string; timeKnown: boolean; tentative: boolean } | null;
+  // When this edition's registration opens; null when not announced.
+  registrationOpens: string | null;
   weeksToTrain: number | null;
 };
 
@@ -114,6 +116,11 @@ export function toListItem(race: RaceRecord, now: Date): RaceListItem | null {
     nextMilestone: next
       ? { kind: next.kind, at: next.at.toISOString(), timeKnown: next.timeKnown, tentative: next.tentative }
       : null,
+    registrationOpens:
+      edition.milestones
+        .filter((m) => m.kind === 'registration_opens')
+        .sort((a, b) => a.at.getTime() - b.at.getTime())[0]
+        ?.at.toISOString() ?? null,
     weeksToTrain: weeksToTrain(edition.raceDate, now),
   };
 }
@@ -153,12 +160,38 @@ function matches(race: RaceRecord, item: RaceListItem, filters: RaceFilters, unt
 
 const time = (iso: string | null | undefined) => (iso ? Date.parse(iso) : Infinity);
 
-// Sort by next deadline: unknown deadlines go last, ties fall back to race day.
-export function sortRaces(items: RaceListItem[], sort: RaceFilters['sort']): RaceListItem[] {
-  return [...items].sort((a, b) =>
-    sort === 'raceday'
-      ? time(a.raceDate) - time(b.raceDate)
-      : time(a.nextMilestone?.at) - time(b.nextMilestone?.at) || time(a.raceDate) - time(b.raceDate),
+const ALREADY_OPEN = new Set(['open', 'lottery_open', 'waitlist']);
+
+// Openings still ahead come first (soonest first), then races you can
+// already enter, then everything with no opening date announced. Races in
+// the last two groups fall through to race day.
+function opensRank(item: RaceListItem, now: Date): [number, number] {
+  const at = item.registrationOpens ? Date.parse(item.registrationOpens) : null;
+  if (at !== null && at >= now.getTime()) return [0, at];
+  if (at !== null || ALREADY_OPEN.has(item.registrationStatus)) return [1, 0];
+  return [2, 0];
+}
+
+function compareBy(sort: SortKey, a: RaceListItem, b: RaceListItem, now: Date): number {
+  switch (sort) {
+    case 'raceday':
+      return 0;
+    case 'distance':
+      return a.distanceMiles - b.distanceMiles;
+    case 'opens': {
+      const [ra, ta] = opensRank(a, now);
+      const [rb, tb] = opensRank(b, now);
+      return ra - rb || ta - tb;
+    }
+    default:
+      return time(a.nextMilestone?.at) - time(b.nextMilestone?.at);
+  }
+}
+
+// Unknown dates go last; ties fall back to race day, then name, so the order is stable.
+export function sortRaces(items: RaceListItem[], sort: SortKey, now: Date = new Date()): RaceListItem[] {
+  return [...items].sort(
+    (a, b) => compareBy(sort, a, b, now) || time(a.raceDate) - time(b.raceDate) || a.name.localeCompare(b.name),
   );
 }
 
@@ -169,5 +202,5 @@ export function filterAndSortRaces(races: RaceRecord[], filters: RaceFilters, no
     const item = toListItem(race, now);
     if (item && matches(race, item, filters, until)) items.push(item);
   }
-  return sortRaces(items, filters.sort);
+  return sortRaces(items, filters.sort, now);
 }

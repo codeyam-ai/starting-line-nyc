@@ -1976,6 +1976,7 @@
       "imports": [
         "app/lib/filters.ts::RaceFilters",
         "app/lib/filters.ts::SortKey",
+        "app/lib/filters.ts::__file_root__",
         "app/lib/filters.ts::filterHref"
       ],
       "importedBy": []
@@ -2074,6 +2075,7 @@
       "name": "SortKey",
       "imports": [],
       "importedBy": [
+        "app/lib/raceList.ts::__file_root__",
         "app/components/SortToggle.tsx::__file_root__"
       ]
     },
@@ -2094,6 +2096,7 @@
         "app/lib/raceList.ts::__file_root__",
         "app/components/RaceList.tsx::__file_root__",
         "app/components/HeroSearch.tsx::__file_root__",
+        "app/components/SortToggle.tsx::__file_root__",
         "app/components/FilterChips.tsx::__file_root__"
       ]
     },
@@ -2648,6 +2651,7 @@
       "name": "__file_root__",
       "imports": [
         "app/lib/filters.ts::RaceFilters",
+        "app/lib/filters.ts::SortKey",
         "app/lib/filters.ts::__file_root__"
       ],
       "importedBy": []
@@ -3035,5 +3039,5 @@
       "importedBy": []
     }
   },
-  "lastUpdated": "2026-11-02T18:36:02Z"
+  "lastUpdated": "2026-11-02T19:23:35Z"
 }
