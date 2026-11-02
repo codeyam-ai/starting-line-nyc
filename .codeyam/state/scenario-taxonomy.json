@@ -61,6 +61,33 @@
         "status": "added"
       }
     },
+    "MyRacesPage": {
+      "empty": {
+        "status": "covered"
+      },
+      "single": {
+        "status": "added"
+      },
+      "typical": {
+        "status": "covered"
+      },
+      "many": {
+        "status": "covered"
+      },
+      "loading": {
+        "status": "n-a",
+        "reason": "The loading line only shows for the instant before saved races and race details arrive; a page capture waits for the settled page. The line itself is captured by the MyRacesLoading - Loading component preview."
+      },
+      "edge": {
+        "status": "covered"
+      },
+      "error": {
+        "status": "added"
+      },
+      "key-interaction": {
+        "status": "added"
+      }
+    },
     "RacePage": {
       "empty": {
         "status": "covered"

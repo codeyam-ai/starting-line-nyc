@@ -1,0 +1,12 @@
+{
+  "name": "RegistrationChanged - Opened Since Save",
+  "id": "e9e9255a-68f1-40ee-84af-dfd6c8f4287d",
+  "url": "/isolated-components/RegistrationChanged?s=OpenedSinceSave",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "RegistrationChanged",
+  "scenarioType": "component",
+  "description": "The note that registration went from Opening soon to Open since the race was saved."
+}

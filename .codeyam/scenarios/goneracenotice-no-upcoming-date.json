@@ -1,0 +1,12 @@
+{
+  "name": "GoneRaceNotice - No Upcoming Date",
+  "id": "abfb6d63-c9a1-48cd-84ef-ed7f6e3593e3",
+  "url": "/isolated-components/GoneRaceNotice?s=NoUpcomingDate",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "GoneRaceNotice",
+  "scenarioType": "component",
+  "description": "A saved race with no upcoming date listed, with a Remove button."
+}

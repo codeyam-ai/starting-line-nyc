@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // codeyam-generated — DO NOT EDIT.
-// codeyam-editor: 0.1.16  build: bdf0a5d66b0cf9aecf1cc58c1f8410a2a6fd024d  source-sha256: f107bc61998527bd115262ecd83592f44139fb050cafff281a7bd1ab3df6c9a2
+// codeyam-editor: 0.1.7  build: 77f4f95c37b0d305c277da6719bdf81f9dbfff94  source-sha256: 7052f7c36415980efebcfa586ec3dac7b341cc416d1cd3afe7688854a77792b8
 
 // Render environment (colorScheme, deviceScaleFactor, userAgent, locale,
 // timezoneId, reduceMotion, forcedColors) is read from config when present
@@ -14,24 +14,32 @@
 const fs = require("fs");
 const path = require("path");
 const { launchChromiumWithSelfHeal } = require("./scenario-launch");
-
-// The sentinel the reverse proxy stamps on its dev-server-down placeholder —
-// the other half of this contract is
-// `crates/proxy-http/src/reverse_proxy.rs::DEV_SERVER_DOWN_HEADER`, and the two
-// spellings are deliberately greppable from each other. Keyed on the header
-// rather than the placeholder's copy for two reasons: the response is a 200, so
-// no status check can see it, and the copy is per-framework prose that drifts
-// the moment `render_placeholder` is reworded.
-const DEV_SERVER_DOWN_HEADER = "x-codeyam-dev-server-down";
+const {
+  DEV_SERVER_DOWN_HEADER,
+  classifyInteractionEffect,
+  resolvePixelClip,
+  interactionEffectSignal,
+  fingerprintHtml,
+  getDOMFingerprint,
+  mergeVisibleTextLength,
+  isCrossOriginRequest,
+  isCaptureFatalRequestFailure,
+  isDevServerPlaceholderResponse,
+  buildCaptureContextOptions,
+  attachCaptureCollectors,
+  navigationStatusIssue,
+  resolveSettleBudgets,
+  collectRenderedContent,
+  scenarioErrorMarkerIssue,
+  driveSingleInteraction,
+  decorateCaptureResult,
+} = require("./scenario-check-run");
 
 const {
-  findScenarioError,
-  SCENARIO_ERROR_MARKER,
-  hasRenderableContent,
   isCanvasDominated,
   frameHasVisualContent,
+  frameContentStats,
   buildSettleAdvisory,
-  describeBlankReason,
   stripStateSelector,
   collectCssRuleMatches,
 } = require("./scenario-metrics");
@@ -62,11 +70,15 @@ const {
   retryOnLiveReload,
 } = require("./scenario-issues");
 
+const { attachHttpMocks, recordInPageMockHits } = require("./scenario-mocks");
 const {
-  attachHttpMocks,
-  isDeclaredErrorMock,
-  unmockedRouteFrom,
-} = require("./scenario-mocks");
+  resolveRenderedSourcesAttribution,
+  armRenderedSourcesAttribution,
+  retryUnarmedOnReadyTimeout,
+  renderedSourcesRecordPath,
+  recordRenderedSources,
+  renderedSourcesFromOutcome,
+} = require("./scenario-check-attribution");
 
 const {
   assertAppPortReachable,
@@ -79,19 +91,17 @@ const {
   watchNavigationAfterReady,
   createNetworkTracker,
   waitForNetworkQuiet,
-  collectContentState,
   scrollThroughDocument,
-  collectVisibleTextLength,
   forceFinalVisualState,
   centerCaptureWrapper,
   isCanvasInteraction,
-  resolveInteractionTarget,
   performInteraction,
   pixelSnapshot,
   samePixels,
   waitForPixelStable,
   waitForPredicate,
   performInteractionSequence,
+  assertIsolatedComponentResolved,
   logCaptureTiming,
 } = require("./scenario-playwright");
 const { devicePixelRatioOf } = require("./scenario-targeting");
@@ -203,12 +213,7 @@ function captureAuthSkewDetected({ harnessOrigin, cookieCount, tokenExists }) {
   return Boolean(harnessOrigin) && cookieCount === 0 && Boolean(tokenExists);
 }
 
-const {
-  getInitScript,
-  handleConsoleMessage,
-  handlePageError,
-  handleRequestFailed,
-} = require("./scenario-handlers");
+const { getInitScript } = require("./scenario-handlers");
 
 const {
   buildCounterpartProbe,
@@ -427,65 +432,6 @@ function resolveRenderedSourcesSignal(config, readStack = readStackRenderedSourc
     : readStack();
 }
 
-// The record beside a screenshot: `<screenshot>.rendered.json`. The editor's
-// staleness check (`rendered_sources.rs`) reads the same spelling.
-function renderedSourcesRecordPath(outputPath) {
-  return `${outputPath}.rendered.json`;
-}
-
-// Evaluate the rendered-sources signal in the captured frame and record the
-// answer beside the screenshot as `{"sources": [...]}`. Any earlier record is
-// removed first, so a recapture that yields no usable answer never leaves the
-// previous capture's report standing. An empty array means "no information"
-// (no record, no warning); a throw or a non-array / non-string value is a
-// warning — non-blocking, because the editor then simply keeps the full static
-// render set. Returns the warning string, or null.
-async function recordRenderedSources(frame, signal, outputPath, { fsImpl = fs } = {}) {
-  const recordPath = renderedSourcesRecordPath(outputPath);
-  try {
-    fsImpl.rmSync(recordPath, { force: true });
-  } catch (_) {}
-  if (!signal) return null;
-  let outcome;
-  try {
-    outcome = await frame.evaluate((expr) => {
-      try {
-        return { value: (0, eval)(expr) };
-      } catch (e) {
-        return { error: String((e && e.message) || e) };
-      }
-    }, signal);
-  } catch (e) {
-    outcome = { error: String((e && e.message) || e) };
-  }
-  const { sources, warning } = renderedSourcesFromOutcome(outcome, signal);
-  if (sources) {
-    fsImpl.writeFileSync(recordPath, `${JSON.stringify({ sources }, null, 2)}\n`);
-  }
-  return warning;
-}
-
-// Judge what the signal evaluated to: `{ sources }` (sorted, deduped, blanks
-// dropped) for a usable answer, `{ warning }` for a throw or a value that is not
-// an array of strings, and neither for an empty answer — "no information",
-// which the editor already treats as "keep the static render set".
-function renderedSourcesFromOutcome(outcome, signal) {
-  if (outcome && outcome.error != null) {
-    return {
-      warning: `rendered-sources: \`${signal}\` threw (${outcome.error}); staleness keeps this scenario's full static render set. Fix capture.renderedSourcesSignal in .codeyam/stack.json or the app code that publishes it.`,
-    };
-  }
-  const value = outcome ? outcome.value : undefined;
-  if (!Array.isArray(value) || value.some((s) => typeof s !== "string")) {
-    const shape = Array.isArray(value) ? "an array with non-string entries" : typeof value;
-    return {
-      warning: `rendered-sources: \`${signal}\` returned ${shape}, not an array of source paths; staleness keeps this scenario's full static render set.`,
-    };
-  }
-  const sources = [...new Set(value.map((s) => s.trim()).filter((s) => s.length > 0))].sort();
-  return sources.length > 0 ? { sources, warning: null } : { warning: null };
-}
-
 // The readiness this capture waits on: a `readySignal` injected through config
 // (unit tests, and any caller that knows better) wins; otherwise stack.json's.
 function resolveCaptureReadiness(config, readStack = readStackReadySignal) {
@@ -505,12 +451,21 @@ function readySignalTimeoutIssue(readiness, url) {
   );
 }
 
+// The largest share of the frame a painted region may cover and still read as
+// a small widget rather than a frame that painted broadly but flatly.
+const MINIMAL_RENDER_MAX_PAINTED_FRACTION = 0.05;
+
 // A blank issue for a canvas-dominated capture whose frame is one flat color,
 // or null. A canvas-dominated page passes the DOM blank gate on its canvas's
 // bounding box alone, so the pixels it actually painted are checked here.
 // DOM-rendered pages never reach the pixel check, `allowMinimalRender` is the
 // deliberate opt-out for a scenario whose intended frame is empty, and a frame
 // that cannot be decoded is not judged (null) rather than failed.
+//
+// A flat-looking frame is not always an unpainted one: a small, pale widget
+// averages away in the luma grid. So the failure measures what was painted and
+// names `allowMinimalRender` first when a small region was — the widget drew,
+// and waiting longer for a first paint (readySignal) would fail the same way.
 function canvasBlankIssue(
   shot,
   contentState,
@@ -519,9 +474,24 @@ function canvasBlankIssue(
   if (allowMinimalRender || !isCanvasDominated(contentState)) return null;
   const decoded = decode(shot);
   if (!decoded || frameHasVisualContent(decoded)) return null;
+  const { paintedPixels, bbox } = frameContentStats(decoded);
+  const region = bbox
+    ? `${paintedPixels} px painted in a ${bbox.width}×${bbox.height} region`
+    : null;
+  if (
+    region &&
+    paintedPixels <= decoded.width * decoded.height * MINIMAL_RENDER_MAX_PAINTED_FRACTION
+  ) {
+    return createIssue(
+      "blank",
+      `Minimal render detected: ${region} at low contrast — this looks like a small widget, not a blank canvas; set "allowMinimalRender": true on the scenario.`,
+      { url },
+    );
+  }
+  const stats = region ? ` (${region} at low contrast.)` : "";
   return createIssue(
     "blank",
-    "Canvas painted nothing: the page is a canvas with no visible text, and the captured frame is a single flat color. The app has not drawn its first frame (or drew it to a buffer that was never presented). Declare capture.readySignal in .codeyam/stack.json so capture waits for the first paint; if this scenario is meant to be empty, set allowMinimalRender.",
+    `Canvas painted nothing: the page is a canvas with no visible text, and the captured frame is a single flat color. The app has not drawn its first frame (or drew it to a buffer that was never presented). Declare capture.readySignal in .codeyam/stack.json so capture waits for the first paint; if this scenario is meant to be empty, set allowMinimalRender.${stats}`,
     { url },
   );
 }
@@ -548,65 +518,6 @@ function scenarioScriptsLiveSocket(config) {
     return Object.keys(transcripts).length > 0 || Object.keys(streams).length > 0;
   } catch (_) {
     return false;
-  }
-}
-
-// Classify what a driven interaction actually did, from the DOM fingerprint on
-// either side of it plus the page's hydration state. Pure, so the distinction
-// this encodes is unit-tested without a browser.
-//
-// A click that changed nothing has two very different causes, and reporting both
-// as "none" is what let a dead page masquerade as a flaky harness: a page that
-// NEVER HYDRATED could not have responded to ANY interaction (no client JS is
-// running), whereas a hydrated page with an unchanged DOM really does mean the
-// control is inert. Keeping them apart is what tells a reader whether to go look
-// at their component or at the environment.
-//
-// `hydrated` is the three-valued signal from `waitForHydration`: only a PROVEN
-// dead page (`false`) earns "unhydrated". `null` means the wait could not judge
-// (unknown framework, no controls, probe threw) and must keep reporting "none" —
-// never invent a hydration fault we cannot prove.
-//
-// `pixelsChanged` is the second effect signal, for apps that paint into a
-// `<canvas>`: their DOM never changes, so a working click there used to read as
-// "none". An effect counts when EITHER signal moved; a pixel change alone also
-// rules out "unhydrated", since something on the page responded.
-function classifyInteractionEffect(
-  beforeFingerprint,
-  afterFingerprint,
-  hydrated,
-  pixelsChanged = false,
-) {
-  if (beforeFingerprint !== afterFingerprint) return "changed";
-  if (pixelsChanged === true) return "changed";
-  if (hydrated === false) return "unhydrated";
-  return "none";
-}
-
-// Where to look for a pixel effect, and whether the pixel signal applies at all.
-// The shot is clipped to the target's box, so an unrelated spinner elsewhere on
-// the page cannot pass for an effect; page-level keyboard verbs have no target
-// and use the whole viewport (`clip: null`). A target that cannot be resolved
-// here is left for `performInteraction` to fail on with its full no-match
-// guidance, so this never throws.
-//
-// `targetIsCanvas` is what scopes the pixel signal to canvas work. On an
-// ordinary DOM control an inert click still paints a focus ring or a pressed
-// state, and counting that as an effect would hide exactly the dead handler the
-// "none" verdict exists to report.
-async function resolvePixelClip(frame, interaction, resolve = resolveInteractionTarget) {
-  if (["key", "type"].includes((interaction || {}).action)) {
-    return { clip: null, targetIsCanvas: false };
-  }
-  try {
-    const { locator } = await resolve(frame, interaction);
-    const clip = await locator.boundingBox();
-    const targetIsCanvas = await locator.evaluate(
-      (el) => el.tagName === "CANVAS" || !!el.querySelector("canvas"),
-    );
-    return { clip, targetIsCanvas: targetIsCanvas === true };
-  } catch (_) {
-    return { clip: null, targetIsCanvas: false };
   }
 }
 
@@ -638,14 +549,6 @@ async function waitForCanvasSettle(
         `wait and capture.`,
     );
   }
-}
-
-// Which signal proved the effect: `dom` wins when both moved, because it is the
-// stronger and more specific evidence. `null` when neither moved.
-function interactionEffectSignal(beforeFingerprint, afterFingerprint, pixelsChanged) {
-  if (beforeFingerprint !== afterFingerprint) return "dom";
-  if (pixelsChanged === true) return "pixels";
-  return null;
 }
 
 // Where page-level keystrokes went, from the element that held keyboard focus
@@ -736,55 +639,6 @@ function buildStepEffect(
   return effect;
 }
 
-// Hash serialized markup into a compact `<length>-<hash>` fingerprint, so two
-// snapshots compare by value. Pure; `getDOMFingerprint` decides what markup
-// goes in.
-function fingerprintHtml(html) {
-  const text = String(html || "");
-  let hash = 0;
-  for (let i = 0; i < text.length; i++) {
-    hash = (hash << 5) - hash + text.charCodeAt(i);
-    hash |= 0;
-  }
-  return `${text.length}-${hash}`;
-}
-
-async function getDOMFingerprint(frame) {
-  try {
-    // On a clone, so the live page is untouched: drop each inline `cursor`
-    // and re-serialize every inline style in its canonical form.
-    //
-    // The cursor is pointer feedback, not app state — egui/eframe rewrites its
-    // canvas's cursor every time the pointer crosses a widget, so counting it
-    // made a click on empty canvas read as "changed", hiding exactly the dead
-    // step the verdict exists to name. It is removed through the style object,
-    // never a text regex, which would also eat visible text like "cursor: 4,2".
-    // Canonical form matters because the first script write to `el.style`
-    // re-serializes the WHOLE attribute (`display:block` → `display: block;`),
-    // which alone would move the fingerprint.
-    const html = await frame.evaluate(() => {
-      if (!document.body) return null;
-      const clone = document.body.cloneNode(true);
-      for (const el of clone.querySelectorAll("[style]")) {
-        el.style.removeProperty("cursor");
-        el.setAttribute("style", el.style.cssText);
-      }
-      return clone.innerHTML;
-    });
-    return html === null ? "" : fingerprintHtml(html);
-  } catch (err) {
-    return "";
-  }
-}
-
-// Cold-start retry pause. waitForStablePage settles as soon as the page is
-// HTML-stable, which for a lazy/Suspense app is the empty `<div id="root">`
-// shell — stable for the ~3s the dynamic chunk takes to load (longer when the
-// scenario's mocks slow the boot). 500ms re-checked before the chunk resolved
-// and reported a false blank; this pause must comfortably exceed that window
-// while staying under the test runner's default per-case timeout.
-const BLANK_RETRY_DELAY_MS = 3000;
-
 // Pause after scrolling the document to trip scroll-gated reveal observers, so
 // the IntersectionObserver callbacks fire and any opacity/transform entrance
 // transition begins before we measure visible content and screenshot. Driven
@@ -792,70 +646,14 @@ const BLANK_RETRY_DELAY_MS = 3000;
 // against the stubbed pages in unit tests.
 const REVEAL_SETTLE_MS = 600;
 
-// Measure the frame's visible (painted, non-opacity:0) text and fold it into
-// the content state in place, so the blank gate can distinguish "text rendered
-// but invisible" from a populated frame. Best-effort: a frame/target that
-// cannot be measured (a stubbed test target returns a non-number, an evaluate
-// throws) leaves the state untouched, so `hasRenderableContent` falls back to
-// its DOM-presence behavior rather than treating an un-measurable frame as
-// blank.
-async function mergeVisibleTextLength(contentState, frame) {
-  if (!contentState) return;
-  let visible;
-  try {
-    visible = await collectVisibleTextLength(frame);
-  } catch (_) {
-    return;
-  }
-  if (typeof visible === "number") {
-    contentState.visibleTextLength = visible;
-  }
-}
-
-// True when `url` targets a different origin than `appOrigin`. Used to decide
-// whether the codeyam capture markers must be stripped before the request
-// leaves (cross-origin) or may ride along (same-origin, the app's own dev
-// server). A malformed URL counts as same-origin (false) so we never strip
-// markers from a request we can't classify — the conservative default keeps
-// same-origin behavior unchanged. `url` may be a string or a URL-like object.
-function isCrossOriginRequest(url, appOrigin) {
-  try {
-    const href = typeof url === "string" ? url : url.href;
-    return new URL(href).origin !== appOrigin;
-  } catch (_) {
-    return false;
-  }
-}
-
-// Decide whether a failed request should fail the capture. Only a failure
-// targeting the captured page's OWN origin counts — a first-party route that
-// 500s or a same-origin asset that 404s is a real capture problem. A
-// cross-origin failure (the mocked app's dev port being down, an external
-// CDN/API) is an external resource and is tolerated, so the editor-shell
-// screenshot still succeeds. Mirrors the console handler's tolerance for
-// declared error-mock URLs. When `appOrigin` is unknown (malformed capture
-// URL) the failure stays fatal — the conservative default preserves today's
-// behavior rather than silently swallowing every failure. Pure, so the
-// decision is unit-testable without a live browser.
-function isCaptureFatalRequestFailure(url, appOrigin) {
-  if (!appOrigin) return true;
-  return !isCrossOriginRequest(url, appOrigin);
-}
-
-// True when this response is the reverse proxy's dev-server-down placeholder
-// rather than the app. The proxy stamps `DEV_SERVER_DOWN_HEADER` on exactly
-// that response and four Rust consumers already key on it; this is the fifth,
-// and the first on the capture side. Header names are compared
-// case-insensitively — Playwright lowercases them, but the contract is the
-// header, not Playwright's normalization of it. A null response is not a
-// placeholder (the null-response case has its own branch). Pure, so the
-// decision is unit-testable without a live browser or a downed dev server.
-function isDevServerPlaceholderResponse(response) {
-  if (!response || typeof response.headers !== "function") return false;
-  const headers = response.headers() || {};
-  return Object.keys(headers).some(
-    (name) => name.toLowerCase() === DEV_SERVER_DOWN_HEADER,
-  );
+// Whether a capture must pause `REVEAL_SETTLE_MS` for scroll-gated reveals.
+// Always, unless the app signalled ready (`readyFastPath`) AND the document has
+// nothing below the fold to reveal: `scrollHeight` (what the scroll-through
+// measured, null when it could not) fits within `viewportHeight`.
+function revealSettleNeeded({ readyFastPath, scrollHeight, viewportHeight }) {
+  if (!readyFastPath) return true;
+  if (typeof scrollHeight !== "number") return true;
+  return scrollHeight > viewportHeight;
 }
 
 // Return a copy of `headers` with every name in `markerNames` removed.
@@ -1746,6 +1544,7 @@ async function navigateFlowStep(page, stepPath, ctx) {
         });
   const frame = loadResult.frame;
   await waitForStablePage(page, frame, ctx.settleMs, ctx.loadingMarkers);
+  await assertIsolatedComponentResolved(frame);
   // A navigate loads a fresh route that must re-hydrate before the next
   // fill/click, or the interaction lands on inert SSR markup (the same
   // bug the top-level wait fixes, one route deeper). Bounded and
@@ -1935,96 +1734,21 @@ async function runFlowSteps(page, initialFrame, steps, ctx) {
 
 // One capture, retried once if a dev server's live reload interrupted it (see
 // `retryOnLiveReload`).
+// A capture that missed its ready signal with rendered-source attribution armed
+// is retried once unarmed (see `retryUnarmedOnReadyTimeout`).
 async function runScenarioCheck(config, options = {}) {
-  return retryOnLiveReload(() => runScenarioCheckOnce(config, options), {
-    onRetry: (firstError) => logCaptureTiming("live-reload-retry", { firstError }),
-  });
+  const attempt = (cfg) =>
+    retryOnLiveReload(() => runScenarioCheckOnce(cfg, options), {
+      onRetry: (firstError) => logCaptureTiming("live-reload-retry", { firstError }),
+    });
+  return retryUnarmedOnReadyTimeout(await attempt(config), config, attempt);
 }
 
-// `preflight` is injectable (defaulting to the real app-port reachability
-// check) so unit tests that mock the browser can stay network-free.
-// `harnessOrigin` is likewise injectable: it defaults to resolving the editor's
-// harness origin from `.codeyam/server-state.json`, but a test passes an
-// explicit value (e.g. `null` to force the legacy `setContent` harness) so the
-// iframe-load path never silently depends on a server-state file in cwd.
-// Resolved ONCE here and threaded into every iframe load below.
-async function runScenarioCheckOnce(
-  config,
-  { preflight = assertAppPortReachable, harnessOrigin } = {},
-) {
-  const { url, outputPath, width, height, httpMocks = {} } = config;
-  // The harness host mirrors the capture target's host so the framed load stays
-  // SAME-SITE — see `resolveHarnessOrigin`. A cross-site frame withholds the
-  // SameSite=Lax `cy_session` cookie and every token-gated route 401s.
-  const resolvedHarnessOrigin =
-    harnessOrigin !== undefined
-      ? harnessOrigin
-      : resolveHarnessOrigin({ targetUrl: url });
-  // Per-scenario capture-check allowances (see `CaptureAllowances` /
-  // `ScenarioDefinition` on the Rust side). Default false so the guards keep
-  // their strict behavior for every scenario that does not opt in.
-  const allowMinimalRender = !!(config && config.allowMinimalRender);
-  const expectedConsoleErrors = !!(config && config.expectedConsoleErrors);
-  let interactionEffect = null;
-  let interactionRetried = false;
-  // `dom` | `pixels` | null — which signal proved `interactionEffect`.
-  let interactionSignal = null;
-  // One `{step, action, effect, effectSignal}` per driven step of a flow — the
-  // per-step counterpart of `interactionEffect`, which a flow never sets.
-  const flowStepEffects = [];
-  // One `{step, suggestedFilename, bytes, path, status}` per browser download a
-  // flow step triggered — evidence, not frames.
-  const flowDownloads = [];
-  const flowDownloadDir = resolveFlowDownloadDir(config);
-  // Non-fatal warnings raised while resolving interaction/flow targets — e.g. a
-  // substring text match that hit more than one element. Surfaced on the result
-  // so the agent sees the ambiguity instead of a silently-wrong first-match.
-  const interactionWarnings = [];
-  const issues = [];
-  // Actionable set for self-healing: same-origin routes that returned 4xx with
-  // no scenario mock. A hermetic-proxy/upstream 404 is a *successful* HTTP
-  // response with status 404 (not a Playwright `requestfailed`), so the only
-  // place with method + path + status together is the `page.on("response")`
-  // collector below. De-duped by `"<METHOD> <path>"`; surfaced through
-  // `buildResult` so the Rust failure message can name each unmocked route and
-  // `stub-unmocked-routes` can add stub mocks for them.
-  const unmockedRoutes = [];
-  const unmockedRouteKeys = new Set();
-  // Origin of the captured page, used to classify failed requests: only a
-  // failure on the page's OWN origin should fail the capture (see
-  // `isCaptureFatalRequestFailure`). Derived from `config.url` exactly as
-  // `applyBrowserState` does; a malformed URL leaves it null, which keeps every
-  // request failure fatal (today's behavior).
-  let appOrigin = null;
-  try {
-    appOrigin = new URL(url).origin;
-  } catch (_) {
-    /* malformed capture URL — the guard no-ops and failures stay fatal */
-  }
-  const browser = await launchChromiumWithSelfHeal();
-  const contextOptions = {
-    viewport: { width: width || 1440, height: height || 900 },
-    // Explicit, because a flow step that exports a file must produce evidence
-    // rather than a download nobody waits on (see `saveFlowDownload`).
-    acceptDownloads: true,
-  };
-  if (config.colorScheme) contextOptions.colorScheme = config.colorScheme;
-  if (config.deviceScaleFactor)
-    contextOptions.deviceScaleFactor = config.deviceScaleFactor;
-  if (config.userAgent) contextOptions.userAgent = config.userAgent;
-  if (config.locale) contextOptions.locale = config.locale;
-  if (config.timezoneId) contextOptions.timezoneId = config.timezoneId;
-  if (config.reduceMotion) contextOptions.reducedMotion = config.reduceMotion;
-  if (config.forcedColors) contextOptions.forcedColors = config.forcedColors;
-  // When the opt-in HTTPS preview (`proxy.httpsPreview`) is on, the capture
-  // origin is `https://localhost:<port>` served by the reverse proxy's
-  // self-signed cert. Accept it for capture only — gated on the https origin so
-  // plain-HTTP captures keep full TLS-error fidelity.
-  if (typeof appOrigin === "string" && appOrigin.startsWith("https://")) {
-    contextOptions.ignoreHTTPSErrors = true;
-  }
-  const context = await browser.newContext(contextOptions);
-
+// Ready a fresh capture context before its first navigation: authenticate it
+// to the harness origin, apply the scenario's browser state, and install the
+// init script. THROWS on a capture-auth version skew rather than heading into a
+// guaranteed 401.
+async function prepareCaptureContext(context, config, resolvedHarnessOrigin) {
   // Authenticate the capture context to the editor's token-gated control-API
   // BEFORE any navigation. On a non-loopback bind the harness route requires the
   // session token; the browser UI carries it as a cookie automatically but the
@@ -2077,8 +1801,162 @@ async function runScenarioCheckOnce(
   // transcript / WS stream so the scripted agent state reaches the capture;
   // every other capture gets the reconnect-silencing stub.
   await context.addInitScript(getInitScript(scenarioScriptsLiveSocket(config)));
+}
+
+// Write the capture's screenshot to `outputPath` with the records that
+// describe it (the CSS rule matches, and the rendered widget sources when the
+// app signalled ready), then run the canvas blank check on the pixels it took.
+// Returns the `hasContent` verdict, which that check can withdraw.
+async function writeCaptureScreenshot(
+  page,
+  frame,
+  {
+    config,
+    outputPath,
+    url,
+    timings,
+    settleStartedAt,
+    ready,
+    hasContent,
+    contentState,
+    allowMinimalRender,
+    issues,
+    warnings,
+    attribution = null,
+  },
+) {
+  fs.mkdirSync(path.dirname(outputPath), { recursive: true });
+  // A record left by an earlier capture describes an earlier frame, so it
+  // goes before this shot; the one written after always describes THIS one.
+  fs.rmSync(cssRuleMatchesPath(outputPath), { force: true });
+  const screenshotStartedAt = Date.now();
+  timings.settleMs = screenshotStartedAt - settleStartedAt;
+  const shot = await page.screenshot({ path: outputPath, fullPage: false });
+  timings.screenshotMs = Date.now() - screenshotStartedAt;
+  await recordCssRuleMatches(frame, outputPath);
+  // Ask the app which widget sources it drew in THIS frame, and record the
+  // answer beside the screenshot it describes. Only when the app signalled
+  // ready — a frame that never finished painting reports nothing useful.
+  // Attribution, when armed, stops watching here: what ran up to this shot is
+  // what drew it.
+  if (ready) {
+    let attributed = null;
+    if (attribution) {
+      const outcome = await attribution.finish();
+      if (outcome.warning) warnings.push(outcome.warning);
+      attributed = outcome.record || null;
+    }
+    const renderedWarning = await recordRenderedSources(
+      frame,
+      resolveRenderedSourcesSignal(config),
+      outputPath,
+      { attributed },
+    );
+    if (renderedWarning) warnings.push(renderedWarning);
+  }
+  // A canvas-dominated page passed the DOM blank gate on its canvas's
+  // bounding box alone, so check the pixels it actually painted. A frame
+  // that is one flat color is an unpainted (or cleared-to-black) canvas.
+  // DOM-rendered pages skip this entirely, and `allowMinimalRender` is the
+  // deliberate opt-out for a scenario whose intended frame is empty.
+  if (hasContent) {
+    const canvasIssue = canvasBlankIssue(shot, contentState, {
+      allowMinimalRender,
+      url: page.url() || url,
+    });
+    if (canvasIssue) {
+      pushIssue(issues, canvasIssue);
+      return false;
+    }
+  }
+  return hasContent;
+}
+
+// `preflight` is injectable (defaulting to the real app-port reachability
+// check) so unit tests that mock the browser can stay network-free.
+// `harnessOrigin` is likewise injectable: it defaults to resolving the editor's
+// harness origin from `.codeyam/server-state.json`, but a test passes an
+// explicit value (e.g. `null` to force the legacy `setContent` harness) so the
+// iframe-load path never silently depends on a server-state file in cwd.
+// Resolved ONCE here and threaded into every iframe load below.
+//
+// `browser`, when given, is a browser the caller keeps alive across captures
+// (worker mode, see `runCaptureWorker`). This capture then opens its own
+// context in it and closes only that context, so cookies, storage and
+// permissions stay per-scenario while the browser process, its HTTP cache and
+// its compiled-wasm cache are reused.
+async function runScenarioCheckOnce(
+  config,
+  { preflight = assertAppPortReachable, harnessOrigin, browser: sharedBrowser } = {},
+) {
+  const { url, outputPath, height, httpMocks = {} } = config;
+  const captureStartedAt = Date.now();
+  // The harness host mirrors the capture target's host so the framed load stays
+  // SAME-SITE — see `resolveHarnessOrigin`. A cross-site frame withholds the
+  // SameSite=Lax `cy_session` cookie and every token-gated route 401s.
+  const resolvedHarnessOrigin =
+    harnessOrigin !== undefined
+      ? harnessOrigin
+      : resolveHarnessOrigin({ targetUrl: url });
+  // Per-scenario capture-check allowances (see `CaptureAllowances` /
+  // `ScenarioDefinition` on the Rust side). Default false so the guards keep
+  // their strict behavior for every scenario that does not opt in.
+  const allowMinimalRender = !!(config && config.allowMinimalRender);
+  const expectedConsoleErrors = !!(config && config.expectedConsoleErrors);
+  let interactionEffect = null;
+  let interactionRetried = false;
+  // `dom` | `pixels` | null — which signal proved `interactionEffect`.
+  let interactionSignal = null;
+  // One `{step, action, effect, effectSignal}` per driven step of a flow — the
+  // per-step counterpart of `interactionEffect`, which a flow never sets.
+  const flowStepEffects = [];
+  // One `{step, suggestedFilename, bytes, path, status}` per browser download a
+  // flow step triggered — evidence, not frames.
+  const flowDownloads = [];
+  const flowDownloadDir = resolveFlowDownloadDir(config);
+  // Non-fatal warnings raised while resolving interaction/flow targets — e.g. a
+  // substring text match that hit more than one element. Surfaced on the result
+  // so the agent sees the ambiguity instead of a silently-wrong first-match.
+  const interactionWarnings = [];
+  const issues = [];
+  // Actionable set for self-healing: same-origin routes that returned 4xx with
+  // no scenario mock. A hermetic-proxy/upstream 404 is a *successful* HTTP
+  // response with status 404 (not a Playwright `requestfailed`), so the only
+  // place with method + path + status together is the `page.on("response")`
+  // collector `attachCaptureCollectors` wires. De-duped by `"<METHOD> <path>"`;
+  // surfaced through `buildResult` so the Rust failure message can name each
+  // unmocked route and `stub-unmocked-routes` can add stub mocks for them.
+  const unmockedRoutes = [];
+  // Origin of the captured page, used to classify failed requests: only a
+  // failure on the page's OWN origin should fail the capture (see
+  // `isCaptureFatalRequestFailure`). Derived from `config.url` exactly as
+  // `applyBrowserState` does; a malformed URL leaves it null, which keeps every
+  // request failure fatal (today's behavior).
+  let appOrigin = null;
+  try {
+    appOrigin = new URL(url).origin;
+  } catch (_) {
+    /* malformed capture URL — the guard no-ops and failures stay fatal */
+  }
+  const browser = sharedBrowser || (await launchChromiumWithSelfHeal());
+  // Per-phase wall-clock, reported on the result so a run can say where its
+  // capture time went instead of leaving it to be estimated.
+  const timings = { browserStartMs: Date.now() - captureStartedAt };
+  const context = await browser.newContext(buildCaptureContextOptions(config, appOrigin));
+  await prepareCaptureContext(context, config, resolvedHarnessOrigin);
 
   const page = await context.newPage();
+  // Rendered-source attribution, when the stack opts in, watches from before
+  // the first navigation so the app's startup code is seen too. It never fails
+  // the capture: an unknown strategy or one that cannot start is a warning.
+  const attributionChoice = resolveRenderedSourcesAttribution(config);
+  if (attributionChoice.warning) interactionWarnings.push(attributionChoice.warning);
+  const attribution = await armRenderedSourcesAttribution(
+    context,
+    page,
+    attributionChoice.strategy,
+    { warnings: interactionWarnings },
+  );
   // Attach the network tracker BEFORE navigation so every request (the document
   // and every client-side data fetch) is counted. Used after DOM stability to
   // wait out an in-flight fetch that would otherwise be screenshotted as a
@@ -2089,77 +1967,12 @@ async function runScenarioCheckOnce(
   // same-origin from cross-origin — a third-party host the scenario has no
   // opinion about becomes visible rather than inferred.
   const mockObserver = await attachHttpMocks(page, httpMocks, { appOrigin });
-
-  page.on("pageerror", (error) => {
-    pushIssue(issues, handlePageError(error));
-  });
-
-  page.on("console", (message) => {
-    const issue = handleConsoleMessage(message);
-    if (!issue) return;
-    // Per-scenario allowance: a scenario that provokes console errors by design
-    // (a broken-image fallback whose `<img>` is meant to 404) opts in via
-    // `expectedConsoleErrors`. Load-bearing: without it the console-error guard
-    // fails the capture instead of screenshotting the intended fallback UI. A
-    // non-opted-in scenario still fails, so an unexpected console error is never
-    // silently tolerated.
-    if (expectedConsoleErrors) return;
-    // Console errors produced by the scenario's OWN declared error mocks
-    // (status >= 400) are the intended behavior of an error-state scenario,
-    // not a capture problem — skip them so "History - Load Error"-style
-    // scenarios can screenshot the failure UI they exist to demonstrate.
-    const sourceUrl = message.location && message.location().url;
-    if (sourceUrl && isDeclaredErrorMock(httpMocks, sourceUrl)) return;
-    // A console error originating from a cross-origin resource — the "Failed to
-    // load resource" Chromium logs alongside a cross-origin requestfailed (the
-    // down app dev port, an external CDN) — is an external-resource failure, not
-    // an editor-shell problem. Tolerate it for the same reason, and via the same
-    // predicate, as the requestfailed handler below.
-    if (sourceUrl && !isCaptureFatalRequestFailure(sourceUrl, appOrigin)) return;
-    pushIssue(issues, issue);
-  });
-
-  page.on("response", (response) => {
-    // Collect same-origin 4xx responses that no scenario mock covers — the set
-    // a stub mock would fix. Mirrors the console-guard predicates exactly so the
-    // reported set matches the guard's tolerances: a scenario that provokes
-    // errors by design (`expectedConsoleErrors`) reports none, and a route the
-    // scenario already declares an error mock for is the mock's intended 4xx,
-    // not a missing mock.
-    if (expectedConsoleErrors) return;
-    const req = response.request();
-    const reqUrl = req.url();
-    // Same-origin only — mirror the console/requestfailed origin gate so a
-    // cross-origin sub-resource 4xx is never reported as an unmocked route.
-    if (!isCaptureFatalRequestFailure(reqUrl, appOrigin)) return;
-    // The status-threshold, declared-mock, and path-extraction decision is the
-    // pure `unmockedRouteFrom` helper; the listener keeps only the stateful
-    // same-origin gate above and the dedup below.
-    const route = unmockedRouteFrom(req.method(), reqUrl, response.status(), httpMocks);
-    if (!route) return;
-    const key = `${route.method} ${route.path}`;
-    if (unmockedRouteKeys.has(key)) return;
-    unmockedRouteKeys.add(key);
-    unmockedRoutes.push(route);
-  });
-
-  page.on("requestfailed", (request) => {
-    // Per-scenario allowance: the broken-image fallback scenario's `<img>` 404
-    // is a SAME-origin request failure it exists to demonstrate, so
-    // `expectedConsoleErrors` tolerates it here too (the console guard above
-    // relaxes the paired "Failed to load resource" error). Load-bearing for the
-    // same reason; a non-opted-in same-origin failure still fails the capture.
-    if (expectedConsoleErrors) return;
-    // A cross-origin sub-resource failing must not fail an editor-shell
-    // screenshot — only the captured page's OWN origin counts. The most common
-    // case here is the live preview pane reaching the mocked project's app dev
-    // port (e.g. http://localhost:3000), which is not running in the
-    // self-hosting capture container.
-    if (!isCaptureFatalRequestFailure(request.url(), appOrigin)) return;
-    const issue = handleRequestFailed(request);
-    if (issue) {
-      pushIssue(issues, issue);
-    }
+  attachCaptureCollectors(page, {
+    issues,
+    unmockedRoutes,
+    httpMocks,
+    appOrigin,
+    expectedConsoleErrors,
   });
 
   let loaded = false;
@@ -2191,51 +2004,10 @@ async function runScenarioCheckOnce(
     const response = loadResult.response;
     loaded = true;
 
-    // The proxy's dev-server-down placeholder is a 200 carrying codeyam's own
-    // sentinel header, so it is checked BEFORE the status branches below —
-    // status alone cannot tell it from the app. Left unchecked, the capture
-    // photographs codeyam's "Ready to scaffold" card, reports success, and
-    // leaves that frame on disk to be shown later as the app's real state.
-    if (isDevServerPlaceholderResponse(response)) {
-      devServerPlaceholder = true;
-      pushIssue(
-        issues,
-        createIssue(
-          "navigation",
-          "Captured the editor's dev-server placeholder, not the app. The proxy " +
-            `answered with \`${DEV_SERVER_DOWN_HEADER}\`, which means the proxy ` +
-            "could not reach the app for this request. That happens two ways: the " +
-            "app's dev server is not running, or it is running and the proxy could " +
-            "not reach it this time. The screenshot would be of codeyam's own " +
-            "placeholder card. Re-run the capture first — it is the cheaper check, " +
-            "and a transient miss clears. If the same capture fails this way again, " +
-            "confirm the app's dev server is up and accepting connections.",
-          { url, devServerDown: true },
-        ),
-      );
-    } else if (response && response.status() >= 400) {
-      pushIssue(
-        issues,
-        createIssue("navigation", `Navigation returned HTTP ${response.status()}`, {
-          url: response.url(),
-          status: response.status(),
-        }),
-      );
-    } else if (!response && config.navigation === "topLevel") {
-      // A real top-level document load always yields a response. A null one
-      // means the status could never be checked — and an unverified status is
-      // not a passing status: a 500 whose error body renders text would
-      // otherwise satisfy `hasContent` and pass as `ok`. Fail loudly instead.
-      // The iframe path stays tolerant: there the app response is matched by
-      // exact URL and is legitimately allowed to miss.
-      pushIssue(
-        issues,
-        createIssue(
-          "navigation",
-          "Navigation response unavailable — could not verify the HTTP status of the top-level document",
-          { url },
-        ),
-      );
+    const navigation = navigationStatusIssue(response, config, url);
+    devServerPlaceholder = navigation.devServerPlaceholder;
+    if (navigation.issue) {
+      pushIssue(issues, navigation.issue);
     }
 
     pushRedirectMismatchIssue(issues, url, frame, response, config);
@@ -2246,51 +2018,22 @@ async function runScenarioCheckOnce(
     const loadingMarkers = Array.isArray(config.loadingMarkers)
       ? config.loadingMarkers
       : readStackLoadingMarkers();
-    // Content-stability window. Defaults to 10s; the editor's own WS-driven
-    // terminal/build route under self-hosting passes a longer `stableTimeoutMs`
-    // (its network never goes idle, so the default expired before the WS replay
-    // landed and the capture came back blank — VM1). Every other route omits the
-    // field and keeps the 10s default.
-    const stableTimeoutMs =
-      typeof config.stableTimeoutMs === "number" && config.stableTimeoutMs > 0
-        ? config.stableTimeoutMs
-        : 10000;
-    // Hydration wait cap. Mirrors `stableTimeoutMs`: defaults to 10s, but a slow
-    // Turbopack cold-compile route can extend it via `config.hydrationTimeoutMs`
-    // without a code change. Bounded and near-zero on a healthy page (attaches in
-    // a poll or two); only a genuinely dead page pays the full cap.
-    const hydrationTimeoutMs =
-      typeof config.hydrationTimeoutMs === "number" &&
-      config.hydrationTimeoutMs > 0
-        ? config.hydrationTimeoutMs
-        : 10000;
-    // A scenario's declared `captureTiming` moment, as a FLOOR on when the
-    // frame may be taken. Distinct from `stableTimeoutMs` above, which is a
-    // CAP: `waitForStablePage` returns the moment two consecutive polls match,
-    // so a cap can only ever make a capture happen *sooner*, never later. That
-    // asymmetry is what made a declared capture moment unreachable on a canvas
-    // surface — a scripted terminal replay paints into a <canvas>, so
-    // `document.body.innerHTML` never changes while it plays, the page reads as
-    // stable on the first two polls, and the frame was taken ~1.2s in no matter
-    // what the scenario declared. A scenario whose interesting state arrives
-    // later than that (a `blocked` banner scripted at 1800ms) could never be
-    // captured, and raising `atMs` did nothing because it only raised the cap.
-    const captureAtMs =
-      typeof config.captureAtMs === "number" && config.captureAtMs > 0
-        ? config.captureAtMs
-        : null;
+    const { stableTimeoutMs, hydrationTimeoutMs, captureAtMs } =
+      resolveSettleBudgets(config);
     const settleStartedAt = Date.now();
-    const stableOutcome = await waitForStablePage(
-      page,
-      frame,
-      stableTimeoutMs,
-      loadingMarkers,
-    );
+    timings.navigateMs = settleStartedAt - captureStartedAt - timings.browserStartMs;
     // App-declared readiness. DOM stability cannot see a canvas paint, so an
     // app that renders into one says when its first frame is down. Declared in
     // stack.json (`capture.readySignal`), or injected via config by tests. A
     // signal that never arrives FAILS the capture — falling through to a
     // screenshot would record exactly the unpainted frame this exists to stop.
+    //
+    // Awaited BEFORE the stability heuristics: once the app has said its first
+    // frame is drawn, they stop being the gate. Stability drops to a single
+    // confirming sample (`confirmOnly`), and the network-quiet wait and the
+    // reveal settle below are skipped. Those waits cost about 2.5 s on every
+    // capture, and on a canvas app they measure nothing the signal did not
+    // already answer. An app without a signal keeps every wait.
     const readiness = resolveCaptureReadiness(config);
     const readyOutcome = await waitForReadySignal(
       frame,
@@ -2300,6 +2043,19 @@ async function runScenarioCheckOnce(
     if (!readyOutcome.ready) {
       pushIssue(issues, readySignalTimeoutIssue(readiness, page.url() || url));
     }
+    const readyFastPath = readyOutcome.awaited && readyOutcome.ready;
+    const stableOutcome = await waitForStablePage(
+      page,
+      frame,
+      stableTimeoutMs,
+      loadingMarkers,
+      { confirmOnly: readyFastPath },
+    );
+    // The isolation harness's "No such component" placeholder settles like any
+    // page, so it is refused here, before any interaction can be blamed for it
+    // and before the screenshot. The throw lands in the catch below, which
+    // writes no PNG, so the scenario's committed screenshot is left as it was.
+    await assertIsolatedComponentResolved(frame);
     // Checked before the screenshot below; a declared interaction may navigate
     // on purpose, so it is only acted on for a static capture.
     const reloadWatch = watchNavigationAfterReady(page, frame);
@@ -2318,7 +2074,9 @@ async function runScenarioCheckOnce(
     // landed). Wait for the network to go quiet — bounded, so a streaming /
     // long-poll endpoint that never idles caps out and captures anyway rather
     // than hanging.
-    const networkOutcome = await waitForNetworkQuiet(networkTracker);
+    const networkOutcome = readyFastPath
+      ? { quiet: true, elapsedMs: 0, skipped: true }
+      : await waitForNetworkQuiet(networkTracker);
 
     // If the page never settled (a loading marker outlasted the wait) or the
     // network never went quiet, the screenshot likely caught a client-fetched
@@ -2350,80 +2108,25 @@ async function runScenarioCheckOnce(
     if (typeof page.emulateMedia === "function") {
       await page.emulateMedia({ reducedMotion: "reduce" }).catch(() => {});
     }
-    await scrollThroughDocument(frame).catch(() => {});
-    if (typeof page.waitForTimeout === "function") {
+    const scrollHeight = await scrollThroughDocument(frame).catch(() => null);
+    if (
+      typeof page.waitForTimeout === "function" &&
+      revealSettleNeeded({ readyFastPath, scrollHeight, viewportHeight: height || 900 })
+    ) {
       await page.waitForTimeout(REVEAL_SETTLE_MS);
     }
 
-    // Cold-start retry: a single re-collect after BLANK_RETRY_DELAY_MS covers
-    // the React.lazy / Suspense-fallback race where waitForStablePage settles
-    // on the still-empty `<div id="root">` shell before the dynamic chunk
-    // resolves. One retry is enough — the pause is sized to outlast the
-    // chunk-load window; only a genuinely blank page falls through to the
-    // blank issue below.
-    let contentState = await collectContentState(frame);
-    await mergeVisibleTextLength(contentState, frame);
-    let hasContent = hasRenderableContent(contentState);
-    if (!hasContent) {
-      await new Promise((r) => setTimeout(r, BLANK_RETRY_DELAY_MS));
-      contentState = await collectContentState(frame);
-      await mergeVisibleTextLength(contentState, frame);
-      hasContent = hasRenderableContent(contentState);
-    }
+    const rendered = await collectRenderedContent(page, frame, {
+      issues,
+      url,
+      allowMinimalRender,
+    });
+    const { contentState } = rendered;
+    let { hasContent } = rendered;
 
-    // Per-scenario allowance: a scenario whose intended UI is intrinsically
-    // minimal (an empty `<textarea>` the blank heuristic can't "see") opts in
-    // via `allowMinimalRender`. Accept the near-blank render as valid content so
-    // BOTH the blank issue below is skipped AND `buildResult`'s `ok` (which
-    // independently requires `hasContent`) can be true — otherwise the capture
-    // would still fail with an empty issue list. The cold-start retry already
-    // ran above, so a non-opted-in blank (a genuinely empty render) still falls
-    // through to the issue below.
-    if (!hasContent && allowMinimalRender) {
-      hasContent = true;
-    }
-
-    if (!hasContent) {
-      pushIssue(
-        issues,
-        createIssue(
-          "blank",
-          `Page rendered no visible content (${describeBlankReason(contentState)})`,
-          { url: page.url() || url },
-        ),
-      );
-    }
-
-    // Check for codeyam's scenario-renderer error fallback. We anchor on the
-    // DOM marker the ScenarioRenderer stamps on its error / seed-error frames
-    // rather than scanning the whole page body for ERROR_PATTERNS — a
-    // legitimately-mocked scenario whose content quotes one of those harness
-    // phrases must not be flagged. Apps with no codeyam ScenarioRenderer never
-    // emit the marker, so their pages are treated as healthy regardless of body
-    // text. The scan is scoped to the marked element's own text.
-    const errorMarker = await frame.evaluate((attr) => {
-      const el = document.querySelector(`[${attr}]`);
-      if (!el) return null;
-      return {
-        reason: el.getAttribute(attr) || "",
-        text: el.innerText || el.textContent || "",
-      };
-    }, SCENARIO_ERROR_MARKER);
-    const scenarioError = findScenarioError(errorMarker);
-    if (scenarioError) {
-      const { matchedPattern, contextSnippet } = scenarioError;
-      pushIssue(
-        issues,
-        createIssue(
-          "error-state",
-          `Page contains error content (matched "${matchedPattern}"): ${contextSnippet ?? ""}`,
-          {
-            url: page.url() || url,
-            matchedPattern,
-            contextSnippet,
-          },
-        ),
-      );
+    const errorStateIssue = await scenarioErrorMarkerIssue(page, frame, url);
+    if (errorStateIssue) {
+      pushIssue(issues, errorStateIssue);
     }
 
     // Hydration / interactivity gate: a page can render content and log no
@@ -2513,66 +2216,12 @@ async function runScenarioCheckOnce(
         downloadDir: flowDownloadDir,
       });
     } else if (config.interaction) {
-      const { clip: pixelClip, targetIsCanvas } = await resolvePixelClip(
-        frame,
-        config.interaction,
-      );
-      const canvasVerb = isCanvasInteraction(config.interaction) || targetIsCanvas;
-
-      // Record both fingerprints before interaction
-      const beforeFingerprint = await getDOMFingerprint(frame);
-      const beforePixels = canvasVerb ? await pixelSnapshot(page, pixelClip) : null;
-
-      // Drive the requested interaction (if any) against the settled frame,
-      // then re-settle, so `preview-interact` captures the RESULT of a click /
-      // fill / press (expanded accordion, open modal) without editing app
-      // source. A no-match target throws here and is caught below as a failed
-      // capture with the candidate-labels hint — never a silent blank shot.
-      await performInteraction(frame, config.interaction, {
-        warnings: interactionWarnings,
-      });
-      await waitForStablePage(page, frame, 5000, loadingMarkers);
-      if (canvasVerb) {
-        await waitForPixelStable(page, { clip: pixelClip, timeoutMs: 5000 });
-      }
-
-      // Record both fingerprints after interaction
-      let afterFingerprint = await getDOMFingerprint(frame);
-      const pixelsMoved = async () =>
-        canvasVerb && !samePixels(beforePixels, await pixelSnapshot(page, pixelClip));
-      let pixelsChanged = await pixelsMoved();
-
-      // If NEITHER signal moved and it was a plain DOM click, retry once after
-      // 500ms (covers the hydration race). Never for a canvas verb: a canvas
-      // click that did land shows no DOM change, and repeating it toggles a
-      // selection straight back off.
-      if (
-        beforeFingerprint === afterFingerprint &&
-        !pixelsChanged &&
-        config.interaction.action === "click" &&
-        !canvasVerb
-      ) {
-        interactionRetried = true;
-        await new Promise((resolve) => setTimeout(resolve, 500));
-        // The retry re-resolves the same target; suppress its ambiguity warning
-        // (already captured on the first attempt) to avoid a duplicate.
-        await performInteraction(frame, config.interaction);
-        await waitForStablePage(page, frame, 5000, loadingMarkers);
-        afterFingerprint = await getDOMFingerprint(frame);
-        pixelsChanged = await pixelsMoved();
-      }
-
-      interactionEffect = classifyInteractionEffect(
-        beforeFingerprint,
-        afterFingerprint,
-        hydration.hydrated,
-        pixelsChanged,
-      );
-      interactionSignal = interactionEffectSignal(
-        beforeFingerprint,
-        afterFingerprint,
-        pixelsChanged,
-      );
+      ({ interactionEffect, interactionRetried, interactionSignal } =
+        await driveSingleInteraction(page, frame, config.interaction, {
+          loadingMarkers,
+          warnings: interactionWarnings,
+          hydrated: hydration.hydrated,
+        }));
     }
 
     // Replay the scenario's PERSISTED interaction sequence (if any) in order,
@@ -2623,40 +2272,25 @@ async function runScenarioCheckOnce(
     // previous (or absent) screenshot untouched is what makes the failure
     // recoverable rather than destructive.
     if (outputPath && loaded && !devServerPlaceholder) {
-      fs.mkdirSync(path.dirname(outputPath), { recursive: true });
-      // A record left by an earlier capture describes an earlier frame, so it
-      // goes before this shot; the one written after always describes THIS one.
-      fs.rmSync(cssRuleMatchesPath(outputPath), { force: true });
-      const shot = await page.screenshot({ path: outputPath, fullPage: false });
-      await recordCssRuleMatches(frame, outputPath);
-      // Ask the app which widget sources it drew in THIS frame, and record the
-      // answer beside the screenshot it describes. Only when the app signalled
-      // ready — a frame that never finished painting reports nothing useful.
-      if (readyOutcome.ready) {
-        const renderedWarning = await recordRenderedSources(
-          frame,
-          resolveRenderedSourcesSignal(config),
-          outputPath,
-        );
-        if (renderedWarning) interactionWarnings.push(renderedWarning);
-      }
-      // A canvas-dominated page passed the DOM blank gate on its canvas's
-      // bounding box alone, so check the pixels it actually painted. A frame
-      // that is one flat color is an unpainted (or cleared-to-black) canvas.
-      // DOM-rendered pages skip this entirely, and `allowMinimalRender` is the
-      // deliberate opt-out for a scenario whose intended frame is empty.
-      if (hasContent) {
-        const canvasIssue = canvasBlankIssue(shot, contentState, {
-          allowMinimalRender,
-          url: page.url() || url,
-        });
-        if (canvasIssue) {
-          hasContent = false;
-          pushIssue(issues, canvasIssue);
-        }
-      }
+      hasContent = await writeCaptureScreenshot(page, frame, {
+        config,
+        outputPath,
+        url,
+        timings,
+        settleStartedAt,
+        ready: readyOutcome.ready,
+        hasContent,
+        contentState,
+        allowMinimalRender,
+        issues,
+        warnings: interactionWarnings,
+        attribution,
+      });
     }
 
+    // Fold in the mocks the proxy's in-page fetch shim answered, which the
+    // route tally above never sees.
+    await recordInPageMockHits(page, mockObserver, httpMocks);
     const result = buildResult({
       loaded,
       hasContent,
@@ -2671,47 +2305,18 @@ async function runScenarioCheckOnce(
       // reported verdict `false` rather than a guess.
       viewerOrigin: config.viewerOrigin ?? null,
     });
-
-    if (config.interaction) {
-      result.interactionEffect = interactionEffect;
-      result.interactionRetried = interactionRetried;
-      result.effectSignal = interactionSignal;
-    }
-    if (flowStepEffects.length > 0) {
-      result.stepEffects = flowStepEffects;
-    }
-    if (flowDownloads.length > 0) {
-      result.downloads = flowDownloads;
-    }
-
-    // Forward the hydration password census so the in-place auth-gate guard can
-    // fire on a route the project never declared. Attached ONLY when the probe
-    // actually took a census: a backend/static/unknown stack returns a null
-    // census having looked at nothing, and emitting hardcoded `false`s there
-    // would read downstream as positive "no password field", "not a credential
-    // form" claims the probe never made.
-    //
-    // Emitted as ONE object rather than three sibling flags because the three
-    // facts are only meaningful together — the two corroborating shapes exist
-    // precisely to qualify the first, and a consumer that received one without
-    // the others would be back to inferring a gate from a bare password field.
-    // `hasPasswordInput` is the discriminator for whether a census happened at
-    // all; the other two are booleans whenever it is.
-    if (typeof hydration.hasPasswordInput === "boolean") {
-      result.passwordCensus = {
-        hasPasswordInput: hydration.hasPasswordInput,
-        credentialForm: hydration.credentialForm === true,
-        formIsThePage: hydration.formIsThePage === true,
-      };
-    }
-
-    // Surface any non-fatal interaction/flow warnings (e.g. an ambiguous
-    // substring text match) so the CLI can print them and the agent can switch
-    // to a precise selector. Only attached when present — a clean run is
-    // byte-for-byte unchanged.
-    if (interactionWarnings.length > 0) {
-      result.warnings = interactionWarnings.slice();
-    }
+    decorateCaptureResult(result, {
+      timings,
+      settleStartedAt,
+      interaction: config.interaction
+        ? { interactionEffect, interactionRetried, interactionSignal }
+        : null,
+      flowStepEffects,
+      flowDownloads,
+      hydration,
+      interactionWarnings,
+    });
+    if (attribution) result.renderedSourcesAttribution = { strategy: attribution.strategy };
 
     // `capture-state` mode: attach the read-only page-state snapshot so the
     // backend can report localStorage + rendered text. Off by default, so a
@@ -2734,6 +2339,7 @@ async function runScenarioCheckOnce(
       createIssue("navigation", error.message || String(error), { url }),
     );
 
+    await recordInPageMockHits(page, mockObserver, httpMocks);
     return buildResult({
       loaded,
       hasContent: false,
@@ -2748,8 +2354,77 @@ async function runScenarioCheckOnce(
       viewerOrigin: config.viewerOrigin ?? null,
     });
   } finally {
-    await closeBrowserBounded(browser);
+    if (sharedBrowser) {
+      // The caller owns the browser. A context that will not close leaves
+      // it behind in `browser.contexts()`, which is how the worker learns to
+      // replace the browser.
+      await closeBrowserBounded(context);
+    } else {
+      await closeBrowserBounded(browser);
+    }
   }
+}
+
+// Captures one worker serves before it exits so the editor starts a fresh one.
+// A slow leak in the browser or the page code then cannot outlive this many
+// scenarios.
+const WORKER_MAX_CAPTURES = 50;
+
+// Prefix of the one stdout line that carries each worker reply, so a stray
+// `console.log` from page or helper code cannot be taken for a result.
+const WORKER_REPLY_PREFIX = "CODEYAM_CAPTURE_REPLY ";
+
+// Worker mode (`node capture.js --worker`): read one JSON capture config per
+// stdin line and answer each with one `WORKER_REPLY_PREFIX` line, either
+// `{"result": …}` (exactly what one-shot mode prints) or `{"error": "…"}` (what
+// one-shot mode would have exited non-zero with). Requests run one at a time.
+//
+// One browser serves every request. It is relaunched when it disconnects or
+// a context failed to close. After `maxCaptures` the worker exits by itself and
+// the editor starts a fresh one.
+async function runCaptureWorker({
+  input = process.stdin,
+  output = process.stdout,
+  launch = () => launchChromiumWithSelfHeal(),
+  capture = runScenarioCheck,
+  maxCaptures = WORKER_MAX_CAPTURES,
+} = {}) {
+  const readline = require("readline");
+  const lines = readline.createInterface({ input, crlfDelay: Infinity });
+  let browser = null;
+  let served = 0;
+  const reply = (body) => output.write(`${WORKER_REPLY_PREFIX}${JSON.stringify(body)}\n`);
+  for await (const line of lines) {
+    if (!line.trim()) continue;
+    try {
+      const config = JSON.parse(line);
+      if (!config.url) throw new Error("capture config has no url");
+      if (
+        browser &&
+        (!browser.isConnected() || browser.contexts().length > 0)
+      ) {
+        await closeBrowserBounded(browser);
+        browser = null;
+      }
+      let launchMs = 0;
+      if (!browser) {
+        const launchStartedAt = Date.now();
+        browser = await launch();
+        launchMs = Date.now() - launchStartedAt;
+      }
+      const result = await capture(config, { browser });
+      // The launch ran outside the capture, so charge it to the capture that
+      // needed it; every later capture on this browser reports zero.
+      if (result && result.timings) result.timings.browserStartMs += launchMs;
+      reply({ result });
+    } catch (error) {
+      reply({ error: (error && error.message) || String(error) });
+    }
+    served += 1;
+    if (served >= maxCaptures) break;
+  }
+  lines.close();
+  if (browser) await closeBrowserBounded(browser);
 }
 
 /**
@@ -2758,6 +2433,10 @@ async function runScenarioCheckOnce(
  * URL, and writes the resulting screenshot.
  */
 async function main() {
+  if (process.argv[2] === "--worker") {
+    await runCaptureWorker();
+    return;
+  }
   const config = JSON.parse(process.argv[2] || "{}");
 
   // Preview-preflight launch probe (`preview_preflight.rs`
@@ -2789,6 +2468,9 @@ async function main() {
 
 module.exports = {
   runScenarioCheck,
+  runCaptureWorker,
+  WORKER_REPLY_PREFIX,
+  revealSettleNeeded,
   recordCssRuleMatches,
   classifyInteractionEffect,
   interactionEffectSignal,

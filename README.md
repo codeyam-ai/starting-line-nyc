@@ -15,7 +15,9 @@ update automatically, so always check the official site before you register.
 Spotted something missing or wrong? Use **Report a missing or wrong detail** on
 the race page, which opens a pre-filled issue here. You can save races as
 Interested, Considering or Signed up; saves stay in your browser on that device,
-because accounts are not live yet.
+because accounts are not live yet. **My Races** (`/my-races`) lists your saved
+races grouped by status, soonest first, with a private note for each and a flag
+when a race's registration status has changed since you saved it.
 
 Photos are from Wikimedia Commons, used under the licences credited in the
 site footer.
@@ -40,6 +42,8 @@ waiting-room queue, so their dates and entry rules could not be checked and
 were left out rather than copied from third-party sites.
 
 - `GET /api/races` returns the filtered race list (same query parameters as the home page).
+- `GET /api/races/summaries?slugs=<a>,<b>` returns My Races summaries for up to
+  100 saved races; a race no longer listed comes back as `not-listed`.
 - `GET /api/races/<slug>/calendar` downloads an `.ics` for the next registration
   date; add `?milestone=<id>` for a specific date or `?event=raceday` for race day.
   Add `target=google` to redirect to Google Calendar's create-event page for the
@@ -117,14 +121,14 @@ try unreleased builds, use
 [`codeyam-ai/codespaces-starter-staging`](https://github.com/codeyam-ai/codespaces-starter-staging),
 which is the same template rendered with `--channel staging`.
 
-<!-- codeyam:run-and-edit:start d=b024ecdd083c -->
+<!-- codeyam:run-and-edit:start d=93f44abcb060 -->
 ## Develop this project with codeyam-editor
 
 This project is built with [codeyam-editor](https://codeyam.com) — code and runnable data scenarios are authored side by side against a live preview.
 
 ```bash
 # Clone the repo
-git clone https://github.com/nseldeib/starting-line-nyc && cd starting-line-nyc
+git clone https://github.com/codeyam-ai/starting-line-nyc && cd starting-line-nyc
 
 # Install codeyam-editor
 npm install -g @codeyam-editor/codeyam-editor@latest
@@ -134,7 +138,7 @@ codeyam-editor start
 ```
 <!-- codeyam:run-and-edit:end -->
 
-<!-- codeyam:scenario-gallery:start d=295debe4c8f2 -->
+<!-- codeyam:scenario-gallery:start d=61b721ea9c9d -->
 ## Scenario gallery
 
 States captured as runnable scenarios with codeyam-editor:
@@ -143,13 +147,25 @@ States captured as runnable scenarios with codeyam-editor:
 
 <img src=".codeyam/scenarios/screenshots/home-all-distances-next-12-months--desktop.png" alt="Home - All Distances Next 12 Months" width="280">
 
-Every distance over the next year on the real researched races, sorted by next deadline: 5K, 10K, halves and the Escarpment 30K, whose qualifier applications are not open yet.
+Every distance over the next year on the real researched races from 17 organizers (clubs, park groups, trail series and ultras), from 5K to a 100-miler across the five boroughs, Westchester, Long Island, NJ and CT, sorted by next deadline.
 
 ### Home - Phone Layout
 
 <img src=".codeyam/scenarios/screenshots/home-phone-layout--mobile.png" alt="Home - Phone Layout" width="280">
 
 The default search on a phone: the hero search stacks into two columns, the nav collapses, and each race row folds under its thumbnail with Save beside the name.
+
+### My Races - No Saved Races
+
+<img src=".codeyam/scenarios/screenshots/my-races-no-saved-races--desktop.png" alt="My Races - No Saved Races" width="280">
+
+Nothing saved in this browser yet: the page explains that Save keeps races here with their dates and notes, and points back to the race list.
+
+### My Races - Phone Layout
+
+<img src=".codeyam/scenarios/screenshots/my-races-phone-layout--mobile.png" alt="My Races - Phone Layout" width="280">
+
+The same six saved races on a phone: rows stack, the My Races link sits in the header, and notes and the changed-since-saved flag run full width.
 
 ### Race - Big Bear Squatch North
 
@@ -169,21 +185,9 @@ The Big Apple Half on a phone: photo, facts and the key-dates timeline stack in 
 
 The default search (half marathons, next 6 months) on the real researched races, sorted by next deadline: upcoming price rises and registration closings in Eastern Time, with the nearest highlighted.
 
-### Race - Escarpment Trail Run
+### My Races - One Saved Race
 
-<img src=".codeyam/scenarios/screenshots/race-escarpment-trail-run--desktop.png" alt="Race - Escarpment Trail Run" width="280">
+<img src=".codeyam/scenarios/screenshots/my-races-one-saved-race--desktop.png" alt="My Races - One Saved Race" width="280">
 
-A qualifier-only race whose applications are not open yet: the qualifying standards, no listed price, and Visit the official site instead of a registration link.
-
-### Home - Lottery Races Only
-
-<img src=".codeyam/scenarios/screenshots/home-lottery-races-only--desktop.png" alt="Home - Lottery Races Only" width="280">
-
-The Lottery chip switched on: none of the verified races uses a lottery entry, so the results show the no-matches state with a way back to all races.
-
-### Race - Great Gobble 5K
-
-<img src=".codeyam/scenarios/screenshots/race-great-gobble-5k--desktop.png" alt="Race - Great Gobble 5K" width="280">
-
-A road race with a park photo and several date-only price rises marked time not stated, each with its own Add to calendar.
+A runner who has saved a single race: one group, a singular race count, the registration-change note and their private note.
 <!-- codeyam:scenario-gallery:end -->

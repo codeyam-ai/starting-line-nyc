@@ -6,7 +6,16 @@ import SaveRaceButton from '@/app/components/SaveRaceButton';
 import WeeksToTrain from '@/app/components/WeeksToTrain';
 import type { RaceListItem } from '@/app/lib/raceList';
 
-export default function RaceRow({ race, urgent }: { race: RaceListItem; urgent: boolean }) {
+// alwaysOfferCalendar: My Races offers Add to calendar for any dated deadline, not only urgent ones.
+export default function RaceRow({
+  race,
+  urgent,
+  alwaysOfferCalendar = false,
+}: {
+  race: RaceListItem;
+  urgent: boolean;
+  alwaysOfferCalendar?: boolean;
+}) {
   return (
     <div className="row">
       <RaceThumb photoUrl={race.photoUrl} photoAlt={race.photoAlt} distanceMiles={race.distanceMiles} />
@@ -24,9 +33,10 @@ export default function RaceRow({ race, urgent }: { race: RaceListItem; urgent: 
         milestone={race.nextMilestone}
         urgent={urgent}
         calendarHref={`/api/races/${race.slug}/calendar`}
+        alwaysOfferCalendar={alwaysOfferCalendar}
       />
       <WeeksToTrain weeks={race.weeksToTrain} />
-      <SaveRaceButton slug={race.slug} raceName={race.name} />
+      <SaveRaceButton slug={race.slug} raceName={race.name} registrationStatus={race.registrationStatus} />
     </div>
   );
 }

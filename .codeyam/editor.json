@@ -10,41 +10,6 @@
     }
   ],
   "audit": {
-    "scenarioFixtureDateSkip": [
-      {"slug": "home-races-saved-on-this-device", "table": "raceEdition", "field": "lastVerifiedAt", "reason": "fixed-reference-data"},
-      {"slug": "home-races-saved-on-this-device", "table": "raceEdition", "field": "raceDate", "reason": "fixed-reference-data"},
-      {"slug": "home-races-saved-on-this-device", "table": "registrationMilestone", "field": "at", "reason": "fixed-reference-data"},
-      {"slug": "race-saved-as-considering", "table": "raceEdition", "field": "lastVerifiedAt", "reason": "fixed-reference-data"},
-      {"slug": "race-saved-as-considering", "table": "raceEdition", "field": "raceDate", "reason": "fixed-reference-data"},
-      {"slug": "race-saved-as-considering", "table": "registrationMilestone", "field": "at", "reason": "fixed-reference-data"},
-      {"slug": "home-all-distances-next-12-months", "table": "raceEdition", "field": "lastVerifiedAt", "reason": "fixed-reference-data"},
-      {"slug": "home-all-distances-next-12-months", "table": "raceEdition", "field": "raceDate", "reason": "fixed-reference-data"},
-      {"slug": "home-all-distances-next-12-months", "table": "registrationMilestone", "field": "at", "reason": "fixed-reference-data"},
-      {"slug": "home-half-marathons-next-6-months", "table": "raceEdition", "field": "lastVerifiedAt", "reason": "fixed-reference-data"},
-      {"slug": "home-half-marathons-next-6-months", "table": "raceEdition", "field": "raceDate", "reason": "fixed-reference-data"},
-      {"slug": "home-half-marathons-next-6-months", "table": "registrationMilestone", "field": "at", "reason": "fixed-reference-data"},
-      {"slug": "home-lottery-races-only", "table": "raceEdition", "field": "lastVerifiedAt", "reason": "fixed-reference-data"},
-      {"slug": "home-lottery-races-only", "table": "raceEdition", "field": "raceDate", "reason": "fixed-reference-data"},
-      {"slug": "home-lottery-races-only", "table": "registrationMilestone", "field": "at", "reason": "fixed-reference-data"},
-      {"slug": "home-phone-layout", "table": "raceEdition", "field": "lastVerifiedAt", "reason": "fixed-reference-data"},
-      {"slug": "home-phone-layout", "table": "raceEdition", "field": "raceDate", "reason": "fixed-reference-data"},
-      {"slug": "home-phone-layout", "table": "registrationMilestone", "field": "at", "reason": "fixed-reference-data"},
-      {"slug": "home-single-search-result", "table": "raceEdition", "field": "lastVerifiedAt", "reason": "fixed-reference-data"},
-      {"slug": "home-single-search-result", "table": "raceEdition", "field": "raceDate", "reason": "fixed-reference-data"},
-      {"slug": "home-single-search-result", "table": "registrationMilestone", "field": "at", "reason": "fixed-reference-data"},
-      {"slug": "race-big-bear-squatch-north", "table": "raceEdition", "field": "lastVerifiedAt", "reason": "fixed-reference-data"},
-      {"slug": "race-big-bear-squatch-north", "table": "raceEdition", "field": "raceDate", "reason": "fixed-reference-data"},
-      {"slug": "race-big-bear-squatch-north", "table": "registrationMilestone", "field": "at", "reason": "fixed-reference-data"},
-      {"slug": "race-escarpment-trail-run", "table": "raceEdition", "field": "lastVerifiedAt", "reason": "fixed-reference-data"},
-      {"slug": "race-escarpment-trail-run", "table": "raceEdition", "field": "raceDate", "reason": "fixed-reference-data"},
-      {"slug": "race-escarpment-trail-run", "table": "registrationMilestone", "field": "at", "reason": "fixed-reference-data"},
-      {"slug": "race-great-gobble-5k", "table": "raceEdition", "field": "lastVerifiedAt", "reason": "fixed-reference-data"},
-      {"slug": "race-great-gobble-5k", "table": "raceEdition", "field": "raceDate", "reason": "fixed-reference-data"},
-      {"slug": "race-great-gobble-5k", "table": "registrationMilestone", "field": "at", "reason": "fixed-reference-data"},
-      {"slug": "race-phone-layout", "table": "raceEdition", "field": "lastVerifiedAt", "reason": "fixed-reference-data"},
-      {"slug": "race-phone-layout", "table": "raceEdition", "field": "raceDate", "reason": "fixed-reference-data"},
-      {"slug": "race-phone-layout", "table": "registrationMilestone", "field": "at", "reason": "fixed-reference-data"}
-    ],
     "allowedDocumentationOnlySlugs": [
       "post-merge-drift-sweep"
     ],
@@ -57,6 +22,206 @@
       "compound": "warning",
       "vague": "warning"
     },
+    "scenarioFixtureDateSkip": [
+      {
+        "field": "lastVerifiedAt",
+        "reason": "fixed-reference-data",
+        "slug": "home-races-saved-on-this-device",
+        "table": "raceEdition"
+      },
+      {
+        "field": "raceDate",
+        "reason": "fixed-reference-data",
+        "slug": "home-races-saved-on-this-device",
+        "table": "raceEdition"
+      },
+      {
+        "field": "at",
+        "reason": "fixed-reference-data",
+        "slug": "home-races-saved-on-this-device",
+        "table": "registrationMilestone"
+      },
+      {
+        "field": "lastVerifiedAt",
+        "reason": "fixed-reference-data",
+        "slug": "race-saved-as-considering",
+        "table": "raceEdition"
+      },
+      {
+        "field": "raceDate",
+        "reason": "fixed-reference-data",
+        "slug": "race-saved-as-considering",
+        "table": "raceEdition"
+      },
+      {
+        "field": "at",
+        "reason": "fixed-reference-data",
+        "slug": "race-saved-as-considering",
+        "table": "registrationMilestone"
+      },
+      {
+        "field": "lastVerifiedAt",
+        "reason": "fixed-reference-data",
+        "slug": "home-all-distances-next-12-months",
+        "table": "raceEdition"
+      },
+      {
+        "field": "raceDate",
+        "reason": "fixed-reference-data",
+        "slug": "home-all-distances-next-12-months",
+        "table": "raceEdition"
+      },
+      {
+        "field": "at",
+        "reason": "fixed-reference-data",
+        "slug": "home-all-distances-next-12-months",
+        "table": "registrationMilestone"
+      },
+      {
+        "field": "lastVerifiedAt",
+        "reason": "fixed-reference-data",
+        "slug": "home-half-marathons-next-6-months",
+        "table": "raceEdition"
+      },
+      {
+        "field": "raceDate",
+        "reason": "fixed-reference-data",
+        "slug": "home-half-marathons-next-6-months",
+        "table": "raceEdition"
+      },
+      {
+        "field": "at",
+        "reason": "fixed-reference-data",
+        "slug": "home-half-marathons-next-6-months",
+        "table": "registrationMilestone"
+      },
+      {
+        "field": "lastVerifiedAt",
+        "reason": "fixed-reference-data",
+        "slug": "home-lottery-races-only",
+        "table": "raceEdition"
+      },
+      {
+        "field": "raceDate",
+        "reason": "fixed-reference-data",
+        "slug": "home-lottery-races-only",
+        "table": "raceEdition"
+      },
+      {
+        "field": "at",
+        "reason": "fixed-reference-data",
+        "slug": "home-lottery-races-only",
+        "table": "registrationMilestone"
+      },
+      {
+        "field": "lastVerifiedAt",
+        "reason": "fixed-reference-data",
+        "slug": "home-phone-layout",
+        "table": "raceEdition"
+      },
+      {
+        "field": "raceDate",
+        "reason": "fixed-reference-data",
+        "slug": "home-phone-layout",
+        "table": "raceEdition"
+      },
+      {
+        "field": "at",
+        "reason": "fixed-reference-data",
+        "slug": "home-phone-layout",
+        "table": "registrationMilestone"
+      },
+      {
+        "field": "lastVerifiedAt",
+        "reason": "fixed-reference-data",
+        "slug": "home-single-search-result",
+        "table": "raceEdition"
+      },
+      {
+        "field": "raceDate",
+        "reason": "fixed-reference-data",
+        "slug": "home-single-search-result",
+        "table": "raceEdition"
+      },
+      {
+        "field": "at",
+        "reason": "fixed-reference-data",
+        "slug": "home-single-search-result",
+        "table": "registrationMilestone"
+      },
+      {
+        "field": "lastVerifiedAt",
+        "reason": "fixed-reference-data",
+        "slug": "race-big-bear-squatch-north",
+        "table": "raceEdition"
+      },
+      {
+        "field": "raceDate",
+        "reason": "fixed-reference-data",
+        "slug": "race-big-bear-squatch-north",
+        "table": "raceEdition"
+      },
+      {
+        "field": "at",
+        "reason": "fixed-reference-data",
+        "slug": "race-big-bear-squatch-north",
+        "table": "registrationMilestone"
+      },
+      {
+        "field": "lastVerifiedAt",
+        "reason": "fixed-reference-data",
+        "slug": "race-escarpment-trail-run",
+        "table": "raceEdition"
+      },
+      {
+        "field": "raceDate",
+        "reason": "fixed-reference-data",
+        "slug": "race-escarpment-trail-run",
+        "table": "raceEdition"
+      },
+      {
+        "field": "at",
+        "reason": "fixed-reference-data",
+        "slug": "race-escarpment-trail-run",
+        "table": "registrationMilestone"
+      },
+      {
+        "field": "lastVerifiedAt",
+        "reason": "fixed-reference-data",
+        "slug": "race-great-gobble-5k",
+        "table": "raceEdition"
+      },
+      {
+        "field": "raceDate",
+        "reason": "fixed-reference-data",
+        "slug": "race-great-gobble-5k",
+        "table": "raceEdition"
+      },
+      {
+        "field": "at",
+        "reason": "fixed-reference-data",
+        "slug": "race-great-gobble-5k",
+        "table": "registrationMilestone"
+      },
+      {
+        "field": "lastVerifiedAt",
+        "reason": "fixed-reference-data",
+        "slug": "race-phone-layout",
+        "table": "raceEdition"
+      },
+      {
+        "field": "raceDate",
+        "reason": "fixed-reference-data",
+        "slug": "race-phone-layout",
+        "table": "raceEdition"
+      },
+      {
+        "field": "at",
+        "reason": "fixed-reference-data",
+        "slug": "race-phone-layout",
+        "table": "registrationMilestone"
+      }
+    ],
     "scenarioFreshnessDays": 14,
     "sharedBaselineMinScenarios": 10,
     "sizeBudget": {

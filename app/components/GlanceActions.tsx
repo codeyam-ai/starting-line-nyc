@@ -8,13 +8,13 @@ export default function GlanceActions({
   save,
 }: {
   official: { href: string; label: string } | null;
-  save?: { slug: string; raceName: string };
+  save?: { slug: string; raceName: string; registrationStatus?: string };
 }) {
   if (!official && !save) return null;
   return (
     <div className="glance-actions">
       {official && <OfficialLinkButton href={official.href} label={official.label} />}
-      {save && <SaveRaceButton slug={save.slug} raceName={save.raceName} />}
+      {save && <SaveRaceButton slug={save.slug} raceName={save.raceName} registrationStatus={save.registrationStatus} />}
     </div>
   );
 }

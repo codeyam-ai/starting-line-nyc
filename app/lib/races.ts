@@ -4,13 +4,29 @@
 import { prisma } from '@/app/lib/prisma';
 import type { RaceFilters } from '@/app/lib/filters';
 import { buildTimeline } from '@/app/lib/raceDetail';
-import { filterAndSortRaces, upcomingEdition, weeksToTrain, type RaceListItem } from '@/app/lib/raceList';
+import {
+  filterAndSortRaces,
+  summarizeSavedRaces,
+  upcomingEdition,
+  weeksToTrain,
+  type RaceListItem,
+  type SavedRaceSummary,
+} from '@/app/lib/raceList';
 
 export async function findRaces(filters: RaceFilters, now = new Date()): Promise<RaceListItem[]> {
   const races = await prisma.race.findMany({
     include: { organizer: true, editions: { include: { milestones: true } } },
   });
   return filterAndSortRaces(races, filters, now);
+}
+
+// Summaries for the races saved in a browser. The shaping is pure and lives in raceList.ts.
+export async function findRaceSummaries(slugs: string[], now = new Date()): Promise<SavedRaceSummary[]> {
+  const races = await prisma.race.findMany({
+    where: { slug: { in: slugs } },
+    include: { organizer: true, editions: { include: { milestones: true } } },
+  });
+  return summarizeSavedRaces(slugs, races, now);
 }
 
 // One race for its page: the upcoming edition and its timeline.

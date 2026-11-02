@@ -1,0 +1,12 @@
+{
+  "name": "RaceNote - Empty",
+  "id": "238e54c4-0167-4608-9e13-a843941d09c2",
+  "url": "/isolated-components/RaceNote?s=Empty",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "RaceNote",
+  "scenarioType": "component",
+  "description": "An empty private note box with its example placeholder."
+}

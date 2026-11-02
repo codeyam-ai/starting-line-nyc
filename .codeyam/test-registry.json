@@ -19,6 +19,24 @@
       "runner": "tests"
     },
     {
+      "description": "Not loaded until every saved race has a summary.",
+      "file": "app/lib/myRaces.test.ts",
+      "format": "vitest",
+      "key": "allSummariesLoaded › is false while any saved race lacks a summary",
+      "line": 195,
+      "registeredAt": "2026-11-02T16:32:32Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Loaded once every saved race has one.",
+      "file": "app/lib/myRaces.test.ts",
+      "format": "vitest",
+      "key": "allSummariesLoaded › is true when every saved race has a summary",
+      "line": 200,
+      "registeredAt": "2026-11-02T16:32:32Z",
+      "runner": "tests"
+    },
+    {
       "description": "Text fields are escaped so commas in descriptions do not break parsing.",
       "file": "app/lib/ics.test.ts",
       "format": "vitest",
@@ -181,11 +199,38 @@
       "runner": "tests"
     },
     {
+      "description": "Summaries come back keyed by slug, from the encoded summaries URL.",
+      "file": "app/lib/useRaceSummaries.test.tsx",
+      "format": "vitest",
+      "key": "fetchRaceSummaries › keys the response by slug",
+      "line": 12,
+      "registeredAt": "2026-11-02T16:32:32Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A server error rejects so the page can show the failure message.",
+      "file": "app/lib/useRaceSummaries.test.tsx",
+      "format": "vitest",
+      "key": "fetchRaceSummaries › rejects on a failed response",
+      "line": 27,
+      "registeredAt": "2026-11-02T16:32:32Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A body without summaries reads as none rather than crashing.",
+      "file": "app/lib/useRaceSummaries.test.tsx",
+      "format": "vitest",
+      "key": "fetchRaceSummaries › treats a missing summaries list as empty",
+      "line": 32,
+      "registeredAt": "2026-11-02T16:32:32Z",
+      "runner": "tests"
+    },
+    {
       "description": "The default search keeps halves inside six months and drops the May race.",
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "filterAndSortRaces › applies distance and six month window by default",
-      "line": 204,
+      "line": 230,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -194,7 +239,7 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "filterAndSortRaces › filters by status chips",
-      "line": 226,
+      "line": 252,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -203,7 +248,7 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "filterAndSortRaces › filters by terrain and by search text across name, place and organizer",
-      "line": 219,
+      "line": 245,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -212,7 +257,7 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "filterAndSortRaces › matches ultras beyond marathon distance",
-      "line": 214,
+      "line": 240,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -221,7 +266,7 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "filterAndSortRaces › returns everything with any distance and any time",
-      "line": 209,
+      "line": 235,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -334,6 +379,42 @@
       "runner": "tests"
     },
     {
+      "description": "Each missing-listing reason has its own explanation.",
+      "file": "app/lib/myRaces.test.ts",
+      "format": "vitest",
+      "key": "goneRaceMessage › explains each reason differently",
+      "line": 123,
+      "registeredAt": "2026-11-02T16:32:32Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Saves made before names were recorded fall back to the slug.",
+      "file": "app/lib/myRaces.test.ts",
+      "format": "vitest",
+      "key": "goneRaceName › falls back to a name made from the slug",
+      "line": 114,
+      "registeredAt": "2026-11-02T16:32:32Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A race that still exists shows its current name.",
+      "file": "app/lib/myRaces.test.ts",
+      "format": "vitest",
+      "key": "goneRaceName › prefers the current name of a race with no upcoming edition",
+      "line": 102,
+      "registeredAt": "2026-11-02T16:32:32Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A delisted race shows the name recorded at save.",
+      "file": "app/lib/myRaces.test.ts",
+      "format": "vitest",
+      "key": "goneRaceName › uses the saved name for a race no longer listed",
+      "line": 108,
+      "registeredAt": "2026-11-02T16:32:32Z",
+      "runner": "tests"
+    },
+    {
       "description": "A plain calendar link gains the Google target as its only query.",
       "file": "app/lib/raceCalendar.test.ts",
       "format": "vitest",
@@ -424,6 +505,42 @@
       "runner": "tests"
     },
     {
+      "description": "A status nobody picked gets no group.",
+      "file": "app/lib/myRaces.test.ts",
+      "format": "vitest",
+      "key": "groupSavedRaces › leaves out empty groups",
+      "line": 68,
+      "registeredAt": "2026-11-02T16:32:32Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Groups run Signed up, Considering, Interested, each soonest first.",
+      "file": "app/lib/myRaces.test.ts",
+      "format": "vitest",
+      "key": "groupSavedRaces › orders groups by status and races by race day",
+      "line": 48,
+      "registeredAt": "2026-11-02T16:32:32Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Races with no date, or no listing, follow the dated ones, by slug.",
+      "file": "app/lib/myRaces.test.ts",
+      "format": "vitest",
+      "key": "groupSavedRaces › puts undated races after dated ones in slug order",
+      "line": 73,
+      "registeredAt": "2026-11-02T16:32:32Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Nothing saved means no groups.",
+      "file": "app/lib/myRaces.test.ts",
+      "format": "vitest",
+      "key": "groupSavedRaces › returns no groups for nothing saved",
+      "line": 83,
+      "registeredAt": "2026-11-02T16:32:32Z",
+      "runner": "tests"
+    },
+    {
       "description": "Dates are written as compact UTC timestamps without milliseconds.",
       "file": "app/lib/ics.test.ts",
       "format": "vitest",
@@ -455,7 +572,7 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "isUrgent › is false beyond three weeks, in the past, or missing",
-      "line": 114,
+      "line": 140,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -464,7 +581,7 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "isUrgent › is true within three weeks",
-      "line": 108,
+      "line": 134,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -473,7 +590,7 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "isUrgent › keeps a date-only deadline urgent until its ET day ends",
-      "line": 122,
+      "line": 148,
       "registeredAt": "2026-10-26T21:01:51Z",
       "runner": "tests"
     },
@@ -482,7 +599,7 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "milestoneEnd › extends date-only milestones to the end of the day",
-      "line": 131,
+      "line": 157,
       "registeredAt": "2026-10-26T21:01:51Z",
       "runner": "tests"
     },
@@ -505,6 +622,33 @@
       "runner": "tests"
     },
     {
+      "description": "Stray dashes do not produce double spaces.",
+      "file": "app/lib/savedRaces.test.ts",
+      "format": "vitest",
+      "key": "nameFromSlug › ignores empty segments",
+      "line": 220,
+      "registeredAt": "2026-11-02T16:32:32Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Words are capitalised and joined with spaces.",
+      "file": "app/lib/savedRaces.test.ts",
+      "format": "vitest",
+      "key": "nameFromSlug › turns a slug into a title",
+      "line": 210,
+      "registeredAt": "2026-11-02T16:32:32Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Distance tokens like 10k read as 10K.",
+      "file": "app/lib/savedRaces.test.ts",
+      "format": "vitest",
+      "key": "nameFromSlug › uppercases tokens that start with a digit",
+      "line": 215,
+      "registeredAt": "2026-11-02T16:32:32Z",
+      "runner": "tests"
+    },
+    {
       "description": "The first non-past registration date is the next deadline; race day never is.",
       "file": "app/lib/raceDetail.test.ts",
       "format": "vitest",
@@ -518,7 +662,7 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "nextMilestone with date-only deadlines › keeps today as next until the day ends",
-      "line": 140,
+      "line": 166,
       "registeredAt": "2026-10-26T21:01:51Z",
       "runner": "tests"
     },
@@ -527,7 +671,7 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "nextMilestone › returns null when nothing is upcoming",
-      "line": 87,
+      "line": 113,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -536,7 +680,7 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "nextMilestone › returns the earliest future milestone",
-      "line": 81,
+      "line": 107,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -622,11 +766,20 @@
       "runner": "tests"
     },
     {
+      "description": "Name, note and the status at save survive a round trip; blanks and wrong types are dropped.",
+      "file": "app/lib/savedRaces.test.ts",
+      "format": "vitest",
+      "key": "parseSavedRaces extras › keeps the name note and registration status at save",
+      "line": 130,
+      "registeredAt": "2026-11-02T16:32:32Z",
+      "runner": "tests"
+    },
+    {
       "description": "Only the three known statuses survive; anything else is dropped, not guessed.",
       "file": "app/lib/savedRaces.test.ts",
       "format": "vitest",
       "key": "parseSavedRaces › keeps known statuses and drops unknown ones",
-      "line": 48,
+      "line": 51,
       "registeredAt": "2026-10-27T19:18:21Z",
       "runner": "tests"
     },
@@ -635,8 +788,35 @@
       "file": "app/lib/savedRaces.test.ts",
       "format": "vitest",
       "key": "parseSavedRaces › treats missing or corrupt storage as nothing saved",
-      "line": 40,
+      "line": 43,
       "registeredAt": "2026-10-27T19:18:21Z",
+      "runner": "tests"
+    },
+    {
+      "description": "The request is capped so one URL cannot ask for the whole table.",
+      "file": "app/lib/myRaces.test.ts",
+      "format": "vitest",
+      "key": "parseSummarySlugs › caps the number of slugs",
+      "line": 187,
+      "registeredAt": "2026-11-02T16:32:32Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A missing parameter means no slugs.",
+      "file": "app/lib/myRaces.test.ts",
+      "format": "vitest",
+      "key": "parseSummarySlugs › returns nothing for a missing parameter",
+      "line": 182,
+      "registeredAt": "2026-11-02T16:32:32Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Blanks and repeats are dropped, whitespace trimmed.",
+      "file": "app/lib/myRaces.test.ts",
+      "format": "vitest",
+      "key": "parseSummarySlugs › splits trims and dedupes",
+      "line": 178,
+      "registeredAt": "2026-11-02T16:32:32Z",
       "runner": "tests"
     },
     {
@@ -730,6 +910,69 @@
       "runner": "tests"
     },
     {
+      "description": "A garbled date sorts last rather than breaking the sort with NaN.",
+      "file": "app/lib/myRaces.test.ts",
+      "format": "vitest",
+      "key": "raceDay › returns Infinity for an unparseable date",
+      "line": 41,
+      "registeredAt": "2026-11-02T16:32:32Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Undated, unlisted and unknown races sort last.",
+      "file": "app/lib/myRaces.test.ts",
+      "format": "vitest",
+      "key": "raceDay › returns Infinity when there is no date to sort by",
+      "line": 34,
+      "registeredAt": "2026-11-02T16:32:32Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A listed race sorts by its race day.",
+      "file": "app/lib/myRaces.test.ts",
+      "format": "vitest",
+      "key": "raceDay › returns the race day in ms for a listed race",
+      "line": 30,
+      "registeredAt": "2026-11-02T16:32:32Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A changed status reads as labels, before and after.",
+      "file": "app/lib/myRaces.test.ts",
+      "format": "vitest",
+      "key": "registrationChange › reports the change in plain labels",
+      "line": 131,
+      "registeredAt": "2026-11-02T16:32:32Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Old saves without a recorded status never flag a change.",
+      "file": "app/lib/myRaces.test.ts",
+      "format": "vitest",
+      "key": "registrationChange › returns null when no status was recorded at save",
+      "line": 142,
+      "registeredAt": "2026-11-02T16:32:32Z",
+      "runner": "tests"
+    },
+    {
+      "description": "No change, nothing to flag.",
+      "file": "app/lib/myRaces.test.ts",
+      "format": "vitest",
+      "key": "registrationChange › returns null when the status is unchanged",
+      "line": 138,
+      "registeredAt": "2026-11-02T16:32:32Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Unknown status codes show as-is instead of disappearing.",
+      "file": "app/lib/myRaces.test.ts",
+      "format": "vitest",
+      "key": "registrationChange › shows unknown status codes verbatim",
+      "line": 146,
+      "registeredAt": "2026-11-02T16:32:32Z",
+      "runner": "tests"
+    },
+    {
       "description": "The issue is pre-filled with the race, edition, page link and a label.",
       "file": "app/lib/raceDetail.test.ts",
       "format": "vitest",
@@ -757,11 +1000,47 @@
       "runner": "tests"
     },
     {
+      "description": "Any other count reads plural.",
+      "file": "app/lib/myRaces.test.ts",
+      "format": "vitest",
+      "key": "savedCountLabel › uses the plural otherwise",
+      "line": 94,
+      "registeredAt": "2026-11-02T16:32:32Z",
+      "runner": "tests"
+    },
+    {
+      "description": "One race reads singular.",
+      "file": "app/lib/myRaces.test.ts",
+      "format": "vitest",
+      "key": "savedCountLabel › uses the singular for one",
+      "line": 90,
+      "registeredAt": "2026-11-02T16:32:32Z",
+      "runner": "tests"
+    },
+    {
+      "description": "When the browser blocks storage (private browsing), saving reports failure instead of throwing.",
+      "file": "app/lib/savedRaces.test.ts",
+      "format": "vitest",
+      "key": "setSaveNote › reports failure when storage is blocked",
+      "line": 113,
+      "registeredAt": "2026-11-02T16:32:32Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A note lands in storage and tells listeners.",
+      "file": "app/lib/savedRaces.test.ts",
+      "format": "vitest",
+      "key": "setSaveNote › stores the note and notifies subscribers",
+      "line": 190,
+      "registeredAt": "2026-11-02T16:32:32Z",
+      "runner": "tests"
+    },
+    {
       "description": "When the browser blocks storage (private browsing), saving reports failure instead of throwing.",
       "file": "app/lib/savedRaces.test.ts",
       "format": "vitest",
       "key": "setSaveStatus › reports failure when storage is blocked",
-      "line": 110,
+      "line": 113,
       "registeredAt": "2026-10-27T19:18:21Z",
       "runner": "tests"
     },
@@ -770,7 +1049,7 @@
       "file": "app/lib/savedRaces.test.ts",
       "format": "vitest",
       "key": "setSaveStatus › reports nothing saved and no storage outside a browser",
-      "line": 118,
+      "line": 121,
       "registeredAt": "2026-10-27T19:18:21Z",
       "runner": "tests"
     },
@@ -779,7 +1058,7 @@
       "file": "app/lib/savedRaces.test.ts",
       "format": "vitest",
       "key": "setSaveStatus › stores the status and notifies subscribers",
-      "line": 93,
+      "line": 96,
       "registeredAt": "2026-10-27T19:18:21Z",
       "runner": "tests"
     },
@@ -788,7 +1067,7 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "sortRaces › sorts by next deadline with unknown last",
-      "line": 177,
+      "line": 203,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -797,7 +1076,7 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "sortRaces › sorts by race day with unknown last",
-      "line": 186,
+      "line": 212,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -808,6 +1087,78 @@
       "key": "sourceHost › strips www and handles missing or bad URLs",
       "line": 118,
       "registeredAt": "2026-10-26T21:01:51Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Nothing saved gives an empty key, which needs no fetch.",
+      "file": "app/lib/myRaces.test.ts",
+      "format": "vitest",
+      "key": "summariesKey › returns an empty key for nothing saved",
+      "line": 164,
+      "registeredAt": "2026-11-02T16:32:32Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Before hydration there is no key.",
+      "file": "app/lib/myRaces.test.ts",
+      "format": "vitest",
+      "key": "summariesKey › returns null before saves are read",
+      "line": 160,
+      "registeredAt": "2026-11-02T16:32:32Z",
+      "runner": "tests"
+    },
+    {
+      "description": "The key ignores save order, so reordering never refetches.",
+      "file": "app/lib/myRaces.test.ts",
+      "format": "vitest",
+      "key": "summariesKey › sorts and joins the saved slugs",
+      "line": 156,
+      "registeredAt": "2026-11-02T16:32:32Z",
+      "runner": "tests"
+    },
+    {
+      "description": "The slug list is URL-encoded into the query.",
+      "file": "app/lib/myRaces.test.ts",
+      "format": "vitest",
+      "key": "summariesUrl › builds the summaries request URL",
+      "line": 171,
+      "registeredAt": "2026-11-02T16:32:32Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Results follow the requested order, not the database order.",
+      "file": "app/lib/raceList.test.ts",
+      "format": "vitest",
+      "key": "summarizeSavedRaces › keeps the requested slug order",
+      "line": 69,
+      "registeredAt": "2026-11-02T16:34:16.083605723+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "A race that has already run keeps its name so the runner can recognise it.",
+      "file": "app/lib/raceList.test.ts",
+      "format": "vitest",
+      "key": "summarizeSavedRaces › marks a race with no upcoming edition and keeps its name",
+      "line": 58,
+      "registeredAt": "2026-11-02T16:34:16.083605723+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "A slug the database doesn't know is reported, never dropped.",
+      "file": "app/lib/raceList.test.ts",
+      "format": "vitest",
+      "key": "summarizeSavedRaces › marks an unknown slug as not listed",
+      "line": 64,
+      "registeredAt": "2026-11-02T16:34:16.083605723+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "A race with an upcoming edition comes back as a full list row.",
+      "file": "app/lib/raceList.test.ts",
+      "format": "vitest",
+      "key": "summarizeSavedRaces › summarizes a listed race as its list item",
+      "line": 52,
+      "registeredAt": "2026-11-02T16:34:16.083605723+00:00",
       "runner": "tests"
     },
     {
@@ -824,7 +1175,7 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "toListItem › flattens the upcoming edition into a list item",
-      "line": 151,
+      "line": 177,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -833,7 +1184,7 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "toListItem › returns null when the race has no upcoming edition",
-      "line": 167,
+      "line": 193,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -860,7 +1211,7 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "upcomingEdition › picks the earliest upcoming year regardless of input order",
-      "line": 65,
+      "line": 91,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -869,7 +1220,7 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "upcomingEdition › returns null when every edition is past",
-      "line": 74,
+      "line": 100,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -878,7 +1229,7 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "upcomingEdition › skips editions whose race day has passed",
-      "line": 51,
+      "line": 77,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -887,8 +1238,17 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "upcomingEdition › treats an unannounced date as upcoming",
-      "line": 60,
+      "line": 86,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "Before any request lands there are no summaries and no failure.",
+      "file": "app/lib/useRaceSummaries.test.tsx",
+      "format": "vitest",
+      "key": "useRaceSummaries › starts with nothing loaded and no failure",
+      "line": 44,
+      "registeredAt": "2026-11-02T16:32:32Z",
       "runner": "tests"
     },
     {
@@ -901,11 +1261,20 @@
       "runner": "tests"
     },
     {
+      "description": "The server can't see this browser's saves, so it renders the not-yet-hydrated state.",
+      "file": "app/lib/useSavedRaces.test.tsx",
+      "format": "vitest",
+      "key": "useSavedRaces › reports null during server rendering",
+      "line": 13,
+      "registeredAt": "2026-11-02T16:32:32Z",
+      "runner": "tests"
+    },
+    {
       "description": "An unknown race date gives no week count.",
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "weeksToTrain › returns null for an unknown date",
-      "line": 101,
+      "line": 127,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -914,8 +1283,62 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "weeksToTrain › rounds down to whole weeks",
-      "line": 95,
+      "line": 121,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
+      "runner": "tests"
+    },
+    {
+      "description": "Clearing the note removes it rather than storing whitespace.",
+      "file": "app/lib/savedRaces.test.ts",
+      "format": "vitest",
+      "key": "withNote › drops a blank note",
+      "line": 178,
+      "registeredAt": "2026-11-02T16:32:32Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A note for a race that isn't saved is ignored.",
+      "file": "app/lib/savedRaces.test.ts",
+      "format": "vitest",
+      "key": "withNote › ignores a race that is not saved",
+      "line": 183,
+      "registeredAt": "2026-11-02T16:32:32Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A note is stored on the saved race without touching the input.",
+      "file": "app/lib/savedRaces.test.ts",
+      "format": "vitest",
+      "key": "withNote › sets a note",
+      "line": 172,
+      "registeredAt": "2026-11-02T16:32:32Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A status change keeps the note and the ORIGINAL registration status, so a change stays visible.",
+      "file": "app/lib/savedRaces.test.ts",
+      "format": "vitest",
+      "key": "withSaveStatus info › keeps the note and first registration status on a status change",
+      "line": 153,
+      "registeredAt": "2026-11-02T16:32:32Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Without info the stored name is kept.",
+      "file": "app/lib/savedRaces.test.ts",
+      "format": "vitest",
+      "key": "withSaveStatus info › keeps the stored name when no info is passed",
+      "line": 162,
+      "registeredAt": "2026-11-02T16:32:32Z",
+      "runner": "tests"
+    },
+    {
+      "description": "The first save records the race name and its registration status.",
+      "file": "app/lib/savedRaces.test.ts",
+      "format": "vitest",
+      "key": "withSaveStatus info › records name and registration status on the first save",
+      "line": 146,
+      "registeredAt": "2026-11-02T16:32:32Z",
       "runner": "tests"
     },
     {
@@ -923,7 +1346,7 @@
       "file": "app/lib/savedRaces.test.ts",
       "format": "vitest",
       "key": "withSaveStatus › adds a race with the time it was saved",
-      "line": 66,
+      "line": 69,
       "registeredAt": "2026-10-27T19:18:21Z",
       "runner": "tests"
     },
@@ -932,7 +1355,7 @@
       "file": "app/lib/savedRaces.test.ts",
       "format": "vitest",
       "key": "withSaveStatus › removes a race without mutating the input",
-      "line": 84,
+      "line": 87,
       "registeredAt": "2026-10-27T19:18:21Z",
       "runner": "tests"
     },
@@ -941,7 +1364,7 @@
       "file": "app/lib/savedRaces.test.ts",
       "format": "vitest",
       "key": "withSaveStatus › restamps a changed status and keeps the time for an unchanged one",
-      "line": 73,
+      "line": 76,
       "registeredAt": "2026-10-27T19:18:21Z",
       "runner": "tests"
     }

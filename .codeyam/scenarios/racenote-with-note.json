@@ -1,0 +1,12 @@
+{
+  "name": "RaceNote - With Note",
+  "id": "cb26fe50-a7b9-490f-9774-76579aa0c511",
+  "url": "/isolated-components/RaceNote?s=WithNote",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "RaceNote",
+  "scenarioType": "component",
+  "description": "A private note already written for a race."
+}

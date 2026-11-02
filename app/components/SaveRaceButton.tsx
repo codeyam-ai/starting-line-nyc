@@ -7,7 +7,16 @@ import SaveMenu from '@/app/components/SaveMenu';
 import { SAVE_STATUS_LABELS, setSaveStatus, storageAvailable, type SaveStatus } from '@/app/lib/savedRaces';
 import { useSaveStatus } from '@/app/lib/useSaveStatus';
 
-export default function SaveRaceButton({ slug, raceName }: { slug: string; raceName: string }) {
+// registrationStatus is recorded on the first save so My Races can flag a later change.
+export default function SaveRaceButton({
+  slug,
+  raceName,
+  registrationStatus,
+}: {
+  slug: string;
+  raceName: string;
+  registrationStatus?: string;
+}) {
   const status = useSaveStatus(slug);
   const [open, setOpen] = useState(false);
   const [unavailable, setUnavailable] = useState(false);
@@ -37,7 +46,7 @@ export default function SaveRaceButton({ slug, raceName }: { slug: string; raceN
   };
 
   const choose = (next: SaveStatus | null) => {
-    if (!setSaveStatus(slug, next)) {
+    if (!setSaveStatus(slug, next, { name: raceName, registrationStatus })) {
       setUnavailable(true);
       return;
     }

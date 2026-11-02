@@ -1,0 +1,17 @@
+{
+  "name": "MyRacesList - Empty",
+  "id": "c329f4d3-7954-4f0d-bcfb-c53e3f0bbd3b",
+  "url": "/isolated-components/MyRacesList?s=Empty",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "browserState": {
+    "localStorage": {
+      "starting-line:saved-races": "{}"
+    }
+  },
+  "componentName": "MyRacesList",
+  "scenarioType": "component",
+  "description": "The list with nothing saved in this browser."
+}

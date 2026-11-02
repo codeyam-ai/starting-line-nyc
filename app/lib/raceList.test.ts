@@ -6,6 +6,7 @@ import {
   milestoneEnd,
   nextMilestone,
   sortRaces,
+  summarizeSavedRaces,
   toListItem,
   upcomingEdition,
   weeksToTrain,
@@ -44,6 +45,31 @@ function race(over: Partial<RaceRecord> & { slug: string }): RaceRecord {
 const withEdition = (r: RaceRecord, e: Partial<RaceRecord['editions'][number]>): RaceRecord => ({
   ...r,
   editions: [{ ...r.editions[0], ...e }],
+});
+
+describe('summarizeSavedRaces', () => {
+  // A race with an upcoming edition comes back as a full list row.
+  it('summarizes a listed race as its list item', () => {
+    const [s] = summarizeSavedRaces(['a'], [race({ slug: 'a', name: 'A Half' })], NOW);
+    expect(s).toMatchObject({ slug: 'a', state: 'listed', race: { slug: 'a', name: 'A Half' } });
+  });
+
+  // A race that has already run keeps its name so the runner can recognise it.
+  it('marks a race with no upcoming edition and keeps its name', () => {
+    const past = withEdition(race({ slug: 'old', name: 'Old Race' }), { raceDate: d('2026-01-01T12:00:00Z') });
+    expect(summarizeSavedRaces(['old'], [past], NOW)).toEqual([{ slug: 'old', state: 'no-upcoming', name: 'Old Race' }]);
+  });
+
+  // A slug the database doesn't know is reported, never dropped.
+  it('marks an unknown slug as not listed', () => {
+    expect(summarizeSavedRaces(['gone'], [], NOW)).toEqual([{ slug: 'gone', state: 'not-listed' }]);
+  });
+
+  // Results follow the requested order, not the database order.
+  it('keeps the requested slug order', () => {
+    const out = summarizeSavedRaces(['b', 'x', 'a'], [race({ slug: 'a' }), race({ slug: 'b' })], NOW);
+    expect(out.map((s) => `${s.slug}:${s.state}`)).toEqual(['b:listed', 'x:not-listed', 'a:listed']);
+  });
 });
 
 describe('upcomingEdition', () => {

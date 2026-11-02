@@ -1,0 +1,12 @@
+{
+  "name": "RaceRow - Always Offer Calendar",
+  "id": "4db975d3-1d4f-468c-8197-3ccb4322dfe3",
+  "url": "/isolated-components/RaceRow?s=AlwaysOfferCalendar",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "RaceRow",
+  "scenarioType": "component",
+  "description": "A race row as My Races shows it: Add to calendar offered even though the deadline is not urgent."
+}

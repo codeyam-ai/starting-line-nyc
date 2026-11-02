@@ -1,0 +1,12 @@
+{
+  "name": "SavedRaceItem - Registration Changed",
+  "id": "78a2184f-bb3d-44d5-9df4-2df372fc494b",
+  "url": "/isolated-components/SavedRaceItem?s=RegistrationChanged",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "SavedRaceItem",
+  "scenarioType": "component",
+  "description": "A saved race whose registration opened since it was saved: the race row, the change note, and the runner's note."
+}

@@ -8,12 +8,16 @@ export default function NextDeadline({
   milestone,
   urgent,
   calendarHref,
+  alwaysOfferCalendar = false,
 }: {
   status: string;
   milestone: { kind: string; at: string; timeKnown: boolean; tentative: boolean } | null;
   urgent: boolean;
   calendarHref: string;
+  // My Races offers Add to calendar for any dated milestone, not only urgent ones.
+  alwaysOfferCalendar?: boolean;
 }) {
+  const offerCalendar = urgent || (alwaysOfferCalendar && milestone !== null);
   return (
     <div className={urgent ? 'next urgent' : 'next'}>
       <span className={LIVE_STATUSES.has(status) ? 'state live' : 'state'}>{STATUS_LABELS[status] ?? status}</span>
@@ -32,7 +36,7 @@ export default function NextDeadline({
       ) : (
         <div className="v quiet">Registration date to come</div>
       )}
-      {urgent && <AddToCalendar href={calendarHref} />}
+      {offerCalendar && <AddToCalendar href={calendarHref} />}
     </div>
   );
 }

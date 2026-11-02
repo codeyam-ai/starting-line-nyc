@@ -1,0 +1,12 @@
+{
+  "name": "MyRacesEmpty - Default",
+  "id": "fe037948-1e92-4835-892a-001360e87323",
+  "url": "/isolated-components/MyRacesEmpty?s=Default",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "MyRacesEmpty",
+  "scenarioType": "component",
+  "description": "What a runner sees with nothing saved yet: a short explanation and a Browse races button."
+}

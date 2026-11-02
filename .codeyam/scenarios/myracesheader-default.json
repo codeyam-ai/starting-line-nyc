@@ -1,0 +1,12 @@
+{
+  "name": "MyRacesHeader - Default",
+  "id": "cd121e56-ea2e-4426-88db-51ccd37f1b6a",
+  "url": "/isolated-components/MyRacesHeader?s=Default",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "MyRacesHeader",
+  "scenarioType": "component",
+  "description": "The My Races page title with the note that saves live on this device only."
+}

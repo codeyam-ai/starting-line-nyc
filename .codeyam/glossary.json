@@ -91,6 +91,18 @@
     ]
   },
   {
+    "description": "Summaries route: race summaries for the saved slugs in the query, unknown slugs reported as not listed.",
+    "filePath": "app/api/races/summaries/route.ts",
+    "name": "GET",
+    "tags": [
+      "saved-races"
+    ],
+    "untestabilityReason": {
+      "justification": "thin HTTP handler; slug parsing is parseSummarySlugs and shaping is summarizeSavedRaces, both unit tested",
+      "kind": "platform-glue"
+    }
+  },
+  {
     "description": "The race page's actions side by side: register on the organizer's site and save the race on this device.",
     "filePath": "app/components/GlanceActions.tsx",
     "name": "GlanceActions",
@@ -113,6 +125,22 @@
     "tags": [
       "race-detail"
     ]
+  },
+  {
+    "description": "Notice for a saved race with no upcoming date or no listing, with a Remove button.",
+    "filePath": "app/components/GoneRaceNotice.tsx",
+    "name": "GoneRaceNotice",
+    "scenarios": [
+      "goneracenotice-no-upcoming-date",
+      "goneracenotice-no-longer-listed"
+    ],
+    "tags": [
+      "saved-races"
+    ],
+    "untestabilityReason": {
+      "justification": "Remove only writes browser storage; the notice itself does not change, the parent list drops the race. That click is captured on MyRacesList - Remove Unlisted Race.",
+      "kind": "interaction-not-capturable"
+    }
   },
   {
     "description": "Central Park photo hero with credit, headline and lede, wrapping the race search.",
@@ -192,6 +220,81 @@
     ]
   },
   {
+    "description": "Empty state for My Races with nothing saved, linking back to browse races.",
+    "filePath": "app/components/MyRacesEmpty.tsx",
+    "name": "MyRacesEmpty",
+    "scenarios": [
+      "myracesempty-default"
+    ],
+    "tags": [
+      "saved-races"
+    ]
+  },
+  {
+    "description": "My Races page title with the saved-on-this-device note.",
+    "filePath": "app/components/MyRacesHeader.tsx",
+    "name": "MyRacesHeader",
+    "scenarios": [
+      "myracesheader-default"
+    ],
+    "tags": [
+      "saved-races"
+    ]
+  },
+  {
+    "description": "Saved races from this browser grouped by status, soonest first; handles loading, empty and failed states.",
+    "filePath": "app/components/MyRacesList.tsx",
+    "name": "MyRacesList",
+    "scenarios": [
+      "myraceslist-default",
+      "myraceslist-empty",
+      "myraceslist-remove-unlisted-race"
+    ],
+    "tags": [
+      "saved-races"
+    ]
+  },
+  {
+    "description": "Placeholder line while saved races load, or the message when race details failed to load.",
+    "filePath": "app/components/MyRacesLoading.tsx",
+    "name": "MyRacesLoading",
+    "scenarios": [
+      "myracesloading-loading",
+      "myracesloading-failed"
+    ],
+    "tags": [
+      "saved-races"
+    ]
+  },
+  {
+    "description": "The My Races page: races saved in this browser, grouped by status, with notes and registration changes.",
+    "filePath": "app/my-races/page.tsx",
+    "name": "MyRacesPage",
+    "scenarios": [
+      "my-races-saved-across-all-statuses",
+      "my-races-phone-layout",
+      "my-races-no-saved-races",
+      "my-races-one-saved-race",
+      "my-races-race-details-failed-to-load",
+      "my-races-removing-a-race-no-longer-listed"
+    ],
+    "tags": [
+      "saved-races"
+    ]
+  },
+  {
+    "description": "The My Races main area: title, timezone note and the saved races list.",
+    "filePath": "app/components/MyRacesSection.tsx",
+    "name": "MyRacesSection",
+    "scenarios": [
+      "myracessection-default",
+      "myracessection-empty"
+    ],
+    "tags": [
+      "saved-races"
+    ]
+  },
+  {
     "description": "Registration status and next milestone in ET; within three weeks it is highlighted and offers Add to calendar.",
     "filePath": "app/components/NextDeadline.tsx",
     "name": "NextDeadline",
@@ -199,7 +302,8 @@
       "nextdeadline-lottery-open",
       "nextdeadline-not-announced",
       "nextdeadline-tentative-date",
-      "nextdeadline-urgent-opening-soon"
+      "nextdeadline-urgent-opening-soon",
+      "nextdeadline-always-offer-calendar"
     ],
     "tags": [
       "race-discovery"
@@ -325,6 +429,19 @@
     ]
   },
   {
+    "description": "Private note box for a saved race, saved to this browser as you type.",
+    "filePath": "app/components/RaceNote.tsx",
+    "name": "RaceNote",
+    "scenarios": [
+      "racenote-empty",
+      "racenote-with-note",
+      "racenote-typing-a-note"
+    ],
+    "tags": [
+      "saved-races"
+    ]
+  },
+  {
     "description": "Race detail page: loads one race by slug and composes the photo hero with title, the at-a-glance strip, key dates timeline, how to enter, course note and sources, or a no-upcoming-edition notice.",
     "filePath": "app/races/[slug]/page.tsx",
     "name": "RacePage",
@@ -346,7 +463,8 @@
       "racerow-lottery-open",
       "racerow-no-photo-trail",
       "racerow-not-announced",
-      "racerow-urgent-deadline"
+      "racerow-urgent-deadline",
+      "racerow-always-offer-calendar"
     ],
     "tags": [
       "race-discovery"
@@ -374,6 +492,18 @@
     ],
     "tags": [
       "race-detail"
+    ]
+  },
+  {
+    "description": "Flags that a saved race's registration status changed since it was saved.",
+    "filePath": "app/components/RegistrationChanged.tsx",
+    "name": "RegistrationChanged",
+    "scenarios": [
+      "registrationchanged-opened-since-save",
+      "registrationchanged-sold-out-since-save"
+    ],
+    "tags": [
+      "saved-races"
     ]
   },
   {
@@ -433,6 +563,42 @@
     ],
     "tags": [
       "race-discovery",
+      "saved-races"
+    ]
+  },
+  {
+    "description": "One status group on My Races: its heading and saved race items.",
+    "filePath": "app/components/SavedRaceGroup.tsx",
+    "name": "SavedRaceGroup",
+    "scenarios": [
+      "savedracegroup-considering-two"
+    ],
+    "tags": [
+      "saved-races"
+    ]
+  },
+  {
+    "description": "Status group heading on My Races with the race count.",
+    "filePath": "app/components/SavedRaceGroupHeading.tsx",
+    "name": "SavedRaceGroupHeading",
+    "scenarios": [
+      "savedracegroupheading-signed-up-one",
+      "savedracegroupheading-interested-several"
+    ],
+    "tags": [
+      "saved-races"
+    ]
+  },
+  {
+    "description": "One saved race: its list row or a gone notice, any registration change since saving, and the private note.",
+    "filePath": "app/components/SavedRaceItem.tsx",
+    "name": "SavedRaceItem",
+    "scenarios": [
+      "savedraceitem-registration-changed",
+      "savedraceitem-listed-with-note",
+      "savedraceitem-no-upcoming-date"
+    ],
+    "tags": [
       "saved-races"
     ]
   },
@@ -505,7 +671,8 @@
     "filePath": "app/components/SiteHeader.tsx",
     "name": "SiteHeader",
     "scenarios": [
-      "siteheader-default"
+      "siteheader-default",
+      "siteheader-my-races-active"
     ],
     "tags": [
       "race-discovery"
@@ -581,6 +748,15 @@
     "testFile": "app/lib/filters.test.ts"
   },
   {
+    "description": "True once every saved race has a loaded summary.",
+    "filePath": "app/lib/myRaces.ts",
+    "name": "allSummariesLoaded",
+    "tags": [
+      "saved-races"
+    ],
+    "testFile": "app/lib/myRaces.test.ts"
+  },
+  {
     "description": "Builds a single-event .ics file in UTC that Google, Apple and Outlook calendars import.",
     "filePath": "app/lib/ics.ts",
     "name": "buildIcs",
@@ -626,6 +802,15 @@
     "testFile": "app/lib/format.test.ts"
   },
   {
+    "description": "Fetches race summaries for a slug key and keys them by slug; rejects on a failed response.",
+    "filePath": "app/lib/useRaceSummaries.ts",
+    "name": "fetchRaceSummaries",
+    "tags": [
+      "saved-races"
+    ],
+    "testFile": "app/lib/useRaceSummaries.test.tsx"
+  },
+  {
     "description": "Applies distance, window, terrain, search text and status-chip filters to stored races and returns sorted results rows.",
     "filePath": "app/lib/raceList.ts",
     "name": "filterAndSortRaces",
@@ -652,6 +837,18 @@
     ],
     "untestabilityReason": {
       "justification": "database read only; the timeline and edition logic it calls are unit tested",
+      "kind": "platform-glue"
+    }
+  },
+  {
+    "description": "Database lookup of the races saved in a browser; hands the rows to summarizeSavedRaces.",
+    "filePath": "app/lib/races.ts",
+    "name": "findRaceSummaries",
+    "tags": [
+      "saved-races"
+    ],
+    "untestabilityReason": {
+      "justification": "bare Prisma findMany; the shaping lives in summarizeSavedRaces, which is unit tested",
       "kind": "platform-glue"
     }
   },
@@ -731,6 +928,24 @@
     "testFile": "app/lib/format.test.ts"
   },
   {
+    "description": "Explains why a saved race has no row: no upcoming date, or no longer listed.",
+    "filePath": "app/lib/myRaces.ts",
+    "name": "goneRaceMessage",
+    "tags": [
+      "saved-races"
+    ],
+    "testFile": "app/lib/myRaces.test.ts"
+  },
+  {
+    "description": "Name to show for a saved race with no listing: current name, else name at save, else one built from the slug.",
+    "filePath": "app/lib/myRaces.ts",
+    "name": "goneRaceName",
+    "tags": [
+      "saved-races"
+    ],
+    "testFile": "app/lib/myRaces.test.ts"
+  },
+  {
     "description": "Turns a race calendar route link into the variant that redirects to Google Calendar, keeping any milestone or race-day query.",
     "filePath": "app/lib/raceCalendar.ts",
     "name": "googleCalendarHref",
@@ -747,6 +962,15 @@
       "calendar"
     ],
     "testFile": "app/lib/raceCalendar.test.ts"
+  },
+  {
+    "description": "Groups saved races Signed up, Considering, Interested, soonest race first, dropping empty groups.",
+    "filePath": "app/lib/myRaces.ts",
+    "name": "groupSavedRaces",
+    "tags": [
+      "saved-races"
+    ],
+    "testFile": "app/lib/myRaces.test.ts"
   },
   {
     "description": "Formats a date as a compact UTC iCalendar timestamp.",
@@ -830,6 +1054,15 @@
     "testFile": "app/lib/format.test.ts"
   },
   {
+    "description": "Readable race name from a slug, for saves made before names were recorded.",
+    "filePath": "app/lib/savedRaces.ts",
+    "name": "nameFromSlug",
+    "tags": [
+      "saved-races"
+    ],
+    "testFile": "app/lib/savedRaces.test.ts"
+  },
+  {
     "description": "The calendar date after a YYYY-MM-DD date, for an all-day event's end.",
     "filePath": "app/lib/ics.ts",
     "name": "nextDay",
@@ -864,6 +1097,15 @@
       "saved-races"
     ],
     "testFile": "app/lib/useSaveStatus.test.tsx"
+  },
+  {
+    "description": "Server snapshot for useSavedRaces: undefined marks the not-yet-hydrated render.",
+    "filePath": "app/lib/useSavedRaces.ts",
+    "name": "notHydrated",
+    "tags": [
+      "saved-races"
+    ],
+    "testFile": "app/lib/useSavedRaces.test.tsx"
   },
   {
     "description": "Where the main button sends a runner: the registration page (Register on the official site), else the source or organizer site (Visit the official site).",
@@ -915,6 +1157,15 @@
     "testFile": "app/lib/savedRaces.test.ts"
   },
   {
+    "description": "Parses the summaries route slugs parameter into distinct trimmed slugs, capped at 100.",
+    "filePath": "app/lib/myRaces.ts",
+    "name": "parseSummarySlugs",
+    "tags": [
+      "saved-races"
+    ],
+    "testFile": "app/lib/myRaces.test.ts"
+  },
+  {
     "description": "Returns a query value when it is one of the allowed options, otherwise the default; used by parseFilters.",
     "filePath": "app/lib/filters.ts",
     "name": "pick",
@@ -942,6 +1193,15 @@
     "testFile": "app/lib/filters.test.ts"
   },
   {
+    "description": "Sort key for a saved race: its race day in ms, or Infinity when unlisted, undated or unparseable.",
+    "filePath": "app/lib/myRaces.ts",
+    "name": "raceDay",
+    "tags": [
+      "saved-races"
+    ],
+    "testFile": "app/lib/myRaces.test.ts"
+  },
+  {
     "description": "The raw stored saved-races string (a stable snapshot for useSyncExternalStore), or null when nothing is stored or storage is blocked.",
     "filePath": "app/lib/savedRaces.ts",
     "name": "readSavedRacesRaw",
@@ -949,6 +1209,15 @@
       "saved-races"
     ],
     "testFile": "app/lib/savedRaces.test.ts"
+  },
+  {
+    "description": "Registration status at save and now as labels, or null when unchanged or never recorded.",
+    "filePath": "app/lib/myRaces.ts",
+    "name": "registrationChange",
+    "tags": [
+      "saved-races"
+    ],
+    "testFile": "app/lib/myRaces.test.ts"
   },
   {
     "description": "A pre-filled GitHub issue link for reporting a missing or wrong race detail, labelled race-data.",
@@ -976,6 +1245,24 @@
       "justification": "codeyam template build script, unchanged",
       "kind": "scaffold"
     }
+  },
+  {
+    "description": "Count label for a My Races group, singular for one race.",
+    "filePath": "app/lib/myRaces.ts",
+    "name": "savedCountLabel",
+    "tags": [
+      "saved-races"
+    ],
+    "testFile": "app/lib/myRaces.test.ts"
+  },
+  {
+    "description": "Saves a race's private note to this browser; false when storage is unavailable.",
+    "filePath": "app/lib/savedRaces.ts",
+    "name": "setSaveNote",
+    "tags": [
+      "saved-races"
+    ],
+    "testFile": "app/lib/savedRaces.test.ts"
   },
   {
     "description": "Saves a race's status (or removes it) in this browser and notifies listeners; returns false when storage is unavailable.",
@@ -1032,6 +1319,33 @@
     "testFile": "app/lib/savedRaces.test.ts"
   },
   {
+    "description": "Sorted comma-joined saved slugs, a stable key for refetching race summaries; null before hydration.",
+    "filePath": "app/lib/myRaces.ts",
+    "name": "summariesKey",
+    "tags": [
+      "saved-races"
+    ],
+    "testFile": "app/lib/myRaces.test.ts"
+  },
+  {
+    "description": "Builds the race summaries API URL for a slug key.",
+    "filePath": "app/lib/myRaces.ts",
+    "name": "summariesUrl",
+    "tags": [
+      "saved-races"
+    ],
+    "testFile": "app/lib/myRaces.test.ts"
+  },
+  {
+    "description": "One My Races summary per requested slug in request order: listed row, no upcoming edition, or not listed.",
+    "filePath": "app/lib/raceList.ts",
+    "name": "summarizeSavedRaces",
+    "tags": [
+      "saved-races"
+    ],
+    "testFile": "app/lib/raceList.test.ts"
+  },
+  {
     "description": "Sort key for an ISO date, putting unknown dates last.",
     "filePath": "app/lib/raceList.ts",
     "name": "time",
@@ -1078,6 +1392,24 @@
     "testFile": "app/lib/raceList.test.ts"
   },
   {
+    "description": "Applies a change to the saved races in browser storage and notifies listeners; false when storage is unavailable. Exercised through setSaveStatus and setSaveNote.",
+    "filePath": "app/lib/savedRaces.ts",
+    "name": "update",
+    "tags": [
+      "saved-races"
+    ],
+    "testFile": "app/lib/savedRaces.test.ts"
+  },
+  {
+    "description": "Loads race summaries for the saved races, keeping earlier results and flagging a failed load.",
+    "filePath": "app/lib/useRaceSummaries.ts",
+    "name": "useRaceSummaries",
+    "tags": [
+      "saved-races"
+    ],
+    "testFile": "app/lib/useRaceSummaries.test.tsx"
+  },
+  {
     "description": "Hook giving a race's saved status in this browser, kept in sync across buttons and tabs; null on the server so the first render is a plain Save.",
     "filePath": "app/lib/useSaveStatus.ts",
     "name": "useSaveStatus",
@@ -1085,6 +1417,15 @@
       "saved-races"
     ],
     "testFile": "app/lib/useSaveStatus.test.tsx"
+  },
+  {
+    "description": "Every race saved in this browser, synced across buttons and tabs; null before hydration.",
+    "filePath": "app/lib/useSavedRaces.ts",
+    "name": "useSavedRaces",
+    "tags": [
+      "saved-races"
+    ],
+    "testFile": "app/lib/useSavedRaces.test.tsx"
   },
   {
     "description": "Whole weeks from now until race day, rounded down; null when the race date is unknown.",
@@ -1103,6 +1444,15 @@
       "race-discovery"
     ],
     "testFile": "app/lib/raceList.test.ts"
+  },
+  {
+    "description": "Next saved set with a race's private note replaced; blank notes are dropped, unsaved races ignored.",
+    "filePath": "app/lib/savedRaces.ts",
+    "name": "withNote",
+    "tags": [
+      "saved-races"
+    ],
+    "testFile": "app/lib/savedRaces.test.ts"
   },
   {
     "description": "Returns the saved set with one race's status set (stamped with when it was saved) or the race removed, without mutating the input.",

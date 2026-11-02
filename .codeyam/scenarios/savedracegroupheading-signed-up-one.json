@@ -1,0 +1,12 @@
+{
+  "name": "SavedRaceGroupHeading - Signed Up One",
+  "id": "4ea49333-cd89-4910-9b90-0493147da9e8",
+  "url": "/isolated-components/SavedRaceGroupHeading?s=SignedUpOne",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "SavedRaceGroupHeading",
+  "scenarioType": "component",
+  "description": "A Signed up group heading with a singular count of 1 race."
+}

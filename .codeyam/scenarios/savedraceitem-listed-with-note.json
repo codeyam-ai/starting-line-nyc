@@ -1,0 +1,12 @@
+{
+  "name": "SavedRaceItem - Listed With Note",
+  "id": "bb491235-7a47-4f71-92f3-8611c3b30b00",
+  "url": "/isolated-components/SavedRaceItem?s=ListedWithNote",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "SavedRaceItem",
+  "scenarioType": "component",
+  "description": "A signed-up race with its row, Add to calendar, and a private note; no registration change."
+}

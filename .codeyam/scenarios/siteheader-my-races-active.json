@@ -1,0 +1,12 @@
+{
+  "name": "SiteHeader - My Races Active",
+  "id": "7681bb19-8c5a-4551-8c73-d2be21855839",
+  "url": "/isolated-components/SiteHeader?s=MyRacesActive",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "SiteHeader",
+  "scenarioType": "component",
+  "description": "The site header on the My Races page: the new My Races nav link is highlighted instead of Races."
+}

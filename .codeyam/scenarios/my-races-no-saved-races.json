@@ -1,0 +1,419 @@
+{
+  "name": "My Races - No Saved Races",
+  "id": "6d3a9b21-7b75-4a26-a0de-299dfae29995",
+  "url": "/my-races",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "seed": {
+    "organizer": [
+      {
+        "id": 1,
+        "name": "NYCRUNS",
+        "slug": "nycruns",
+        "websiteUrl": "https://nycruns.com"
+      },
+      {
+        "id": 2,
+        "name": "Sassquad & NY-NJ Trail Conference",
+        "slug": "sassquad",
+        "websiteUrl": "https://www.sassquadtrailrunning.com"
+      },
+      {
+        "id": 3,
+        "name": "Escarpment Trail Run",
+        "slug": "escarpment-trail-run",
+        "websiteUrl": "https://escarpmenttrail.com"
+      }
+    ],
+    "race": [
+      {
+        "area": "Manhattan",
+        "courseNote": "Two loops around Governors Island with views of New York Harbor and Lower Manhattan; start and finish near the Festival Area. USATF-certified.",
+        "distanceMiles": 6.2,
+        "elevationGainFt": null,
+        "id": 1,
+        "locationName": "Governors Island",
+        "name": "Go Nuts for Donuts 10K",
+        "organizerId": 1,
+        "photoAlt": "Colonels Row on Governors Island, by the start and finish",
+        "photoCredit": "Brian W. Schaller, Free Art License",
+        "photoUrl": "/images/governors-island-colonels-row.jpg",
+        "slug": "nycruns-go-nuts-for-donuts-10k",
+        "terrain": "road"
+      },
+      {
+        "area": "Brooklyn",
+        "courseNote": "Just under one full loop of Prospect Park, finishing with a sprint up Center Drive. Benefits the YMCA of Greater New York. USATF-certified.",
+        "distanceMiles": 3.1,
+        "elevationGainFt": null,
+        "id": 2,
+        "locationName": "Prospect Park",
+        "name": "Great Gobble 5K",
+        "organizerId": 1,
+        "photoAlt": "Runners on the Prospect Park drive",
+        "photoCredit": null,
+        "photoUrl": "/images/prospect-park-drive.jpg",
+        "slug": "nycruns-great-gobble-5k",
+        "terrain": "road"
+      },
+      {
+        "area": "Manhattan",
+        "courseNote": "A multi-loop course around Central Park; full course details are posted closer to race day. USATF-certified.",
+        "distanceMiles": 13.1,
+        "elevationGainFt": null,
+        "id": 3,
+        "locationName": "Central Park",
+        "name": "Big Apple Half Marathon",
+        "organizerId": 1,
+        "photoAlt": "Runners on the Central Park drive",
+        "photoCredit": "Mike Peel, CC BY-SA 4.0",
+        "photoUrl": "/images/central-park-drive.jpg",
+        "slug": "nycruns-big-apple-half-marathon",
+        "terrain": "road"
+      },
+      {
+        "area": "Manhattan",
+        "courseNote": "A 13.1-mile wintry tour of Central Park on a looped course; details are posted closer to race day. USATF-certified.",
+        "distanceMiles": 13.1,
+        "elevationGainFt": null,
+        "id": 4,
+        "locationName": "Central Park",
+        "name": "Central Park Half Marathon",
+        "organizerId": 1,
+        "photoAlt": "Runners on the Central Park drive",
+        "photoCredit": "Mike Peel, CC BY-SA 4.0",
+        "photoUrl": "/images/central-park-drive.jpg",
+        "slug": "nycruns-central-park-half-marathon",
+        "terrain": "road"
+      },
+      {
+        "area": "Brooklyn",
+        "courseNote": "Starts in North Brooklyn, runs along the East River waterfront under the Williamsburg, Manhattan and Brooklyn Bridges, then up Fulton Street and Flatbush Avenue to finish in Prospect Park. Wave starts 7:00 to 9:40 AM. USATF-certified.",
+        "distanceMiles": 13.1,
+        "elevationGainFt": null,
+        "id": 5,
+        "locationName": "North Brooklyn to Prospect Park",
+        "name": "Brooklyn Experience Half Marathon",
+        "organizerId": 1,
+        "photoAlt": "Runners on the Prospect Park drive",
+        "photoCredit": null,
+        "photoUrl": "/images/prospect-park-drive.jpg",
+        "slug": "nycruns-brooklyn-experience-half-marathon",
+        "terrain": "road"
+      },
+      {
+        "area": "Bear Mountain, NY",
+        "courseNote": "A lollipop course in Harriman State Park with over 2,600 ft of climbing. Also offered the same day: a 10K (1,400 ft) and a 10K ruck. 6-hour cutoff; the course closes at 3:00 PM.",
+        "distanceMiles": 13.1,
+        "elevationGainFt": 2600,
+        "id": 6,
+        "locationName": "Anthony Wayne Recreation Area, Harriman State Park",
+        "name": "Big Bear Squatch North Half Marathon",
+        "organizerId": 2,
+        "photoAlt": "The Ramapo-Dunderberg Trail through forest in Harriman State Park",
+        "photoCredit": "Daniel Case, CC BY-SA 4.0",
+        "photoUrl": "/images/harriman-ramapo-dunderberg-trail.jpg",
+        "slug": "big-bear-squatch-north-half",
+        "terrain": "trail"
+      },
+      {
+        "area": "Catskills, NY",
+        "courseNote": "Point to point from the Elm Ridge parking lot in Windham to North/South Lake in Haines Falls: 30 km (18.6 mi) with about 4,800 ft of climbing and hard aid-station cutoffs (6-hour limit). The 50th edition; wave starts 9:00 to 10:35 AM.",
+        "distanceMiles": 18.6,
+        "elevationGainFt": 4800,
+        "id": 7,
+        "locationName": "Windham to North/South Lake",
+        "name": "Escarpment Trail Run",
+        "organizerId": 3,
+        "photoAlt": "The view from the Catskill Mountain House site at North-South Lake, near the finish",
+        "photoCredit": "Mwanner, CC BY-SA 3.0",
+        "photoUrl": "/images/catskill-mountain-house-view.jpg",
+        "slug": "escarpment-trail-run",
+        "terrain": "trail"
+      }
+    ],
+    "raceEdition": [
+      {
+        "entryMethod": "open",
+        "entryNote": "Registration closes the day before the race, or earlier if it reaches capacity.",
+        "id": 1,
+        "isSample": false,
+        "lastVerifiedAt": "2026-10-26T20:00:00.000Z",
+        "priceCents": 5500,
+        "priceNote": "Non-member price through Nov 9 (members $49.50). Then $65 until registration ends.",
+        "raceDate": "2026-11-14T14:30:00.000Z",
+        "raceDateTentative": false,
+        "raceId": 1,
+        "registrationStatus": "open",
+        "registrationUrl": "https://nycruns.com/register-race?race=nycruns-go-nuts-for-donuts-10k",
+        "sourceUrl": "https://nycruns.com/race/nycruns-go-nuts-for-donuts-10k",
+        "year": 2026
+      },
+      {
+        "entryMethod": "open",
+        "entryNote": "Registration closes the day before the race, or earlier if it reaches capacity.",
+        "id": 2,
+        "isSample": false,
+        "lastVerifiedAt": "2026-10-26T20:00:00.000Z",
+        "priceCents": 6000,
+        "priceNote": "Non-member price through Oct 26 (members $54). Then $65 through Nov 16, and $75 until registration ends.",
+        "raceDate": "2026-11-21T14:00:00.000Z",
+        "raceDateTentative": false,
+        "raceId": 2,
+        "registrationStatus": "open",
+        "registrationUrl": "https://nycruns.com/register-race?race=nycruns-great-gobble-5k",
+        "sourceUrl": "https://nycruns.com/race/nycruns-great-gobble-5k",
+        "year": 2026
+      },
+      {
+        "entryMethod": "open",
+        "entryNote": "Registration closes the day before the race, or earlier if it reaches capacity.",
+        "id": 3,
+        "isSample": false,
+        "lastVerifiedAt": "2026-10-26T20:00:00.000Z",
+        "priceCents": 11000,
+        "priceNote": "Non-member price through Nov 9 (members $99). Then $135 through Dec 7, and $145 until registration ends.",
+        "raceDate": "2026-12-13T13:00:00.000Z",
+        "raceDateTentative": false,
+        "raceId": 3,
+        "registrationStatus": "open",
+        "registrationUrl": "https://nycruns.com/register-race?race=nycruns-big-apple-half-marathon",
+        "sourceUrl": "https://nycruns.com/race/nycruns-big-apple-half-marathon",
+        "year": 2026
+      },
+      {
+        "entryMethod": "open",
+        "entryNote": "Registration closes the day before the race, or earlier if it reaches capacity.",
+        "id": 4,
+        "isSample": false,
+        "lastVerifiedAt": "2026-10-26T20:00:00.000Z",
+        "priceCents": 9000,
+        "priceNote": "Non-member price through Oct 26 (members $81). Then $100 through Dec 8, $110 through Jan 25, $125 through Feb 22, and $135 until registration ends.",
+        "raceDate": "2027-02-28T13:30:00.000Z",
+        "raceDateTentative": false,
+        "raceId": 4,
+        "registrationStatus": "open",
+        "registrationUrl": "https://nycruns.com/register-race?race=nycruns-central-park-half-marathon",
+        "sourceUrl": "https://nycruns.com/race/nycruns-central-park-half-marathon",
+        "year": 2027
+      },
+      {
+        "entryMethod": "open",
+        "entryNote": "Registration closes the day before the race, or earlier if it reaches capacity.",
+        "id": 5,
+        "isSample": false,
+        "lastVerifiedAt": "2026-10-26T20:00:00.000Z",
+        "priceCents": 15500,
+        "priceNote": "Non-member price through Oct 28 (members $139.50). Then $165 through Dec 17; later prices are not listed yet.",
+        "raceDate": "2027-04-25T11:00:00.000Z",
+        "raceDateTentative": false,
+        "raceId": 5,
+        "registrationStatus": "open",
+        "registrationUrl": "https://nycruns.com/register-race?race=nycruns-brooklyn-experience-half-marathon",
+        "sourceUrl": "https://nycruns.com/race/nycruns-brooklyn-experience-half-marathon",
+        "year": 2027
+      },
+      {
+        "entryMethod": "open",
+        "entryNote": "Capped at 400 runners across all three events. It has sold out each of the last four years, typically by the end of March. Charity bibs and free hardship entries are available.",
+        "id": 6,
+        "isSample": false,
+        "lastVerifiedAt": "2026-10-26T20:00:00.000Z",
+        "priceCents": 7520,
+        "priceNote": "Includes a $5.20 sign-up fee. The price rises after Dec 31, 2026.",
+        "raceDate": "2027-04-03T13:00:00.000Z",
+        "raceDateTentative": false,
+        "raceId": 6,
+        "registrationStatus": "open",
+        "registrationUrl": "https://runsignup.com/Race/NY/BearMountain/BigBearSquaTChNorth",
+        "sourceUrl": "https://www.sassquadtrailrunning.com/bigbearsquatchnorth",
+        "year": 2027
+      },
+      {
+        "entryMethod": "qualification",
+        "entryNote": "You must meet one qualifying standard: an Escarpment finish under 6 hours in the last 2 years, a road or trail marathon under 4:15 in the last year, a finish at a listed qualifying race in the last year, or 18+ mile trail race results reviewed by the race director. Applications open in early 2027 (exact dates not announced). Capped at 275 runners; your card is charged only if you are accepted.",
+        "id": 7,
+        "isSample": false,
+        "lastVerifiedAt": "2026-10-26T20:00:00.000Z",
+        "priceCents": null,
+        "priceNote": null,
+        "raceDate": "2027-07-25T13:00:00.000Z",
+        "raceDateTentative": false,
+        "raceId": 7,
+        "registrationStatus": "not_announced",
+        "registrationUrl": null,
+        "sourceUrl": "https://escarpmenttrail.com/",
+        "year": 2027
+      }
+    ],
+    "registrationMilestone": [
+      {
+        "at": "2026-11-09T17:00:00.000Z",
+        "editionId": 1,
+        "id": 1,
+        "kind": "price_increase",
+        "note": "Rises to $65 (non-member)",
+        "tentative": false,
+        "timeKnown": false
+      },
+      {
+        "at": "2026-11-13T17:00:00.000Z",
+        "editionId": 1,
+        "id": 2,
+        "kind": "registration_closes",
+        "note": "Or earlier if it sells out",
+        "tentative": false,
+        "timeKnown": false
+      },
+      {
+        "at": "2026-10-26T16:00:00.000Z",
+        "editionId": 2,
+        "id": 3,
+        "kind": "price_increase",
+        "note": "Rises to $65 (non-member)",
+        "tentative": false,
+        "timeKnown": false
+      },
+      {
+        "at": "2026-11-16T17:00:00.000Z",
+        "editionId": 2,
+        "id": 4,
+        "kind": "price_increase",
+        "note": "Rises to $75 (non-member)",
+        "tentative": false,
+        "timeKnown": false
+      },
+      {
+        "at": "2026-11-20T17:00:00.000Z",
+        "editionId": 2,
+        "id": 5,
+        "kind": "registration_closes",
+        "note": "Or earlier if it sells out",
+        "tentative": false,
+        "timeKnown": false
+      },
+      {
+        "at": "2026-11-09T17:00:00.000Z",
+        "editionId": 3,
+        "id": 6,
+        "kind": "price_increase",
+        "note": "Rises to $135 (non-member)",
+        "tentative": false,
+        "timeKnown": false
+      },
+      {
+        "at": "2026-12-07T17:00:00.000Z",
+        "editionId": 3,
+        "id": 7,
+        "kind": "price_increase",
+        "note": "Rises to $145 (non-member)",
+        "tentative": false,
+        "timeKnown": false
+      },
+      {
+        "at": "2026-12-12T17:00:00.000Z",
+        "editionId": 3,
+        "id": 8,
+        "kind": "registration_closes",
+        "note": "Or earlier if it sells out",
+        "tentative": false,
+        "timeKnown": false
+      },
+      {
+        "at": "2026-10-26T16:00:00.000Z",
+        "editionId": 4,
+        "id": 9,
+        "kind": "price_increase",
+        "note": "Rises to $100 (non-member)",
+        "tentative": false,
+        "timeKnown": false
+      },
+      {
+        "at": "2026-12-08T17:00:00.000Z",
+        "editionId": 4,
+        "id": 10,
+        "kind": "price_increase",
+        "note": "Rises to $110 (non-member)",
+        "tentative": false,
+        "timeKnown": false
+      },
+      {
+        "at": "2027-01-25T17:00:00.000Z",
+        "editionId": 4,
+        "id": 11,
+        "kind": "price_increase",
+        "note": "Rises to $125 (non-member)",
+        "tentative": false,
+        "timeKnown": false
+      },
+      {
+        "at": "2027-02-22T17:00:00.000Z",
+        "editionId": 4,
+        "id": 12,
+        "kind": "price_increase",
+        "note": "Rises to $135 (non-member)",
+        "tentative": false,
+        "timeKnown": false
+      },
+      {
+        "at": "2027-02-27T17:00:00.000Z",
+        "editionId": 4,
+        "id": 13,
+        "kind": "registration_closes",
+        "note": "Or earlier if it sells out",
+        "tentative": false,
+        "timeKnown": false
+      },
+      {
+        "at": "2026-10-28T16:00:00.000Z",
+        "editionId": 5,
+        "id": 14,
+        "kind": "price_increase",
+        "note": "Rises to $165 (non-member)",
+        "tentative": false,
+        "timeKnown": false
+      },
+      {
+        "at": "2027-04-24T16:00:00.000Z",
+        "editionId": 5,
+        "id": 15,
+        "kind": "registration_closes",
+        "note": "Or earlier if it sells out",
+        "tentative": false,
+        "timeKnown": false
+      },
+      {
+        "at": "2027-01-01T04:59:00.000Z",
+        "editionId": 6,
+        "id": 16,
+        "kind": "price_increase",
+        "note": "After this the price goes up; the new price is not listed yet",
+        "tentative": false,
+        "timeKnown": true
+      },
+      {
+        "at": "2027-03-30T13:00:00.000Z",
+        "editionId": 6,
+        "id": 17,
+        "kind": "charity_closes",
+        "note": "For charity bib entries; regular sign-up has no stated close date",
+        "tentative": false,
+        "timeKnown": true
+      },
+      {
+        "at": "2027-07-13T16:00:00.000Z",
+        "editionId": 7,
+        "id": 18,
+        "kind": "registration_closes",
+        "note": "Or when 275 entries are reached, whichever comes first",
+        "tentative": false,
+        "timeKnown": false
+      }
+    ]
+  },
+  "scenarioType": "application",
+  "pageFilePath": "app/my-races/page.tsx",
+  "description": "Nothing saved in this browser yet: the page explains that Save keeps races here with their dates and notes, and points back to the race list."
+}

@@ -1,0 +1,12 @@
+{
+  "name": "RegistrationChanged - Sold Out Since Save",
+  "id": "ea17e848-38f6-47d2-a9cf-575a64307c9e",
+  "url": "/isolated-components/RegistrationChanged?s=SoldOutSinceSave",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "RegistrationChanged",
+  "scenarioType": "component",
+  "description": "The note that registration went from Open to Sold out since the race was saved."
+}

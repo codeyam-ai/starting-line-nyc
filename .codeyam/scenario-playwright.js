@@ -1,5 +1,5 @@
 // codeyam-generated — DO NOT EDIT.
-// codeyam-editor: 0.1.16  build: bdf0a5d66b0cf9aecf1cc58c1f8410a2a6fd024d  source-sha256: 422f7f1216857d33abe0b1fdbf2d1803f415af29706dec89cd1397017a9d1053
+// codeyam-editor: 0.1.7  build: 77f4f95c37b0d305c277da6719bdf81f9dbfff94  source-sha256: 67d2ad4782f07d64e00439f36d5c2b583a9d88fd61987329135b5d72cb0a7204
 const {
   hasLoadingMarkers,
   isCanvasDominated,
@@ -799,15 +799,29 @@ async function waitForNetworkQuiet(
 // stack.json `capture.loadingMarkers`); they extend the codeyam-harness
 // defaults so a stable-but-still-loading app screen counts as "not ready"
 // and the loop keeps waiting instead of capturing the loading flash.
-async function waitForStablePage(page, target, timeoutMs = 10000, loadingMarkers = []) {
+//
+// `confirmOnly` is for a page whose app already signalled ready (see
+// `waitForReadySignal`). The signal answers "has it painted?", so a single
+// sample, taken 100 ms in rather than 500, only confirms that no loading marker
+// is up and the root is painted. It does not wait for two identical polls,
+// which put a 1.5 s floor under every capture.
+async function waitForStablePage(
+  page,
+  target,
+  timeoutMs = 10000,
+  loadingMarkers = [],
+  { confirmOnly = false } = {},
+) {
   const started = Date.now();
+  const pollIntervalMs = confirmOnly ? 100 : 500;
+  const requiredStableSamples = confirmOnly ? 1 : 2;
   let lastHtml = "";
   let stableCount = 0;
   let lastHadLoadingMarkers = false;
   let lastHtmlChanged = false;
 
   while (Date.now() - started < timeoutMs) {
-    await page.waitForTimeout(500);
+    await page.waitForTimeout(pollIntervalMs);
 
     const pageState = await target.evaluate(() => {
       const getById = document.getElementById;
@@ -843,9 +857,9 @@ async function waitForStablePage(page, target, timeoutMs = 10000, loadingMarkers
       pageState.rootChildCount === 0 &&
       (pageState.bodyText ?? "").trim().length === 0;
 
-    if (!lastHadLoadingMarkers && !lastHtmlChanged && !rootUnpainted) {
+    if (!lastHadLoadingMarkers && (confirmOnly || !lastHtmlChanged) && !rootUnpainted) {
       stableCount += 1;
-      if (stableCount >= 2) {
+      if (stableCount >= requiredStableSamples) {
         const remaining = () => Math.max(0, timeoutMs - (Date.now() - started));
         await waitForAnimationsSettled(target, {
           timeoutMs: Math.min(2000, remaining()),
@@ -1113,34 +1127,54 @@ async function performKeyboardInteraction(frame, { action, value }) {
   }
 }
 
+// How often a not-yet-rendered interaction target is looked up again.
+const TARGET_APPEAR_POLL_MS = 250;
+
 // Resolve a step's target to the single element to act on. Shared by
 // `performInteraction` and by callers that need the target's box BEFORE
 // acting (the pixel-effect signal clips its before/after shots to it).
+//
+// A target that is not there yet is re-polled until `appearTimeoutMs` is
+// spent: a page that keeps polling never reaches network idle, so the settle
+// before a step can time out while a fetch-gated control is still on its way.
+// The default of 0 keeps a single look for callers that only need geometry.
 async function resolveInteractionTarget(
   frame,
   interaction,
-  { warnings, canvasProbe = probeCanvasDominated } = {},
+  {
+    warnings,
+    canvasProbe = probeCanvasDominated,
+    appearTimeoutMs = 0,
+    sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms)),
+    now = Date.now,
+  } = {},
 ) {
   const { action, selector, text } = interaction || {};
 
-  let baseLocator;
+  let matchedByText;
   let targetDesc;
-  let matchedByText = false;
-  let matchCount;
   if (typeof text === "string" && text.length > 0) {
-    const resolved = await resolveTextTarget(frame, text, action);
-    baseLocator = resolved.baseLocator;
-    matchCount = resolved.matchCount;
-    targetDesc = `text "${text}"`;
     matchedByText = true;
+    targetDesc = `text "${text}"`;
   } else if (typeof selector === "string" && selector.length > 0) {
-    baseLocator = frame.locator(selector);
-    matchCount = await baseLocator.count();
+    matchedByText = false;
     targetDesc = `selector "${selector}"`;
   } else {
     throw new Error(
       "preview-interact: interaction requires a `text` or `selector` target",
     );
+  }
+
+  const lookUp = async () => {
+    if (matchedByText) return resolveTextTarget(frame, text, action);
+    const locator = frame.locator(selector);
+    return { baseLocator: locator, matchCount: await locator.count() };
+  };
+  const deadline = now() + appearTimeoutMs;
+  let { baseLocator, matchCount } = await lookUp();
+  while (matchCount === 0 && now() < deadline) {
+    await sleep(TARGET_APPEAR_POLL_MS);
+    ({ baseLocator, matchCount } = await lookUp());
   }
 
   if (matchCount === 0) {
@@ -1191,7 +1225,7 @@ async function resolveInteractionTarget(
 async function performInteraction(
   frame,
   interaction,
-  { timeoutMs = 5000, warnings } = {},
+  { timeoutMs = 5000, appearTimeoutMs = timeoutMs, warnings } = {},
 ) {
   const { action, value, position, from, to, steps, button, deltaX, deltaY } =
     interaction || {};
@@ -1209,6 +1243,7 @@ async function performInteraction(
 
   const { locator, targetDesc } = await resolveInteractionTarget(frame, interaction, {
     warnings,
+    appearTimeoutMs,
   });
 
   // Only the keys Playwright accepts, so an absent field never reaches it as
@@ -1433,6 +1468,7 @@ async function performInteractionSequence(
   interactions,
   {
     timeoutMs = 5000,
+    appearTimeoutMs = timeoutMs,
     settleMs = 5000,
     loadingMarkers,
     settle = waitForStablePage,
@@ -1442,7 +1478,11 @@ async function performInteractionSequence(
 ) {
   for (let i = 0; i < interactions.length; i += 1) {
     try {
-      await performInteraction(frame, interactions[i], { timeoutMs, warnings });
+      await performInteraction(frame, interactions[i], {
+        timeoutMs,
+        appearTimeoutMs,
+        warnings,
+      });
     } catch (err) {
       // Prefix the failing step's index so a miss in a multi-step sequence is
       // locatable, matching the model-side `interactions[i]` validator.
@@ -1452,6 +1492,73 @@ async function performInteractionSequence(
     if (isCanvasInteraction(interactions[i])) {
       await pixelSettle(page, { timeoutMs: settleMs });
     }
+  }
+}
+
+// The query-param isolation harness renders a placeholder instead of the
+// component when the component manifest has no entry for it (most often a fresh
+// checkout, where the gitignored manifest is absent). That placeholder is a
+// perfectly stable page, so nothing else in the capture path notices it: an
+// interaction against it was reported as a selector miss, and a recapture
+// saved it over the scenario's good committed screenshot. The shipped harness
+// marks it with this attribute; harnesses scaffolded before the marker existed
+// are matched by codeyam's own placeholder wording inside `#codeyam-capture`
+// (a compatibility shim for text codeyam wrote, never app text).
+const ISOLATE_MISSING_ATTR = "data-codeyam-isolate-missing";
+const LEGACY_ISOLATE_MISSING_PATTERN = /^\s*No such component "([^"]*)"/;
+
+// The component name the harness placeholder reports as missing, or null when
+// the frame rendered something else.
+async function isolateMissingComponent(frame) {
+  return frame
+    .evaluate(
+      ({ attr, pattern }) => {
+        const marked = document.querySelector(`[${attr}]`);
+        if (marked) return marked.getAttribute(attr) || "";
+        const wrapper = document.getElementById("codeyam-capture");
+        if (!wrapper) return null;
+        const match = (wrapper.textContent || "").match(new RegExp(pattern));
+        return match ? match[1] : null;
+      },
+      {
+        attr: ISOLATE_MISSING_ATTR,
+        pattern: LEGACY_ISOLATE_MISSING_PATTERN.source,
+      },
+    )
+    .catch(() => null);
+}
+
+// `routing.componentManifest` from `.codeyam/stack.json`, for naming the file
+// in the error; a generic phrase when the stack declares none.
+function componentManifestPath() {
+  try {
+    const stack = JSON.parse(
+      fs.readFileSync(require("path").join(".codeyam", "stack.json"), "utf8"),
+    );
+    const manifest = stack && stack.routing && stack.routing.componentManifest;
+    if (typeof manifest === "string" && manifest) return manifest;
+  } catch (_) {}
+  return "the component manifest";
+}
+
+function isolateMissingComponentMessage(name, manifestPath) {
+  return (
+    `isolation harness has no component "${name}" — the component manifest ` +
+    `(${manifestPath}) is missing it. Run codeyam-editor editor isolate --all, ` +
+    `or restart the dev server to regenerate it.`
+  );
+}
+
+// Fail the capture when the frame is the harness placeholder. Called after the
+// scenario loads and before any interaction or screenshot, so an interaction
+// never runs against the placeholder and the committed PNG is never replaced.
+async function assertIsolatedComponentResolved(
+  frame,
+  { manifestPath = componentManifestPath } = {},
+) {
+  const missing = await isolateMissingComponent(frame);
+  if (missing !== null) {
+    throw new Error(isolateMissingComponentMessage(missing, manifestPath()));
   }
 }
 
@@ -1489,4 +1596,8 @@ module.exports = {
   waitForPredicate,
   probeCanvasDominated,
   performInteractionSequence,
+  ISOLATE_MISSING_ATTR,
+  isolateMissingComponent,
+  isolateMissingComponentMessage,
+  assertIsolatedComponentResolved,
 };

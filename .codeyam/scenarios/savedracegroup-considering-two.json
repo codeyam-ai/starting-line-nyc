@@ -1,0 +1,12 @@
+{
+  "name": "SavedRaceGroup - Considering Two",
+  "id": "88bdd556-7ad5-4434-b41a-7401c91fb0c8",
+  "url": "/isolated-components/SavedRaceGroup?s=ConsideringTwo",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "SavedRaceGroup",
+  "scenarioType": "component",
+  "description": "The Considering group with two races, soonest first, one flagged as changed since saved."
+}

@@ -1,0 +1,12 @@
+{
+  "name": "MyRacesLoading - Failed",
+  "id": "640f14dd-6f99-47c2-8f7d-67e2459c4fc9",
+  "url": "/isolated-components/MyRacesLoading?s=Failed",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "MyRacesLoading",
+  "scenarioType": "component",
+  "description": "The message shown when race details could not be loaded."
+}

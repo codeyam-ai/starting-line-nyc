@@ -1,0 +1,19 @@
+{
+  "name": "RaceNote - Typing A Note",
+  "id": "ae1ecaca-0fac-47d1-b2af-47729432d8fa",
+  "url": "/isolated-components/RaceNote?s=Empty",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "RaceNote",
+  "scenarioType": "component",
+  "description": "Typing into an empty note box: the note is saved to this browser as you type.",
+  "interactions": [
+    {
+      "action": "fill",
+      "selector": "textarea",
+      "value": "Waiting on lottery email, goal pace 2:05"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "GoneRaceNotice - No Longer Listed",
+  "id": "214fd6cc-2377-46e2-a1c2-00169cdd7878",
+  "url": "/isolated-components/GoneRaceNotice?s=NoLongerListed",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "GoneRaceNotice",
+  "scenarioType": "component",
+  "description": "A saved race that is no longer listed on Starting Line, with a Remove button."
+}

@@ -1,0 +1,17 @@
+{
+  "name": "MyRacesSection - Empty",
+  "id": "a783d152-76f0-4b3b-9273-2ff53bdd2ba1",
+  "url": "/isolated-components/MyRacesSection?s=Empty",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "browserState": {
+    "localStorage": {
+      "starting-line:saved-races": "{}"
+    }
+  },
+  "componentName": "MyRacesSection",
+  "scenarioType": "component",
+  "description": "The My Races main area with nothing saved."
+}

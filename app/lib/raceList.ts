@@ -118,6 +118,24 @@ export function toListItem(race: RaceRecord, now: Date): RaceListItem | null {
   };
 }
 
+// What My Races shows for one saved race: its list summary, or why there is
+// none (no upcoming edition, or no longer listed at all).
+export type SavedRaceSummary =
+  | { slug: string; state: 'listed'; race: RaceListItem }
+  | { slug: string; state: 'no-upcoming'; name: string }
+  | { slug: string; state: 'not-listed' };
+
+// One summary per requested slug, in request order. Unknown slugs are never dropped.
+export function summarizeSavedRaces(slugs: string[], races: RaceRecord[], now: Date): SavedRaceSummary[] {
+  const bySlug = new Map(races.map((r) => [r.slug, r]));
+  return slugs.map((slug): SavedRaceSummary => {
+    const race = bySlug.get(slug);
+    if (!race) return { slug, state: 'not-listed' };
+    const item = toListItem(race, now);
+    return item ? { slug, state: 'listed', race: item } : { slug, state: 'no-upcoming', name: race.name };
+  });
+}
+
 function matches(race: RaceRecord, item: RaceListItem, filters: RaceFilters, until: Date | null): boolean {
   const dist = DISTANCES[filters.distance];
   if (race.distanceMiles < dist.min || race.distanceMiles > dist.max) return false;

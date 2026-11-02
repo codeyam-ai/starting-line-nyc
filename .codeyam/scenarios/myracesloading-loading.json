@@ -1,0 +1,12 @@
+{
+  "name": "MyRacesLoading - Loading",
+  "id": "1ff9ec79-5d6b-430f-b569-67fa65d73790",
+  "url": "/isolated-components/MyRacesLoading?s=Loading",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "MyRacesLoading",
+  "scenarioType": "component",
+  "description": "The placeholder line while saved races and their details load."
+}

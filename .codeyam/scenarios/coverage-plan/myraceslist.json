@@ -1,0 +1,18 @@
+{
+  "surface": "MyRacesList",
+  "surface_kind": "component",
+  "states": [
+    {
+      "dimension": "failed",
+      "value": "true",
+      "rationale": "source-derived state failed=true",
+      "status": "covered"
+    },
+    {
+      "dimension": "failed",
+      "value": "false",
+      "rationale": "source-derived state failed=false",
+      "status": "covered"
+    }
+  ]
+}

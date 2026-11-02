@@ -1,0 +1,12 @@
+{
+  "name": "NextDeadline - Always Offer Calendar",
+  "id": "88756d57-42f2-44ee-bfac-c7d2a0df4aa3",
+  "url": "/isolated-components/NextDeadline?s=AlwaysOfferCalendar",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "NextDeadline",
+  "scenarioType": "component",
+  "description": "A non-urgent deadline as My Races shows it, still offering Add to calendar."
+}

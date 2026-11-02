@@ -1,0 +1,12 @@
+{
+  "name": "SavedRaceItem - No Upcoming Date",
+  "id": "d56ecf5e-5196-475f-a910-f0eab73a06f6",
+  "url": "/isolated-components/SavedRaceItem?s=NoUpcomingDate",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "SavedRaceItem",
+  "scenarioType": "component",
+  "description": "A saved race with no upcoming edition: the notice, Remove button, and the kept note."
+}

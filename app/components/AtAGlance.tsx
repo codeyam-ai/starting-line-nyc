@@ -27,7 +27,7 @@ export default function AtAGlance({
   nextDeadline: TimelineEntry | null;
   weeksToTrain: number | null;
   official: { href: string; label: string } | null;
-  save?: { slug: string; raceName: string };
+  save?: { slug: string; raceName: string; registrationStatus?: string };
 }) {
   return (
     <section className="glance" aria-label="At a glance">

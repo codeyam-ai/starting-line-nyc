@@ -76,11 +76,11 @@
     {
       "id": "my-races",
       "text": "My Races view with upcoming races, registration milestones, notes and status changes",
-      "status": "deferred",
-      "resolvedAt": "2026-10-26T20:26:41.797817775+00:00",
-      "resolvedInFeature": "Race detail pages with real race data",
+      "status": "delivered",
+      "resolvedAt": "2026-11-02T18:24:06.841046127+00:00",
+      "resolvedInFeature": "My Races page with notes and status changes",
       "planSlug": null,
-      "note": "Deferred at the race detail page plan gate; approved by the user.",
+      "note": "My Races page lists saved races grouped by status with upcoming registration milestones, an editable note per race, and a 'changed since you saved' notice; kept in this browser only. Approved at the demo and save gates. Races saved before this update never show the change notice.",
       "decidedBy": "user"
     },
     {

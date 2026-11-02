@@ -1,0 +1,12 @@
+{
+  "name": "SavedRaceGroupHeading - Interested Several",
+  "id": "fed955c6-47b1-43d9-af54-f9b9773faa7f",
+  "url": "/isolated-components/SavedRaceGroupHeading?s=InterestedSeveral",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "SavedRaceGroupHeading",
+  "scenarioType": "component",
+  "description": "An Interested group heading with a plural count of 3 races."
+}
