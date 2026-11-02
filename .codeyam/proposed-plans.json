@@ -451,9 +451,12 @@
       "body": "",
       "reason": "Disclosed at the approval gate: the built work differs from the plan here.",
       "source": "session-review",
-      "status": "pending",
+      "status": "written",
+      "planSlug": "not-yet-tried-on-a-real-codespace-restart-or-a-brand-new-codespace-tests-run-the-start-up-script-with-stand-in-commands",
       "proposedAt": "2026-10-27T14:50:47.901425810+00:00",
-      "sightings": 2
+      "sightings": 2,
+      "decidedAt": "2026-11-02T19:34:06Z",
+      "sightingsAtDecision": 2
     },
     {
       "id": "unconfirmed-whether-the-missing-dev-database-is-what-left-the-scenario-sandbox-empty-the-start-up-schema-push-is-a-safeguard",
@@ -462,9 +465,12 @@
       "body": "",
       "reason": "Disclosed at the approval gate: the built work differs from the plan here.",
       "source": "session-review",
-      "status": "pending",
+      "status": "written",
+      "planSlug": "unconfirmed-whether-the-missing-dev-database-is-what-left-the-scenario-sandbox-empty-the-start-up-schema-push-is-a",
       "proposedAt": "2026-10-27T14:50:47.901425810+00:00",
-      "sightings": 2
+      "sightings": 2,
+      "decidedAt": "2026-11-02T19:34:07Z",
+      "sightingsAtDecision": 2
     },
     {
       "id": "preview-flow-cannot-scroll-a-below-the-fold-element-into-view-before-capturing",
