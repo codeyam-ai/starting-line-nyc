@@ -32,7 +32,6 @@
       "source": "codeyam-improvement",
       "status": "pending",
       "proposedAt": "2026-10-26T20:10:25.299052082+00:00",
-      "rank": 11,
       "sightings": 2
     },
     {
@@ -63,7 +62,6 @@
       "source": "codeyam-improvement",
       "status": "pending",
       "proposedAt": "2026-10-26T20:10:25.299052082+00:00",
-      "rank": 8,
       "sightings": 2
     },
     {
@@ -76,7 +74,6 @@
       "source": "codeyam-improvement",
       "status": "pending",
       "proposedAt": "2026-10-26T20:10:25.299052082+00:00",
-      "rank": 7,
       "sightings": 2
     },
     {
@@ -103,7 +100,6 @@
       "source": "codeyam-improvement",
       "status": "pending",
       "proposedAt": "2026-10-26T20:10:25.299052082+00:00",
-      "rank": 6,
       "sightings": 2
     },
     {
@@ -116,7 +112,6 @@
       "source": "codeyam-improvement",
       "status": "pending",
       "proposedAt": "2026-10-26T20:10:25.299052082+00:00",
-      "rank": 16,
       "sightings": 2
     },
     {
@@ -128,7 +123,6 @@
       "source": "session-review",
       "status": "pending",
       "proposedAt": "2026-10-26T20:10:25.299052082+00:00",
-      "rank": 13,
       "sightings": 2
     },
     {
@@ -140,7 +134,6 @@
       "source": "session-review",
       "status": "pending",
       "proposedAt": "2026-10-26T20:10:25.299052082+00:00",
-      "rank": 12,
       "sightings": 2
     },
     {
@@ -154,7 +147,7 @@
       "status": "pending",
       "proposedAt": "2026-10-26T20:10:25.299052082+00:00",
       "kind": "tech-debt",
-      "rank": 5,
+      "rank": 4,
       "sightings": 3,
       "notes": [
         "2026-10-27: Save now works (kept in this browser); Log in, Sign up and More filters are still placeholders."
@@ -198,7 +191,6 @@
       "source": "session-review",
       "status": "pending",
       "proposedAt": "2026-10-26T20:10:25.299052082+00:00",
-      "rank": 17,
       "sightings": 2
     },
     {
@@ -231,7 +223,7 @@
       "status": "pending",
       "proposedAt": "2026-10-26T20:11:03.258662184+00:00",
       "kind": "feature",
-      "rank": 20,
+      "rank": 6,
       "sightings": 1
     },
     {
@@ -281,7 +273,7 @@
       "status": "pending",
       "proposedAt": "2026-10-26T20:11:03.258662184+00:00",
       "kind": "feature",
-      "rank": 19,
+      "rank": 5,
       "sightings": 6
     },
     {
@@ -369,7 +361,6 @@
       "source": "codeyam-improvement",
       "status": "pending",
       "proposedAt": "2026-10-26T21:54:14.624177062+00:00",
-      "rank": 10,
       "sightings": 1
     },
     {
@@ -396,7 +387,6 @@
       "source": "session-review",
       "status": "pending",
       "proposedAt": "2026-10-26T21:54:14.624177062+00:00",
-      "rank": 18,
       "sightings": 1
     },
     {
@@ -421,7 +411,6 @@
       "source": "codeyam-improvement",
       "status": "pending",
       "proposedAt": "2026-10-27T14:50:47.901425810+00:00",
-      "rank": 15,
       "sightings": 3,
       "notes": [
         "2026-10-27: Hit again in the Google Calendar cycle: advance from the save gate blocked until save-approval was run by hand.",
@@ -437,7 +426,6 @@
       "source": "session-review",
       "status": "pending",
       "proposedAt": "2026-10-27T14:50:47.901425810+00:00",
-      "rank": 14,
       "sightings": 2
     },
     {
@@ -496,7 +484,6 @@
       "source": "codeyam-improvement",
       "status": "pending",
       "proposedAt": "2026-10-27T19:35:17.608223131+00:00",
-      "rank": 9,
       "sightings": 1
     },
     {
@@ -532,7 +519,6 @@
       "source": "session-review",
       "status": "pending",
       "proposedAt": "2026-10-27T19:35:17.608223131+00:00",
-      "rank": 4,
       "sightings": 1
     },
     {
@@ -556,6 +542,7 @@
       "source": "session-review",
       "status": "pending",
       "proposedAt": "2026-11-02T18:36:53.943777086+00:00",
+      "rank": 8,
       "sightings": 1
     },
     {
@@ -567,6 +554,29 @@
       "source": "session-review",
       "status": "pending",
       "proposedAt": "2026-11-02T18:36:53.943777086+00:00",
+      "rank": 7,
+      "sightings": 1
+    },
+    {
+      "id": "on-a-wide-screen-the-longer-sort-control-pushes-the-more-filters-button-onto-a-second-line-of-the-toolbar",
+      "title": "On a wide screen the longer sort control pushes the More filters button onto a second line of the toolbar.",
+      "mode": "backend",
+      "body": "## Summary\n\nOn a wide screen the longer sort control pushes the More filters button onto a second line of the toolbar.\n\nAt the approval gate for \"More ways to sort the race list\" the user approved the built work past this gap: it differs from what the plan asked for. Built from plan `more-ways-to-sort-the-race-list` (now at `.codeyam/plans/completed/more-ways-to-sort-the-race-list.md`).\n\nYou can now choose how the race list is ordered, instead of always seeing it by next deadline.\n\n## What you can now do\n- Sort by **Next deadline** (still the default)\n- Sort by **Race day** to see races in calendar order\n- Sort by **Registration opens** to plan sign-ups ahead\n- Sort by **Distance** to compare races by length\n\nRead that plan and the code it changed before planning how to close the gap.",
+      "reason": "Approved past at the approval gate for \"More ways to sort the race list\".",
+      "source": "session-review",
+      "status": "pending",
+      "proposedAt": "2026-11-02T19:25:07.286550099+00:00",
+      "sightings": 1
+    },
+    {
+      "id": "the-plan-did-not-say-how-to-order-races-under-registration-opens-i-chose-openings-still-ahead-first-soonest-first-then-races-you-can-already-enter-then-races-with-no-opening-date-announced-only-four-races-in-the-current-data-have-an",
+      "title": "The plan did not say how to order races under Registration opens. I chose: openings still ahead first (soonest first), then races you can already enter, then races with no opening date announced. Only four races in the current data have an…",
+      "mode": "backend",
+      "body": "## Summary\n\nThe plan did not say how to order races under Registration opens. I chose: openings still ahead first (soonest first), then races you can already enter, then races with no opening date announced. Only four races in the current data have an…\n\nAt the approval gate for \"More ways to sort the race list\" the user approved the built work past this gap: it differs from what the plan asked for. Built from plan `more-ways-to-sort-the-race-list` (now at `.codeyam/plans/completed/more-ways-to-sort-the-race-list.md`).\n\nYou can now choose how the race list is ordered, instead of always seeing it by next deadline.\n\n## What you can now do\n- Sort by **Next deadline** (still the default)\n- Sort by **Race day** to see races in calendar order\n- Sort by **Registration opens** to plan sign-ups ahead\n- Sort by **Distance** to compare races by length\n\nRead that plan and the code it changed before planning how to close the gap.",
+      "reason": "Approved past at the approval gate for \"More ways to sort the race list\".",
+      "source": "session-review",
+      "status": "pending",
+      "proposedAt": "2026-11-02T19:25:07.286550099+00:00",
       "sightings": 1
     }
   ],
@@ -869,6 +879,25 @@
         "the-not-found-page-is-shown-as-a-component-screenshot-not-a-full-page-one-because-the-capture-tool-skips-error-pages",
         "my-races-view-with-upcoming-races-registration-milestones-notes-and-status-changes",
         "race-detail-page-with-date-location-distance-terrain-organizer-price-and-official-registration-link"
+      ]
+    },
+    {
+      "at": "2026-11-02T19:25:07.286550099+00:00",
+      "feature": "More ways to sort the race list",
+      "notes": "Smooth cycle: audit clean, 165 tests passing, push clean with nothing pulled. No new fixes or debt found in the files touched. The queued backend plan 'sort-by-race-date-registration-opening-date-entry-deadline-or-distance' duplicates this…",
+      "proposedIds": [
+        "on-a-wide-screen-the-longer-sort-control-pushes-the-more-filters-button-onto-a-second-line-of-the-toolbar",
+        "the-plan-did-not-say-how-to-order-races-under-registration-opens-i-chose-openings-still-ahead-first-soonest-first-then-races-you-can-already-enter-then-races-with-no-opening-date-announced-only-four-races-in-the-current-data-have-an"
+      ],
+      "rankedIds": [
+        "distinguish-open-registration-lotteries-time-qualification-charity-and-membership-entry-with-qualification-windows-per-edition",
+        "the-template-s-lint-setup-is-broken-it-points-at-a-missing-file-so-lint-was-not-run-type-checks-and-55-unit-tests-pass",
+        "prioritise-google-calendar-for-adding-events",
+        "save-log-in-sign-up-and-more-filters-do-not-work-yet-there-are-no-accounts-and-the-page-says-so",
+        "my-races-view-with-upcoming-races-registration-milestones-notes-and-status-changes",
+        "race-detail-page-with-date-location-distance-terrain-organizer-price-and-official-registration-link",
+        "the-lookup-that-reads-saved-races-from-the-database-has-no-test-that-runs-it-against-a-real-database-the-sorting-and-labelling-it-hands-off-to-are-tested",
+        "races-saved-before-this-update-never-show-the-changed-since-you-saved-note-because-their-registration-status-at-save-time-was-not-recorded"
       ]
     }
   ],
