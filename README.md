@@ -54,7 +54,7 @@ were left out rather than copied from third-party sites.
 
 # CodeYam Editor in GitHub Codespaces
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/nseldeib/starting-line-nyc?quickstart=1)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/codeyam-ai/starting-line-nyc?quickstart=1)
 
 Click the button to try the [CodeYam Editor](https://codeyam.com) with nothing
 installed on your own machine. It runs in a GitHub codespace, a Linux machine
