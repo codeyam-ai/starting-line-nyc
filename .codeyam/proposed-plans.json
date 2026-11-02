@@ -144,14 +144,17 @@
       "reason": "Save now works on this device; Log in, Sign up and More filters are still placeholders.",
       "source": "session-review",
       "category": "fix",
-      "status": "pending",
+      "status": "written",
+      "planSlug": "save-log-in-sign-up-and-more-filters-do-not-work-yet-there-are-no-accounts-and-the-page-says-so",
       "proposedAt": "2026-10-26T20:10:25.299052082+00:00",
       "kind": "tech-debt",
       "rank": 4,
       "sightings": 3,
       "notes": [
         "2026-10-27: Save now works (kept in this browser); Log in, Sign up and More filters are still placeholders."
-      ]
+      ],
+      "decidedAt": "2026-11-02T19:33:51Z",
+      "sightingsAtDecision": 3
     },
     {
       "id": "race-dates-and-deadlines-are-sample-data-not-verified-against-organizers-photo-credits-were-copied-from-the-mockup-and-only-the-hero-photo-has-its-own-credit",
