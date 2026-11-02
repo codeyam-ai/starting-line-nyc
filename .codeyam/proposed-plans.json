@@ -556,9 +556,12 @@
       "body": "",
       "reason": "Disclosed at the approval gate: the built work differs from the plan here.",
       "source": "session-review",
-      "status": "pending",
+      "status": "written",
+      "planSlug": "the-plan-listed-a-phone-layout-demo-saving-works-on-phones-but-there-is-no-phone-size-demo-of-saved-races-yet",
       "proposedAt": "2026-10-27T19:35:17.608223131+00:00",
-      "sightings": 1
+      "sightings": 1,
+      "decidedAt": "2026-11-02T19:34:15Z",
+      "sightingsAtDecision": 1
     },
     {
       "id": "push-refuses-the-feature-commit-even-though-session-finalize-passed-just-before-it-was-made",
