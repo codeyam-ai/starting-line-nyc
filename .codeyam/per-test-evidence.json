@@ -1,10 +1,11 @@
 {
   "activeFilterChips › includes query and terrain, and is empty when nothing narrows": {
     "file": "app/lib/filters.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -17,10 +18,11 @@
   },
   "activeFilterChips › lists distance and window for the defaults": {
     "file": "app/lib/filters.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -33,10 +35,11 @@
   },
   "buildIcs › escapes text fields": {
     "file": "app/lib/ics.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -49,10 +52,11 @@
   },
   "buildIcs › omits optional fields when absent": {
     "file": "app/lib/ics.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -65,10 +69,11 @@
   },
   "buildIcs › writes a single event with start, end and CRLF endings": {
     "file": "app/lib/ics.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -81,10 +86,11 @@
   },
   "buildIcs › writes all-day events with a next-day end": {
     "file": "app/lib/ics.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -94,10 +100,11 @@
   },
   "buildTimeline › is empty when nothing is announced": {
     "file": "app/lib/raceDetail.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -107,10 +114,11 @@
   },
   "buildTimeline › keeps a date-only deadline for today as next": {
     "file": "app/lib/raceDetail.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -120,10 +128,11 @@
   },
   "buildTimeline › marks past, next and upcoming": {
     "file": "app/lib/raceDetail.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -133,10 +142,11 @@
   },
   "buildTimeline › sorts milestones by date and appends race day": {
     "file": "app/lib/raceDetail.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -146,10 +156,11 @@
   },
   "calendarFileName › names next, race day and milestone files": {
     "file": "app/lib/raceCalendar.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -161,10 +172,11 @@
   },
   "codeyam-preview-origin.sh › does nothing outside Codespaces": {
     "file": ".devcontainer/codeyam-preview-origin.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -173,10 +185,11 @@
   },
   "codeyam-preview-origin.sh › falls back to app.github.dev when the domain is unset": {
     "file": ".devcontainer/codeyam-preview-origin.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -185,10 +198,11 @@
   },
   "codeyam-preview-origin.sh › makes the app port public for this codespace": {
     "file": ".devcontainer/codeyam-preview-origin.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -197,10 +211,11 @@
   },
   "codeyam-preview-origin.sh › points the preview at the forwarded app port": {
     "file": ".devcontainer/codeyam-preview-origin.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -209,10 +224,11 @@
   },
   "codeyam-preview-origin.sh › pushes the schema to dev.db": {
     "file": ".devcontainer/codeyam-preview-origin.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -221,10 +237,11 @@
   },
   "codeyam-preview-origin.sh › runs every step and says which one failed": {
     "file": ".devcontainer/codeyam-preview-origin.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -233,10 +250,11 @@
   },
   "entryMethod › explains known entry methods": {
     "file": "app/lib/raceDetail.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -246,10 +264,11 @@
   },
   "entryMethod › falls back to the raw method": {
     "file": "app/lib/raceDetail.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -259,10 +278,11 @@
   },
   "etDate › gives the ET calendar date": {
     "file": "app/lib/format.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -272,10 +292,11 @@
   },
   "filterAndSortRaces › applies distance and six month window by default": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -288,10 +309,11 @@
   },
   "filterAndSortRaces › filters by status chips": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -304,10 +326,11 @@
   },
   "filterAndSortRaces › filters by terrain and by search text across name, place and organizer": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -320,10 +343,11 @@
   },
   "filterAndSortRaces › matches ultras beyond marathon distance": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -336,10 +360,11 @@
   },
   "filterAndSortRaces › returns everything with any distance and any time": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -352,10 +377,11 @@
   },
   "filterHref › always writes distance and window and omits defaults otherwise": {
     "file": "app/lib/filters.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -368,10 +394,11 @@
   },
   "filterHref › applies a change over the current filters": {
     "file": "app/lib/filters.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -384,10 +411,11 @@
   },
   "filterHref › round trips through parseFilters": {
     "file": "app/lib/filters.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -400,10 +428,11 @@
   },
   "formatDay › formats in Eastern Time even across a UTC date boundary": {
     "file": "app/lib/format.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -416,10 +445,11 @@
   },
   "formatDistance › appends elevation gain": {
     "file": "app/lib/format.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -432,10 +462,11 @@
   },
   "formatDistance › formats miles": {
     "file": "app/lib/format.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -448,10 +479,11 @@
   },
   "formatEt › joins day and time": {
     "file": "app/lib/format.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -464,10 +496,11 @@
   },
   "formatLongDay › spells out weekday, month and year": {
     "file": "app/lib/format.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -477,10 +510,11 @@
   },
   "formatPrice › formats cents as dollars": {
     "file": "app/lib/format.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -490,10 +524,11 @@
   },
   "formatTime › formats standard time with a lowercase meridiem and ET": {
     "file": "app/lib/format.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -506,10 +541,11 @@
   },
   "formatTime › handles daylight saving time": {
     "file": "app/lib/format.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -522,10 +558,11 @@
   },
   "formatWhen › shows the time only when it is known": {
     "file": "app/lib/format.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -535,10 +572,11 @@
   },
   "googleCalendarHref › adds the Google target to a bare link": {
     "file": "app/lib/raceCalendar.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -547,10 +585,11 @@
   },
   "googleCalendarHref › keeps an existing query": {
     "file": "app/lib/raceCalendar.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -559,10 +598,11 @@
   },
   "googleCalendarUrl › carries the title, location and details": {
     "file": "app/lib/raceCalendar.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -571,10 +611,11 @@
   },
   "googleCalendarUrl › encodes a date-only deadline as all day": {
     "file": "app/lib/raceCalendar.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -583,10 +624,11 @@
   },
   "googleCalendarUrl › encodes a timed event in UTC": {
     "file": "app/lib/raceCalendar.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -595,10 +637,11 @@
   },
   "googleCalendarUrl › keeps a summer start correct across daylight saving": {
     "file": "app/lib/raceCalendar.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -607,10 +650,11 @@
   },
   "googleCalendarUrl › matches the event built for the ics file": {
     "file": "app/lib/raceCalendar.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -619,10 +663,11 @@
   },
   "googleCalendarUrl › omits absent location and details": {
     "file": "app/lib/raceCalendar.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -631,10 +676,11 @@
   },
   "googleCalendarUrl › points at the Google create-event page": {
     "file": "app/lib/raceCalendar.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -643,10 +689,11 @@
   },
   "googleCalendarUrl › rolls an all-day end date over a month boundary": {
     "file": "app/lib/raceCalendar.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -655,10 +702,11 @@
   },
   "icsDate › formats as basic UTC": {
     "file": "app/lib/ics.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -671,10 +719,11 @@
   },
   "icsEscape › escapes special characters and newlines": {
     "file": "app/lib/ics.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -687,10 +736,11 @@
   },
   "icsEscape › leaves plain text alone": {
     "file": "app/lib/ics.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -703,10 +753,11 @@
   },
   "isUrgent › is false beyond three weeks, in the past, or missing": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -719,10 +770,11 @@
   },
   "isUrgent › is true within three weeks": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -735,10 +787,11 @@
   },
   "isUrgent › keeps a date-only deadline urgent until its ET day ends": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -748,10 +801,11 @@
   },
   "milestoneEnd › extends date-only milestones to the end of the day": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -761,10 +815,11 @@
   },
   "milestoneVerb › falls back to the raw kind": {
     "file": "app/lib/format.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -777,10 +832,11 @@
   },
   "milestoneVerb › maps known kinds to verbs": {
     "file": "app/lib/format.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -793,10 +849,11 @@
   },
   "nextDeadline › skips past entries and race day": {
     "file": "app/lib/raceDetail.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -806,10 +863,11 @@
   },
   "nextMilestone with date-only deadlines › keeps today as next until the day ends": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -819,10 +877,11 @@
   },
   "nextMilestone › returns null when nothing is upcoming": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -835,10 +894,11 @@
   },
   "nextMilestone › returns the earliest future milestone": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -851,10 +911,11 @@
   },
   "officialLink › falls back to the source then the organizer": {
     "file": "app/lib/raceDetail.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -864,10 +925,11 @@
   },
   "officialLink › prefers the registration link": {
     "file": "app/lib/raceDetail.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -877,10 +939,11 @@
   },
   "pageUrlFrom › defaults to http on localhost": {
     "file": "app/lib/raceDetail.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -890,10 +953,11 @@
   },
   "pageUrlFrom › uses forwarded host and protocol": {
     "file": "app/lib/raceDetail.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -903,10 +967,11 @@
   },
   "parseFilters › falls back to defaults for unknown values": {
     "file": "app/lib/filters.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -919,10 +984,11 @@
   },
   "parseFilters › parses comma separated status chips, dropping unknown and duplicates": {
     "file": "app/lib/filters.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -935,10 +1001,11 @@
   },
   "parseFilters › reads valid values and trims the query": {
     "file": "app/lib/filters.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -951,10 +1018,11 @@
   },
   "parseFilters › returns the defaults for empty params": {
     "file": "app/lib/filters.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -967,10 +1035,11 @@
   },
   "parseFilters › uses the first value of repeated single fields and all values of status": {
     "file": "app/lib/filters.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -983,30 +1052,33 @@
   },
   "parseSavedRaces › keeps known statuses and drops unknown ones": {
     "file": "app/lib/savedRaces.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z"
     ]
   },
   "parseSavedRaces › treats missing or corrupt storage as nothing saved": {
     "file": "app/lib/savedRaces.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z"
     ]
   },
   "raceCalendarEvent for one milestone › exports a date-only milestone as all day": {
     "file": "app/lib/raceCalendar.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -1018,10 +1090,11 @@
   },
   "raceCalendarEvent for one milestone › exports a timed milestone at its time": {
     "file": "app/lib/raceCalendar.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -1033,10 +1106,11 @@
   },
   "raceCalendarEvent for one milestone › refuses missing or past milestones": {
     "file": "app/lib/raceCalendar.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -1048,10 +1122,11 @@
   },
   "raceCalendarEvent › builds a race day event": {
     "file": "app/lib/raceCalendar.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -1060,16 +1135,16 @@
       "pass|full|2026-10-26T21:49:13.522Z",
       "pass|changed|2026-10-26T21:02:26.685Z",
       "pass|changed|2026-10-26T21:01:34.847Z",
-      "pass|full|2026-10-26T19:47:29.085Z",
-      "pass|full|2026-10-26T19:24:54.655Z"
+      "pass|full|2026-10-26T19:47:29.085Z"
     ]
   },
   "raceCalendarEvent › builds the next milestone event": {
     "file": "app/lib/raceCalendar.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -1078,16 +1153,16 @@
       "pass|full|2026-10-26T21:49:13.522Z",
       "pass|changed|2026-10-26T21:02:26.685Z",
       "pass|changed|2026-10-26T21:01:34.847Z",
-      "pass|full|2026-10-26T19:47:29.085Z",
-      "pass|full|2026-10-26T19:24:54.655Z"
+      "pass|full|2026-10-26T19:47:29.085Z"
     ]
   },
   "raceCalendarEvent › describes the time in ET with the official link and sample notice": {
     "file": "app/lib/raceCalendar.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -1096,16 +1171,16 @@
       "pass|full|2026-10-26T21:49:13.522Z",
       "pass|changed|2026-10-26T21:02:26.685Z",
       "pass|changed|2026-10-26T21:01:34.847Z",
-      "pass|full|2026-10-26T19:47:29.085Z",
-      "pass|full|2026-10-26T19:24:54.655Z"
+      "pass|full|2026-10-26T19:47:29.085Z"
     ]
   },
   "raceCalendarEvent › refuses race day when the date is unannounced": {
     "file": "app/lib/raceCalendar.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -1114,16 +1189,16 @@
       "pass|full|2026-10-26T21:49:13.522Z",
       "pass|changed|2026-10-26T21:02:26.685Z",
       "pass|changed|2026-10-26T21:01:34.847Z",
-      "pass|full|2026-10-26T19:47:29.085Z",
-      "pass|full|2026-10-26T19:24:54.655Z"
+      "pass|full|2026-10-26T19:47:29.085Z"
     ]
   },
   "raceCalendarEvent › refuses when no registration date is upcoming": {
     "file": "app/lib/raceCalendar.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -1132,16 +1207,16 @@
       "pass|full|2026-10-26T21:49:13.522Z",
       "pass|changed|2026-10-26T21:02:26.685Z",
       "pass|changed|2026-10-26T21:01:34.847Z",
-      "pass|full|2026-10-26T19:47:29.085Z",
-      "pass|full|2026-10-26T19:24:54.655Z"
+      "pass|full|2026-10-26T19:47:29.085Z"
     ]
   },
   "raceCalendarEvent › refuses when there is no upcoming edition": {
     "file": "app/lib/raceCalendar.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -1150,16 +1225,16 @@
       "pass|full|2026-10-26T21:49:13.522Z",
       "pass|changed|2026-10-26T21:02:26.685Z",
       "pass|changed|2026-10-26T21:01:34.847Z",
-      "pass|full|2026-10-26T19:47:29.085Z",
-      "pass|full|2026-10-26T19:24:54.655Z"
+      "pass|full|2026-10-26T19:47:29.085Z"
     ]
   },
   "raceCountLabel › pluralises correctly": {
     "file": "app/lib/filters.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -1172,10 +1247,11 @@
   },
   "reportIssueUrl › pre-fills a GitHub issue": {
     "file": "app/lib/raceDetail.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -1185,10 +1261,11 @@
   },
   "resultsHeading › names the distance and the window": {
     "file": "app/lib/filters.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -1201,10 +1278,11 @@
   },
   "resultsHeading › omits the window when it is any time": {
     "file": "app/lib/filters.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -1217,40 +1295,44 @@
   },
   "setSaveStatus › reports failure when storage is blocked": {
     "file": "app/lib/savedRaces.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z"
     ]
   },
   "setSaveStatus › reports nothing saved and no storage outside a browser": {
     "file": "app/lib/savedRaces.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z"
     ]
   },
   "setSaveStatus › stores the status and notifies subscribers": {
     "file": "app/lib/savedRaces.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z"
     ]
   },
   "sortRaces › sorts by next deadline with unknown last": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -1263,10 +1345,11 @@
   },
   "sortRaces › sorts by race day with unknown last": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -1279,10 +1362,11 @@
   },
   "sourceHost › strips www and handles missing or bad URLs": {
     "file": "app/lib/raceDetail.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -1292,10 +1376,11 @@
   },
   "timelineCalendarHref › builds race day and milestone links": {
     "file": "app/lib/raceDetail.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -1305,10 +1390,11 @@
   },
   "toListItem › flattens the upcoming edition into a list item": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -1321,10 +1407,11 @@
   },
   "toListItem › returns null when the race has no upcoming edition": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -1337,10 +1424,11 @@
   },
   "toggleStatus › adds a chip that is not selected": {
     "file": "app/lib/filters.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -1353,10 +1441,11 @@
   },
   "toggleStatus › removes a selected chip without mutating the input": {
     "file": "app/lib/filters.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -1369,10 +1458,11 @@
   },
   "upcomingEdition › picks the earliest upcoming year regardless of input order": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -1385,10 +1475,11 @@
   },
   "upcomingEdition › returns null when every edition is past": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -1401,10 +1492,11 @@
   },
   "upcomingEdition › skips editions whose race day has passed": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -1417,10 +1509,11 @@
   },
   "upcomingEdition › treats an unannounced date as upcoming": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -1433,20 +1526,22 @@
   },
   "useSaveStatus › reports no status during server rendering": {
     "file": "app/lib/useSaveStatus.test.tsx",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z"
     ]
   },
   "weeksToTrain › returns null for an unknown date": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -1459,10 +1554,11 @@
   },
   "weeksToTrain › rounds down to whole weeks": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z",
       "pass|full|2026-10-27T16:32:27.916Z",
@@ -1475,30 +1571,33 @@
   },
   "withSaveStatus › adds a race with the time it was saved": {
     "file": "app/lib/savedRaces.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z"
     ]
   },
   "withSaveStatus › removes a race without mutating the input": {
     "file": "app/lib/savedRaces.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z"
     ]
   },
   "withSaveStatus › restamps a changed status and keeps the time for an unchanged one": {
     "file": "app/lib/savedRaces.test.ts",
-    "lastRunAt": "2026-11-02T14:17:30.853Z",
+    "lastRunAt": "2026-11-02T14:21:32.229Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
+      "pass|changed|2026-11-02T14:21:32.229Z",
       "pass|changed|2026-11-02T14:17:30.853Z",
       "pass|full|2026-10-27T19:32:46.825Z"
     ]
