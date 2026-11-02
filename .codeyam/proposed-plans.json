@@ -201,9 +201,12 @@
       "body": "",
       "reason": "Disclosed at the approval gate: the built work differs from the plan here.",
       "source": "session-review",
-      "status": "pending",
+      "status": "written",
+      "planSlug": "one-of-46-component-screenshots-kept-an-older-capture-showing-the-next-js-dev-badge",
       "proposedAt": "2026-10-26T20:10:25.299052082+00:00",
-      "sightings": 2
+      "sightings": 2,
+      "decidedAt": "2026-11-02T19:34:05Z",
+      "sightingsAtDecision": 2
     },
     {
       "id": "sort-by-race-date-registration-opening-date-entry-deadline-or-distance",
@@ -564,10 +567,13 @@
       "body": "## Summary\n\nRaces saved before this update never show the \"changed since you saved\" note, because their registration status at save time was not recorded.\n\nAt the approval gate for \"My Races page with notes and status changes\" the user approved the built work past this gap: it differs from what the plan asked for. Built from plan `my-races-page-with-notes-and-status-changes` (now at `.codeyam/plans/completed/my-races-page-with-notes-and-status-changes.md`).\n\nYou now have a My Races page that gathers every race you've saved, with your own notes and a heads-up when a race changes.\n\n## What you can now do\n- Open **My Races** from the header to see all your saved races in one place, grouped by upcoming and past\n- Add or edit a personal note on any saved race\n- Spot races whose date or status changed since you saved them\n- See a clear notice and remove a race that's no longer listed\n\nRead that plan and the code it changed before planning how to close the gap.",
       "reason": "Approved past at the approval gate for \"My Races page with notes and status changes\".",
       "source": "session-review",
-      "status": "pending",
+      "status": "written",
+      "planSlug": "races-saved-before-this-update-never-show-the-changed-since-you-saved-note-because-their-registration-status-at-save",
       "proposedAt": "2026-11-02T18:36:53.943777086+00:00",
       "rank": 8,
-      "sightings": 1
+      "sightings": 1,
+      "decidedAt": "2026-11-02T19:34:03Z",
+      "sightingsAtDecision": 1
     },
     {
       "id": "the-lookup-that-reads-saved-races-from-the-database-has-no-test-that-runs-it-against-a-real-database-the-sorting-and-labelling-it-hands-off-to-are-tested",
@@ -576,10 +582,13 @@
       "body": "## Summary\n\nThe lookup that reads saved races from the database has no test that runs it against a real database; the sorting and labelling it hands off to are tested.\n\nAt the approval gate for \"My Races page with notes and status changes\" the user approved the built work past this gap: it differs from what the plan asked for. Built from plan `my-races-page-with-notes-and-status-changes` (now at `.codeyam/plans/completed/my-races-page-with-notes-and-status-changes.md`).\n\nYou now have a My Races page that gathers every race you've saved, with your own notes and a heads-up when a race changes.\n\n## What you can now do\n- Open **My Races** from the header to see all your saved races in one place, grouped by upcoming and past\n- Add or edit a personal note on any saved race\n- Spot races whose date or status changed since you saved them\n- See a clear notice and remove a race that's no longer listed\n\nRead that plan and the code it changed before planning how to close the gap.",
       "reason": "Approved past at the approval gate for \"My Races page with notes and status changes\".",
       "source": "session-review",
-      "status": "pending",
+      "status": "written",
+      "planSlug": "the-lookup-that-reads-saved-races-from-the-database-has-no-test-that-runs-it-against-a-real-database-the-sorting-and",
       "proposedAt": "2026-11-02T18:36:53.943777086+00:00",
       "rank": 7,
-      "sightings": 1
+      "sightings": 1,
+      "decidedAt": "2026-11-02T19:34:02Z",
+      "sightingsAtDecision": 1
     },
     {
       "id": "on-a-wide-screen-the-longer-sort-control-pushes-the-more-filters-button-onto-a-second-line-of-the-toolbar",
