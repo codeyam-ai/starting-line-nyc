@@ -32,7 +32,7 @@
       "source": "codeyam-improvement",
       "status": "pending",
       "proposedAt": "2026-10-26T20:10:25.299052082+00:00",
-      "rank": 18,
+      "rank": 11,
       "sightings": 2
     },
     {
@@ -63,7 +63,7 @@
       "source": "codeyam-improvement",
       "status": "pending",
       "proposedAt": "2026-10-26T20:10:25.299052082+00:00",
-      "rank": 19,
+      "rank": 8,
       "sightings": 2
     },
     {
@@ -76,7 +76,7 @@
       "source": "codeyam-improvement",
       "status": "pending",
       "proposedAt": "2026-10-26T20:10:25.299052082+00:00",
-      "rank": 17,
+      "rank": 7,
       "sightings": 2
     },
     {
@@ -103,7 +103,7 @@
       "source": "codeyam-improvement",
       "status": "pending",
       "proposedAt": "2026-10-26T20:10:25.299052082+00:00",
-      "rank": 16,
+      "rank": 6,
       "sightings": 2
     },
     {
@@ -116,7 +116,7 @@
       "source": "codeyam-improvement",
       "status": "pending",
       "proposedAt": "2026-10-26T20:10:25.299052082+00:00",
-      "rank": 25,
+      "rank": 16,
       "sightings": 2
     },
     {
@@ -128,7 +128,7 @@
       "source": "session-review",
       "status": "pending",
       "proposedAt": "2026-10-26T20:10:25.299052082+00:00",
-      "rank": 7,
+      "rank": 13,
       "sightings": 2
     },
     {
@@ -140,7 +140,7 @@
       "source": "session-review",
       "status": "pending",
       "proposedAt": "2026-10-26T20:10:25.299052082+00:00",
-      "rank": 6,
+      "rank": 12,
       "sightings": 2
     },
     {
@@ -154,7 +154,7 @@
       "status": "pending",
       "proposedAt": "2026-10-26T20:10:25.299052082+00:00",
       "kind": "tech-debt",
-      "rank": 4,
+      "rank": 5,
       "sightings": 3,
       "notes": [
         "2026-10-27: Save now works (kept in this browser); Log in, Sign up and More filters are still placeholders."
@@ -196,7 +196,7 @@
       "source": "session-review",
       "status": "pending",
       "proposedAt": "2026-10-26T20:10:25.299052082+00:00",
-      "rank": 11,
+      "rank": 17,
       "sightings": 2
     },
     {
@@ -229,7 +229,7 @@
       "status": "pending",
       "proposedAt": "2026-10-26T20:11:03.258662184+00:00",
       "kind": "feature",
-      "rank": 12,
+      "rank": 20,
       "sightings": 1
     },
     {
@@ -244,7 +244,7 @@
       "status": "pending",
       "proposedAt": "2026-10-26T20:11:03.258662184+00:00",
       "kind": "feature",
-      "rank": 5,
+      "rank": 1,
       "sightings": 1
     },
     {
@@ -277,7 +277,7 @@
       "status": "pending",
       "proposedAt": "2026-10-26T20:11:03.258662184+00:00",
       "kind": "feature",
-      "rank": 1,
+      "rank": 19,
       "sightings": 6
     },
     {
@@ -310,7 +310,7 @@
       "status": "pending",
       "proposedAt": "2026-10-26T20:11:03.258662184+00:00",
       "kind": "feature",
-      "rank": 13,
+      "rank": 3,
       "sightings": 4
     },
     {
@@ -341,7 +341,6 @@
       "source": "codeyam-improvement",
       "status": "pending",
       "proposedAt": "2026-10-26T21:54:14.624177062+00:00",
-      "rank": 21,
       "sightings": 1
     },
     {
@@ -354,7 +353,6 @@
       "source": "codeyam-improvement",
       "status": "pending",
       "proposedAt": "2026-10-26T21:54:14.624177062+00:00",
-      "rank": 26,
       "sightings": 1
     },
     {
@@ -367,7 +365,7 @@
       "source": "codeyam-improvement",
       "status": "pending",
       "proposedAt": "2026-10-26T21:54:14.624177062+00:00",
-      "rank": 20,
+      "rank": 10,
       "sightings": 1
     },
     {
@@ -394,7 +392,7 @@
       "source": "session-review",
       "status": "pending",
       "proposedAt": "2026-10-26T21:54:14.624177062+00:00",
-      "rank": 10,
+      "rank": 18,
       "sightings": 1
     },
     {
@@ -407,7 +405,6 @@
       "source": "codeyam-improvement",
       "status": "pending",
       "proposedAt": "2026-10-27T14:50:47.901425810+00:00",
-      "rank": 27,
       "sightings": 1
     },
     {
@@ -420,7 +417,7 @@
       "source": "codeyam-improvement",
       "status": "pending",
       "proposedAt": "2026-10-27T14:50:47.901425810+00:00",
-      "rank": 24,
+      "rank": 15,
       "sightings": 3,
       "notes": [
         "2026-10-27: Hit again in the Google Calendar cycle: advance from the save gate blocked until save-approval was run by hand.",
@@ -436,7 +433,7 @@
       "source": "session-review",
       "status": "pending",
       "proposedAt": "2026-10-27T14:50:47.901425810+00:00",
-      "rank": 8,
+      "rank": 14,
       "sightings": 2
     },
     {
@@ -448,7 +445,6 @@
       "source": "session-review",
       "status": "pending",
       "proposedAt": "2026-10-27T14:50:47.901425810+00:00",
-      "rank": 9,
       "sightings": 2
     },
     {
@@ -461,7 +457,6 @@
       "source": "codeyam-improvement",
       "status": "pending",
       "proposedAt": "2026-10-27T16:34:02.438055494+00:00",
-      "rank": 28,
       "sightings": 1
     },
     {
@@ -485,7 +480,6 @@
       "source": "codeyam-improvement",
       "status": "pending",
       "proposedAt": "2026-10-27T19:35:17.608223131+00:00",
-      "rank": 14,
       "sightings": 1
     },
     {
@@ -498,7 +492,7 @@
       "source": "codeyam-improvement",
       "status": "pending",
       "proposedAt": "2026-10-27T19:35:17.608223131+00:00",
-      "rank": 15,
+      "rank": 9,
       "sightings": 1
     },
     {
@@ -511,7 +505,6 @@
       "source": "codeyam-improvement",
       "status": "pending",
       "proposedAt": "2026-10-27T19:35:17.608223131+00:00",
-      "rank": 22,
       "sightings": 1
     },
     {
@@ -524,7 +517,6 @@
       "source": "codeyam-improvement",
       "status": "pending",
       "proposedAt": "2026-10-27T19:35:17.608223131+00:00",
-      "rank": 23,
       "sightings": 1
     },
     {
@@ -536,6 +528,41 @@
       "source": "session-review",
       "status": "pending",
       "proposedAt": "2026-10-27T19:35:17.608223131+00:00",
+      "rank": 4,
+      "sightings": 1
+    },
+    {
+      "id": "push-refuses-the-feature-commit-even-though-session-finalize-passed-just-before-it-was-made",
+      "title": "Push refuses the feature commit even though session-finalize passed just before it was made",
+      "mode": "backend",
+      "body": "## What happened\nsession-finalize ran at the Finalize step and passed (152/152 tests). The Commit step then created f641016. At the Push step, `codeyam-editor editor push` exited 1 with \"Refusing to push: 1 source commit(s) after the last finalize carry no deferred trailer and are not yet finalized\", naming f641016. Re-running `session-finalize` reused every cached partition and passed in ~20s, after which push succeeded. The tree was identical to the one finalize had validated.\n\n## What would have helped\nRecord the finalize verdict against the tree hash (or have `commit` stamp the resulting commit as covered when its tree matches the last finalized tree), so the in-workflow Finalize → Commit → Push sequence never trips the un-finalized-commit guard.",
+      "reason": "Push blocked a freshly finalized commit and forced a second session-finalize run",
+      "severity": 3,
+      "source": "codeyam-improvement",
+      "status": "pending",
+      "proposedAt": "2026-11-02T18:36:53.943777086+00:00",
+      "sightings": 1
+    },
+    {
+      "id": "races-saved-before-this-update-never-show-the-changed-since-you-saved-note-because-their-registration-status-at-save-time-was-not-recorded",
+      "title": "Races saved before this update never show the \"changed since you saved\" note, because their registration status at save time was not recorded.",
+      "mode": "backend",
+      "body": "## Summary\n\nRaces saved before this update never show the \"changed since you saved\" note, because their registration status at save time was not recorded.\n\nAt the approval gate for \"My Races page with notes and status changes\" the user approved the built work past this gap: it differs from what the plan asked for. Built from plan `my-races-page-with-notes-and-status-changes` (now at `.codeyam/plans/completed/my-races-page-with-notes-and-status-changes.md`).\n\nYou now have a My Races page that gathers every race you've saved, with your own notes and a heads-up when a race changes.\n\n## What you can now do\n- Open **My Races** from the header to see all your saved races in one place, grouped by upcoming and past\n- Add or edit a personal note on any saved race\n- Spot races whose date or status changed since you saved them\n- See a clear notice and remove a race that's no longer listed\n\nRead that plan and the code it changed before planning how to close the gap.",
+      "reason": "Approved past at the approval gate for \"My Races page with notes and status changes\".",
+      "source": "session-review",
+      "status": "pending",
+      "proposedAt": "2026-11-02T18:36:53.943777086+00:00",
+      "sightings": 1
+    },
+    {
+      "id": "the-lookup-that-reads-saved-races-from-the-database-has-no-test-that-runs-it-against-a-real-database-the-sorting-and-labelling-it-hands-off-to-are-tested",
+      "title": "The lookup that reads saved races from the database has no test that runs it against a real database; the sorting and labelling it hands off to are tested.",
+      "mode": "backend",
+      "body": "## Summary\n\nThe lookup that reads saved races from the database has no test that runs it against a real database; the sorting and labelling it hands off to are tested.\n\nAt the approval gate for \"My Races page with notes and status changes\" the user approved the built work past this gap: it differs from what the plan asked for. Built from plan `my-races-page-with-notes-and-status-changes` (now at `.codeyam/plans/completed/my-races-page-with-notes-and-status-changes.md`).\n\nYou now have a My Races page that gathers every race you've saved, with your own notes and a heads-up when a race changes.\n\n## What you can now do\n- Open **My Races** from the header to see all your saved races in one place, grouped by upcoming and past\n- Add or edit a personal note on any saved race\n- Spot races whose date or status changed since you saved them\n- See a clear notice and remove a race that's no longer listed\n\nRead that plan and the code it changed before planning how to close the gap.",
+      "reason": "Approved past at the approval gate for \"My Races page with notes and status changes\".",
+      "source": "session-review",
+      "status": "pending",
+      "proposedAt": "2026-11-02T18:36:53.943777086+00:00",
       "sightings": 1
     }
   ],
@@ -806,6 +833,38 @@
         "blank-page-check-misses-photos-drawn-as-css-backgrounds",
         "prove-red-cannot-measure-a-fix-that-lives-in-a-shell-script",
         "preview-flow-cannot-scroll-a-below-the-fold-element-into-view-before-capturing"
+      ]
+    },
+    {
+      "at": "2026-11-02T18:36:53.943777086+00:00",
+      "feature": "My Races page with notes and status changes",
+      "notes": "Smooth cycle. Only friction: push refused the feature commit created right after a passing session-finalize; a cached re-finalize cleared it. Touched app files are all small (largest component 40 lines) with unit tests on the logic, so no …",
+      "proposedIds": [
+        "push-refuses-the-feature-commit-even-though-session-finalize-passed-just-before-it-was-made",
+        "races-saved-before-this-update-never-show-the-changed-since-you-saved-note-because-their-registration-status-at-save-time-was-not-recorded",
+        "the-lookup-that-reads-saved-races-from-the-database-has-no-test-that-runs-it-against-a-real-database-the-sorting-and-labelling-it-hands-off-to-are-tested"
+      ],
+      "rankedIds": [
+        "distinguish-open-registration-lotteries-time-qualification-charity-and-membership-entry-with-qualification-windows-per-edition",
+        "the-template-s-lint-setup-is-broken-it-points-at-a-missing-file-so-lint-was-not-run-type-checks-and-55-unit-tests-pass",
+        "prioritise-google-calendar-for-adding-events",
+        "the-plan-listed-a-phone-layout-demo-saving-works-on-phones-but-there-is-no-phone-size-demo-of-saved-races-yet",
+        "save-log-in-sign-up-and-more-filters-do-not-work-yet-there-are-no-accounts-and-the-page-says-so",
+        "scenario-sandbox-database-emptied-after-a-test-run",
+        "github-setup-unusable-in-codespaces-because-github-token-shadows-a-real-login",
+        "relative-seed-token-today-nh-silently-drops-the-hours",
+        "blank-isolated-component-capture-accepted-as-a-successful-register",
+        "a-malformed-scenariofixturedateskip-entry-breaks-every-editor-command",
+        "prototype-plan-resumes-at-deconstruct-with-no-app-scaffolded",
+        "the-nyc-half-lottery-deadline-is-22-days-away-so-it-is-not-highlighted-the-mockup-highlighted-it",
+        "the-default-search-shows-4-half-marathons-not-the-mockup-s-5-the-brooklyn-half-may-15-falls-outside-the-next-6-months-so-it-appears-in-the-12-month-view-instead",
+        "not-yet-tried-on-a-real-codespace-restart-or-a-brand-new-codespace-tests-run-the-start-up-script-with-stand-in-commands",
+        "review-gate-refused-to-advance-after-the-user-answered-until-save-approval-was-run",
+        "commit-step-lint-gate-needs-a-file-edit-that-the-commit-step-forbids",
+        "one-of-46-component-screenshots-kept-an-older-capture-showing-the-next-js-dev-badge",
+        "the-not-found-page-is-shown-as-a-component-screenshot-not-a-full-page-one-because-the-capture-tool-skips-error-pages",
+        "my-races-view-with-upcoming-races-registration-milestones-notes-and-status-changes",
+        "race-detail-page-with-date-location-distance-terrain-organizer-price-and-official-registration-link"
       ]
     }
   ],
