@@ -26,3 +26,8 @@
 .codeyam/scenario-interactivity.js merge=codeyam-generated-artifact
 .codeyam/scenario-targeting.js merge=codeyam-generated-artifact
 .codeyam/scenario-launch.js merge=codeyam-generated-artifact
+.codeyam/size-ledger.json merge=codeyam-size-ledger
+.codeyam/scenario-check-run.js merge=codeyam-generated-artifact
+.codeyam/scenario-check-attribution.js merge=codeyam-generated-artifact
+.codeyam/wasm-name-section.js merge=codeyam-generated-artifact
+.codeyam/wasm-source-attribution.js merge=codeyam-generated-artifact
