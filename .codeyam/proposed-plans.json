@@ -30,9 +30,14 @@
       "reason": "A plan from a mockup-only prototype started at step 11 and failed: no startCommand",
       "severity": 3,
       "source": "codeyam-improvement",
-      "status": "pending",
+      "status": "retired",
       "proposedAt": "2026-10-26T20:10:25.299052082+00:00",
-      "sightings": 2
+      "sightings": 2,
+      "notes": [
+        "2026-11-04: migrated to a debt finding"
+      ],
+      "decidedAt": "2026-11-04T20:04:38.523244717+00:00",
+      "retiredReason": "migrated-to-findings"
     },
     {
       "id": "live-preview-blank-in-codespaces-until-preview-origin-and-dev-origins-are-changed",
@@ -60,9 +65,14 @@
       "reason": "@today+377h expanded to a midnight date, shifting deadline times and race days",
       "severity": 3,
       "source": "codeyam-improvement",
-      "status": "pending",
+      "status": "retired",
       "proposedAt": "2026-10-26T20:10:25.299052082+00:00",
-      "sightings": 2
+      "sightings": 2,
+      "notes": [
+        "2026-11-04: migrated to a debt finding"
+      ],
+      "decidedAt": "2026-11-04T20:04:38.523244717+00:00",
+      "retiredReason": "migrated-to-findings"
     },
     {
       "id": "github-setup-unusable-in-codespaces-because-github-token-shadows-a-real-login",
@@ -72,9 +82,14 @@
       "reason": "gh looks signed in via the codespace token, which cannot create repos; needed env -u GITHUB_TOKEN gh auth login",
       "severity": 3,
       "source": "codeyam-improvement",
-      "status": "pending",
+      "status": "retired",
       "proposedAt": "2026-10-26T20:10:25.299052082+00:00",
-      "sightings": 2
+      "sightings": 2,
+      "notes": [
+        "2026-11-04: migrated to a debt finding"
+      ],
+      "decidedAt": "2026-11-04T20:04:38.523244717+00:00",
+      "retiredReason": "migrated-to-findings"
     },
     {
       "id": "stage-feature-path-replaces-earlier-staging-so-the-commit-lost-the-app-source",
@@ -98,9 +113,14 @@
       "reason": "Preview rendered 0 races until the scenario was re-registered",
       "severity": 3,
       "source": "codeyam-improvement",
-      "status": "pending",
+      "status": "retired",
       "proposedAt": "2026-10-26T20:10:25.299052082+00:00",
-      "sightings": 2
+      "sightings": 2,
+      "notes": [
+        "2026-11-04: migrated to a debt finding"
+      ],
+      "decidedAt": "2026-11-04T20:04:38.523244717+00:00",
+      "retiredReason": "migrated-to-findings"
     },
     {
       "id": "commit-step-lint-gate-needs-a-file-edit-that-the-commit-step-forbids",
@@ -110,9 +130,14 @@
       "reason": "lockfile-sync required .nvmrc at commit time; the matching README edit was then refused",
       "severity": 2,
       "source": "codeyam-improvement",
-      "status": "pending",
+      "status": "retired",
       "proposedAt": "2026-10-26T20:10:25.299052082+00:00",
-      "sightings": 2
+      "sightings": 2,
+      "notes": [
+        "2026-11-04: migrated to a debt finding"
+      ],
+      "decidedAt": "2026-11-04T20:04:38.523244717+00:00",
+      "retiredReason": "migrated-to-findings"
     },
     {
       "id": "the-default-search-shows-4-half-marathons-not-the-mockup-s-5-the-brooklyn-half-may-15-falls-outside-the-next-6-months-so-it-appears-in-the-12-month-view-instead",
@@ -362,9 +387,14 @@
       "reason": "False alarm shown twice; the user asked to get rid of it",
       "severity": 3,
       "source": "codeyam-improvement",
-      "status": "pending",
+      "status": "retired",
       "proposedAt": "2026-10-26T21:54:14.624177062+00:00",
-      "sightings": 1
+      "sightings": 1,
+      "notes": [
+        "2026-11-04: migrated to a debt finding"
+      ],
+      "decidedAt": "2026-11-04T20:04:38.523244717+00:00",
+      "retiredReason": "migrated-to-findings"
     },
     {
       "id": "blank-page-check-misses-photos-drawn-as-css-backgrounds",
@@ -374,9 +404,14 @@
       "reason": "A photo thumbnail was reported as a blank page",
       "severity": 2,
       "source": "codeyam-improvement",
-      "status": "pending",
+      "status": "retired",
       "proposedAt": "2026-10-26T21:54:14.624177062+00:00",
-      "sightings": 1
+      "sightings": 1,
+      "notes": [
+        "2026-11-04: migrated to a debt finding"
+      ],
+      "decidedAt": "2026-11-04T20:04:38.523244717+00:00",
+      "retiredReason": "migrated-to-findings"
     },
     {
       "id": "a-malformed-scenariofixturedateskip-entry-breaks-every-editor-command",
@@ -386,9 +421,14 @@
       "reason": "A slug-only opt-out made the editor unable to read its own config",
       "severity": 3,
       "source": "codeyam-improvement",
-      "status": "pending",
+      "status": "retired",
       "proposedAt": "2026-10-26T21:54:14.624177062+00:00",
-      "sightings": 1
+      "sightings": 1,
+      "notes": [
+        "2026-11-04: migrated to a debt finding"
+      ],
+      "decidedAt": "2026-11-04T20:04:38.523244717+00:00",
+      "retiredReason": "migrated-to-findings"
     },
     {
       "id": "there-is-no-lottery-race-none-of-the-races-i-could-verify-uses-a-lottery-and-new-york-road-runners-races-are-missing-because-their-site-blocks-automated-reading",
@@ -427,9 +467,14 @@
       "reason": "Neutering a .sh fix reported selected-nothing; red had to be proven by hand and attested",
       "severity": 2,
       "source": "codeyam-improvement",
-      "status": "pending",
+      "status": "retired",
       "proposedAt": "2026-10-27T14:50:47.901425810+00:00",
-      "sightings": 1
+      "sightings": 1,
+      "notes": [
+        "2026-11-04: migrated to a debt finding"
+      ],
+      "decidedAt": "2026-11-04T20:04:38.523244717+00:00",
+      "retiredReason": "migrated-to-findings"
     },
     {
       "id": "review-gate-refused-to-advance-after-the-user-answered-until-save-approval-was-run",
@@ -439,13 +484,16 @@
       "reason": "Seen again at the Save gate this session.",
       "severity": 2,
       "source": "codeyam-improvement",
-      "status": "pending",
+      "status": "retired",
       "proposedAt": "2026-10-27T14:50:47.901425810+00:00",
       "sightings": 3,
       "notes": [
         "2026-10-27: Hit again in the Google Calendar cycle: advance from the save gate blocked until save-approval was run by hand.",
-        "2026-10-27: Seen again: the user picked 'Save my work — full check now' and advance still refused until save-approval recorded it."
-      ]
+        "2026-10-27: Seen again: the user picked 'Save my work — full check now' and advance still refused until save-approval recorded it.",
+        "2026-11-04: migrated to a debt finding"
+      ],
+      "decidedAt": "2026-11-04T20:04:38.523244717+00:00",
+      "retiredReason": "migrated-to-findings"
     },
     {
       "id": "not-yet-tried-on-a-real-codespace-restart-or-a-brand-new-codespace-tests-run-the-start-up-script-with-stand-in-commands",
@@ -483,9 +531,14 @@
       "reason": "A demo capture of an opened menu below the fold cut the menu off at the frame edge",
       "severity": 2,
       "source": "codeyam-improvement",
-      "status": "pending",
+      "status": "retired",
       "proposedAt": "2026-10-27T16:34:02.438055494+00:00",
-      "sightings": 1
+      "sightings": 1,
+      "notes": [
+        "2026-11-04: migrated to a debt finding"
+      ],
+      "decidedAt": "2026-11-04T20:04:38.523244717+00:00",
+      "retiredReason": "migrated-to-findings"
     },
     {
       "id": "the-plan-listed-separate-saved-previews-for-the-open-menu-on-a-timed-deadline-a-date-only-deadline-race-day-and-a-phone-they-all-look-identical-so-there-is-one-open-menu-preview-the-differences-between-them-are-checked-by-automated-te",
@@ -509,9 +562,14 @@
       "reason": "The user could not copy a branch link from the terminal and had to ask for it on a preview page.",
       "severity": 3,
       "source": "codeyam-improvement",
-      "status": "pending",
+      "status": "retired",
       "proposedAt": "2026-10-27T19:35:17.608223131+00:00",
-      "sightings": 1
+      "sightings": 1,
+      "notes": [
+        "2026-11-04: migrated to a debt finding"
+      ],
+      "decidedAt": "2026-11-04T20:04:38.523244717+00:00",
+      "retiredReason": "migrated-to-findings"
     },
     {
       "id": "blank-isolated-component-capture-accepted-as-a-successful-register",
@@ -521,9 +579,14 @@
       "reason": "Three new component screenshots were blank and register still reported success.",
       "severity": 3,
       "source": "codeyam-improvement",
-      "status": "pending",
+      "status": "retired",
       "proposedAt": "2026-10-27T19:35:17.608223131+00:00",
-      "sightings": 1
+      "sightings": 1,
+      "notes": [
+        "2026-11-04: migrated to a debt finding"
+      ],
+      "decidedAt": "2026-11-04T20:04:38.523244717+00:00",
+      "retiredReason": "migrated-to-findings"
     },
     {
       "id": "committing-to-another-branch-from-a-worktree-needs-a-second-editor-server",
@@ -533,9 +596,14 @@
       "reason": "Adding a text report to a debug branch took a project registration, a temporary server with port overrides, and a test refresh.",
       "severity": 2,
       "source": "codeyam-improvement",
-      "status": "pending",
+      "status": "retired",
       "proposedAt": "2026-10-27T19:35:17.608223131+00:00",
-      "sightings": 1
+      "sightings": 1,
+      "notes": [
+        "2026-11-04: migrated to a debt finding"
+      ],
+      "decidedAt": "2026-11-04T20:04:38.523244717+00:00",
+      "retiredReason": "migrated-to-findings"
     },
     {
       "id": "scenario-browserstate-localstorage-is-not-documented-in-register-help",
@@ -545,9 +613,14 @@
       "reason": "Seeding saved races into a scenario relied on a field named only in passing in step text.",
       "severity": 2,
       "source": "codeyam-improvement",
-      "status": "pending",
+      "status": "retired",
       "proposedAt": "2026-10-27T19:35:17.608223131+00:00",
-      "sightings": 1
+      "sightings": 1,
+      "notes": [
+        "2026-11-04: migrated to a debt finding"
+      ],
+      "decidedAt": "2026-11-04T20:04:38.523244717+00:00",
+      "retiredReason": "migrated-to-findings"
     },
     {
       "id": "the-plan-listed-a-phone-layout-demo-saving-works-on-phones-but-there-is-no-phone-size-demo-of-saved-races-yet",
@@ -571,9 +644,14 @@
       "reason": "Push blocked a freshly finalized commit and forced a second session-finalize run",
       "severity": 3,
       "source": "codeyam-improvement",
-      "status": "pending",
+      "status": "retired",
       "proposedAt": "2026-11-02T18:36:53.943777086+00:00",
-      "sightings": 1
+      "sightings": 1,
+      "notes": [
+        "2026-11-04: migrated to a debt finding"
+      ],
+      "decidedAt": "2026-11-04T20:04:38.523244717+00:00",
+      "retiredReason": "migrated-to-findings"
     },
     {
       "id": "races-saved-before-this-update-never-show-the-changed-since-you-saved-note-because-their-registration-status-at-save-time-was-not-recorded",
@@ -953,6 +1031,11 @@
         "the-lookup-that-reads-saved-races-from-the-database-has-no-test-that-runs-it-against-a-real-database-the-sorting-and-labelling-it-hands-off-to-are-tested",
         "races-saved-before-this-update-never-show-the-changed-since-you-saved-note-because-their-registration-status-at-save-time-was-not-recorded"
       ]
+    },
+    {
+      "at": "2026-11-04T20:04:38.523244717+00:00",
+      "feature": "Real registration-opening dates for every race",
+      "notes": "Resumed at reconcile after a context reset. The only audit drift was a lost clock pin on one home scenario; restoring it produced a pixel-identical capture. Full suite: 177/177 passed. Pushed to main. Price mismatches on three races are re…"
     }
   ],
   "syntheses": [
