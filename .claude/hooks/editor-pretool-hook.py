@@ -94,6 +94,47 @@ def staged_paths_are_plans_only(project_dir):
     return all(l.startswith(PLAN_PATH_PREFIX) for l in lines)
 
 
+# The planning-state stores a proposed-plan decision commits beside the plan,
+# and the state directory a `chore: update codeyam state` commit touches.
+# Mirrors `PLANNING_STATE_FILES` / `STATE_DIR_PREFIX` in
+# `crates/codeyam-editor/src/commands/editor/push_plan_only.rs`.
+PLANNING_STATE_FILES = (".codeyam/proposed-plans.json", ".codeyam/project-deliverables.json")
+STATE_DIR_PREFIX = ".codeyam/state/"
+
+
+def _git_lines(project_dir, args):
+    """`git <args>` stdout lines, or None when git fails or times out."""
+    try:
+        result = subprocess.run(
+            ["git", *args], cwd=project_dir, capture_output=True, text=True, timeout=2
+        )
+    except Exception:
+        return None
+    if result.returncode != 0:
+        return None
+    return [l for l in result.stdout.splitlines() if l.strip()]
+
+
+def unpushed_range_is_plan_only(project_dir):
+    """True iff `@{upstream}..HEAD` holds at least one commit and every one of
+    them touches only planning paths or only `.codeyam/state/` — the range
+    `codeyam-editor editor push` ships at any step without the commit queue.
+    Mirrors `push_plan_only::commit_skips_queue`; anything git cannot answer
+    is False, so the refusal keeps its ordinary wording."""
+    shas = _git_lines(project_dir, ["rev-list", "@{upstream}..HEAD"])
+    if not shas:
+        return False
+    for sha in shas:
+        files = _git_lines(project_dir, ["diff-tree", "--no-commit-id", "--name-only", "-r", sha])
+        if not files:
+            return False
+        planning = all(f.startswith(PLAN_PATH_PREFIX) or f in PLANNING_STATE_FILES for f in files)
+        state = all(f.startswith(STATE_DIR_PREFIX) for f in files)
+        if not (planning or state):
+            return False
+    return True
+
+
 def git_add_paths_are_plans_only(command):
     """True iff a `git add` command targets only paths under .codeyam/plans/.
 
@@ -6730,13 +6771,24 @@ def main():
         if invokes_git_subcommand(command, "push"):
             if slug and push_slugs and slug not in push_slugs:
                 allowed = ", ".join(sorted(push_slugs))
+                if unpushed_range_is_plan_only(project_dir):
+                    next_action = (
+                        "run `codeyam-editor editor push` — every unpushed commit is a plan "
+                        "or state commit, and plan-only pushes are allowed at any step. It "
+                        "skips the commit queue and handles a moved remote and a dirty tree, "
+                        "which a raw `git push` does not."
+                    )
+                else:
+                    next_action = (
+                        "keep advancing to the `push` slug, which runs "
+                        "`codeyam-editor editor push` with the queue held."
+                    )
                 block(
                     project_dir,
                     "git-push",
                     f"git push is only allowed at slug(s): {allowed}. "
                     f"You are at {_slug_label(state, slug)}.",
-                    "keep advancing to the `push` slug, which runs "
-                    "`codeyam-editor editor push` with the queue held.",
+                    next_action,
                     detail=slug,
                     evidence=(
                         f"{resolved_context(project_dir, state_path)}; `git push` is "
