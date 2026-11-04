@@ -95,7 +95,7 @@
       "file": "app/lib/raceDetail.test.ts",
       "format": "vitest",
       "key": "buildTimeline › is empty when nothing is announced",
-      "line": 55,
+      "line": 57,
       "registeredAt": "2026-10-26T21:01:51Z",
       "runner": "tests"
     },
@@ -104,7 +104,7 @@
       "file": "app/lib/raceDetail.test.ts",
       "format": "vitest",
       "key": "buildTimeline › keeps a date-only deadline for today as next",
-      "line": 49,
+      "line": 51,
       "registeredAt": "2026-10-26T21:01:51Z",
       "runner": "tests"
     },
@@ -113,7 +113,7 @@
       "file": "app/lib/raceDetail.test.ts",
       "format": "vitest",
       "key": "buildTimeline › marks past, next and upcoming",
-      "line": 38,
+      "line": 40,
       "registeredAt": "2026-10-26T21:01:51Z",
       "runner": "tests"
     },
@@ -122,7 +122,7 @@
       "file": "app/lib/raceDetail.test.ts",
       "format": "vitest",
       "key": "buildTimeline › sorts milestones by date and appends race day",
-      "line": 26,
+      "line": 28,
       "registeredAt": "2026-10-26T21:01:51Z",
       "runner": "tests"
     },
@@ -194,7 +194,7 @@
       "file": "app/lib/raceDetail.test.ts",
       "format": "vitest",
       "key": "entryMethod › explains known entry methods",
-      "line": 85,
+      "line": 87,
       "registeredAt": "2026-10-26T21:01:51Z",
       "runner": "tests"
     },
@@ -203,7 +203,7 @@
       "file": "app/lib/raceDetail.test.ts",
       "format": "vitest",
       "key": "entryMethod › falls back to the raw method",
-      "line": 91,
+      "line": 93,
       "registeredAt": "2026-10-26T21:01:51Z",
       "runner": "tests"
     },
@@ -212,7 +212,7 @@
       "file": "app/lib/format.test.ts",
       "format": "vitest",
       "key": "etDate › gives the ET calendar date",
-      "line": 16,
+      "line": 17,
       "registeredAt": "2026-10-26T21:01:51Z",
       "runner": "tests"
     },
@@ -320,7 +320,7 @@
       "file": "app/lib/format.test.ts",
       "format": "vitest",
       "key": "formatDay › formats in Eastern Time even across a UTC date boundary",
-      "line": 48,
+      "line": 49,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -329,7 +329,7 @@
       "file": "app/lib/format.test.ts",
       "format": "vitest",
       "key": "formatDistance › appends elevation gain",
-      "line": 95,
+      "line": 96,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -338,7 +338,7 @@
       "file": "app/lib/format.test.ts",
       "format": "vitest",
       "key": "formatDistance › formats miles",
-      "line": 89,
+      "line": 90,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -347,7 +347,7 @@
       "file": "app/lib/format.test.ts",
       "format": "vitest",
       "key": "formatEt › joins day and time",
-      "line": 68,
+      "line": 69,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -356,7 +356,7 @@
       "file": "app/lib/format.test.ts",
       "format": "vitest",
       "key": "formatLongDay › spells out weekday, month and year",
-      "line": 24,
+      "line": 25,
       "registeredAt": "2026-10-26T21:01:51Z",
       "runner": "tests"
     },
@@ -365,7 +365,7 @@
       "file": "app/lib/format.test.ts",
       "format": "vitest",
       "key": "formatPrice › formats cents as dollars",
-      "line": 39,
+      "line": 40,
       "registeredAt": "2026-10-26T21:01:51Z",
       "runner": "tests"
     },
@@ -374,7 +374,7 @@
       "file": "app/lib/format.test.ts",
       "format": "vitest",
       "key": "formatTime › formats standard time with a lowercase meridiem and ET",
-      "line": 56,
+      "line": 57,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -383,7 +383,7 @@
       "file": "app/lib/format.test.ts",
       "format": "vitest",
       "key": "formatTime › handles daylight saving time",
-      "line": 61,
+      "line": 62,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -392,7 +392,7 @@
       "file": "app/lib/format.test.ts",
       "format": "vitest",
       "key": "formatWhen › shows the time only when it is known",
-      "line": 31,
+      "line": 32,
       "registeredAt": "2026-10-26T21:01:51Z",
       "runner": "tests"
     },
@@ -622,11 +622,56 @@
       "runner": "tests"
     },
     {
+      "description": "Race day keeps the same wording whether or not it has passed.",
+      "file": "app/lib/format.test.ts",
+      "format": "vitest",
+      "key": "milestoneLabel › always calls race day Race day",
+      "line": 116,
+      "registeredAt": "2026-11-04T18:31:31Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A kind with no past-tense wording falls back to its normal label.",
+      "file": "app/lib/format.test.ts",
+      "format": "vitest",
+      "key": "milestoneLabel › falls back to the present label when no past wording exists",
+      "line": 122,
+      "registeredAt": "2026-11-04T18:31:31Z",
+      "runner": "tests"
+    },
+    {
+      "description": "An unknown kind is shown as-is rather than hidden.",
+      "file": "app/lib/format.test.ts",
+      "format": "vitest",
+      "key": "milestoneLabel › falls back to the raw kind",
+      "line": 83,
+      "registeredAt": "2026-11-04T18:31:31Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A milestone that already happened reads in the past tense.",
+      "file": "app/lib/format.test.ts",
+      "format": "vitest",
+      "key": "milestoneLabel › uses the past-tense label for passed milestones",
+      "line": 109,
+      "registeredAt": "2026-11-04T18:31:31Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Upcoming milestones use the present-tense timeline label.",
+      "file": "app/lib/format.test.ts",
+      "format": "vitest",
+      "key": "milestoneLabel › uses the present-tense label by default",
+      "line": 103,
+      "registeredAt": "2026-11-04T18:31:31Z",
+      "runner": "tests"
+    },
+    {
       "description": "An unknown kind is shown as-is rather than hidden.",
       "file": "app/lib/format.test.ts",
       "format": "vitest",
       "key": "milestoneVerb › falls back to the raw kind",
-      "line": 82,
+      "line": 83,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -635,7 +680,7 @@
       "file": "app/lib/format.test.ts",
       "format": "vitest",
       "key": "milestoneVerb › maps known kinds to verbs",
-      "line": 75,
+      "line": 76,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -671,7 +716,7 @@
       "file": "app/lib/raceDetail.test.ts",
       "format": "vitest",
       "key": "nextDeadline › skips past entries and race day",
-      "line": 62,
+      "line": 64,
       "registeredAt": "2026-10-26T21:01:51Z",
       "runner": "tests"
     },
@@ -707,7 +752,7 @@
       "file": "app/lib/raceDetail.test.ts",
       "format": "vitest",
       "key": "officialLink › falls back to the source then the organizer",
-      "line": 106,
+      "line": 108,
       "registeredAt": "2026-10-26T21:01:51Z",
       "runner": "tests"
     },
@@ -716,8 +761,44 @@
       "file": "app/lib/raceDetail.test.ts",
       "format": "vitest",
       "key": "officialLink › prefers the registration link",
-      "line": 98,
+      "line": 100,
       "registeredAt": "2026-10-26T21:01:51Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A published registration opening is a known opening date.",
+      "file": "app/lib/raceDetail.test.ts",
+      "format": "vitest",
+      "key": "openingDateUnknown › is false when registration opening is listed",
+      "line": 174,
+      "registeredAt": "2026-11-04T18:31:31Z",
+      "runner": "tests"
+    },
+    {
+      "description": "For lottery races, the lottery opening counts as the opening date.",
+      "file": "app/lib/raceDetail.test.ts",
+      "format": "vitest",
+      "key": "openingDateUnknown › is false when the lottery opening is listed",
+      "line": 179,
+      "registeredAt": "2026-11-04T18:31:31Z",
+      "runner": "tests"
+    },
+    {
+      "description": "With no dates at all, the opening date is unknown.",
+      "file": "app/lib/raceDetail.test.ts",
+      "format": "vitest",
+      "key": "openingDateUnknown › is true for an empty timeline",
+      "line": 164,
+      "registeredAt": "2026-11-04T18:31:31Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Other dates do not count as an opening date.",
+      "file": "app/lib/raceDetail.test.ts",
+      "format": "vitest",
+      "key": "openingDateUnknown › is true when only non-opening dates are listed",
+      "line": 169,
+      "registeredAt": "2026-11-04T18:31:31Z",
       "runner": "tests"
     },
     {
@@ -725,7 +806,7 @@
       "file": "app/lib/raceDetail.test.ts",
       "format": "vitest",
       "key": "pageUrlFrom › defaults to http on localhost",
-      "line": 133,
+      "line": 135,
       "registeredAt": "2026-10-26T21:01:51Z",
       "runner": "tests"
     },
@@ -734,7 +815,7 @@
       "file": "app/lib/raceDetail.test.ts",
       "format": "vitest",
       "key": "pageUrlFrom › uses forwarded host and protocol",
-      "line": 127,
+      "line": 129,
       "registeredAt": "2026-10-26T21:01:51Z",
       "runner": "tests"
     },
@@ -1000,11 +1081,38 @@
       "runner": "tests"
     },
     {
+      "description": "Statuses before opening do not count.",
+      "file": "app/lib/raceDetail.test.ts",
+      "format": "vitest",
+      "key": "registrationHasOpened › is false before registration opens",
+      "line": 193,
+      "registeredAt": "2026-11-04T18:31:31Z",
+      "runner": "tests"
+    },
+    {
+      "description": "An unrecognized status is not assumed to be open.",
+      "file": "app/lib/raceDetail.test.ts",
+      "format": "vitest",
+      "key": "registrationHasOpened › is false for an unknown status",
+      "line": 199,
+      "registeredAt": "2026-11-04T18:31:31Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Every status that can only follow an opening counts as already opened.",
+      "file": "app/lib/raceDetail.test.ts",
+      "format": "vitest",
+      "key": "registrationHasOpened › is true for statuses after registration opened",
+      "line": 186,
+      "registeredAt": "2026-11-04T18:31:31Z",
+      "runner": "tests"
+    },
+    {
       "description": "The issue is pre-filled with the race, edition, page link and a label.",
       "file": "app/lib/raceDetail.test.ts",
       "format": "vitest",
       "key": "reportIssueUrl › pre-fills a GitHub issue",
-      "line": 141,
+      "line": 143,
       "registeredAt": "2026-10-26T21:01:51Z",
       "runner": "tests"
     },
@@ -1184,7 +1292,7 @@
       "file": "app/lib/raceDetail.test.ts",
       "format": "vitest",
       "key": "sourceHost › strips www and handles missing or bad URLs",
-      "line": 118,
+      "line": 120,
       "registeredAt": "2026-10-26T21:01:51Z",
       "runner": "tests"
     },
@@ -1265,7 +1373,7 @@
       "file": "app/lib/raceDetail.test.ts",
       "format": "vitest",
       "key": "timelineCalendarHref › builds race day and milestone links",
-      "line": 76,
+      "line": 78,
       "registeredAt": "2026-10-26T21:01:51Z",
       "runner": "tests"
     },

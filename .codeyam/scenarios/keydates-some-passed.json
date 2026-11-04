@@ -1,6 +1,6 @@
 {
   "name": "KeyDates - Some Passed",
-  "id": "a1bc1e04-02e5-41ae-80b3-5476b5efea06",
+  "id": "9dfbb20f-5fa0-42d7-8754-5ce91884e1db",
   "url": "/isolated-components/KeyDates?s=SomePassed",
   "dimensions": [
     "Desktop"
@@ -8,5 +8,5 @@
   "mocks": {},
   "componentName": "KeyDates",
   "scenarioType": "component",
-  "description": "KeyDates in its some passed state, using the real researched race data."
+  "description": "KeyDates with some dates passed: passed dates read in the past tense, plus the Opening date not announced row because no opening date is published."
 }

@@ -1,0 +1,12 @@
+{
+  "name": "OpeningDateUnknown - Not Yet Open",
+  "id": "ed65701d-01bf-46f9-9ccc-02d7441b42af",
+  "url": "/isolated-components/OpeningDateUnknown?s=NotYetOpen",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "OpeningDateUnknown",
+  "scenarioType": "component",
+  "description": "Key-dates row for a race whose organizer hasn't published when registration opens."
+}

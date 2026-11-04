@@ -649,9 +649,9 @@
    "year": 2026,
    "raceDate": "2026-11-14T11:00:00.000Z",
    "raceDateTentative": false,
-   "registrationStatus": "open",
+   "registrationStatus": "waitlist",
    "entryMethod": "open",
-   "entryNote": "2026 edition, 50 Miler starts 6:00 AM (50K 7:00 AM, half 8:00 AM). Open registration on UltraSignup until Thu Nov 12, 2026 11:59 PM ET. Very limited: page showed only 5 spots left in the 50 Miler (14 in 50K, 29 in half) on 2026-10-28. Refund policy not stated.",
+   "entryNote": "2026 edition, 50 Miler starts 6:00 AM (50K 7:00 AM, half 8:00 AM). Open registration on UltraSignup until Thu Nov 12, 2026 11:59 PM ET. The 50 Miler is sold out; UltraSignup offers a free waitlist (50K and half still had spots on 2026-11-04). Refund policy not stated.",
    "priceCents": 19500,
    "priceNote": "50 Miler, before UltraSignup taxes/fees ($211.17 total). 50K $155.",
    "registrationUrl": "https://ultrasignup.com/register.aspx?did=136156",
@@ -809,9 +809,9 @@
    "year": 2027,
    "raceDate": "2027-05-02T11:30:00.000Z",
    "raceDateTentative": false,
-   "registrationStatus": "opening_soon",
+   "registrationStatus": "open",
    "entryMethod": "open",
-   "entryNote": "Open registration on RunSignup opens Nov 1, 2026. The marathon is part of a race weekend that runs Apr 30-May 2, 2027 and also includes a 5K, 10K, half marathon, kids 1K, and multi-race challenges. 7:30 AM start. The page names no Boston-qualifier status, registration close date, or charity bib program.",
+   "entryNote": "Open registration on RunSignup opened Nov 1, 2026. The marathon is part of a race weekend that runs Apr 30-May 2, 2027 and also includes a 5K, 10K, half marathon, kids 1K, and multi-race challenges. 7:30 AM start. The page names no Boston-qualifier status, registration close date, or charity bib program.",
    "priceCents": 12900,
    "priceNote": "Marathon adult price $129 as listed. Ages 16-18 pay $84. No price-change dates are listed.",
    "registrationUrl": "https://runsignup.com/Race/NY/EastMeadow/LongIslandMarathon",
@@ -1149,6 +1149,24 @@
    "timeKnown": false,
    "tentative": false,
    "note": "'REGISTRATION OPENS 11/1/2026' (date only)"
+  },
+  {
+   "id": 34,
+   "editionId": 5,
+   "kind": "registration_opens",
+   "at": "2026-04-26T17:00:00.000Z",
+   "timeKnown": false,
+   "tentative": false,
+   "note": "Early-bird registration opened on 2026 race day, after the last finisher (NYCRUNS press release; date only)"
+  },
+  {
+   "id": 35,
+   "editionId": 18,
+   "kind": "registration_opens",
+   "at": "2026-08-12T18:11:00.000Z",
+   "timeKnown": true,
+   "tentative": false,
+   "note": "Start of the registration period on RunSignup"
   }
  ]
 }

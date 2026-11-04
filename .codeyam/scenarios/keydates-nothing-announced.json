@@ -1,6 +1,6 @@
 {
   "name": "KeyDates - Nothing Announced",
-  "id": "9a28425d-dab9-4d9a-992a-84587ddda4dd",
+  "id": "50859e00-50b8-4a11-9c6a-ddac83de945a",
   "url": "/isolated-components/KeyDates?s=NothingAnnounced",
   "dimensions": [
     "Desktop"
@@ -8,5 +8,5 @@
   "mocks": {},
   "componentName": "KeyDates",
   "scenarioType": "component",
-  "description": "KeyDates in its nothing announced state, using the real researched race data."
+  "description": "KeyDates with no dates published: shows the Opening date not announced row."
 }

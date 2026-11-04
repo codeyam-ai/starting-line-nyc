@@ -55,7 +55,14 @@ export default async function RacePage({ params }: { params: Promise<{ slug: str
             save={{ slug: race.slug, raceName: race.name, registrationStatus: edition.registrationStatus }}
           />
           <RaceDetailBody
-            main={<KeyDates year={edition.year} timeline={timeline} calendarBase={calendarBase} />}
+            main={
+              <KeyDates
+                year={edition.year}
+                timeline={timeline}
+                calendarBase={calendarBase}
+                registrationStatus={edition.registrationStatus}
+              />
+            }
             aside={
               <>
                 <HowToEnter

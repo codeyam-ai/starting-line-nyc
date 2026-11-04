@@ -195,13 +195,14 @@
     ]
   },
   {
-    "description": "The race edition key-dates timeline in ET with past, next and upcoming entries, or a note when nothing is announced.",
+    "description": "The race edition key-dates timeline in ET with past, next and upcoming entries; when no registration opening date is published it leads with an Opening date not announced row.",
     "filePath": "app/components/KeyDates.tsx",
     "name": "KeyDates",
     "scenarios": [
       "keydates-nothing-announced",
       "keydates-some-passed",
-      "keydates-upcoming"
+      "keydates-upcoming",
+      "keydates-opening-published"
     ],
     "tags": [
       "race-detail"
@@ -344,6 +345,18 @@
     ]
   },
   {
+    "description": "Key-dates row that says Opening date not announced when the organizer has not published a registration opening date, worded differently for races that are already open.",
+    "filePath": "app/components/OpeningDateUnknown.tsx",
+    "name": "OpeningDateUnknown",
+    "scenarios": [
+      "openingdateunknown-not-yet-open",
+      "openingdateunknown-already-open"
+    ],
+    "tags": [
+      "race-detail"
+    ]
+  },
+  {
     "description": "Centred page column wrapper.",
     "filePath": "app/components/PageShell.tsx",
     "name": "PageShell",
@@ -449,7 +462,8 @@
       "race-big-bear-squatch-north",
       "race-great-gobble-5k",
       "race-escarpment-trail-run",
-      "race-phone-layout"
+      "race-phone-layout",
+      "race-registration-opening-published"
     ],
     "tags": [
       "race-detail"
@@ -706,14 +720,15 @@
     ]
   },
   {
-    "description": "One key date: checked off when passed, highlighted when next, with its own Add to calendar while upcoming; says time not stated when none was given.",
+    "description": "One key date: checked off and worded in the past tense when passed, highlighted when next, with its own Add to calendar while upcoming; says time not stated when none was given.",
     "filePath": "app/components/TimelineItem.tsx",
     "name": "TimelineItem",
     "scenarios": [
       "timelineitem-next",
       "timelineitem-passed-date-only",
       "timelineitem-race-day",
-      "timelineitem-upcoming-timed"
+      "timelineitem-upcoming-timed",
+      "timelineitem-registration-opened"
     ],
     "tags": [
       "race-detail"
@@ -1057,6 +1072,15 @@
     "testFile": "app/lib/raceList.test.ts"
   },
   {
+    "description": "Timeline label for a milestone kind; past-tense wording (Registration opened) when the milestone has already happened, Race day for race day, raw kind as a fallback.",
+    "filePath": "app/lib/format.ts",
+    "name": "milestoneLabel",
+    "tags": [
+      "race-detail"
+    ],
+    "testFile": "app/lib/format.test.ts"
+  },
+  {
     "description": "Short verb for a registration milestone kind such as Opens, Closes or Qualify by.",
     "filePath": "app/lib/format.ts",
     "name": "milestoneVerb",
@@ -1123,6 +1147,15 @@
     "description": "Where the main button sends a runner: the registration page (Register on the official site), else the source or organizer site (Visit the official site).",
     "filePath": "app/lib/raceDetail.ts",
     "name": "officialLink",
+    "tags": [
+      "race-detail"
+    ],
+    "testFile": "app/lib/raceDetail.test.ts"
+  },
+  {
+    "description": "True when a race's key-dates timeline has no registration or lottery opening date, so the page shows an Opening date not announced row instead of guessing.",
+    "filePath": "app/lib/raceDetail.ts",
+    "name": "openingDateUnknown",
     "tags": [
       "race-detail"
     ],
@@ -1239,6 +1272,15 @@
       "saved-races"
     ],
     "testFile": "app/lib/myRaces.test.ts"
+  },
+  {
+    "description": "True when a registration status means registration has already opened at some point: open, lottery open, waitlist, sold out or closed.",
+    "filePath": "app/lib/raceDetail.ts",
+    "name": "registrationHasOpened",
+    "tags": [
+      "race-detail"
+    ],
+    "testFile": "app/lib/raceDetail.test.ts"
   },
   {
     "description": "A pre-filled GitHub issue link for reporting a missing or wrong race detail, labelled race-data.",

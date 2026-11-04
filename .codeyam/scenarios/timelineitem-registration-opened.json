@@ -1,0 +1,12 @@
+{
+  "name": "TimelineItem - Registration Opened",
+  "id": "da641b20-3763-4258-8d5c-9afa3d01c713",
+  "url": "/isolated-components/TimelineItem?s=RegistrationOpened",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "TimelineItem",
+  "scenarioType": "component",
+  "description": "A passed registration opening reads in the past tense: Registration opened."
+}

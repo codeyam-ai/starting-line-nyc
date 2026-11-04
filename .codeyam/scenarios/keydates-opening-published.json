@@ -1,0 +1,12 @@
+{
+  "name": "KeyDates - Opening Published",
+  "id": "5ca3b6b5-0ac8-4637-bf07-ac62cae66798",
+  "url": "/isolated-components/KeyDates?s=OpeningPublished",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "KeyDates",
+  "scenarioType": "component",
+  "description": "Staten Island Half: the organizer published when registration opened, so the list shows Registration opened with that date and no Opening date not announced row."
+}

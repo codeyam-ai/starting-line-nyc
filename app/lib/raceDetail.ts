@@ -27,6 +27,19 @@ export type TimelineEntry = {
   state: 'past' | 'next' | 'upcoming';
 };
 
+const OPENING_KINDS = new Set(['registration_opens', 'lottery_opens']);
+const OPENED_STATUSES = new Set(['open', 'lottery_open', 'waitlist', 'sold_out', 'closed']);
+
+// True when the organizer has not published when registration (or the lottery) opens.
+export function openingDateUnknown(timeline: TimelineEntry[]): boolean {
+  return !timeline.some((t) => OPENING_KINDS.has(t.kind));
+}
+
+// True when the status means registration has already opened at some point.
+export function registrationHasOpened(registrationStatus: string): boolean {
+  return OPENED_STATUSES.has(registrationStatus);
+}
+
 type MilestoneInput = { id: number; kind: string; at: Date; timeKnown: boolean; tentative: boolean; note: string | null };
 
 // Milestones in date order with race day last; the first not-yet-passed entry is "next".

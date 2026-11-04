@@ -1,0 +1,18 @@
+{
+  "entries": [
+    {
+      "method": "GET",
+      "pathPattern": "/api/races/summaries",
+      "isFullUrl": false,
+      "variants": [
+        "GET /api/races/summaries"
+      ],
+      "scenarios": [
+        "my-races-race-details-failed-to-load"
+      ],
+      "inDefault": false,
+      "observedCount": 0,
+      "autoAdded": false
+    }
+  ]
+}

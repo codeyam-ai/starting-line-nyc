@@ -5,7 +5,9 @@ import {
   entryMethod,
   nextDeadline,
   officialLink,
+  openingDateUnknown,
   pageUrlFrom,
+  registrationHasOpened,
   reportIssueUrl,
   sourceHost,
   timelineCalendarHref,
@@ -144,5 +146,58 @@ describe('reportIssueUrl', () => {
     expect(url.searchParams.get('title')).toBe('Race detail: Great Gobble 5K (2026)');
     expect(url.searchParams.get('body')).toContain('https://site/races/g');
     expect(url.searchParams.get('labels')).toBe('race-data');
+  });
+});
+
+const entry = (kind: string) => ({
+  id: 1,
+  kind,
+  at: '2026-12-01T17:00:00Z',
+  timeKnown: true,
+  tentative: false,
+  note: null,
+  state: 'upcoming' as const,
+});
+
+describe('openingDateUnknown', () => {
+  // With no dates at all, the opening date is unknown.
+  it('is true for an empty timeline', () => {
+    expect(openingDateUnknown([])).toBe(true);
+  });
+
+  // Other dates do not count as an opening date.
+  it('is true when only non-opening dates are listed', () => {
+    expect(openingDateUnknown([entry('price_increase'), entry('registration_closes'), entry('race_day')])).toBe(true);
+  });
+
+  // A published registration opening is a known opening date.
+  it('is false when registration opening is listed', () => {
+    expect(openingDateUnknown([entry('registration_opens'), entry('race_day')])).toBe(false);
+  });
+
+  // For lottery races, the lottery opening counts as the opening date.
+  it('is false when the lottery opening is listed', () => {
+    expect(openingDateUnknown([entry('lottery_opens')])).toBe(false);
+  });
+});
+
+describe('registrationHasOpened', () => {
+  // Every status that can only follow an opening counts as already opened.
+  it('is true for statuses after registration opened', () => {
+    for (const s of ['open', 'lottery_open', 'waitlist', 'sold_out', 'closed']) {
+      expect(registrationHasOpened(s)).toBe(true);
+    }
+  });
+
+  // Statuses before opening do not count.
+  it('is false before registration opens', () => {
+    expect(registrationHasOpened('opening_soon')).toBe(false);
+    expect(registrationHasOpened('not_announced')).toBe(false);
+  });
+
+  // An unrecognized status is not assumed to be open.
+  it('is false for an unknown status', () => {
+    expect(registrationHasOpened('')).toBe(false);
+    expect(registrationHasOpened('something_new')).toBe(false);
   });
 });

@@ -26,6 +26,15 @@ export const centralParkTimelineDec10 = buildTimeline(
   new Date("2027-02-28T13:30:00Z"), false, new Date("2026-12-10T15:00:00Z"),
 );
 
+// Staten Island Half: a race whose organizer did publish when registration opened.
+export const statenIslandTimeline = buildTimeline(
+  [
+    ms(35, "registration_opens", "2026-08-12T18:11:00Z", true, "Start of the registration period on RunSignup"),
+    ms(29, "registration_closes", "2027-03-20T03:00:00Z", true, "Registration ends 11:00pm Mar 19"),
+  ],
+  new Date("2027-03-20T13:00:00Z"), false, TODAY,
+);
+
 export const escarpmentTimeline = buildTimeline(
   [ms(18, "registration_closes", "2027-07-13T16:00:00Z", false, "Or when 275 entries are reached, whichever comes first")],
   new Date("2027-07-25T13:00:00Z"), false, TODAY,

@@ -1,0 +1,18 @@
+{
+  "surface": "TimelineItem",
+  "surface_kind": "component",
+  "states": [
+    {
+      "dimension": "state",
+      "value": "past",
+      "rationale": "source-derived state state=past",
+      "status": "covered"
+    },
+    {
+      "dimension": "state",
+      "value": "next",
+      "rationale": "source-derived state state=next",
+      "status": "covered"
+    }
+  ]
+}

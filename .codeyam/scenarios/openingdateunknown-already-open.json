@@ -1,0 +1,12 @@
+{
+  "name": "OpeningDateUnknown - Already Open",
+  "id": "99e27574-6767-4c07-9805-431c54534c8d",
+  "url": "/isolated-components/OpeningDateUnknown?s=AlreadyOpen",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "OpeningDateUnknown",
+  "scenarioType": "component",
+  "description": "Key-dates row for a race that is already open but never said when registration opened."
+}

@@ -8,6 +8,7 @@ import {
   formatPrice,
   formatTime,
   formatWhen,
+  milestoneLabel,
   milestoneVerb,
 } from '@/app/lib/format';
 
@@ -94,5 +95,37 @@ describe('formatDistance', () => {
   // Elevation gain is appended with a thousands separator.
   it('appends elevation gain', () => {
     expect(formatDistance(13.1, 3100)).toBe('13.1 mi, 3,100 ft climb');
+  });
+});
+
+describe('milestoneLabel', () => {
+  // Upcoming milestones use the present-tense timeline label.
+  it('uses the present-tense label by default', () => {
+    expect(milestoneLabel('registration_opens')).toBe('Registration opens');
+    expect(milestoneLabel('lottery_closes', false)).toBe('Lottery closes');
+  });
+
+  // A milestone that already happened reads in the past tense.
+  it('uses the past-tense label for passed milestones', () => {
+    expect(milestoneLabel('registration_opens', true)).toBe('Registration opened');
+    expect(milestoneLabel('registration_closes', true)).toBe('Registration closed');
+    expect(milestoneLabel('charity_closes', true)).toBe('Charity sign-up closed');
+  });
+
+  // Race day keeps the same wording whether or not it has passed.
+  it('always calls race day Race day', () => {
+    expect(milestoneLabel('race_day')).toBe('Race day');
+    expect(milestoneLabel('race_day', true)).toBe('Race day');
+  });
+
+  // A kind with no past-tense wording falls back to its normal label.
+  it('falls back to the present label when no past wording exists', () => {
+    expect(milestoneLabel('price_increase', true)).toBe(milestoneLabel('price_increase'));
+  });
+
+  // An unknown kind is shown as-is rather than hidden.
+  it('falls back to the raw kind', () => {
+    expect(milestoneLabel('something_new')).toBe('something_new');
+    expect(milestoneLabel('something_new', true)).toBe('something_new');
   });
 });

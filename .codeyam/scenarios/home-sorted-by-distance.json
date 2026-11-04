@@ -1,6 +1,6 @@
 {
   "name": "Home - Sorted By Distance",
-  "id": "0daf6eeb-7b11-4f09-af61-b551e0a4adb3",
+  "id": "e435f500-961f-4c8b-a295-06c7371ed6fa",
   "url": "/?distance=any&when=12m&sort=distance",
   "dimensions": [
     "Desktop"
@@ -658,7 +658,7 @@
       },
       {
         "entryMethod": "open",
-        "entryNote": "2026 edition, 50 Miler starts 6:00 AM (50K 7:00 AM, half 8:00 AM). Open registration on UltraSignup until Thu Nov 12, 2026 11:59 PM ET. Very limited: page showed only 5 spots left in the 50 Miler (14 in 50K, 29 in half) on 2026-10-28. Refund policy not stated.",
+        "entryNote": "2026 edition, 50 Miler starts 6:00 AM (50K 7:00 AM, half 8:00 AM). Open registration on UltraSignup until Thu Nov 12, 2026 11:59 PM ET. The 50 Miler is sold out; UltraSignup offers a free waitlist (50K and half still had spots on 2026-11-04). Refund policy not stated.",
         "id": 12,
         "isSample": false,
         "lastVerifiedAt": "2026-10-28T12:00:00.000Z",
@@ -667,7 +667,7 @@
         "raceDate": "2026-11-14T11:00:00.000Z",
         "raceDateTentative": false,
         "raceId": 12,
-        "registrationStatus": "open",
+        "registrationStatus": "waitlist",
         "registrationUrl": "https://ultrasignup.com/register.aspx?did=136156",
         "sourceUrl": "https://ultrasignup.com/register.aspx?did=136156",
         "year": 2026
@@ -818,7 +818,7 @@
       },
       {
         "entryMethod": "open",
-        "entryNote": "Open registration on RunSignup opens Nov 1, 2026. The marathon is part of a race weekend that runs Apr 30-May 2, 2027 and also includes a 5K, 10K, half marathon, kids 1K, and multi-race challenges. 7:30 AM start. The page names no Boston-qualifier status, registration close date, or charity bib program.",
+        "entryNote": "Open registration on RunSignup opened Nov 1, 2026. The marathon is part of a race weekend that runs Apr 30-May 2, 2027 and also includes a 5K, 10K, half marathon, kids 1K, and multi-race challenges. 7:30 AM start. The page names no Boston-qualifier status, registration close date, or charity bib program.",
         "id": 22,
         "isSample": false,
         "lastVerifiedAt": "2026-10-28T12:00:00.000Z",
@@ -827,7 +827,7 @@
         "raceDate": "2027-05-02T11:30:00.000Z",
         "raceDateTentative": false,
         "raceId": 22,
-        "registrationStatus": "opening_soon",
+        "registrationStatus": "open",
         "registrationUrl": "https://runsignup.com/Race/NY/EastMeadow/LongIslandMarathon",
         "sourceUrl": "https://runsignup.com/Race/NY/EastMeadow/LongIslandMarathon",
         "year": 2027
@@ -1162,6 +1162,24 @@
         "note": "'REGISTRATION OPENS 11/1/2026' (date only)",
         "tentative": false,
         "timeKnown": false
+      },
+      {
+        "at": "2026-04-26T17:00:00.000Z",
+        "editionId": 5,
+        "id": 34,
+        "kind": "registration_opens",
+        "note": "Early-bird registration opened on 2026 race day, after the last finisher (NYCRUNS press release; date only)",
+        "tentative": false,
+        "timeKnown": false
+      },
+      {
+        "at": "2026-08-12T18:11:00.000Z",
+        "editionId": 18,
+        "id": 35,
+        "kind": "registration_opens",
+        "note": "Start of the registration period on RunSignup",
+        "tentative": false,
+        "timeKnown": true
       }
     ]
   },

@@ -12,6 +12,20 @@ export const MILESTONE_LABELS: Record<string, string> = {
   charity_closes: 'Charity sign-up closes',
 };
 
+// Past-tense wording for milestones that have already happened.
+const PAST_MILESTONE_LABELS: Record<string, string> = {
+  registration_opens: 'Registration opened',
+  registration_closes: 'Registration closed',
+  lottery_opens: 'Lottery opened',
+  lottery_closes: 'Lottery closed',
+  charity_closes: 'Charity sign-up closed',
+};
+
+export function milestoneLabel(kind: string, past = false): string {
+  if (kind === 'race_day') return 'Race day';
+  return (past && PAST_MILESTONE_LABELS[kind]) || MILESTONE_LABELS[kind] || kind;
+}
+
 const MILESTONE_VERBS: Record<string, string> = {
   registration_opens: 'Opens',
   registration_closes: 'Closes',

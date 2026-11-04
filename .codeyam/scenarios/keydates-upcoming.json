@@ -1,6 +1,6 @@
 {
   "name": "KeyDates - Upcoming",
-  "id": "951dedc9-42c5-4dc5-8612-fdd8fd25c3c2",
+  "id": "22707de3-6a04-4ef0-aaa4-709ba0c0daf1",
   "url": "/isolated-components/KeyDates?s=Upcoming",
   "dimensions": [
     "Desktop"
@@ -8,5 +8,5 @@
   "mocks": {},
   "componentName": "KeyDates",
   "scenarioType": "component",
-  "description": "KeyDates in its upcoming state, using the real researched race data."
+  "description": "KeyDates with only upcoming dates for an open race whose opening date was never published."
 }

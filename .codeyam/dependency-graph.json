@@ -1,1141 +1,32 @@
 {
-  "files": {
-    ".claude/hooks/_step_metadata.py": {
-      "imports": [],
-      "importedBy": []
-    },
-    ".claude/hooks/editor-pretool-hook.py": {
-      "imports": [],
-      "importedBy": []
-    },
-    ".claude/hooks/editor-step-hook.py": {
-      "imports": [],
-      "importedBy": []
-    },
-    ".claude/skills/review-session/scripts/extract-session-helpers.mjs": {
-      "imports": [],
-      "importedBy": [
-        ".claude/skills/review-session/scripts/extract-session.mjs"
-      ]
-    },
-    ".claude/skills/review-session/scripts/extract-session.mjs": {
-      "imports": [
-        ".claude/skills/review-session/scripts/extract-session-helpers.mjs",
-        ".claude/skills/review-session/scripts/session-tokens.mjs",
-        ".claude/skills/review-session/scripts/session-tokens-report.mjs",
-        ".claude/skills/review-session/scripts/session-tokens-subagents.mjs"
-      ],
-      "importedBy": []
-    },
-    ".claude/skills/review-session/scripts/find-last-session-helpers.mjs": {
-      "imports": [],
-      "importedBy": [
-        ".claude/skills/review-session/scripts/find-last-session.mjs"
-      ]
-    },
-    ".claude/skills/review-session/scripts/find-last-session.mjs": {
-      "imports": [
-        ".claude/skills/review-session/scripts/find-last-session-helpers.mjs"
-      ],
-      "importedBy": []
-    },
-    ".claude/skills/review-session/scripts/session-tokens-carried.mjs": {
-      "imports": [],
-      "importedBy": [
-        ".claude/skills/review-session/scripts/session-tokens.mjs"
-      ]
-    },
-    ".claude/skills/review-session/scripts/session-tokens-labels.mjs": {
-      "imports": [],
-      "importedBy": [
-        ".claude/skills/review-session/scripts/session-tokens.mjs"
-      ]
-    },
-    ".claude/skills/review-session/scripts/session-tokens-report.mjs": {
-      "imports": [
-        ".claude/skills/review-session/scripts/session-tokens.mjs"
-      ],
-      "importedBy": [
-        ".claude/skills/review-session/scripts/extract-session.mjs"
-      ]
-    },
-    ".claude/skills/review-session/scripts/session-tokens-steps.mjs": {
-      "imports": [],
-      "importedBy": [
-        ".claude/skills/review-session/scripts/session-tokens.mjs"
-      ]
-    },
-    ".claude/skills/review-session/scripts/session-tokens-subagents.mjs": {
-      "imports": [],
-      "importedBy": [
-        ".claude/skills/review-session/scripts/extract-session.mjs"
-      ]
-    },
-    ".claude/skills/review-session/scripts/session-tokens.mjs": {
-      "imports": [
-        ".claude/skills/review-session/scripts/session-tokens-carried.mjs",
-        ".claude/skills/review-session/scripts/session-tokens-labels.mjs",
-        ".claude/skills/review-session/scripts/session-tokens-steps.mjs"
-      ],
-      "importedBy": [
-        ".claude/skills/review-session/scripts/session-tokens-report.mjs",
-        ".claude/skills/review-session/scripts/extract-session.mjs"
-      ]
-    },
-    ".codeyam/capture.js": {
-      "imports": [
-        ".codeyam/scenario-launch.js",
-        ".codeyam/scenario-check-run.js",
-        ".codeyam/scenario-metrics.js",
-        ".codeyam/scenario-issues.js",
-        ".codeyam/scenario-mocks.js",
-        ".codeyam/scenario-check-attribution.js",
-        ".codeyam/scenario-playwright.js",
-        ".codeyam/scenario-targeting.js",
-        ".codeyam/scenario-handlers.js",
-        ".codeyam/scenario-interactivity.js"
-      ],
-      "importedBy": []
-    },
-    ".codeyam/isolation-props/AtAGlance.ts": {
-      "imports": [
-        "app/components/AtAGlance.tsx",
-        ".codeyam/isolation-props/_raceDetail.ts"
-      ],
-      "importedBy": []
-    },
-    ".codeyam/isolation-props/FilterChips.ts": {
-      "imports": [
-        "app/components/FilterChips.tsx",
-        ".codeyam/isolation-props/_fixtures.ts"
-      ],
-      "importedBy": []
-    },
-    ".codeyam/isolation-props/FilterToolbar.ts": {
-      "imports": [
-        "app/components/FilterToolbar.tsx",
-        ".codeyam/isolation-props/_fixtures.ts"
-      ],
-      "importedBy": []
-    },
-    ".codeyam/isolation-props/Hero.ts": {
-      "imports": [
-        "app/components/Hero.tsx",
-        "app/components/HeroSearch.tsx",
-        ".codeyam/isolation-props/_fixtures.ts"
-      ],
-      "importedBy": []
-    },
-    ".codeyam/isolation-props/HeroSearch.ts": {
-      "imports": [
-        "app/components/HeroSearch.tsx",
-        ".codeyam/isolation-props/_fixtures.ts"
-      ],
-      "importedBy": []
-    },
-    ".codeyam/isolation-props/NextDeadline.ts": {
-      "imports": [
-        "app/components/NextDeadline.tsx"
-      ],
-      "importedBy": []
-    },
-    ".codeyam/isolation-props/RaceIdentity.ts": {
-      "imports": [
-        "app/components/RaceIdentity.tsx"
-      ],
-      "importedBy": []
-    },
-    ".codeyam/isolation-props/RaceList.ts": {
-      "imports": [
-        "app/components/RaceList.tsx",
-        ".codeyam/isolation-props/_fixtures.ts"
-      ],
-      "importedBy": []
-    },
-    ".codeyam/isolation-props/RaceRow.ts": {
-      "imports": [
-        "app/components/RaceRow.tsx",
-        ".codeyam/isolation-props/_fixtures.ts"
-      ],
-      "importedBy": []
-    },
-    ".codeyam/isolation-props/ResultsSection.ts": {
-      "imports": [
-        "app/components/ResultsSection.tsx",
-        ".codeyam/isolation-props/_fixtures.ts"
-      ],
-      "importedBy": []
-    },
-    ".codeyam/isolation-props/SaveRaceButton.ts": {
-      "imports": [
-        "app/components/SaveRaceButton.tsx"
-      ],
-      "importedBy": []
-    },
-    ".codeyam/isolation-props/SortToggle.ts": {
-      "imports": [
-        "app/components/SortToggle.tsx",
-        ".codeyam/isolation-props/_fixtures.ts"
-      ],
-      "importedBy": []
-    },
-    ".codeyam/isolation-props/_fixtures.ts": {
-      "imports": [
-        "app/lib/filters.ts",
-        "app/lib/raceList.ts"
-      ],
-      "importedBy": [
-        ".codeyam/isolation-props/FilterChips.ts",
-        ".codeyam/isolation-props/FilterToolbar.ts",
-        ".codeyam/isolation-props/Hero.ts",
-        ".codeyam/isolation-props/HeroSearch.ts",
-        ".codeyam/isolation-props/RaceList.ts",
-        ".codeyam/isolation-props/RaceRow.ts",
-        ".codeyam/isolation-props/ResultsSection.ts",
-        ".codeyam/isolation-props/SortToggle.ts"
-      ]
-    },
-    ".codeyam/isolation-props/_raceDetail.ts": {
-      "imports": [],
-      "importedBy": [
-        ".codeyam/isolation-props/AtAGlance.ts"
-      ]
-    },
-    ".codeyam/scenario-check-attribution.js": {
-      "imports": [],
-      "importedBy": [
-        ".codeyam/capture.js"
-      ]
-    },
-    ".codeyam/scenario-check-run.js": {
-      "imports": [],
-      "importedBy": [
-        ".codeyam/capture.js"
-      ]
-    },
-    ".codeyam/scenario-handlers.js": {
-      "imports": [],
-      "importedBy": [
-        ".codeyam/capture.js"
-      ]
-    },
-    ".codeyam/scenario-interactivity.js": {
-      "imports": [],
-      "importedBy": [
-        ".codeyam/capture.js"
-      ]
-    },
-    ".codeyam/scenario-issues.js": {
-      "imports": [],
-      "importedBy": [
-        ".codeyam/capture.js"
-      ]
-    },
-    ".codeyam/scenario-launch.js": {
-      "imports": [],
-      "importedBy": [
-        ".codeyam/capture.js"
-      ]
-    },
-    ".codeyam/scenario-metrics.js": {
-      "imports": [],
-      "importedBy": [
-        ".codeyam/capture.js",
-        ".codeyam/scenario-playwright.js"
-      ]
-    },
-    ".codeyam/scenario-mocks.js": {
-      "imports": [],
-      "importedBy": [
-        ".codeyam/capture.js"
-      ]
-    },
-    ".codeyam/scenario-playwright.js": {
-      "imports": [
-        ".codeyam/scenario-metrics.js",
-        ".codeyam/scenario-targeting.js"
-      ],
-      "importedBy": [
-        ".codeyam/capture.js"
-      ]
-    },
-    ".codeyam/scenario-targeting.js": {
-      "imports": [],
-      "importedBy": [
-        ".codeyam/capture.js",
-        ".codeyam/scenario-playwright.js"
-      ]
-    },
-    ".devcontainer/codeyam-preview-origin.test.ts": {
-      "imports": [],
-      "importedBy": []
-    },
-    "app/api/codeyam-revalidate/route.ts": {
-      "imports": [],
-      "importedBy": []
-    },
-    "app/api/races/[slug]/calendar/route.ts": {
-      "imports": [
-        "app/lib/prisma.ts",
-        "app/lib/ics.ts",
-        "app/lib/raceCalendar.ts"
-      ],
-      "importedBy": []
-    },
-    "app/api/races/route.ts": {
-      "imports": [
-        "app/lib/filters.ts",
-        "app/lib/races.ts"
-      ],
-      "importedBy": []
-    },
-    "app/api/races/summaries/route.ts": {
-      "imports": [
-        "app/lib/myRaces.ts",
-        "app/lib/races.ts"
-      ],
-      "importedBy": []
-    },
-    "app/codeyam-isolate/layout.tsx": {
-      "imports": [],
-      "importedBy": []
-    },
-    "app/components/AddToCalendar.tsx": {
-      "imports": [
-        "app/lib/raceCalendar.ts"
-      ],
-      "importedBy": [
-        "app/components/TimelineItem.tsx",
-        "app/components/NextDeadline.tsx"
-      ]
-    },
-    "app/components/AtAGlance.tsx": {
-      "imports": [
-        "app/components/GlanceActions.tsx",
-        "app/components/GlanceItem.tsx",
-        "app/lib/format.ts",
-        "app/lib/raceDetail.ts"
-      ],
-      "importedBy": [
-        ".codeyam/isolation-props/AtAGlance.ts",
-        "app/races/[slug]/page.tsx"
-      ]
-    },
-    "app/components/BackLink.tsx": {
-      "imports": [],
-      "importedBy": [
-        "app/races/[slug]/page.tsx"
-      ]
-    },
-    "app/components/CourseNote.tsx": {
-      "imports": [],
-      "importedBy": [
-        "app/races/[slug]/page.tsx"
-      ]
-    },
-    "app/components/EmptyResults.tsx": {
-      "imports": [],
-      "importedBy": [
-        "app/components/RaceList.tsx"
-      ]
-    },
-    "app/components/FilterChips.tsx": {
-      "imports": [
-        "app/lib/filters.ts"
-      ],
-      "importedBy": [
-        ".codeyam/isolation-props/FilterChips.ts",
-        "app/components/FilterToolbar.tsx"
-      ]
-    },
-    "app/components/FilterToolbar.tsx": {
-      "imports": [
-        "app/components/FilterChips.tsx",
-        "app/components/SortToggle.tsx",
-        "app/lib/filters.ts"
-      ],
-      "importedBy": [
-        ".codeyam/isolation-props/FilterToolbar.ts",
-        "app/components/ResultsSection.tsx"
-      ]
-    },
-    "app/components/GlanceActions.tsx": {
-      "imports": [
-        "app/components/OfficialLinkButton.tsx",
-        "app/components/SaveRaceButton.tsx"
-      ],
-      "importedBy": [
-        "app/components/AtAGlance.tsx"
-      ]
-    },
-    "app/components/GlanceItem.tsx": {
-      "imports": [],
-      "importedBy": [
-        "app/components/AtAGlance.tsx"
-      ]
-    },
-    "app/components/GoneRaceNotice.tsx": {
-      "imports": [
-        "app/lib/myRaces.ts",
-        "app/lib/savedRaces.ts"
-      ],
-      "importedBy": [
-        "app/components/SavedRaceItem.tsx"
-      ]
-    },
-    "app/components/Hero.tsx": {
-      "imports": [],
-      "importedBy": [
-        ".codeyam/isolation-props/Hero.ts",
-        "app/page.tsx"
-      ]
-    },
-    "app/components/HeroSearch.tsx": {
-      "imports": [
-        "app/components/SelectField.tsx",
-        "app/lib/filters.ts"
-      ],
-      "importedBy": [
-        ".codeyam/isolation-props/Hero.ts",
-        ".codeyam/isolation-props/HeroSearch.ts",
-        "app/page.tsx"
-      ]
-    },
-    "app/components/HowToEnter.tsx": {
-      "imports": [
-        "app/lib/format.ts"
-      ],
-      "importedBy": [
-        "app/races/[slug]/page.tsx"
-      ]
-    },
-    "app/components/KeyDates.tsx": {
-      "imports": [
-        "app/components/TimelineItem.tsx",
-        "app/lib/raceDetail.ts"
-      ],
-      "importedBy": [
-        "app/races/[slug]/page.tsx"
-      ]
-    },
-    "app/components/Logo.tsx": {
-      "imports": [],
-      "importedBy": [
-        "app/components/SiteHeader.tsx"
-      ]
-    },
-    "app/components/MyRacesEmpty.tsx": {
-      "imports": [],
-      "importedBy": [
-        "app/components/MyRacesList.tsx"
-      ]
-    },
-    "app/components/MyRacesHeader.tsx": {
-      "imports": [],
-      "importedBy": [
-        "app/components/MyRacesSection.tsx"
-      ]
-    },
-    "app/components/MyRacesList.tsx": {
-      "imports": [
-        "app/components/MyRacesEmpty.tsx",
-        "app/components/MyRacesLoading.tsx",
-        "app/components/SavedRaceGroup.tsx",
-        "app/lib/myRaces.ts",
-        "app/lib/useRaceSummaries.ts",
-        "app/lib/useSavedRaces.ts"
-      ],
-      "importedBy": [
-        "app/components/MyRacesSection.tsx"
-      ]
-    },
-    "app/components/MyRacesLoading.tsx": {
-      "imports": [],
-      "importedBy": [
-        "app/components/MyRacesList.tsx"
-      ]
-    },
-    "app/components/MyRacesSection.tsx": {
-      "imports": [
-        "app/components/MyRacesHeader.tsx",
-        "app/components/MyRacesList.tsx",
-        "app/components/TimezoneNote.tsx"
-      ],
-      "importedBy": [
-        "app/my-races/page.tsx"
-      ]
-    },
-    "app/components/NextDeadline.tsx": {
-      "imports": [
-        "app/components/AddToCalendar.tsx",
-        "app/lib/format.ts"
-      ],
-      "importedBy": [
-        ".codeyam/isolation-props/NextDeadline.ts",
-        "app/components/RaceRow.tsx"
-      ]
-    },
-    "app/components/NoUpcomingEdition.tsx": {
-      "imports": [],
-      "importedBy": [
-        "app/races/[slug]/page.tsx"
-      ]
-    },
-    "app/components/OfficialLinkButton.tsx": {
-      "imports": [],
-      "importedBy": [
-        "app/components/GlanceActions.tsx"
-      ]
-    },
-    "app/components/PageShell.tsx": {
-      "imports": [],
-      "importedBy": [
-        "app/page.tsx",
-        "app/my-races/page.tsx",
-        "app/races/[slug]/page.tsx",
-        "app/races/[slug]/not-found.tsx"
-      ]
-    },
-    "app/components/RaceDayCell.tsx": {
-      "imports": [
-        "app/lib/format.ts"
-      ],
-      "importedBy": [
-        "app/components/RaceRow.tsx"
-      ]
-    },
-    "app/components/RaceDetailBody.tsx": {
-      "imports": [],
-      "importedBy": [
-        "app/races/[slug]/page.tsx"
-      ]
-    },
-    "app/components/RaceHero.tsx": {
-      "imports": [],
-      "importedBy": [
-        "app/races/[slug]/page.tsx"
-      ]
-    },
-    "app/components/RaceIdentity.tsx": {
-      "imports": [
-        "app/lib/format.ts"
-      ],
-      "importedBy": [
-        ".codeyam/isolation-props/RaceIdentity.ts",
-        "app/components/RaceRow.tsx"
-      ]
-    },
-    "app/components/RaceList.tsx": {
-      "imports": [
-        "app/components/EmptyResults.tsx",
-        "app/components/RaceRow.tsx",
-        "app/components/ShowAllLink.tsx",
-        "app/lib/filters.ts",
-        "app/lib/raceList.ts"
-      ],
-      "importedBy": [
-        ".codeyam/isolation-props/RaceList.ts",
-        "app/components/ResultsSection.tsx"
-      ]
-    },
-    "app/components/RaceNotFound.tsx": {
-      "imports": [],
-      "importedBy": [
-        "app/races/[slug]/not-found.tsx"
-      ]
-    },
-    "app/components/RaceNote.tsx": {
-      "imports": [
-        "app/lib/savedRaces.ts"
-      ],
-      "importedBy": [
-        "app/components/SavedRaceItem.tsx"
-      ]
-    },
-    "app/components/RaceRow.tsx": {
-      "imports": [
-        "app/components/NextDeadline.tsx",
-        "app/components/RaceDayCell.tsx",
-        "app/components/RaceIdentity.tsx",
-        "app/components/RaceThumb.tsx",
-        "app/components/SaveRaceButton.tsx",
-        "app/components/WeeksToTrain.tsx",
-        "app/lib/raceList.ts"
-      ],
-      "importedBy": [
-        ".codeyam/isolation-props/RaceRow.ts",
-        "app/components/RaceList.tsx",
-        "app/components/SavedRaceItem.tsx"
-      ]
-    },
-    "app/components/RaceThumb.tsx": {
-      "imports": [],
-      "importedBy": [
-        "app/components/RaceRow.tsx"
-      ]
-    },
-    "app/components/RaceTitle.tsx": {
-      "imports": [],
-      "importedBy": [
-        "app/races/[slug]/page.tsx"
-      ]
-    },
-    "app/components/RegistrationChanged.tsx": {
-      "imports": [],
-      "importedBy": [
-        "app/components/SavedRaceItem.tsx"
-      ]
-    },
-    "app/components/ResultsHeader.tsx": {
-      "imports": [
-        "app/lib/filters.ts"
-      ],
-      "importedBy": [
-        "app/components/ResultsSection.tsx"
-      ]
-    },
-    "app/components/ResultsSection.tsx": {
-      "imports": [
-        "app/components/FilterToolbar.tsx",
-        "app/components/RaceList.tsx",
-        "app/components/ResultsHeader.tsx",
-        "app/components/SeasonTeaser.tsx",
-        "app/components/TimezoneNote.tsx",
-        "app/lib/filters.ts",
-        "app/lib/raceList.ts"
-      ],
-      "importedBy": [
-        ".codeyam/isolation-props/ResultsSection.ts",
-        "app/page.tsx"
-      ]
-    },
-    "app/components/SaveMenu.tsx": {
-      "imports": [
-        "app/lib/savedRaces.ts"
-      ],
-      "importedBy": [
-        "app/components/SaveRaceButton.tsx"
-      ]
-    },
-    "app/components/SaveRaceButton.tsx": {
-      "imports": [
-        "app/components/SaveMenu.tsx",
-        "app/lib/savedRaces.ts",
-        "app/lib/useSaveStatus.ts"
-      ],
-      "importedBy": [
-        ".codeyam/isolation-props/SaveRaceButton.ts",
-        "app/components/RaceRow.tsx",
-        "app/components/GlanceActions.tsx"
-      ]
-    },
-    "app/components/SavedRaceGroup.tsx": {
-      "imports": [
-        "app/components/SavedRaceGroupHeading.tsx",
-        "app/components/SavedRaceItem.tsx",
-        "app/lib/raceList.ts",
-        "app/lib/savedRaces.ts"
-      ],
-      "importedBy": [
-        "app/components/MyRacesList.tsx"
-      ]
-    },
-    "app/components/SavedRaceGroupHeading.tsx": {
-      "imports": [
-        "app/lib/myRaces.ts",
-        "app/lib/savedRaces.ts"
-      ],
-      "importedBy": [
-        "app/components/SavedRaceGroup.tsx"
-      ]
-    },
-    "app/components/SavedRaceItem.tsx": {
-      "imports": [
-        "app/components/GoneRaceNotice.tsx",
-        "app/components/RaceNote.tsx",
-        "app/components/RaceRow.tsx",
-        "app/components/RegistrationChanged.tsx",
-        "app/lib/myRaces.ts",
-        "app/lib/raceList.ts",
-        "app/lib/savedRaces.ts"
-      ],
-      "importedBy": [
-        "app/components/SavedRaceGroup.tsx"
-      ]
-    },
-    "app/components/SeasonPreview.tsx": {
-      "imports": [],
-      "importedBy": [
-        "app/components/SeasonTeaser.tsx"
-      ]
-    },
-    "app/components/SeasonTeaser.tsx": {
-      "imports": [
-        "app/components/SeasonPreview.tsx"
-      ],
-      "importedBy": [
-        "app/components/ResultsSection.tsx"
-      ]
-    },
-    "app/components/SelectField.tsx": {
-      "imports": [],
-      "importedBy": [
-        "app/components/HeroSearch.tsx"
-      ]
-    },
-    "app/components/ShowAllLink.tsx": {
-      "imports": [],
-      "importedBy": [
-        "app/components/RaceList.tsx"
-      ]
-    },
-    "app/components/SiteFooter.tsx": {
-      "imports": [],
-      "importedBy": [
-        "app/page.tsx",
-        "app/my-races/page.tsx",
-        "app/races/[slug]/page.tsx",
-        "app/races/[slug]/not-found.tsx"
-      ]
-    },
-    "app/components/SiteHeader.tsx": {
-      "imports": [
-        "app/components/Logo.tsx"
-      ],
-      "importedBy": [
-        "app/page.tsx",
-        "app/my-races/page.tsx",
-        "app/races/[slug]/page.tsx",
-        "app/races/[slug]/not-found.tsx"
-      ]
-    },
-    "app/components/SortToggle.tsx": {
-      "imports": [
-        "app/lib/filters.ts"
-      ],
-      "importedBy": [
-        ".codeyam/isolation-props/SortToggle.ts",
-        "app/components/FilterToolbar.tsx"
-      ]
-    },
-    "app/components/SourcesPanel.tsx": {
-      "imports": [
-        "app/lib/format.ts",
-        "app/lib/raceDetail.ts"
-      ],
-      "importedBy": [
-        "app/races/[slug]/page.tsx"
-      ]
-    },
-    "app/components/TimelineItem.tsx": {
-      "imports": [
-        "app/components/AddToCalendar.tsx",
-        "app/lib/format.ts",
-        "app/lib/raceDetail.ts"
-      ],
-      "importedBy": [
-        "app/components/KeyDates.tsx"
-      ]
-    },
-    "app/components/TimezoneNote.tsx": {
-      "imports": [],
-      "importedBy": [
-        "app/components/MyRacesSection.tsx",
-        "app/components/ResultsSection.tsx"
-      ]
-    },
-    "app/components/WeeksToTrain.tsx": {
-      "imports": [],
-      "importedBy": [
-        "app/components/RaceRow.tsx"
-      ]
-    },
-    "app/globals.css": {
-      "imports": [],
-      "importedBy": [
-        "app/layout.tsx"
-      ]
-    },
-    "app/layout.tsx": {
-      "imports": [
-        "app/globals.css"
-      ],
-      "importedBy": []
-    },
-    "app/lib/filters.test.ts": {
-      "imports": [
-        "app/lib/filters.ts"
-      ],
-      "importedBy": []
-    },
-    "app/lib/filters.ts": {
-      "imports": [],
-      "importedBy": [
-        ".codeyam/isolation-props/_fixtures.ts",
-        "app/lib/races.ts",
-        "app/lib/raceList.test.ts",
-        "app/lib/filters.test.ts",
-        "app/lib/raceList.ts",
-        "app/api/races/route.ts",
-        "app/page.tsx",
-        "app/components/RaceList.tsx",
-        "app/components/HeroSearch.tsx",
-        "app/components/SortToggle.tsx",
-        "app/components/FilterChips.tsx",
-        "app/components/ResultsSection.tsx",
-        "app/components/ResultsHeader.tsx",
-        "app/components/FilterToolbar.tsx"
-      ]
-    },
-    "app/lib/format.test.ts": {
-      "imports": [
-        "app/lib/format.ts"
-      ],
-      "importedBy": []
-    },
-    "app/lib/format.ts": {
-      "imports": [],
-      "importedBy": [
-        "app/lib/raceCalendar.ts",
-        "app/lib/myRaces.ts",
-        "app/lib/format.test.ts",
-        "app/components/TimelineItem.tsx",
-        "app/components/SourcesPanel.tsx",
-        "app/components/RaceDayCell.tsx",
-        "app/components/HowToEnter.tsx",
-        "app/components/AtAGlance.tsx",
-        "app/components/RaceIdentity.tsx",
-        "app/components/NextDeadline.tsx"
-      ]
-    },
-    "app/lib/ics.test.ts": {
-      "imports": [
-        "app/lib/ics.ts"
-      ],
-      "importedBy": []
-    },
-    "app/lib/ics.ts": {
-      "imports": [],
-      "importedBy": [
-        "app/lib/raceCalendar.ts",
-        "app/lib/ics.test.ts",
-        "app/lib/raceCalendar.test.ts",
-        "app/api/races/[slug]/calendar/route.ts"
-      ]
-    },
-    "app/lib/loadEnv.ts": {
-      "imports": [],
-      "importedBy": [
-        "vitest.config.ts",
-        "prisma/seed.ts",
-        "prisma.config.ts"
-      ]
-    },
-    "app/lib/myRaces.test.ts": {
-      "imports": [
-        "app/lib/myRaces.ts",
-        "app/lib/raceList.ts",
-        "app/lib/savedRaces.ts"
-      ],
-      "importedBy": []
-    },
-    "app/lib/myRaces.ts": {
-      "imports": [
-        "app/lib/format.ts",
-        "app/lib/raceList.ts",
-        "app/lib/savedRaces.ts"
-      ],
-      "importedBy": [
-        "app/lib/useRaceSummaries.ts",
-        "app/lib/myRaces.test.ts",
-        "app/api/races/summaries/route.ts",
-        "app/components/SavedRaceGroupHeading.tsx",
-        "app/components/SavedRaceItem.tsx",
-        "app/components/MyRacesList.tsx",
-        "app/components/GoneRaceNotice.tsx"
-      ]
-    },
-    "app/lib/prisma.ts": {
-      "imports": [],
-      "importedBy": [
-        "app/lib/races.ts",
-        "app/api/races/[slug]/calendar/route.ts"
-      ]
-    },
-    "app/lib/raceCalendar.test.ts": {
-      "imports": [
-        "app/lib/ics.ts",
-        "app/lib/raceCalendar.ts"
-      ],
-      "importedBy": []
-    },
-    "app/lib/raceCalendar.ts": {
-      "imports": [
-        "app/lib/format.ts",
-        "app/lib/ics.ts",
-        "app/lib/raceList.ts"
-      ],
-      "importedBy": [
-        "app/lib/raceCalendar.test.ts",
-        "app/api/races/[slug]/calendar/route.ts",
-        "app/components/AddToCalendar.tsx"
-      ]
-    },
-    "app/lib/raceDetail.test.ts": {
-      "imports": [
-        "app/lib/raceDetail.ts"
-      ],
-      "importedBy": []
-    },
-    "app/lib/raceDetail.ts": {
-      "imports": [
-        "app/lib/raceList.ts"
-      ],
-      "importedBy": [
-        "app/lib/races.ts",
-        "app/lib/raceDetail.test.ts",
-        "app/races/[slug]/page.tsx",
-        "app/components/TimelineItem.tsx",
-        "app/components/SourcesPanel.tsx",
-        "app/components/AtAGlance.tsx",
-        "app/components/KeyDates.tsx"
-      ]
-    },
-    "app/lib/raceList.test.ts": {
-      "imports": [
-        "app/lib/filters.ts",
-        "app/lib/raceList.ts"
-      ],
-      "importedBy": []
-    },
-    "app/lib/raceList.ts": {
-      "imports": [
-        "app/lib/filters.ts"
-      ],
-      "importedBy": [
-        ".codeyam/isolation-props/_fixtures.ts",
-        "app/lib/races.ts",
-        "app/lib/raceCalendar.ts",
-        "app/lib/raceList.test.ts",
-        "app/lib/raceDetail.ts",
-        "app/lib/useRaceSummaries.ts",
-        "app/lib/myRaces.ts",
-        "app/lib/myRaces.test.ts",
-        "app/components/RaceRow.tsx",
-        "app/components/RaceList.tsx",
-        "app/components/SavedRaceItem.tsx",
-        "app/components/ResultsSection.tsx",
-        "app/components/SavedRaceGroup.tsx"
-      ]
-    },
-    "app/lib/races.ts": {
-      "imports": [
-        "app/lib/prisma.ts",
-        "app/lib/filters.ts",
-        "app/lib/raceDetail.ts",
-        "app/lib/raceList.ts"
-      ],
-      "importedBy": [
-        "app/api/races/summaries/route.ts",
-        "app/api/races/route.ts",
-        "app/page.tsx",
-        "app/races/[slug]/page.tsx"
-      ]
-    },
-    "app/lib/savedRaces.test.ts": {
-      "imports": [
-        "app/lib/savedRaces.ts"
-      ],
-      "importedBy": []
-    },
-    "app/lib/savedRaces.ts": {
-      "imports": [],
-      "importedBy": [
-        "app/lib/useSaveStatus.ts",
-        "app/lib/savedRaces.test.ts",
-        "app/lib/useSavedRaces.ts",
-        "app/lib/myRaces.ts",
-        "app/lib/myRaces.test.ts",
-        "app/components/SavedRaceGroupHeading.tsx",
-        "app/components/RaceNote.tsx",
-        "app/components/SavedRaceItem.tsx",
-        "app/components/SaveRaceButton.tsx",
-        "app/components/SaveMenu.tsx",
-        "app/components/GoneRaceNotice.tsx",
-        "app/components/SavedRaceGroup.tsx"
-      ]
-    },
-    "app/lib/useRaceSummaries.test.tsx": {
-      "imports": [
-        "app/lib/useRaceSummaries.ts"
-      ],
-      "importedBy": []
-    },
-    "app/lib/useRaceSummaries.ts": {
-      "imports": [
-        "app/lib/myRaces.ts",
-        "app/lib/raceList.ts"
-      ],
-      "importedBy": [
-        "app/lib/useRaceSummaries.test.tsx",
-        "app/components/MyRacesList.tsx"
-      ]
-    },
-    "app/lib/useSaveStatus.test.tsx": {
-      "imports": [
-        "app/lib/useSaveStatus.ts"
-      ],
-      "importedBy": []
-    },
-    "app/lib/useSaveStatus.ts": {
-      "imports": [
-        "app/lib/savedRaces.ts"
-      ],
-      "importedBy": [
-        "app/lib/useSaveStatus.test.tsx",
-        "app/components/SaveRaceButton.tsx"
-      ]
-    },
-    "app/lib/useSavedRaces.test.tsx": {
-      "imports": [
-        "app/lib/useSavedRaces.ts"
-      ],
-      "importedBy": []
-    },
-    "app/lib/useSavedRaces.ts": {
-      "imports": [
-        "app/lib/savedRaces.ts"
-      ],
-      "importedBy": [
-        "app/lib/useSavedRaces.test.tsx",
-        "app/components/MyRacesList.tsx"
-      ]
-    },
-    "app/my-races/page.tsx": {
-      "imports": [
-        "app/components/MyRacesSection.tsx",
-        "app/components/PageShell.tsx",
-        "app/components/SiteFooter.tsx",
-        "app/components/SiteHeader.tsx"
-      ],
-      "importedBy": []
-    },
-    "app/page.tsx": {
-      "imports": [
-        "app/components/Hero.tsx",
-        "app/components/HeroSearch.tsx",
-        "app/components/PageShell.tsx",
-        "app/components/ResultsSection.tsx",
-        "app/components/SiteFooter.tsx",
-        "app/components/SiteHeader.tsx",
-        "app/lib/filters.ts",
-        "app/lib/races.ts"
-      ],
-      "importedBy": []
-    },
-    "app/races/[slug]/not-found.tsx": {
-      "imports": [
-        "app/components/PageShell.tsx",
-        "app/components/RaceNotFound.tsx",
-        "app/components/SiteFooter.tsx",
-        "app/components/SiteHeader.tsx"
-      ],
-      "importedBy": []
-    },
-    "app/races/[slug]/page.tsx": {
-      "imports": [
-        "app/components/AtAGlance.tsx",
-        "app/components/BackLink.tsx",
-        "app/components/CourseNote.tsx",
-        "app/components/HowToEnter.tsx",
-        "app/components/KeyDates.tsx",
-        "app/components/NoUpcomingEdition.tsx",
-        "app/components/PageShell.tsx",
-        "app/components/RaceDetailBody.tsx",
-        "app/components/RaceHero.tsx",
-        "app/components/RaceTitle.tsx",
-        "app/components/SiteFooter.tsx",
-        "app/components/SiteHeader.tsx",
-        "app/components/SourcesPanel.tsx",
-        "app/lib/raceDetail.ts",
-        "app/lib/races.ts"
-      ],
-      "importedBy": []
-    },
-    "app/scenario/[slug]/page.tsx": {
-      "imports": [],
-      "importedBy": []
-    },
-    "eslint.config.mjs": {
-      "imports": [],
-      "importedBy": []
-    },
-    "next.config.ts": {
-      "imports": [],
-      "importedBy": []
-    },
-    "postcss.config.mjs": {
-      "imports": [],
-      "importedBy": []
-    },
-    "prisma.config.ts": {
-      "imports": [
-        "app/lib/loadEnv.ts"
-      ],
-      "importedBy": []
-    },
-    "prisma/race-data.json": {
-      "imports": [],
-      "importedBy": [
-        "prisma/seed.ts"
-      ]
-    },
-    "prisma/seed.ts": {
-      "imports": [
-        "app/lib/loadEnv.ts",
-        "prisma/race-data.json"
-      ],
-      "importedBy": []
-    },
-    "scripts/build-app.mjs": {
-      "imports": [],
-      "importedBy": []
-    },
-    "vitest.config.ts": {
-      "imports": [
-        "app/lib/loadEnv.ts"
-      ],
-      "importedBy": []
-    }
-  },
   "entities": {
     ".claude/skills/review-session/scripts/extract-session-helpers.mjs::buildConversationTurns": {
       "filePath": ".claude/skills/review-session/scripts/extract-session-helpers.mjs",
-      "name": "buildConversationTurns",
-      "imports": [],
       "importedBy": [
         ".claude/skills/review-session/scripts/extract-session.mjs::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "buildConversationTurns"
     },
     ".claude/skills/review-session/scripts/extract-session-helpers.mjs::detectFormat": {
       "filePath": ".claude/skills/review-session/scripts/extract-session-helpers.mjs",
-      "name": "detectFormat",
-      "imports": [],
       "importedBy": [
         ".claude/skills/review-session/scripts/extract-session.mjs::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "detectFormat"
     },
     ".claude/skills/review-session/scripts/extract-session-helpers.mjs::detectFormatFromPath": {
       "filePath": ".claude/skills/review-session/scripts/extract-session-helpers.mjs",
-      "name": "detectFormatFromPath",
-      "imports": [],
       "importedBy": [
         ".claude/skills/review-session/scripts/extract-session.mjs::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "detectFormatFromPath"
     },
     ".claude/skills/review-session/scripts/extract-session.mjs::__file_root__": {
       "filePath": ".claude/skills/review-session/scripts/extract-session.mjs",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         ".claude/skills/review-session/scripts/extract-session-helpers.mjs::buildConversationTurns",
         ".claude/skills/review-session/scripts/extract-session-helpers.mjs::detectFormat",
@@ -1144,77 +35,79 @@
         ".claude/skills/review-session/scripts/session-tokens-report.mjs::renderTokensMarkdown",
         ".claude/skills/review-session/scripts/session-tokens-subagents.mjs::readSubagentLines"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     ".claude/skills/review-session/scripts/find-last-session-helpers.mjs::claudeProjectHashFromPath": {
       "filePath": ".claude/skills/review-session/scripts/find-last-session-helpers.mjs",
-      "name": "claudeProjectHashFromPath",
-      "imports": [],
       "importedBy": [
         ".claude/skills/review-session/scripts/find-last-session.mjs::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "claudeProjectHashFromPath"
     },
     ".claude/skills/review-session/scripts/find-last-session-helpers.mjs::readBuildSessionIds": {
       "filePath": ".claude/skills/review-session/scripts/find-last-session-helpers.mjs",
-      "name": "readBuildSessionIds",
-      "imports": [],
       "importedBy": [
         ".claude/skills/review-session/scripts/find-last-session.mjs::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "readBuildSessionIds"
     },
     ".claude/skills/review-session/scripts/find-last-session-helpers.mjs::sessionSourceLabel": {
       "filePath": ".claude/skills/review-session/scripts/find-last-session-helpers.mjs",
-      "name": "sessionSourceLabel",
-      "imports": [],
       "importedBy": [
         ".claude/skills/review-session/scripts/find-last-session.mjs::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "sessionSourceLabel"
     },
     ".claude/skills/review-session/scripts/find-last-session.mjs::__file_root__": {
       "filePath": ".claude/skills/review-session/scripts/find-last-session.mjs",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         ".claude/skills/review-session/scripts/find-last-session-helpers.mjs::claudeProjectHashFromPath",
         ".claude/skills/review-session/scripts/find-last-session-helpers.mjs::readBuildSessionIds",
         ".claude/skills/review-session/scripts/find-last-session-helpers.mjs::sessionSourceLabel"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     ".claude/skills/review-session/scripts/session-tokens-carried.mjs::createCarriedTracker": {
       "filePath": ".claude/skills/review-session/scripts/session-tokens-carried.mjs",
-      "name": "createCarriedTracker",
-      "imports": [],
       "importedBy": [
         ".claude/skills/review-session/scripts/session-tokens.mjs::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "createCarriedTracker"
     },
     ".claude/skills/review-session/scripts/session-tokens-report.mjs::__file_root__": {
       "filePath": ".claude/skills/review-session/scripts/session-tokens-report.mjs",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         ".claude/skills/review-session/scripts/session-tokens.mjs::__file_root__"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     ".claude/skills/review-session/scripts/session-tokens-report.mjs::renderTokensMarkdown": {
       "filePath": ".claude/skills/review-session/scripts/session-tokens-report.mjs",
-      "name": "renderTokensMarkdown",
-      "imports": [],
       "importedBy": [
         ".claude/skills/review-session/scripts/extract-session.mjs::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "renderTokensMarkdown"
     },
     ".claude/skills/review-session/scripts/session-tokens-subagents.mjs::readSubagentLines": {
       "filePath": ".claude/skills/review-session/scripts/session-tokens-subagents.mjs",
-      "name": "readSubagentLines",
-      "imports": [],
       "importedBy": [
         ".claude/skills/review-session/scripts/extract-session.mjs::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "readSubagentLines"
     },
     ".claude/skills/review-session/scripts/session-tokens.mjs::__file_root__": {
       "filePath": ".claude/skills/review-session/scripts/session-tokens.mjs",
-      "name": "__file_root__",
+      "importedBy": [
+        ".claude/skills/review-session/scripts/session-tokens-report.mjs::__file_root__"
+      ],
       "imports": [
         ".claude/skills/review-session/scripts/session-tokens-carried.mjs::createCarriedTracker",
         ".claude/skills/review-session/scripts/session-tokens-labels.mjs::sourcesForToolUse",
@@ -1222,315 +115,378 @@
         ".claude/skills/review-session/scripts/session-tokens-steps.mjs::stepFromHook",
         ".claude/skills/review-session/scripts/session-tokens-steps.mjs::stepLabel"
       ],
-      "importedBy": [
-        ".claude/skills/review-session/scripts/session-tokens-report.mjs::__file_root__"
-      ]
+      "name": "__file_root__"
     },
     ".claude/skills/review-session/scripts/session-tokens.mjs::profileSession": {
       "filePath": ".claude/skills/review-session/scripts/session-tokens.mjs",
-      "name": "profileSession",
-      "imports": [],
       "importedBy": [
         ".claude/skills/review-session/scripts/extract-session.mjs::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "profileSession"
     },
     ".codeyam/capture.js::{\n  DEV_SERVER_DOWN_HEADER,\n  classifyInteractionEffect,\n  resolvePixelClip,\n  interactionEffectSignal,\n  fingerprintHtml,\n  getDOMFingerprint,\n  mergeVisibleTextLength,\n  isCrossOriginRequest,\n  isCaptureFatalRequestFailure,\n  isDevServerPlaceholderResponse,\n  buildCaptureContextOptions,\n  attachCaptureCollectors,\n  navigationStatusIssue,\n  resolveSettleBudgets,\n  collectRenderedContent,\n  scenarioErrorMarkerIssue,\n  driveSingleInteraction,\n  decorateCaptureResult,\n}": {
       "filePath": ".codeyam/capture.js",
-      "name": "{\n  DEV_SERVER_DOWN_HEADER,\n  classifyInteractionEffect,\n  resolvePixelClip,\n  interactionEffectSignal,\n  fingerprintHtml,\n  getDOMFingerprint,\n  mergeVisibleTextLength,\n  isCrossOriginRequest,\n  isCaptureFatalRequestFailure,\n  isDevServerPlaceholderResponse,\n  buildCaptureContextOptions,\n  attachCaptureCollectors,\n  navigationStatusIssue,\n  resolveSettleBudgets,\n  collectRenderedContent,\n  scenarioErrorMarkerIssue,\n  driveSingleInteraction,\n  decorateCaptureResult,\n}",
+      "importedBy": [],
       "imports": [
         ".codeyam/scenario-check-run.js::__file_root__"
       ],
-      "importedBy": []
+      "name": "{\n  DEV_SERVER_DOWN_HEADER,\n  classifyInteractionEffect,\n  resolvePixelClip,\n  interactionEffectSignal,\n  fingerprintHtml,\n  getDOMFingerprint,\n  mergeVisibleTextLength,\n  isCrossOriginRequest,\n  isCaptureFatalRequestFailure,\n  isDevServerPlaceholderResponse,\n  buildCaptureContextOptions,\n  attachCaptureCollectors,\n  navigationStatusIssue,\n  resolveSettleBudgets,\n  collectRenderedContent,\n  scenarioErrorMarkerIssue,\n  driveSingleInteraction,\n  decorateCaptureResult,\n}"
     },
     ".codeyam/capture.js::{\n  assertAppPortReachable,\n  defaultReadServerState,\n  loadScenarioInIframe,\n  loadScenarioTopLevel,\n  resolveHarnessOrigin,\n  waitForStablePage,\n  waitForReadySignal,\n  watchNavigationAfterReady,\n  createNetworkTracker,\n  waitForNetworkQuiet,\n  scrollThroughDocument,\n  forceFinalVisualState,\n  centerCaptureWrapper,\n  isCanvasInteraction,\n  performInteraction,\n  pixelSnapshot,\n  samePixels,\n  waitForPixelStable,\n  waitForPredicate,\n  performInteractionSequence,\n  assertIsolatedComponentResolved,\n  logCaptureTiming,\n}": {
       "filePath": ".codeyam/capture.js",
-      "name": "{\n  assertAppPortReachable,\n  defaultReadServerState,\n  loadScenarioInIframe,\n  loadScenarioTopLevel,\n  resolveHarnessOrigin,\n  waitForStablePage,\n  waitForReadySignal,\n  watchNavigationAfterReady,\n  createNetworkTracker,\n  waitForNetworkQuiet,\n  scrollThroughDocument,\n  forceFinalVisualState,\n  centerCaptureWrapper,\n  isCanvasInteraction,\n  performInteraction,\n  pixelSnapshot,\n  samePixels,\n  waitForPixelStable,\n  waitForPredicate,\n  performInteractionSequence,\n  assertIsolatedComponentResolved,\n  logCaptureTiming,\n}",
+      "importedBy": [],
       "imports": [
         ".codeyam/scenario-playwright.js::__file_root__"
       ],
-      "importedBy": []
+      "name": "{\n  assertAppPortReachable,\n  defaultReadServerState,\n  loadScenarioInIframe,\n  loadScenarioTopLevel,\n  resolveHarnessOrigin,\n  waitForStablePage,\n  waitForReadySignal,\n  watchNavigationAfterReady,\n  createNetworkTracker,\n  waitForNetworkQuiet,\n  scrollThroughDocument,\n  forceFinalVisualState,\n  centerCaptureWrapper,\n  isCanvasInteraction,\n  performInteraction,\n  pixelSnapshot,\n  samePixels,\n  waitForPixelStable,\n  waitForPredicate,\n  performInteractionSequence,\n  assertIsolatedComponentResolved,\n  logCaptureTiming,\n}"
     },
     ".codeyam/capture.js::{\n  buildCounterpartProbe,\n  subpathHydrationEscalation,\n  waitForHydration,\n}": {
       "filePath": ".codeyam/capture.js",
-      "name": "{\n  buildCounterpartProbe,\n  subpathHydrationEscalation,\n  waitForHydration,\n}",
+      "importedBy": [],
       "imports": [
         ".codeyam/scenario-interactivity.js::__file_root__"
       ],
-      "importedBy": []
+      "name": "{\n  buildCounterpartProbe,\n  subpathHydrationEscalation,\n  waitForHydration,\n}"
     },
     ".codeyam/capture.js::{\n  createIssue,\n  pushIssue,\n  buildResult,\n  RELOADED_AFTER_READY,\n  retryOnLiveReload,\n}": {
       "filePath": ".codeyam/capture.js",
-      "name": "{\n  createIssue,\n  pushIssue,\n  buildResult,\n  RELOADED_AFTER_READY,\n  retryOnLiveReload,\n}",
+      "importedBy": [],
       "imports": [
         ".codeyam/scenario-issues.js::__file_root__"
       ],
-      "importedBy": []
+      "name": "{\n  createIssue,\n  pushIssue,\n  buildResult,\n  RELOADED_AFTER_READY,\n  retryOnLiveReload,\n}"
     },
     ".codeyam/capture.js::{\n  isCanvasDominated,\n  frameHasVisualContent,\n  frameContentStats,\n  buildSettleAdvisory,\n  stripStateSelector,\n  collectCssRuleMatches,\n}": {
       "filePath": ".codeyam/capture.js",
-      "name": "{\n  isCanvasDominated,\n  frameHasVisualContent,\n  frameContentStats,\n  buildSettleAdvisory,\n  stripStateSelector,\n  collectCssRuleMatches,\n}",
+      "importedBy": [],
       "imports": [
         ".codeyam/scenario-metrics.js::__file_root__"
       ],
-      "importedBy": []
+      "name": "{\n  isCanvasDominated,\n  frameHasVisualContent,\n  frameContentStats,\n  buildSettleAdvisory,\n  stripStateSelector,\n  collectCssRuleMatches,\n}"
     },
     ".codeyam/capture.js::{\n  resolveRenderedSourcesAttribution,\n  armRenderedSourcesAttribution,\n  retryUnarmedOnReadyTimeout,\n  renderedSourcesRecordPath,\n  recordRenderedSources,\n  renderedSourcesFromOutcome,\n}": {
       "filePath": ".codeyam/capture.js",
-      "name": "{\n  resolveRenderedSourcesAttribution,\n  armRenderedSourcesAttribution,\n  retryUnarmedOnReadyTimeout,\n  renderedSourcesRecordPath,\n  recordRenderedSources,\n  renderedSourcesFromOutcome,\n}",
+      "importedBy": [],
       "imports": [
         ".codeyam/scenario-check-attribution.js::__file_root__"
       ],
-      "importedBy": []
+      "name": "{\n  resolveRenderedSourcesAttribution,\n  armRenderedSourcesAttribution,\n  retryUnarmedOnReadyTimeout,\n  renderedSourcesRecordPath,\n  recordRenderedSources,\n  renderedSourcesFromOutcome,\n}"
     },
     ".codeyam/capture.js::{ attachHttpMocks, recordInPageMockHits }": {
       "filePath": ".codeyam/capture.js",
-      "name": "{ attachHttpMocks, recordInPageMockHits }",
+      "importedBy": [],
       "imports": [
         ".codeyam/scenario-mocks.js::__file_root__"
       ],
-      "importedBy": []
+      "name": "{ attachHttpMocks, recordInPageMockHits }"
     },
     ".codeyam/capture.js::{ devicePixelRatioOf }": {
       "filePath": ".codeyam/capture.js",
-      "name": "{ devicePixelRatioOf }",
+      "importedBy": [],
       "imports": [
         ".codeyam/scenario-targeting.js::__file_root__"
       ],
-      "importedBy": []
+      "name": "{ devicePixelRatioOf }"
     },
     ".codeyam/capture.js::{ getInitScript }": {
       "filePath": ".codeyam/capture.js",
-      "name": "{ getInitScript }",
+      "importedBy": [],
       "imports": [
         ".codeyam/scenario-handlers.js::__file_root__"
       ],
-      "importedBy": []
+      "name": "{ getInitScript }"
     },
     ".codeyam/capture.js::{ launchChromiumWithSelfHeal }": {
       "filePath": ".codeyam/capture.js",
-      "name": "{ launchChromiumWithSelfHeal }",
+      "importedBy": [],
       "imports": [
         ".codeyam/scenario-launch.js::__file_root__"
       ],
-      "importedBy": []
+      "name": "{ launchChromiumWithSelfHeal }"
     },
     ".codeyam/isolation-props/AtAGlance.ts::__file_root__": {
       "filePath": ".codeyam/isolation-props/AtAGlance.ts",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/components/AtAGlance.tsx::__file_root__",
         ".codeyam/isolation-props/_raceDetail.ts::bigBearTimeline",
         ".codeyam/isolation-props/_raceDetail.ts::centralParkTimelineDec10",
         ".codeyam/isolation-props/_raceDetail.ts::escarpmentTimeline"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     ".codeyam/isolation-props/FilterChips.ts::__file_root__": {
       "filePath": ".codeyam/isolation-props/FilterChips.ts",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/components/FilterChips.tsx::__file_root__",
         ".codeyam/isolation-props/_fixtures.ts::__file_root__"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     ".codeyam/isolation-props/FilterToolbar.ts::__file_root__": {
       "filePath": ".codeyam/isolation-props/FilterToolbar.ts",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/components/FilterToolbar.tsx::__file_root__",
         ".codeyam/isolation-props/_fixtures.ts::__file_root__"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     ".codeyam/isolation-props/Hero.ts::__file_root__": {
       "filePath": ".codeyam/isolation-props/Hero.ts",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/components/Hero.tsx::__file_root__",
         "app/components/HeroSearch.tsx::HeroSearch",
         ".codeyam/isolation-props/_fixtures.ts::__file_root__"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     ".codeyam/isolation-props/HeroSearch.ts::__file_root__": {
       "filePath": ".codeyam/isolation-props/HeroSearch.ts",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/components/HeroSearch.tsx::__file_root__",
         ".codeyam/isolation-props/_fixtures.ts::__file_root__"
       ],
-      "importedBy": []
+      "name": "__file_root__"
+    },
+    ".codeyam/isolation-props/KeyDates.ts::__file_root__": {
+      "filePath": ".codeyam/isolation-props/KeyDates.ts",
+      "importedBy": [],
+      "imports": [
+        "app/components/KeyDates.tsx::__file_root__",
+        ".codeyam/isolation-props/_raceDetail.ts::bigBearTimeline",
+        ".codeyam/isolation-props/_raceDetail.ts::centralParkTimelineDec10",
+        ".codeyam/isolation-props/_raceDetail.ts::escarpmentTimeline"
+      ],
+      "name": "__file_root__"
     },
     ".codeyam/isolation-props/NextDeadline.ts::__file_root__": {
       "filePath": ".codeyam/isolation-props/NextDeadline.ts",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/components/NextDeadline.tsx::__file_root__"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     ".codeyam/isolation-props/RaceIdentity.ts::__file_root__": {
       "filePath": ".codeyam/isolation-props/RaceIdentity.ts",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/components/RaceIdentity.tsx::__file_root__"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     ".codeyam/isolation-props/RaceList.ts::__file_root__": {
       "filePath": ".codeyam/isolation-props/RaceList.ts",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/components/RaceList.tsx::__file_root__",
         ".codeyam/isolation-props/_fixtures.ts::__file_root__"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     ".codeyam/isolation-props/RaceRow.ts::__file_root__": {
       "filePath": ".codeyam/isolation-props/RaceRow.ts",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/components/RaceRow.tsx::__file_root__",
         ".codeyam/isolation-props/_fixtures.ts::__file_root__"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     ".codeyam/isolation-props/ResultsSection.ts::__file_root__": {
       "filePath": ".codeyam/isolation-props/ResultsSection.ts",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/components/ResultsSection.tsx::__file_root__",
         ".codeyam/isolation-props/_fixtures.ts::__file_root__"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     ".codeyam/isolation-props/SaveRaceButton.ts::__file_root__": {
       "filePath": ".codeyam/isolation-props/SaveRaceButton.ts",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/components/SaveRaceButton.tsx::__file_root__"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     ".codeyam/isolation-props/SortToggle.ts::__file_root__": {
       "filePath": ".codeyam/isolation-props/SortToggle.ts",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/components/SortToggle.tsx::__file_root__",
         ".codeyam/isolation-props/_fixtures.ts::__file_root__"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     ".codeyam/isolation-props/_fixtures.ts::__file_root__": {
       "filePath": ".codeyam/isolation-props/_fixtures.ts",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/lib/filters.ts::RaceFilters",
         "app/lib/raceList.ts::RaceListItem"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     ".codeyam/isolation-props/_raceDetail.ts::bigBearTimeline": {
       "filePath": ".codeyam/isolation-props/_raceDetail.ts",
-      "name": "bigBearTimeline",
-      "imports": [],
       "importedBy": [
-        ".codeyam/isolation-props/AtAGlance.ts::__file_root__"
-      ]
+        ".codeyam/isolation-props/AtAGlance.ts::__file_root__",
+        ".codeyam/isolation-props/KeyDates.ts::__file_root__"
+      ],
+      "imports": [],
+      "name": "bigBearTimeline"
     },
     ".codeyam/isolation-props/_raceDetail.ts::centralParkTimelineDec10": {
       "filePath": ".codeyam/isolation-props/_raceDetail.ts",
-      "name": "centralParkTimelineDec10",
-      "imports": [],
       "importedBy": [
-        ".codeyam/isolation-props/AtAGlance.ts::__file_root__"
-      ]
+        ".codeyam/isolation-props/AtAGlance.ts::__file_root__",
+        ".codeyam/isolation-props/KeyDates.ts::__file_root__"
+      ],
+      "imports": [],
+      "name": "centralParkTimelineDec10"
     },
     ".codeyam/isolation-props/_raceDetail.ts::escarpmentTimeline": {
       "filePath": ".codeyam/isolation-props/_raceDetail.ts",
-      "name": "escarpmentTimeline",
-      "imports": [],
       "importedBy": [
-        ".codeyam/isolation-props/AtAGlance.ts::__file_root__"
-      ]
+        ".codeyam/isolation-props/AtAGlance.ts::__file_root__",
+        ".codeyam/isolation-props/KeyDates.ts::__file_root__"
+      ],
+      "imports": [],
+      "name": "escarpmentTimeline"
     },
     ".codeyam/scenario-check-attribution.js::__file_root__": {
       "filePath": ".codeyam/scenario-check-attribution.js",
-      "name": "__file_root__",
-      "imports": [],
       "importedBy": [
         ".codeyam/capture.js::{\n  resolveRenderedSourcesAttribution,\n  armRenderedSourcesAttribution,\n  retryUnarmedOnReadyTimeout,\n  renderedSourcesRecordPath,\n  recordRenderedSources,\n  renderedSourcesFromOutcome,\n}"
-      ]
-    },
-    ".codeyam/scenario-check-run.js::__file_root__": {
-      "filePath": ".codeyam/scenario-check-run.js",
-      "name": "__file_root__",
-      "imports": [],
-      "importedBy": [
-        ".codeyam/capture.js::{\n  DEV_SERVER_DOWN_HEADER,\n  classifyInteractionEffect,\n  resolvePixelClip,\n  interactionEffectSignal,\n  fingerprintHtml,\n  getDOMFingerprint,\n  mergeVisibleTextLength,\n  isCrossOriginRequest,\n  isCaptureFatalRequestFailure,\n  isDevServerPlaceholderResponse,\n  buildCaptureContextOptions,\n  attachCaptureCollectors,\n  navigationStatusIssue,\n  resolveSettleBudgets,\n  collectRenderedContent,\n  scenarioErrorMarkerIssue,\n  driveSingleInteraction,\n  decorateCaptureResult,\n}"
-      ]
-    },
-    ".codeyam/scenario-handlers.js::__file_root__": {
-      "filePath": ".codeyam/scenario-handlers.js",
-      "name": "__file_root__",
-      "imports": [],
-      "importedBy": [
-        ".codeyam/capture.js::{ getInitScript }"
-      ]
-    },
-    ".codeyam/scenario-interactivity.js::__file_root__": {
-      "filePath": ".codeyam/scenario-interactivity.js",
-      "name": "__file_root__",
-      "imports": [],
-      "importedBy": [
-        ".codeyam/capture.js::{\n  buildCounterpartProbe,\n  subpathHydrationEscalation,\n  waitForHydration,\n}"
-      ]
-    },
-    ".codeyam/scenario-issues.js::__file_root__": {
-      "filePath": ".codeyam/scenario-issues.js",
-      "name": "__file_root__",
-      "imports": [],
-      "importedBy": [
-        ".codeyam/capture.js::{\n  createIssue,\n  pushIssue,\n  buildResult,\n  RELOADED_AFTER_READY,\n  retryOnLiveReload,\n}"
-      ]
-    },
-    ".codeyam/scenario-metrics.js::__file_root__": {
-      "filePath": ".codeyam/scenario-metrics.js",
-      "name": "__file_root__",
-      "imports": [],
-      "importedBy": [
-        ".codeyam/scenario-playwright.js::{\n  hasLoadingMarkers,\n  isCanvasDominated,\n  shouldStopWaitingForImages,\n}"
-      ]
-    },
-    ".codeyam/scenario-playwright.js::{\n  candidateLabelSummary,\n  noMatchGuidance,\n  describeMatchCandidates,\n  resolveTextTarget,\n  pickBestCandidate,\n  pageOf,\n  targetBox,\n  pointIn,\n  devicePixelRatioOf,\n  outsideTargetMessage,\n  outsideTargetError,\n  pointerGeometry,\n  locatorPointGeometry,\n}": {
-      "filePath": ".codeyam/scenario-playwright.js",
-      "name": "{\n  candidateLabelSummary,\n  noMatchGuidance,\n  describeMatchCandidates,\n  resolveTextTarget,\n  pickBestCandidate,\n  pageOf,\n  targetBox,\n  pointIn,\n  devicePixelRatioOf,\n  outsideTargetMessage,\n  outsideTargetError,\n  pointerGeometry,\n  locatorPointGeometry,\n}",
-      "imports": [
-        ".codeyam/scenario-targeting.js::__file_root__"
       ],
-      "importedBy": []
+      "imports": [],
+      "name": "__file_root__"
     },
-    ".codeyam/scenario-playwright.js::{\n  hasLoadingMarkers,\n  isCanvasDominated,\n  shouldStopWaitingForImages,\n}": {
-      "filePath": ".codeyam/scenario-playwright.js",
-      "name": "{\n  hasLoadingMarkers,\n  isCanvasDominated,\n  shouldStopWaitingForImages,\n}",
+    ".codeyam/scenario-check-run.js::{\n  findScenarioError,\n  SCENARIO_ERROR_MARKER,\n  hasRenderableContent,\n  describeBlankReason,\n}": {
+      "filePath": ".codeyam/scenario-check-run.js",
+      "importedBy": [],
       "imports": [
         ".codeyam/scenario-metrics.js::__file_root__"
       ],
-      "importedBy": []
+      "name": "{\n  findScenarioError,\n  SCENARIO_ERROR_MARKER,\n  hasRenderableContent,\n  describeBlankReason,\n}"
+    },
+    ".codeyam/scenario-check-run.js::{\n  handleConsoleMessage,\n  handlePageError,\n  handleRequestFailed,\n}": {
+      "filePath": ".codeyam/scenario-check-run.js",
+      "importedBy": [],
+      "imports": [
+        ".codeyam/scenario-handlers.js::__file_root__"
+      ],
+      "name": "{\n  handleConsoleMessage,\n  handlePageError,\n  handleRequestFailed,\n}"
+    },
+    ".codeyam/scenario-check-run.js::{\n  waitForStablePage,\n  collectContentState,\n  collectVisibleTextLength,\n  isCanvasInteraction,\n  resolveInteractionTarget,\n  performInteraction,\n  pixelSnapshot,\n  samePixels,\n  waitForPixelStable,\n}": {
+      "filePath": ".codeyam/scenario-check-run.js",
+      "importedBy": [],
+      "imports": [
+        ".codeyam/scenario-playwright.js::__file_root__"
+      ],
+      "name": "{\n  waitForStablePage,\n  collectContentState,\n  collectVisibleTextLength,\n  isCanvasInteraction,\n  resolveInteractionTarget,\n  performInteraction,\n  pixelSnapshot,\n  samePixels,\n  waitForPixelStable,\n}"
+    },
+    ".codeyam/scenario-check-run.js::{ createIssue, pushIssue }": {
+      "filePath": ".codeyam/scenario-check-run.js",
+      "importedBy": [],
+      "imports": [
+        ".codeyam/scenario-issues.js::__file_root__"
+      ],
+      "name": "{ createIssue, pushIssue }"
+    },
+    ".codeyam/scenario-check-run.js::{ isDeclaredErrorMock, unmockedRouteFrom }": {
+      "filePath": ".codeyam/scenario-check-run.js",
+      "importedBy": [],
+      "imports": [
+        ".codeyam/scenario-mocks.js::__file_root__"
+      ],
+      "name": "{ isDeclaredErrorMock, unmockedRouteFrom }"
+    },
+    ".codeyam/scenario-handlers.js::__file_root__": {
+      "filePath": ".codeyam/scenario-handlers.js",
+      "importedBy": [
+        ".codeyam/capture.js::{ getInitScript }",
+        ".codeyam/scenario-check-run.js::{\n  handleConsoleMessage,\n  handlePageError,\n  handleRequestFailed,\n}"
+      ],
+      "imports": [],
+      "name": "__file_root__"
+    },
+    ".codeyam/scenario-interactivity.js::__file_root__": {
+      "filePath": ".codeyam/scenario-interactivity.js",
+      "importedBy": [
+        ".codeyam/capture.js::{\n  buildCounterpartProbe,\n  subpathHydrationEscalation,\n  waitForHydration,\n}"
+      ],
+      "imports": [],
+      "name": "__file_root__"
+    },
+    ".codeyam/scenario-issues.js::__file_root__": {
+      "filePath": ".codeyam/scenario-issues.js",
+      "importedBy": [
+        ".codeyam/capture.js::{\n  createIssue,\n  pushIssue,\n  buildResult,\n  RELOADED_AFTER_READY,\n  retryOnLiveReload,\n}",
+        ".codeyam/scenario-check-run.js::{ createIssue, pushIssue }"
+      ],
+      "imports": [],
+      "name": "__file_root__"
+    },
+    ".codeyam/scenario-metrics.js::__file_root__": {
+      "filePath": ".codeyam/scenario-metrics.js",
+      "importedBy": [
+        ".codeyam/scenario-playwright.js::{\n  hasLoadingMarkers,\n  isCanvasDominated,\n  shouldStopWaitingForImages,\n}",
+        ".codeyam/scenario-check-run.js::{\n  findScenarioError,\n  SCENARIO_ERROR_MARKER,\n  hasRenderableContent,\n  describeBlankReason,\n}"
+      ],
+      "imports": [],
+      "name": "__file_root__"
+    },
+    ".codeyam/scenario-mocks.js::__file_root__": {
+      "filePath": ".codeyam/scenario-mocks.js",
+      "importedBy": [
+        ".codeyam/scenario-check-run.js::{ isDeclaredErrorMock, unmockedRouteFrom }"
+      ],
+      "imports": [],
+      "name": "__file_root__"
+    },
+    ".codeyam/scenario-playwright.js::__file_root__": {
+      "filePath": ".codeyam/scenario-playwright.js",
+      "importedBy": [
+        ".codeyam/scenario-check-run.js::{\n  waitForStablePage,\n  collectContentState,\n  collectVisibleTextLength,\n  isCanvasInteraction,\n  resolveInteractionTarget,\n  performInteraction,\n  pixelSnapshot,\n  samePixels,\n  waitForPixelStable,\n}"
+      ],
+      "imports": [],
+      "name": "__file_root__"
+    },
+    ".codeyam/scenario-playwright.js::{\n  candidateLabelSummary,\n  noMatchGuidance,\n  describeMatchCandidates,\n  resolveTextTarget,\n  pickBestCandidate,\n  pageOf,\n  targetBox,\n  pointIn,\n  devicePixelRatioOf,\n  outsideTargetMessage,\n  outsideTargetError,\n  pointerGeometry,\n  locatorPointGeometry,\n}": {
+      "filePath": ".codeyam/scenario-playwright.js",
+      "importedBy": [],
+      "imports": [
+        ".codeyam/scenario-targeting.js::__file_root__"
+      ],
+      "name": "{\n  candidateLabelSummary,\n  noMatchGuidance,\n  describeMatchCandidates,\n  resolveTextTarget,\n  pickBestCandidate,\n  pageOf,\n  targetBox,\n  pointIn,\n  devicePixelRatioOf,\n  outsideTargetMessage,\n  outsideTargetError,\n  pointerGeometry,\n  locatorPointGeometry,\n}"
+    },
+    ".codeyam/scenario-playwright.js::{\n  hasLoadingMarkers,\n  isCanvasDominated,\n  shouldStopWaitingForImages,\n}": {
+      "filePath": ".codeyam/scenario-playwright.js",
+      "importedBy": [],
+      "imports": [
+        ".codeyam/scenario-metrics.js::__file_root__"
+      ],
+      "name": "{\n  hasLoadingMarkers,\n  isCanvasDominated,\n  shouldStopWaitingForImages,\n}"
     },
     ".codeyam/scenario-targeting.js::__file_root__": {
       "filePath": ".codeyam/scenario-targeting.js",
-      "name": "__file_root__",
-      "imports": [],
       "importedBy": [
         ".codeyam/capture.js::{ devicePixelRatioOf }",
         ".codeyam/scenario-playwright.js::{\n  candidateLabelSummary,\n  noMatchGuidance,\n  describeMatchCandidates,\n  resolveTextTarget,\n  pickBestCandidate,\n  pageOf,\n  targetBox,\n  pointIn,\n  devicePixelRatioOf,\n  outsideTargetMessage,\n  outsideTargetError,\n  pointerGeometry,\n  locatorPointGeometry,\n}"
-      ]
+      ],
+      "imports": [],
+      "name": "__file_root__"
     },
     "app/api/races/[slug]/calendar/route.ts::__file_root__": {
       "filePath": "app/api/races/[slug]/calendar/route.ts",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/lib/prisma.ts::__file_root__",
         "app/lib/ics.ts::buildIcs",
@@ -1539,45 +495,45 @@
         "app/lib/raceCalendar.ts::googleCalendarUrl",
         "app/lib/raceCalendar.ts::raceCalendarEvent"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     "app/api/races/route.ts::__file_root__": {
       "filePath": "app/api/races/route.ts",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/lib/filters.ts::parseFilters",
         "app/lib/races.ts::findRaces"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     "app/api/races/summaries/route.ts::__file_root__": {
       "filePath": "app/api/races/summaries/route.ts",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/lib/myRaces.ts::parseSummarySlugs",
         "app/lib/races.ts::findRaceSummaries"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     "app/components/AddToCalendar.tsx::AddToCalendar": {
       "filePath": "app/components/AddToCalendar.tsx",
-      "name": "AddToCalendar",
-      "imports": [],
       "importedBy": [
         "app/components/NextDeadline.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "AddToCalendar"
     },
     "app/components/AddToCalendar.tsx::__file_root__": {
       "filePath": "app/components/AddToCalendar.tsx",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/lib/raceCalendar.ts::googleCalendarHref"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     "app/components/AtAGlance.tsx::__file_root__": {
       "filePath": "app/components/AtAGlance.tsx",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/components/GlanceActions.tsx::GlanceActions",
         "app/components/GlanceItem.tsx::GlanceItem",
@@ -1588,19 +544,19 @@
         "app/lib/format.ts::formatTime",
         "app/lib/raceDetail.ts::TimelineEntry"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     "app/components/FilterChips.tsx::FilterChips": {
       "filePath": "app/components/FilterChips.tsx",
-      "name": "FilterChips",
-      "imports": [],
       "importedBy": [
         "app/components/FilterToolbar.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "FilterChips"
     },
     "app/components/FilterChips.tsx::__file_root__": {
       "filePath": "app/components/FilterChips.tsx",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/lib/filters.ts::RaceFilters",
         "app/lib/filters.ts::StatusChip",
@@ -1609,100 +565,103 @@
         "app/lib/filters.ts::filterHref",
         "app/lib/filters.ts::toggleStatus"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     "app/components/FilterToolbar.tsx::__file_root__": {
       "filePath": "app/components/FilterToolbar.tsx",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/components/FilterChips.tsx::FilterChips",
         "app/components/SortToggle.tsx::SortToggle",
         "app/lib/filters.ts::RaceFilters"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     "app/components/GlanceActions.tsx::GlanceActions": {
       "filePath": "app/components/GlanceActions.tsx",
-      "name": "GlanceActions",
-      "imports": [],
       "importedBy": [
         "app/components/AtAGlance.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "GlanceActions"
     },
     "app/components/GlanceActions.tsx::__file_root__": {
       "filePath": "app/components/GlanceActions.tsx",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/components/OfficialLinkButton.tsx::OfficialLinkButton",
         "app/components/SaveRaceButton.tsx::SaveRaceButton"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     "app/components/GlanceItem.tsx::GlanceItem": {
       "filePath": "app/components/GlanceItem.tsx",
-      "name": "GlanceItem",
-      "imports": [],
       "importedBy": [
         "app/components/AtAGlance.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "GlanceItem"
     },
     "app/components/GoneRaceNotice.tsx::__file_root__": {
       "filePath": "app/components/GoneRaceNotice.tsx",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/lib/myRaces.ts::goneRaceMessage",
         "app/lib/savedRaces.ts::setSaveStatus"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     "app/components/HeroSearch.tsx::__file_root__": {
       "filePath": "app/components/HeroSearch.tsx",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/components/SelectField.tsx::SelectField",
         "app/lib/filters.ts::RaceFilters",
         "app/lib/filters.ts::__file_root__",
         "app/lib/filters.ts::raceCountLabel"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     "app/components/HowToEnter.tsx::__file_root__": {
       "filePath": "app/components/HowToEnter.tsx",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/lib/format.ts::formatPrice"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     "app/components/KeyDates.tsx::__file_root__": {
       "filePath": "app/components/KeyDates.tsx",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
+        "app/components/OpeningDateUnknown.tsx::OpeningDateUnknown",
         "app/components/TimelineItem.tsx::TimelineItem",
         "app/lib/raceDetail.ts::TimelineEntry",
+        "app/lib/raceDetail.ts::openingDateUnknown",
+        "app/lib/raceDetail.ts::registrationHasOpened",
         "app/lib/raceDetail.ts::timelineCalendarHref"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     "app/components/MyRacesEmpty.tsx::MyRacesEmpty": {
       "filePath": "app/components/MyRacesEmpty.tsx",
-      "name": "MyRacesEmpty",
-      "imports": [],
       "importedBy": [
         "app/components/MyRacesList.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "MyRacesEmpty"
     },
     "app/components/MyRacesHeader.tsx::MyRacesHeader": {
       "filePath": "app/components/MyRacesHeader.tsx",
-      "name": "MyRacesHeader",
-      "imports": [],
       "importedBy": [
         "app/components/MyRacesSection.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "MyRacesHeader"
     },
     "app/components/MyRacesList.tsx::__file_root__": {
       "filePath": "app/components/MyRacesList.tsx",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/components/MyRacesEmpty.tsx::MyRacesEmpty",
         "app/components/MyRacesLoading.tsx::MyRacesLoading",
@@ -1713,21 +672,21 @@
         "app/lib/useRaceSummaries.ts::useRaceSummaries",
         "app/lib/useSavedRaces.ts::useSavedRaces"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     "app/components/MyRacesSection.tsx::__file_root__": {
       "filePath": "app/components/MyRacesSection.tsx",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/components/MyRacesHeader.tsx::MyRacesHeader",
         "app/components/MyRacesList.tsx::MyRacesList",
         "app/components/TimezoneNote.tsx::TimezoneNote"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     "app/components/NextDeadline.tsx::__file_root__": {
       "filePath": "app/components/NextDeadline.tsx",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/components/AddToCalendar.tsx::AddToCalendar",
         "app/lib/format.ts::__file_root__",
@@ -1735,35 +694,43 @@
         "app/lib/format.ts::formatTime",
         "app/lib/format.ts::milestoneVerb"
       ],
-      "importedBy": []
+      "name": "__file_root__"
+    },
+    "app/components/OpeningDateUnknown.tsx::OpeningDateUnknown": {
+      "filePath": "app/components/OpeningDateUnknown.tsx",
+      "importedBy": [
+        "app/components/KeyDates.tsx::__file_root__"
+      ],
+      "imports": [],
+      "name": "OpeningDateUnknown"
     },
     "app/components/RaceDayCell.tsx::__file_root__": {
       "filePath": "app/components/RaceDayCell.tsx",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/lib/format.ts::formatDay"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     "app/components/RaceIdentity.tsx::__file_root__": {
       "filePath": "app/components/RaceIdentity.tsx",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/lib/format.ts::formatDistance"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     "app/components/RaceList.tsx::RaceList": {
       "filePath": "app/components/RaceList.tsx",
-      "name": "RaceList",
-      "imports": [],
       "importedBy": [
         "app/components/ResultsSection.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "RaceList"
     },
     "app/components/RaceList.tsx::__file_root__": {
       "filePath": "app/components/RaceList.tsx",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/components/EmptyResults.tsx::EmptyResults",
         "app/components/RaceRow.tsx::RaceRow",
@@ -1774,36 +741,36 @@
         "app/lib/raceList.ts::RaceListItem",
         "app/lib/raceList.ts::isUrgent"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     "app/components/RaceNote.tsx::RaceNote": {
       "filePath": "app/components/RaceNote.tsx",
-      "name": "RaceNote",
-      "imports": [],
       "importedBy": [
         "app/components/SavedRaceItem.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "RaceNote"
     },
     "app/components/RaceNote.tsx::__file_root__": {
       "filePath": "app/components/RaceNote.tsx",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/lib/savedRaces.ts::setSaveNote"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     "app/components/RaceRow.tsx::RaceRow": {
       "filePath": "app/components/RaceRow.tsx",
-      "name": "RaceRow",
-      "imports": [],
       "importedBy": [
         "app/components/RaceList.tsx::__file_root__",
         "app/components/SavedRaceItem.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "RaceRow"
     },
     "app/components/RaceRow.tsx::__file_root__": {
       "filePath": "app/components/RaceRow.tsx",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/components/NextDeadline.tsx::NextDeadline",
         "app/components/RaceDayCell.tsx::RaceDayCell",
@@ -1813,27 +780,27 @@
         "app/components/WeeksToTrain.tsx::WeeksToTrain",
         "app/lib/raceList.ts::RaceListItem"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     "app/components/RegistrationChanged.tsx::RegistrationChanged": {
       "filePath": "app/components/RegistrationChanged.tsx",
-      "name": "RegistrationChanged",
-      "imports": [],
       "importedBy": [
         "app/components/SavedRaceItem.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "RegistrationChanged"
     },
     "app/components/ResultsHeader.tsx::__file_root__": {
       "filePath": "app/components/ResultsHeader.tsx",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/lib/filters.ts::raceCountLabel"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     "app/components/ResultsSection.tsx::__file_root__": {
       "filePath": "app/components/ResultsSection.tsx",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/components/FilterToolbar.tsx::FilterToolbar",
         "app/components/RaceList.tsx::RaceList",
@@ -1844,20 +811,20 @@
         "app/lib/filters.ts::resultsHeading",
         "app/lib/raceList.ts::RaceListItem"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     "app/components/SaveMenu.tsx::__file_root__": {
       "filePath": "app/components/SaveMenu.tsx",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/lib/savedRaces.ts::SaveStatus",
         "app/lib/savedRaces.ts::__file_root__"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     "app/components/SaveRaceButton.tsx::__file_root__": {
       "filePath": "app/components/SaveRaceButton.tsx",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/components/SaveMenu.tsx::SaveMenu",
         "app/lib/savedRaces.ts::SaveStatus",
@@ -1866,11 +833,11 @@
         "app/lib/savedRaces.ts::storageAvailable",
         "app/lib/useSaveStatus.ts::useSaveStatus"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     "app/components/SavedRaceGroup.tsx::__file_root__": {
       "filePath": "app/components/SavedRaceGroup.tsx",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/components/SavedRaceGroupHeading.tsx::SavedRaceGroupHeading",
         "app/components/SavedRaceItem.tsx::SavedRaceItem",
@@ -1878,37 +845,37 @@
         "app/lib/savedRaces.ts::SaveStatus",
         "app/lib/savedRaces.ts::SavedRaces"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     "app/components/SavedRaceGroupHeading.tsx::SavedRaceGroupHeading": {
       "filePath": "app/components/SavedRaceGroupHeading.tsx",
-      "name": "SavedRaceGroupHeading",
-      "imports": [],
       "importedBy": [
         "app/components/SavedRaceGroup.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "SavedRaceGroupHeading"
     },
     "app/components/SavedRaceGroupHeading.tsx::__file_root__": {
       "filePath": "app/components/SavedRaceGroupHeading.tsx",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/lib/myRaces.ts::savedCountLabel",
         "app/lib/savedRaces.ts::SaveStatus",
         "app/lib/savedRaces.ts::__file_root__"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     "app/components/SavedRaceItem.tsx::SavedRaceItem": {
       "filePath": "app/components/SavedRaceItem.tsx",
-      "name": "SavedRaceItem",
-      "imports": [],
       "importedBy": [
         "app/components/SavedRaceGroup.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "SavedRaceItem"
     },
     "app/components/SavedRaceItem.tsx::__file_root__": {
       "filePath": "app/components/SavedRaceItem.tsx",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/components/GoneRaceNotice.tsx::GoneRaceNotice",
         "app/components/RaceNote.tsx::RaceNote",
@@ -1920,123 +887,123 @@
         "app/lib/raceList.ts::isUrgent",
         "app/lib/savedRaces.ts::SavedRace"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     "app/components/SeasonPreview.tsx::SeasonPreview": {
       "filePath": "app/components/SeasonPreview.tsx",
-      "name": "SeasonPreview",
-      "imports": [],
       "importedBy": [
         "app/components/SeasonTeaser.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "SeasonPreview"
     },
     "app/components/SeasonTeaser.tsx::SeasonTeaser": {
       "filePath": "app/components/SeasonTeaser.tsx",
-      "name": "SeasonTeaser",
-      "imports": [],
       "importedBy": [
         "app/components/ResultsSection.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "SeasonTeaser"
     },
     "app/components/SeasonTeaser.tsx::__file_root__": {
       "filePath": "app/components/SeasonTeaser.tsx",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/components/SeasonPreview.tsx::SeasonPreview"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     "app/components/SelectField.tsx::SelectField": {
       "filePath": "app/components/SelectField.tsx",
-      "name": "SelectField",
-      "imports": [],
       "importedBy": [
         "app/components/HeroSearch.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "SelectField"
     },
     "app/components/SiteHeader.tsx::__file_root__": {
       "filePath": "app/components/SiteHeader.tsx",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/components/Logo.tsx::Logo"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     "app/components/SortToggle.tsx::SortToggle": {
       "filePath": "app/components/SortToggle.tsx",
-      "name": "SortToggle",
-      "imports": [],
       "importedBy": [
         "app/components/FilterToolbar.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "SortToggle"
     },
     "app/components/SortToggle.tsx::__file_root__": {
       "filePath": "app/components/SortToggle.tsx",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/lib/filters.ts::RaceFilters",
         "app/lib/filters.ts::SortKey",
         "app/lib/filters.ts::__file_root__",
         "app/lib/filters.ts::filterHref"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     "app/components/SourcesPanel.tsx::__file_root__": {
       "filePath": "app/components/SourcesPanel.tsx",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/lib/format.ts::formatDay",
         "app/lib/raceDetail.ts::sourceHost"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     "app/components/TimelineItem.tsx::TimelineItem": {
       "filePath": "app/components/TimelineItem.tsx",
-      "name": "TimelineItem",
-      "imports": [],
       "importedBy": [
         "app/components/KeyDates.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "TimelineItem"
     },
     "app/components/TimelineItem.tsx::__file_root__": {
       "filePath": "app/components/TimelineItem.tsx",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/components/AddToCalendar.tsx::AddToCalendar",
-        "app/lib/format.ts::__file_root__",
         "app/lib/format.ts::formatWhen",
+        "app/lib/format.ts::milestoneLabel",
         "app/lib/raceDetail.ts::TimelineEntry"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     "app/components/TimezoneNote.tsx::TimezoneNote": {
       "filePath": "app/components/TimezoneNote.tsx",
-      "name": "TimezoneNote",
-      "imports": [],
       "importedBy": [
         "app/components/MyRacesSection.tsx::__file_root__",
         "app/components/ResultsSection.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "TimezoneNote"
     },
     "app/globals.css::__file_root__": {
       "filePath": "app/globals.css",
-      "name": "__file_root__",
-      "imports": [],
       "importedBy": [
         "app/layout.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "__file_root__"
     },
     "app/layout.tsx::__file_root__": {
       "filePath": "app/layout.tsx",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/globals.css::__file_root__"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     "app/lib/filters.test.ts::__file_root__": {
       "filePath": "app/lib/filters.test.ts",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/lib/filters.ts::__file_root__",
         "app/lib/filters.ts::activeFilterChips",
@@ -2046,12 +1013,10 @@
         "app/lib/filters.ts::resultsHeading",
         "app/lib/filters.ts::toggleStatus"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     "app/lib/filters.ts::RaceFilters": {
       "filePath": "app/lib/filters.ts",
-      "name": "RaceFilters",
-      "imports": [],
       "importedBy": [
         "app/lib/raceList.ts::__file_root__",
         "app/components/RaceList.tsx::__file_root__",
@@ -2060,37 +1025,37 @@
         "app/components/FilterChips.tsx::__file_root__",
         "app/components/ResultsSection.tsx::__file_root__",
         "app/components/FilterToolbar.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "RaceFilters"
     },
     "app/lib/filters.ts::SearchParams": {
       "filePath": "app/lib/filters.ts",
-      "name": "SearchParams",
-      "imports": [],
       "importedBy": [
         "app/page.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "SearchParams"
     },
     "app/lib/filters.ts::SortKey": {
       "filePath": "app/lib/filters.ts",
-      "name": "SortKey",
-      "imports": [],
       "importedBy": [
         "app/lib/raceList.ts::__file_root__",
         "app/components/SortToggle.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "SortKey"
     },
     "app/lib/filters.ts::StatusChip": {
       "filePath": "app/lib/filters.ts",
-      "name": "StatusChip",
-      "imports": [],
       "importedBy": [
         "app/components/FilterChips.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "StatusChip"
     },
     "app/lib/filters.ts::__file_root__": {
       "filePath": "app/lib/filters.ts",
-      "name": "__file_root__",
-      "imports": [],
       "importedBy": [
         "app/lib/filters.test.ts::__file_root__",
         "app/lib/raceList.ts::__file_root__",
@@ -2098,70 +1063,72 @@
         "app/components/HeroSearch.tsx::__file_root__",
         "app/components/SortToggle.tsx::__file_root__",
         "app/components/FilterChips.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "__file_root__"
     },
     "app/lib/filters.ts::activeFilterChips": {
       "filePath": "app/lib/filters.ts",
-      "name": "activeFilterChips",
-      "imports": [],
       "importedBy": [
         "app/lib/filters.test.ts::__file_root__",
         "app/components/FilterChips.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "activeFilterChips"
     },
     "app/lib/filters.ts::filterHref": {
       "filePath": "app/lib/filters.ts",
-      "name": "filterHref",
-      "imports": [],
       "importedBy": [
         "app/lib/filters.test.ts::__file_root__",
         "app/page.tsx::__file_root__",
         "app/components/RaceList.tsx::__file_root__",
         "app/components/SortToggle.tsx::__file_root__",
         "app/components/FilterChips.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "filterHref"
     },
     "app/lib/filters.ts::parseFilters": {
       "filePath": "app/lib/filters.ts",
-      "name": "parseFilters",
-      "imports": [],
       "importedBy": [
         "app/lib/filters.test.ts::__file_root__",
         "app/api/races/route.ts::__file_root__",
         "app/page.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "parseFilters"
     },
     "app/lib/filters.ts::raceCountLabel": {
       "filePath": "app/lib/filters.ts",
-      "name": "raceCountLabel",
-      "imports": [],
       "importedBy": [
         "app/lib/filters.test.ts::__file_root__",
         "app/components/HeroSearch.tsx::__file_root__",
         "app/components/ResultsHeader.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "raceCountLabel"
     },
     "app/lib/filters.ts::resultsHeading": {
       "filePath": "app/lib/filters.ts",
-      "name": "resultsHeading",
-      "imports": [],
       "importedBy": [
         "app/lib/filters.test.ts::__file_root__",
         "app/components/ResultsSection.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "resultsHeading"
     },
     "app/lib/filters.ts::toggleStatus": {
       "filePath": "app/lib/filters.ts",
-      "name": "toggleStatus",
-      "imports": [],
       "importedBy": [
         "app/lib/filters.test.ts::__file_root__",
         "app/components/FilterChips.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "toggleStatus"
     },
     "app/lib/format.test.ts::__file_root__": {
       "filePath": "app/lib/format.test.ts",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/lib/format.ts::etDate",
         "app/lib/format.ts::formatDay",
@@ -2171,142 +1138,151 @@
         "app/lib/format.ts::formatPrice",
         "app/lib/format.ts::formatTime",
         "app/lib/format.ts::formatWhen",
+        "app/lib/format.ts::milestoneLabel",
         "app/lib/format.ts::milestoneVerb"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     "app/lib/format.ts::__file_root__": {
       "filePath": "app/lib/format.ts",
-      "name": "__file_root__",
-      "imports": [],
       "importedBy": [
         "app/lib/myRaces.ts::__file_root__",
-        "app/components/TimelineItem.tsx::__file_root__",
         "app/components/AtAGlance.tsx::__file_root__",
         "app/components/NextDeadline.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "__file_root__"
     },
     "app/lib/format.ts::etDate": {
       "filePath": "app/lib/format.ts",
-      "name": "etDate",
-      "imports": [],
       "importedBy": [
         "app/lib/format.test.ts::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "etDate"
     },
     "app/lib/format.ts::formatDay": {
       "filePath": "app/lib/format.ts",
-      "name": "formatDay",
-      "imports": [],
       "importedBy": [
         "app/lib/format.test.ts::__file_root__",
         "app/components/SourcesPanel.tsx::__file_root__",
         "app/components/RaceDayCell.tsx::__file_root__",
         "app/components/AtAGlance.tsx::__file_root__",
         "app/components/NextDeadline.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "formatDay"
     },
     "app/lib/format.ts::formatDistance": {
       "filePath": "app/lib/format.ts",
-      "name": "formatDistance",
-      "imports": [],
       "importedBy": [
         "app/lib/format.test.ts::__file_root__",
         "app/components/AtAGlance.tsx::__file_root__",
         "app/components/RaceIdentity.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "formatDistance"
     },
     "app/lib/format.ts::formatEt": {
       "filePath": "app/lib/format.ts",
-      "name": "formatEt",
-      "imports": [],
       "importedBy": [
         "app/lib/format.test.ts::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "formatEt"
     },
     "app/lib/format.ts::formatLongDay": {
       "filePath": "app/lib/format.ts",
-      "name": "formatLongDay",
-      "imports": [],
       "importedBy": [
         "app/lib/format.test.ts::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "formatLongDay"
     },
     "app/lib/format.ts::formatPrice": {
       "filePath": "app/lib/format.ts",
-      "name": "formatPrice",
-      "imports": [],
       "importedBy": [
         "app/lib/format.test.ts::__file_root__",
         "app/components/HowToEnter.tsx::__file_root__",
         "app/components/AtAGlance.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "formatPrice"
     },
     "app/lib/format.ts::formatTime": {
       "filePath": "app/lib/format.ts",
-      "name": "formatTime",
-      "imports": [],
       "importedBy": [
         "app/lib/format.test.ts::__file_root__",
         "app/components/AtAGlance.tsx::__file_root__",
         "app/components/NextDeadline.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "formatTime"
     },
     "app/lib/format.ts::formatWhen": {
       "filePath": "app/lib/format.ts",
-      "name": "formatWhen",
-      "imports": [],
       "importedBy": [
         "app/lib/format.test.ts::__file_root__",
         "app/components/TimelineItem.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "formatWhen"
+    },
+    "app/lib/format.ts::milestoneLabel": {
+      "filePath": "app/lib/format.ts",
+      "importedBy": [
+        "app/lib/format.test.ts::__file_root__",
+        "app/components/TimelineItem.tsx::__file_root__"
+      ],
+      "imports": [],
+      "name": "milestoneLabel"
     },
     "app/lib/format.ts::milestoneVerb": {
       "filePath": "app/lib/format.ts",
-      "name": "milestoneVerb",
-      "imports": [],
       "importedBy": [
         "app/lib/format.test.ts::__file_root__",
         "app/components/NextDeadline.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "milestoneVerb"
     },
     "app/lib/ics.test.ts::__file_root__": {
       "filePath": "app/lib/ics.test.ts",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/lib/ics.ts::buildIcs",
         "app/lib/ics.ts::icsDate",
         "app/lib/ics.ts::icsEscape"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     "app/lib/ics.ts::CalendarEvent": {
       "filePath": "app/lib/ics.ts",
-      "name": "CalendarEvent",
-      "imports": [],
       "importedBy": [
         "app/lib/raceCalendar.test.ts::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "CalendarEvent"
     },
     "app/lib/ics.ts::buildIcs": {
       "filePath": "app/lib/ics.ts",
-      "name": "buildIcs",
-      "imports": [],
       "importedBy": [
         "app/api/races/[slug]/calendar/route.ts::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "buildIcs"
     },
     "app/lib/loadEnv.ts::__file_root__": {
       "filePath": "app/lib/loadEnv.ts",
-      "name": "__file_root__",
-      "imports": [],
       "importedBy": [
         "prisma.config.ts::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "__file_root__"
     },
     "app/lib/myRaces.test.ts::__file_root__": {
       "filePath": "app/lib/myRaces.test.ts",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/lib/myRaces.ts::allSummariesLoaded",
         "app/lib/myRaces.ts::goneRaceMessage",
@@ -2323,11 +1299,11 @@
         "app/lib/savedRaces.ts::SavedRace",
         "app/lib/savedRaces.ts::SavedRaces"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     "app/lib/myRaces.ts::__file_root__": {
       "filePath": "app/lib/myRaces.ts",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/lib/format.ts::__file_root__",
         "app/lib/raceList.ts::SavedRaceSummary",
@@ -2336,107 +1312,107 @@
         "app/lib/savedRaces.ts::SavedRaces",
         "app/lib/savedRaces.ts::nameFromSlug"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     "app/lib/myRaces.ts::allSummariesLoaded": {
       "filePath": "app/lib/myRaces.ts",
-      "name": "allSummariesLoaded",
-      "imports": [],
       "importedBy": [
         "app/lib/myRaces.test.ts::__file_root__",
         "app/components/MyRacesList.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "allSummariesLoaded"
     },
     "app/lib/myRaces.ts::goneRaceMessage": {
       "filePath": "app/lib/myRaces.ts",
-      "name": "goneRaceMessage",
-      "imports": [],
       "importedBy": [
         "app/lib/myRaces.test.ts::__file_root__",
         "app/components/GoneRaceNotice.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "goneRaceMessage"
     },
     "app/lib/myRaces.ts::goneRaceName": {
       "filePath": "app/lib/myRaces.ts",
-      "name": "goneRaceName",
-      "imports": [],
       "importedBy": [
         "app/lib/myRaces.test.ts::__file_root__",
         "app/components/SavedRaceItem.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "goneRaceName"
     },
     "app/lib/myRaces.ts::groupSavedRaces": {
       "filePath": "app/lib/myRaces.ts",
-      "name": "groupSavedRaces",
-      "imports": [],
       "importedBy": [
         "app/lib/myRaces.test.ts::__file_root__",
         "app/components/MyRacesList.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "groupSavedRaces"
     },
     "app/lib/myRaces.ts::parseSummarySlugs": {
       "filePath": "app/lib/myRaces.ts",
-      "name": "parseSummarySlugs",
-      "imports": [],
       "importedBy": [
         "app/lib/myRaces.test.ts::__file_root__",
         "app/api/races/summaries/route.ts::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "parseSummarySlugs"
     },
     "app/lib/myRaces.ts::raceDay": {
       "filePath": "app/lib/myRaces.ts",
-      "name": "raceDay",
-      "imports": [],
       "importedBy": [
         "app/lib/myRaces.test.ts::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "raceDay"
     },
     "app/lib/myRaces.ts::registrationChange": {
       "filePath": "app/lib/myRaces.ts",
-      "name": "registrationChange",
-      "imports": [],
       "importedBy": [
         "app/lib/myRaces.test.ts::__file_root__",
         "app/components/SavedRaceItem.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "registrationChange"
     },
     "app/lib/myRaces.ts::savedCountLabel": {
       "filePath": "app/lib/myRaces.ts",
-      "name": "savedCountLabel",
-      "imports": [],
       "importedBy": [
         "app/lib/myRaces.test.ts::__file_root__",
         "app/components/SavedRaceGroupHeading.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "savedCountLabel"
     },
     "app/lib/myRaces.ts::summariesKey": {
       "filePath": "app/lib/myRaces.ts",
-      "name": "summariesKey",
-      "imports": [],
       "importedBy": [
         "app/lib/myRaces.test.ts::__file_root__",
         "app/components/MyRacesList.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "summariesKey"
     },
     "app/lib/myRaces.ts::summariesUrl": {
       "filePath": "app/lib/myRaces.ts",
-      "name": "summariesUrl",
-      "imports": [],
       "importedBy": [
         "app/lib/myRaces.test.ts::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "summariesUrl"
     },
     "app/lib/prisma.ts::__file_root__": {
       "filePath": "app/lib/prisma.ts",
-      "name": "__file_root__",
-      "imports": [],
       "importedBy": [
         "app/api/races/[slug]/calendar/route.ts::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "__file_root__"
     },
     "app/lib/raceCalendar.test.ts::__file_root__": {
       "filePath": "app/lib/raceCalendar.test.ts",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/lib/ics.ts::CalendarEvent",
         "app/lib/raceCalendar.ts::CalendarRace",
@@ -2445,27 +1421,27 @@
         "app/lib/raceCalendar.ts::googleCalendarUrl",
         "app/lib/raceCalendar.ts::raceCalendarEvent"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     "app/lib/raceCalendar.ts::CalendarEventKind": {
       "filePath": "app/lib/raceCalendar.ts",
-      "name": "CalendarEventKind",
-      "imports": [],
       "importedBy": [
         "app/api/races/[slug]/calendar/route.ts::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "CalendarEventKind"
     },
     "app/lib/raceCalendar.ts::CalendarRace": {
       "filePath": "app/lib/raceCalendar.ts",
-      "name": "CalendarRace",
-      "imports": [],
       "importedBy": [
         "app/lib/raceCalendar.test.ts::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "CalendarRace"
     },
     "app/lib/raceCalendar.ts::__file_root__": {
       "filePath": "app/lib/raceCalendar.ts",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/lib/format.ts::__file_root__",
         "app/lib/format.ts::etDate",
@@ -2477,137 +1453,155 @@
         "app/lib/raceList.ts::nextMilestone",
         "app/lib/raceList.ts::upcomingEdition"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     "app/lib/raceCalendar.ts::calendarFileName": {
       "filePath": "app/lib/raceCalendar.ts",
-      "name": "calendarFileName",
-      "imports": [],
       "importedBy": [
         "app/lib/raceCalendar.test.ts::__file_root__",
         "app/api/races/[slug]/calendar/route.ts::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "calendarFileName"
     },
     "app/lib/raceCalendar.ts::googleCalendarHref": {
       "filePath": "app/lib/raceCalendar.ts",
-      "name": "googleCalendarHref",
-      "imports": [],
       "importedBy": [
         "app/lib/raceCalendar.test.ts::__file_root__",
         "app/components/AddToCalendar.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "googleCalendarHref"
     },
     "app/lib/raceCalendar.ts::googleCalendarUrl": {
       "filePath": "app/lib/raceCalendar.ts",
-      "name": "googleCalendarUrl",
-      "imports": [],
       "importedBy": [
         "app/lib/raceCalendar.test.ts::__file_root__",
         "app/api/races/[slug]/calendar/route.ts::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "googleCalendarUrl"
     },
     "app/lib/raceCalendar.ts::raceCalendarEvent": {
       "filePath": "app/lib/raceCalendar.ts",
-      "name": "raceCalendarEvent",
-      "imports": [],
       "importedBy": [
         "app/lib/raceCalendar.test.ts::__file_root__",
         "app/api/races/[slug]/calendar/route.ts::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "raceCalendarEvent"
     },
     "app/lib/raceDetail.test.ts::__file_root__": {
       "filePath": "app/lib/raceDetail.test.ts",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/lib/raceDetail.ts::__file_root__",
         "app/lib/raceDetail.ts::buildTimeline",
         "app/lib/raceDetail.ts::entryMethod",
         "app/lib/raceDetail.ts::nextDeadline",
         "app/lib/raceDetail.ts::officialLink",
+        "app/lib/raceDetail.ts::openingDateUnknown",
         "app/lib/raceDetail.ts::pageUrlFrom",
+        "app/lib/raceDetail.ts::registrationHasOpened",
         "app/lib/raceDetail.ts::reportIssueUrl",
         "app/lib/raceDetail.ts::sourceHost",
         "app/lib/raceDetail.ts::timelineCalendarHref"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     "app/lib/raceDetail.ts::TimelineEntry": {
       "filePath": "app/lib/raceDetail.ts",
-      "name": "TimelineEntry",
-      "imports": [],
       "importedBy": [
         "app/components/TimelineItem.tsx::__file_root__",
         "app/components/AtAGlance.tsx::__file_root__",
         "app/components/KeyDates.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "TimelineEntry"
     },
     "app/lib/raceDetail.ts::__file_root__": {
       "filePath": "app/lib/raceDetail.ts",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/lib/raceList.ts::milestoneEnd"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     "app/lib/raceDetail.ts::entryMethod": {
       "filePath": "app/lib/raceDetail.ts",
-      "name": "entryMethod",
-      "imports": [],
       "importedBy": [
         "app/races/[slug]/page.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "entryMethod"
     },
     "app/lib/raceDetail.ts::nextDeadline": {
       "filePath": "app/lib/raceDetail.ts",
-      "name": "nextDeadline",
-      "imports": [],
       "importedBy": [
         "app/races/[slug]/page.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "nextDeadline"
     },
     "app/lib/raceDetail.ts::officialLink": {
       "filePath": "app/lib/raceDetail.ts",
-      "name": "officialLink",
-      "imports": [],
       "importedBy": [
         "app/races/[slug]/page.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "officialLink"
+    },
+    "app/lib/raceDetail.ts::openingDateUnknown": {
+      "filePath": "app/lib/raceDetail.ts",
+      "importedBy": [
+        "app/components/KeyDates.tsx::__file_root__"
+      ],
+      "imports": [],
+      "name": "openingDateUnknown"
     },
     "app/lib/raceDetail.ts::pageUrlFrom": {
       "filePath": "app/lib/raceDetail.ts",
-      "name": "pageUrlFrom",
-      "imports": [],
       "importedBy": [
         "app/races/[slug]/page.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "pageUrlFrom"
+    },
+    "app/lib/raceDetail.ts::registrationHasOpened": {
+      "filePath": "app/lib/raceDetail.ts",
+      "importedBy": [
+        "app/components/KeyDates.tsx::__file_root__"
+      ],
+      "imports": [],
+      "name": "registrationHasOpened"
     },
     "app/lib/raceDetail.ts::reportIssueUrl": {
       "filePath": "app/lib/raceDetail.ts",
-      "name": "reportIssueUrl",
-      "imports": [],
       "importedBy": [
         "app/races/[slug]/page.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "reportIssueUrl"
     },
     "app/lib/raceDetail.ts::sourceHost": {
       "filePath": "app/lib/raceDetail.ts",
-      "name": "sourceHost",
-      "imports": [],
       "importedBy": [
         "app/components/SourcesPanel.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "sourceHost"
     },
     "app/lib/raceDetail.ts::timelineCalendarHref": {
       "filePath": "app/lib/raceDetail.ts",
-      "name": "timelineCalendarHref",
-      "imports": [],
       "importedBy": [
         "app/components/KeyDates.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "timelineCalendarHref"
     },
     "app/lib/raceList.test.ts::__file_root__": {
       "filePath": "app/lib/raceList.test.ts",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/lib/filters.ts::RaceFilters",
         "app/lib/filters.ts::__file_root__",
@@ -2622,52 +1616,52 @@
         "app/lib/raceList.ts::upcomingEdition",
         "app/lib/raceList.ts::weeksToTrain"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     "app/lib/raceList.ts::RaceListItem": {
       "filePath": "app/lib/raceList.ts",
-      "name": "RaceListItem",
-      "imports": [],
       "importedBy": [
         "app/lib/myRaces.test.ts::__file_root__",
         "app/components/RaceRow.tsx::__file_root__",
         "app/components/RaceList.tsx::__file_root__",
         "app/components/ResultsSection.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "RaceListItem"
     },
     "app/lib/raceList.ts::SavedRaceSummary": {
       "filePath": "app/lib/raceList.ts",
-      "name": "SavedRaceSummary",
-      "imports": [],
       "importedBy": [
         "app/lib/myRaces.ts::__file_root__",
         "app/lib/myRaces.test.ts::__file_root__",
         "app/components/SavedRaceItem.tsx::__file_root__",
         "app/components/SavedRaceGroup.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "SavedRaceSummary"
     },
     "app/lib/raceList.ts::__file_root__": {
       "filePath": "app/lib/raceList.ts",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/lib/filters.ts::RaceFilters",
         "app/lib/filters.ts::SortKey",
         "app/lib/filters.ts::__file_root__"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     "app/lib/raceList.ts::isUrgent": {
       "filePath": "app/lib/raceList.ts",
-      "name": "isUrgent",
-      "imports": [],
       "importedBy": [
         "app/components/RaceList.tsx::__file_root__",
         "app/components/SavedRaceItem.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "isUrgent"
     },
     "app/lib/races.ts::__file_root__": {
       "filePath": "app/lib/races.ts",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/lib/prisma.ts::__file_root__",
         "app/lib/filters.ts::RaceFilters",
@@ -2679,36 +1673,36 @@
         "app/lib/raceList.ts::upcomingEdition",
         "app/lib/raceList.ts::weeksToTrain"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     "app/lib/races.ts::findRaceDetail": {
       "filePath": "app/lib/races.ts",
-      "name": "findRaceDetail",
-      "imports": [],
       "importedBy": [
         "app/races/[slug]/page.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "findRaceDetail"
     },
     "app/lib/races.ts::findRaceSummaries": {
       "filePath": "app/lib/races.ts",
-      "name": "findRaceSummaries",
-      "imports": [],
       "importedBy": [
         "app/api/races/summaries/route.ts::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "findRaceSummaries"
     },
     "app/lib/races.ts::findRaces": {
       "filePath": "app/lib/races.ts",
-      "name": "findRaces",
-      "imports": [],
       "importedBy": [
         "app/api/races/route.ts::__file_root__",
         "app/page.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "findRaces"
     },
     "app/lib/savedRaces.test.ts::__file_root__": {
       "filePath": "app/lib/savedRaces.test.ts",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/lib/savedRaces.ts::__file_root__",
         "app/lib/savedRaces.ts::nameFromSlug",
@@ -2721,12 +1715,10 @@
         "app/lib/savedRaces.ts::withNote",
         "app/lib/savedRaces.ts::withSaveStatus"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     "app/lib/savedRaces.ts::SaveStatus": {
       "filePath": "app/lib/savedRaces.ts",
-      "name": "SaveStatus",
-      "imports": [],
       "importedBy": [
         "app/lib/useSaveStatus.ts::__file_root__",
         "app/lib/myRaces.ts::__file_root__",
@@ -2734,226 +1726,228 @@
         "app/components/SaveRaceButton.tsx::__file_root__",
         "app/components/SaveMenu.tsx::__file_root__",
         "app/components/SavedRaceGroup.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "SaveStatus"
     },
     "app/lib/savedRaces.ts::SavedRace": {
       "filePath": "app/lib/savedRaces.ts",
-      "name": "SavedRace",
-      "imports": [],
       "importedBy": [
         "app/lib/myRaces.ts::__file_root__",
         "app/lib/myRaces.test.ts::__file_root__",
         "app/components/SavedRaceItem.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "SavedRace"
     },
     "app/lib/savedRaces.ts::SavedRaces": {
       "filePath": "app/lib/savedRaces.ts",
-      "name": "SavedRaces",
-      "imports": [],
       "importedBy": [
         "app/lib/useSavedRaces.ts::__file_root__",
         "app/lib/myRaces.ts::__file_root__",
         "app/lib/myRaces.test.ts::__file_root__",
         "app/components/SavedRaceGroup.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "SavedRaces"
     },
     "app/lib/savedRaces.ts::__file_root__": {
       "filePath": "app/lib/savedRaces.ts",
-      "name": "__file_root__",
-      "imports": [],
       "importedBy": [
         "app/lib/savedRaces.test.ts::__file_root__",
         "app/components/SavedRaceGroupHeading.tsx::__file_root__",
         "app/components/SaveRaceButton.tsx::__file_root__",
         "app/components/SaveMenu.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "__file_root__"
     },
     "app/lib/savedRaces.ts::nameFromSlug": {
       "filePath": "app/lib/savedRaces.ts",
-      "name": "nameFromSlug",
-      "imports": [],
       "importedBy": [
         "app/lib/savedRaces.test.ts::__file_root__",
         "app/lib/myRaces.ts::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "nameFromSlug"
     },
     "app/lib/savedRaces.ts::parseSavedRaces": {
       "filePath": "app/lib/savedRaces.ts",
-      "name": "parseSavedRaces",
-      "imports": [],
       "importedBy": [
         "app/lib/useSaveStatus.ts::__file_root__",
         "app/lib/savedRaces.test.ts::__file_root__",
         "app/lib/useSavedRaces.ts::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "parseSavedRaces"
     },
     "app/lib/savedRaces.ts::readSavedRacesRaw": {
       "filePath": "app/lib/savedRaces.ts",
-      "name": "readSavedRacesRaw",
-      "imports": [],
       "importedBy": [
         "app/lib/useSaveStatus.ts::__file_root__",
         "app/lib/savedRaces.test.ts::__file_root__",
         "app/lib/useSavedRaces.ts::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "readSavedRacesRaw"
     },
     "app/lib/savedRaces.ts::setSaveNote": {
       "filePath": "app/lib/savedRaces.ts",
-      "name": "setSaveNote",
-      "imports": [],
       "importedBy": [
         "app/lib/savedRaces.test.ts::__file_root__",
         "app/components/RaceNote.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "setSaveNote"
     },
     "app/lib/savedRaces.ts::setSaveStatus": {
       "filePath": "app/lib/savedRaces.ts",
-      "name": "setSaveStatus",
-      "imports": [],
       "importedBy": [
         "app/lib/savedRaces.test.ts::__file_root__",
         "app/components/SaveRaceButton.tsx::__file_root__",
         "app/components/GoneRaceNotice.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "setSaveStatus"
     },
     "app/lib/savedRaces.ts::storageAvailable": {
       "filePath": "app/lib/savedRaces.ts",
-      "name": "storageAvailable",
-      "imports": [],
       "importedBy": [
         "app/lib/savedRaces.test.ts::__file_root__",
         "app/components/SaveRaceButton.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "storageAvailable"
     },
     "app/lib/savedRaces.ts::subscribeSavedRaces": {
       "filePath": "app/lib/savedRaces.ts",
-      "name": "subscribeSavedRaces",
-      "imports": [],
       "importedBy": [
         "app/lib/useSaveStatus.ts::__file_root__",
         "app/lib/savedRaces.test.ts::__file_root__",
         "app/lib/useSavedRaces.ts::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "subscribeSavedRaces"
     },
     "app/lib/savedRaces.ts::withNote": {
       "filePath": "app/lib/savedRaces.ts",
-      "name": "withNote",
-      "imports": [],
       "importedBy": [
         "app/lib/savedRaces.test.ts::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "withNote"
     },
     "app/lib/savedRaces.ts::withSaveStatus": {
       "filePath": "app/lib/savedRaces.ts",
-      "name": "withSaveStatus",
-      "imports": [],
       "importedBy": [
         "app/lib/savedRaces.test.ts::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "withSaveStatus"
     },
     "app/lib/useRaceSummaries.test.tsx::__file_root__": {
       "filePath": "app/lib/useRaceSummaries.test.tsx",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/lib/useRaceSummaries.ts::fetchRaceSummaries",
         "app/lib/useRaceSummaries.ts::useRaceSummaries"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     "app/lib/useRaceSummaries.ts::__file_root__": {
       "filePath": "app/lib/useRaceSummaries.ts",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/lib/myRaces.ts::summariesUrl",
         "app/lib/raceList.ts::SavedRaceSummary"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     "app/lib/useRaceSummaries.ts::fetchRaceSummaries": {
       "filePath": "app/lib/useRaceSummaries.ts",
-      "name": "fetchRaceSummaries",
-      "imports": [],
       "importedBy": [
         "app/lib/useRaceSummaries.test.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "fetchRaceSummaries"
     },
     "app/lib/useRaceSummaries.ts::useRaceSummaries": {
       "filePath": "app/lib/useRaceSummaries.ts",
-      "name": "useRaceSummaries",
-      "imports": [],
       "importedBy": [
         "app/lib/useRaceSummaries.test.tsx::__file_root__",
         "app/components/MyRacesList.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "useRaceSummaries"
     },
     "app/lib/useSaveStatus.test.tsx::__file_root__": {
       "filePath": "app/lib/useSaveStatus.test.tsx",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/lib/useSaveStatus.ts::useSaveStatus"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     "app/lib/useSaveStatus.ts::__file_root__": {
       "filePath": "app/lib/useSaveStatus.ts",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/lib/savedRaces.ts::SaveStatus",
         "app/lib/savedRaces.ts::parseSavedRaces",
         "app/lib/savedRaces.ts::readSavedRacesRaw",
         "app/lib/savedRaces.ts::subscribeSavedRaces"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     "app/lib/useSaveStatus.ts::useSaveStatus": {
       "filePath": "app/lib/useSaveStatus.ts",
-      "name": "useSaveStatus",
-      "imports": [],
       "importedBy": [
         "app/components/SaveRaceButton.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "useSaveStatus"
     },
     "app/lib/useSavedRaces.test.tsx::__file_root__": {
       "filePath": "app/lib/useSavedRaces.test.tsx",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/lib/useSavedRaces.ts::useSavedRaces"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     "app/lib/useSavedRaces.ts::__file_root__": {
       "filePath": "app/lib/useSavedRaces.ts",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/lib/savedRaces.ts::SavedRaces",
         "app/lib/savedRaces.ts::parseSavedRaces",
         "app/lib/savedRaces.ts::readSavedRacesRaw",
         "app/lib/savedRaces.ts::subscribeSavedRaces"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     "app/lib/useSavedRaces.ts::useSavedRaces": {
       "filePath": "app/lib/useSavedRaces.ts",
-      "name": "useSavedRaces",
-      "imports": [],
       "importedBy": [
         "app/components/MyRacesList.tsx::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "useSavedRaces"
     },
     "app/my-races/page.tsx::__file_root__": {
       "filePath": "app/my-races/page.tsx",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/components/MyRacesSection.tsx::MyRacesSection",
         "app/components/PageShell.tsx::PageShell",
         "app/components/SiteFooter.tsx::SiteFooter",
         "app/components/SiteHeader.tsx::SiteHeader"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     "app/page.tsx::__file_root__": {
       "filePath": "app/page.tsx",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/components/Hero.tsx::Hero",
         "app/components/HeroSearch.tsx::HeroSearch",
@@ -2966,22 +1960,22 @@
         "app/lib/filters.ts::parseFilters",
         "app/lib/races.ts::findRaces"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     "app/races/[slug]/not-found.tsx::__file_root__": {
       "filePath": "app/races/[slug]/not-found.tsx",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/components/PageShell.tsx::PageShell",
         "app/components/RaceNotFound.tsx::RaceNotFound",
         "app/components/SiteFooter.tsx::SiteFooter",
         "app/components/SiteHeader.tsx::SiteHeader"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     "app/races/[slug]/page.tsx::__file_root__": {
       "filePath": "app/races/[slug]/page.tsx",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/components/AtAGlance.tsx::AtAGlance",
         "app/components/BackLink.tsx::BackLink",
@@ -3003,41 +1997,1177 @@
         "app/lib/raceDetail.ts::reportIssueUrl",
         "app/lib/races.ts::findRaceDetail"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     "prisma.config.ts::__file_root__": {
       "filePath": "prisma.config.ts",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/lib/loadEnv.ts::__file_root__"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     "prisma/race-data.json::__file_root__": {
       "filePath": "prisma/race-data.json",
-      "name": "__file_root__",
-      "imports": [],
       "importedBy": [
         "prisma/seed.ts::__file_root__"
-      ]
+      ],
+      "imports": [],
+      "name": "__file_root__"
     },
     "prisma/seed.ts::__file_root__": {
       "filePath": "prisma/seed.ts",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/lib/loadEnv.ts::__file_root__",
         "prisma/race-data.json::__file_root__"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     },
     "vitest.config.ts::__file_root__": {
       "filePath": "vitest.config.ts",
-      "name": "__file_root__",
+      "importedBy": [],
       "imports": [
         "app/lib/loadEnv.ts::__file_root__"
       ],
-      "importedBy": []
+      "name": "__file_root__"
     }
   },
-  "lastUpdated": "2026-11-02T19:23:35Z"
+  "files": {
+    ".claude/hooks/_step_metadata.py": {
+      "importedBy": [],
+      "imports": []
+    },
+    ".claude/hooks/editor-pretool-hook.py": {
+      "importedBy": [],
+      "imports": []
+    },
+    ".claude/hooks/editor-step-hook.py": {
+      "importedBy": [],
+      "imports": []
+    },
+    ".claude/skills/review-session/scripts/extract-session-helpers.mjs": {
+      "importedBy": [
+        ".claude/skills/review-session/scripts/extract-session.mjs"
+      ],
+      "imports": []
+    },
+    ".claude/skills/review-session/scripts/extract-session.mjs": {
+      "importedBy": [],
+      "imports": [
+        ".claude/skills/review-session/scripts/extract-session-helpers.mjs",
+        ".claude/skills/review-session/scripts/session-tokens.mjs",
+        ".claude/skills/review-session/scripts/session-tokens-report.mjs",
+        ".claude/skills/review-session/scripts/session-tokens-subagents.mjs"
+      ]
+    },
+    ".claude/skills/review-session/scripts/find-last-session-helpers.mjs": {
+      "importedBy": [
+        ".claude/skills/review-session/scripts/find-last-session.mjs"
+      ],
+      "imports": []
+    },
+    ".claude/skills/review-session/scripts/find-last-session.mjs": {
+      "importedBy": [],
+      "imports": [
+        ".claude/skills/review-session/scripts/find-last-session-helpers.mjs"
+      ]
+    },
+    ".claude/skills/review-session/scripts/session-tokens-carried.mjs": {
+      "importedBy": [
+        ".claude/skills/review-session/scripts/session-tokens.mjs"
+      ],
+      "imports": []
+    },
+    ".claude/skills/review-session/scripts/session-tokens-labels.mjs": {
+      "importedBy": [
+        ".claude/skills/review-session/scripts/session-tokens.mjs"
+      ],
+      "imports": []
+    },
+    ".claude/skills/review-session/scripts/session-tokens-report.mjs": {
+      "importedBy": [
+        ".claude/skills/review-session/scripts/extract-session.mjs"
+      ],
+      "imports": [
+        ".claude/skills/review-session/scripts/session-tokens.mjs"
+      ]
+    },
+    ".claude/skills/review-session/scripts/session-tokens-steps.mjs": {
+      "importedBy": [
+        ".claude/skills/review-session/scripts/session-tokens.mjs"
+      ],
+      "imports": []
+    },
+    ".claude/skills/review-session/scripts/session-tokens-subagents.mjs": {
+      "importedBy": [
+        ".claude/skills/review-session/scripts/extract-session.mjs"
+      ],
+      "imports": []
+    },
+    ".claude/skills/review-session/scripts/session-tokens.mjs": {
+      "importedBy": [
+        ".claude/skills/review-session/scripts/session-tokens-report.mjs",
+        ".claude/skills/review-session/scripts/extract-session.mjs"
+      ],
+      "imports": [
+        ".claude/skills/review-session/scripts/session-tokens-carried.mjs",
+        ".claude/skills/review-session/scripts/session-tokens-labels.mjs",
+        ".claude/skills/review-session/scripts/session-tokens-steps.mjs"
+      ]
+    },
+    ".codeyam/capture.js": {
+      "importedBy": [],
+      "imports": [
+        ".codeyam/scenario-launch.js",
+        ".codeyam/scenario-check-run.js",
+        ".codeyam/scenario-metrics.js",
+        ".codeyam/scenario-issues.js",
+        ".codeyam/scenario-mocks.js",
+        ".codeyam/scenario-check-attribution.js",
+        ".codeyam/scenario-playwright.js",
+        ".codeyam/scenario-targeting.js",
+        ".codeyam/scenario-handlers.js",
+        ".codeyam/scenario-interactivity.js"
+      ]
+    },
+    ".codeyam/isolation-props/AtAGlance.ts": {
+      "importedBy": [],
+      "imports": [
+        "app/components/AtAGlance.tsx",
+        ".codeyam/isolation-props/_raceDetail.ts"
+      ]
+    },
+    ".codeyam/isolation-props/FilterChips.ts": {
+      "importedBy": [],
+      "imports": [
+        "app/components/FilterChips.tsx",
+        ".codeyam/isolation-props/_fixtures.ts"
+      ]
+    },
+    ".codeyam/isolation-props/FilterToolbar.ts": {
+      "importedBy": [],
+      "imports": [
+        "app/components/FilterToolbar.tsx",
+        ".codeyam/isolation-props/_fixtures.ts"
+      ]
+    },
+    ".codeyam/isolation-props/Hero.ts": {
+      "importedBy": [],
+      "imports": [
+        "app/components/Hero.tsx",
+        "app/components/HeroSearch.tsx",
+        ".codeyam/isolation-props/_fixtures.ts"
+      ]
+    },
+    ".codeyam/isolation-props/HeroSearch.ts": {
+      "importedBy": [],
+      "imports": [
+        "app/components/HeroSearch.tsx",
+        ".codeyam/isolation-props/_fixtures.ts"
+      ]
+    },
+    ".codeyam/isolation-props/KeyDates.ts": {
+      "importedBy": [],
+      "imports": [
+        "app/components/KeyDates.tsx",
+        ".codeyam/isolation-props/_raceDetail.ts"
+      ]
+    },
+    ".codeyam/isolation-props/NextDeadline.ts": {
+      "importedBy": [],
+      "imports": [
+        "app/components/NextDeadline.tsx"
+      ]
+    },
+    ".codeyam/isolation-props/RaceIdentity.ts": {
+      "importedBy": [],
+      "imports": [
+        "app/components/RaceIdentity.tsx"
+      ]
+    },
+    ".codeyam/isolation-props/RaceList.ts": {
+      "importedBy": [],
+      "imports": [
+        "app/components/RaceList.tsx",
+        ".codeyam/isolation-props/_fixtures.ts"
+      ]
+    },
+    ".codeyam/isolation-props/RaceRow.ts": {
+      "importedBy": [],
+      "imports": [
+        "app/components/RaceRow.tsx",
+        ".codeyam/isolation-props/_fixtures.ts"
+      ]
+    },
+    ".codeyam/isolation-props/ResultsSection.ts": {
+      "importedBy": [],
+      "imports": [
+        "app/components/ResultsSection.tsx",
+        ".codeyam/isolation-props/_fixtures.ts"
+      ]
+    },
+    ".codeyam/isolation-props/SaveRaceButton.ts": {
+      "importedBy": [],
+      "imports": [
+        "app/components/SaveRaceButton.tsx"
+      ]
+    },
+    ".codeyam/isolation-props/SortToggle.ts": {
+      "importedBy": [],
+      "imports": [
+        "app/components/SortToggle.tsx",
+        ".codeyam/isolation-props/_fixtures.ts"
+      ]
+    },
+    ".codeyam/isolation-props/_fixtures.ts": {
+      "importedBy": [
+        ".codeyam/isolation-props/FilterChips.ts",
+        ".codeyam/isolation-props/FilterToolbar.ts",
+        ".codeyam/isolation-props/Hero.ts",
+        ".codeyam/isolation-props/HeroSearch.ts",
+        ".codeyam/isolation-props/RaceList.ts",
+        ".codeyam/isolation-props/RaceRow.ts",
+        ".codeyam/isolation-props/ResultsSection.ts",
+        ".codeyam/isolation-props/SortToggle.ts"
+      ],
+      "imports": [
+        "app/lib/filters.ts",
+        "app/lib/raceList.ts"
+      ]
+    },
+    ".codeyam/isolation-props/_raceDetail.ts": {
+      "importedBy": [
+        ".codeyam/isolation-props/AtAGlance.ts",
+        ".codeyam/isolation-props/KeyDates.ts"
+      ],
+      "imports": []
+    },
+    ".codeyam/scenario-check-attribution.js": {
+      "importedBy": [
+        ".codeyam/capture.js"
+      ],
+      "imports": []
+    },
+    ".codeyam/scenario-check-run.js": {
+      "importedBy": [
+        ".codeyam/capture.js"
+      ],
+      "imports": [
+        ".codeyam/scenario-issues.js",
+        ".codeyam/scenario-mocks.js",
+        ".codeyam/scenario-playwright.js",
+        ".codeyam/scenario-metrics.js",
+        ".codeyam/scenario-handlers.js"
+      ]
+    },
+    ".codeyam/scenario-handlers.js": {
+      "importedBy": [
+        ".codeyam/capture.js",
+        ".codeyam/scenario-check-run.js"
+      ],
+      "imports": []
+    },
+    ".codeyam/scenario-interactivity.js": {
+      "importedBy": [
+        ".codeyam/capture.js"
+      ],
+      "imports": []
+    },
+    ".codeyam/scenario-issues.js": {
+      "importedBy": [
+        ".codeyam/capture.js",
+        ".codeyam/scenario-check-run.js"
+      ],
+      "imports": []
+    },
+    ".codeyam/scenario-launch.js": {
+      "importedBy": [
+        ".codeyam/capture.js"
+      ],
+      "imports": []
+    },
+    ".codeyam/scenario-metrics.js": {
+      "importedBy": [
+        ".codeyam/capture.js",
+        ".codeyam/scenario-playwright.js",
+        ".codeyam/scenario-check-run.js"
+      ],
+      "imports": []
+    },
+    ".codeyam/scenario-mocks.js": {
+      "importedBy": [
+        ".codeyam/capture.js",
+        ".codeyam/scenario-check-run.js"
+      ],
+      "imports": []
+    },
+    ".codeyam/scenario-playwright.js": {
+      "importedBy": [
+        ".codeyam/capture.js",
+        ".codeyam/scenario-check-run.js"
+      ],
+      "imports": [
+        ".codeyam/scenario-metrics.js",
+        ".codeyam/scenario-targeting.js"
+      ]
+    },
+    ".codeyam/scenario-targeting.js": {
+      "importedBy": [
+        ".codeyam/capture.js",
+        ".codeyam/scenario-playwright.js"
+      ],
+      "imports": []
+    },
+    ".devcontainer/codeyam-preview-origin.test.ts": {
+      "importedBy": [],
+      "imports": []
+    },
+    "app/api/codeyam-revalidate/route.ts": {
+      "importedBy": [],
+      "imports": []
+    },
+    "app/api/races/[slug]/calendar/route.ts": {
+      "importedBy": [],
+      "imports": [
+        "app/lib/prisma.ts",
+        "app/lib/ics.ts",
+        "app/lib/raceCalendar.ts"
+      ]
+    },
+    "app/api/races/route.ts": {
+      "importedBy": [],
+      "imports": [
+        "app/lib/filters.ts",
+        "app/lib/races.ts"
+      ]
+    },
+    "app/api/races/summaries/route.ts": {
+      "importedBy": [],
+      "imports": [
+        "app/lib/myRaces.ts",
+        "app/lib/races.ts"
+      ]
+    },
+    "app/codeyam-isolate/layout.tsx": {
+      "importedBy": [],
+      "imports": []
+    },
+    "app/components/AddToCalendar.tsx": {
+      "importedBy": [
+        "app/components/TimelineItem.tsx",
+        "app/components/NextDeadline.tsx"
+      ],
+      "imports": [
+        "app/lib/raceCalendar.ts"
+      ]
+    },
+    "app/components/AtAGlance.tsx": {
+      "importedBy": [
+        ".codeyam/isolation-props/AtAGlance.ts",
+        "app/races/[slug]/page.tsx"
+      ],
+      "imports": [
+        "app/components/GlanceActions.tsx",
+        "app/components/GlanceItem.tsx",
+        "app/lib/format.ts",
+        "app/lib/raceDetail.ts"
+      ]
+    },
+    "app/components/BackLink.tsx": {
+      "importedBy": [
+        "app/races/[slug]/page.tsx"
+      ],
+      "imports": []
+    },
+    "app/components/CourseNote.tsx": {
+      "importedBy": [
+        "app/races/[slug]/page.tsx"
+      ],
+      "imports": []
+    },
+    "app/components/EmptyResults.tsx": {
+      "importedBy": [
+        "app/components/RaceList.tsx"
+      ],
+      "imports": []
+    },
+    "app/components/FilterChips.tsx": {
+      "importedBy": [
+        ".codeyam/isolation-props/FilterChips.ts",
+        "app/components/FilterToolbar.tsx"
+      ],
+      "imports": [
+        "app/lib/filters.ts"
+      ]
+    },
+    "app/components/FilterToolbar.tsx": {
+      "importedBy": [
+        ".codeyam/isolation-props/FilterToolbar.ts",
+        "app/components/ResultsSection.tsx"
+      ],
+      "imports": [
+        "app/components/FilterChips.tsx",
+        "app/components/SortToggle.tsx",
+        "app/lib/filters.ts"
+      ]
+    },
+    "app/components/GlanceActions.tsx": {
+      "importedBy": [
+        "app/components/AtAGlance.tsx"
+      ],
+      "imports": [
+        "app/components/OfficialLinkButton.tsx",
+        "app/components/SaveRaceButton.tsx"
+      ]
+    },
+    "app/components/GlanceItem.tsx": {
+      "importedBy": [
+        "app/components/AtAGlance.tsx"
+      ],
+      "imports": []
+    },
+    "app/components/GoneRaceNotice.tsx": {
+      "importedBy": [
+        "app/components/SavedRaceItem.tsx"
+      ],
+      "imports": [
+        "app/lib/myRaces.ts",
+        "app/lib/savedRaces.ts"
+      ]
+    },
+    "app/components/Hero.tsx": {
+      "importedBy": [
+        ".codeyam/isolation-props/Hero.ts",
+        "app/page.tsx"
+      ],
+      "imports": []
+    },
+    "app/components/HeroSearch.tsx": {
+      "importedBy": [
+        ".codeyam/isolation-props/Hero.ts",
+        ".codeyam/isolation-props/HeroSearch.ts",
+        "app/page.tsx"
+      ],
+      "imports": [
+        "app/components/SelectField.tsx",
+        "app/lib/filters.ts"
+      ]
+    },
+    "app/components/HowToEnter.tsx": {
+      "importedBy": [
+        "app/races/[slug]/page.tsx"
+      ],
+      "imports": [
+        "app/lib/format.ts"
+      ]
+    },
+    "app/components/KeyDates.tsx": {
+      "importedBy": [
+        ".codeyam/isolation-props/KeyDates.ts",
+        "app/races/[slug]/page.tsx"
+      ],
+      "imports": [
+        "app/components/OpeningDateUnknown.tsx",
+        "app/components/TimelineItem.tsx",
+        "app/lib/raceDetail.ts"
+      ]
+    },
+    "app/components/Logo.tsx": {
+      "importedBy": [
+        "app/components/SiteHeader.tsx"
+      ],
+      "imports": []
+    },
+    "app/components/MyRacesEmpty.tsx": {
+      "importedBy": [
+        "app/components/MyRacesList.tsx"
+      ],
+      "imports": []
+    },
+    "app/components/MyRacesHeader.tsx": {
+      "importedBy": [
+        "app/components/MyRacesSection.tsx"
+      ],
+      "imports": []
+    },
+    "app/components/MyRacesList.tsx": {
+      "importedBy": [
+        "app/components/MyRacesSection.tsx"
+      ],
+      "imports": [
+        "app/components/MyRacesEmpty.tsx",
+        "app/components/MyRacesLoading.tsx",
+        "app/components/SavedRaceGroup.tsx",
+        "app/lib/myRaces.ts",
+        "app/lib/useRaceSummaries.ts",
+        "app/lib/useSavedRaces.ts"
+      ]
+    },
+    "app/components/MyRacesLoading.tsx": {
+      "importedBy": [
+        "app/components/MyRacesList.tsx"
+      ],
+      "imports": []
+    },
+    "app/components/MyRacesSection.tsx": {
+      "importedBy": [
+        "app/my-races/page.tsx"
+      ],
+      "imports": [
+        "app/components/MyRacesHeader.tsx",
+        "app/components/MyRacesList.tsx",
+        "app/components/TimezoneNote.tsx"
+      ]
+    },
+    "app/components/NextDeadline.tsx": {
+      "importedBy": [
+        ".codeyam/isolation-props/NextDeadline.ts",
+        "app/components/RaceRow.tsx"
+      ],
+      "imports": [
+        "app/components/AddToCalendar.tsx",
+        "app/lib/format.ts"
+      ]
+    },
+    "app/components/NoUpcomingEdition.tsx": {
+      "importedBy": [
+        "app/races/[slug]/page.tsx"
+      ],
+      "imports": []
+    },
+    "app/components/OfficialLinkButton.tsx": {
+      "importedBy": [
+        "app/components/GlanceActions.tsx"
+      ],
+      "imports": []
+    },
+    "app/components/OpeningDateUnknown.tsx": {
+      "importedBy": [
+        "app/components/KeyDates.tsx"
+      ],
+      "imports": []
+    },
+    "app/components/PageShell.tsx": {
+      "importedBy": [
+        "app/page.tsx",
+        "app/my-races/page.tsx",
+        "app/races/[slug]/page.tsx",
+        "app/races/[slug]/not-found.tsx"
+      ],
+      "imports": []
+    },
+    "app/components/RaceDayCell.tsx": {
+      "importedBy": [
+        "app/components/RaceRow.tsx"
+      ],
+      "imports": [
+        "app/lib/format.ts"
+      ]
+    },
+    "app/components/RaceDetailBody.tsx": {
+      "importedBy": [
+        "app/races/[slug]/page.tsx"
+      ],
+      "imports": []
+    },
+    "app/components/RaceHero.tsx": {
+      "importedBy": [
+        "app/races/[slug]/page.tsx"
+      ],
+      "imports": []
+    },
+    "app/components/RaceIdentity.tsx": {
+      "importedBy": [
+        ".codeyam/isolation-props/RaceIdentity.ts",
+        "app/components/RaceRow.tsx"
+      ],
+      "imports": [
+        "app/lib/format.ts"
+      ]
+    },
+    "app/components/RaceList.tsx": {
+      "importedBy": [
+        ".codeyam/isolation-props/RaceList.ts",
+        "app/components/ResultsSection.tsx"
+      ],
+      "imports": [
+        "app/components/EmptyResults.tsx",
+        "app/components/RaceRow.tsx",
+        "app/components/ShowAllLink.tsx",
+        "app/lib/filters.ts",
+        "app/lib/raceList.ts"
+      ]
+    },
+    "app/components/RaceNotFound.tsx": {
+      "importedBy": [
+        "app/races/[slug]/not-found.tsx"
+      ],
+      "imports": []
+    },
+    "app/components/RaceNote.tsx": {
+      "importedBy": [
+        "app/components/SavedRaceItem.tsx"
+      ],
+      "imports": [
+        "app/lib/savedRaces.ts"
+      ]
+    },
+    "app/components/RaceRow.tsx": {
+      "importedBy": [
+        ".codeyam/isolation-props/RaceRow.ts",
+        "app/components/RaceList.tsx",
+        "app/components/SavedRaceItem.tsx"
+      ],
+      "imports": [
+        "app/components/NextDeadline.tsx",
+        "app/components/RaceDayCell.tsx",
+        "app/components/RaceIdentity.tsx",
+        "app/components/RaceThumb.tsx",
+        "app/components/SaveRaceButton.tsx",
+        "app/components/WeeksToTrain.tsx",
+        "app/lib/raceList.ts"
+      ]
+    },
+    "app/components/RaceThumb.tsx": {
+      "importedBy": [
+        "app/components/RaceRow.tsx"
+      ],
+      "imports": []
+    },
+    "app/components/RaceTitle.tsx": {
+      "importedBy": [
+        "app/races/[slug]/page.tsx"
+      ],
+      "imports": []
+    },
+    "app/components/RegistrationChanged.tsx": {
+      "importedBy": [
+        "app/components/SavedRaceItem.tsx"
+      ],
+      "imports": []
+    },
+    "app/components/ResultsHeader.tsx": {
+      "importedBy": [
+        "app/components/ResultsSection.tsx"
+      ],
+      "imports": [
+        "app/lib/filters.ts"
+      ]
+    },
+    "app/components/ResultsSection.tsx": {
+      "importedBy": [
+        ".codeyam/isolation-props/ResultsSection.ts",
+        "app/page.tsx"
+      ],
+      "imports": [
+        "app/components/FilterToolbar.tsx",
+        "app/components/RaceList.tsx",
+        "app/components/ResultsHeader.tsx",
+        "app/components/SeasonTeaser.tsx",
+        "app/components/TimezoneNote.tsx",
+        "app/lib/filters.ts",
+        "app/lib/raceList.ts"
+      ]
+    },
+    "app/components/SaveMenu.tsx": {
+      "importedBy": [
+        "app/components/SaveRaceButton.tsx"
+      ],
+      "imports": [
+        "app/lib/savedRaces.ts"
+      ]
+    },
+    "app/components/SaveRaceButton.tsx": {
+      "importedBy": [
+        ".codeyam/isolation-props/SaveRaceButton.ts",
+        "app/components/RaceRow.tsx",
+        "app/components/GlanceActions.tsx"
+      ],
+      "imports": [
+        "app/components/SaveMenu.tsx",
+        "app/lib/savedRaces.ts",
+        "app/lib/useSaveStatus.ts"
+      ]
+    },
+    "app/components/SavedRaceGroup.tsx": {
+      "importedBy": [
+        "app/components/MyRacesList.tsx"
+      ],
+      "imports": [
+        "app/components/SavedRaceGroupHeading.tsx",
+        "app/components/SavedRaceItem.tsx",
+        "app/lib/raceList.ts",
+        "app/lib/savedRaces.ts"
+      ]
+    },
+    "app/components/SavedRaceGroupHeading.tsx": {
+      "importedBy": [
+        "app/components/SavedRaceGroup.tsx"
+      ],
+      "imports": [
+        "app/lib/myRaces.ts",
+        "app/lib/savedRaces.ts"
+      ]
+    },
+    "app/components/SavedRaceItem.tsx": {
+      "importedBy": [
+        "app/components/SavedRaceGroup.tsx"
+      ],
+      "imports": [
+        "app/components/GoneRaceNotice.tsx",
+        "app/components/RaceNote.tsx",
+        "app/components/RaceRow.tsx",
+        "app/components/RegistrationChanged.tsx",
+        "app/lib/myRaces.ts",
+        "app/lib/raceList.ts",
+        "app/lib/savedRaces.ts"
+      ]
+    },
+    "app/components/SeasonPreview.tsx": {
+      "importedBy": [
+        "app/components/SeasonTeaser.tsx"
+      ],
+      "imports": []
+    },
+    "app/components/SeasonTeaser.tsx": {
+      "importedBy": [
+        "app/components/ResultsSection.tsx"
+      ],
+      "imports": [
+        "app/components/SeasonPreview.tsx"
+      ]
+    },
+    "app/components/SelectField.tsx": {
+      "importedBy": [
+        "app/components/HeroSearch.tsx"
+      ],
+      "imports": []
+    },
+    "app/components/ShowAllLink.tsx": {
+      "importedBy": [
+        "app/components/RaceList.tsx"
+      ],
+      "imports": []
+    },
+    "app/components/SiteFooter.tsx": {
+      "importedBy": [
+        "app/page.tsx",
+        "app/my-races/page.tsx",
+        "app/races/[slug]/page.tsx",
+        "app/races/[slug]/not-found.tsx"
+      ],
+      "imports": []
+    },
+    "app/components/SiteHeader.tsx": {
+      "importedBy": [
+        "app/page.tsx",
+        "app/my-races/page.tsx",
+        "app/races/[slug]/page.tsx",
+        "app/races/[slug]/not-found.tsx"
+      ],
+      "imports": [
+        "app/components/Logo.tsx"
+      ]
+    },
+    "app/components/SortToggle.tsx": {
+      "importedBy": [
+        ".codeyam/isolation-props/SortToggle.ts",
+        "app/components/FilterToolbar.tsx"
+      ],
+      "imports": [
+        "app/lib/filters.ts"
+      ]
+    },
+    "app/components/SourcesPanel.tsx": {
+      "importedBy": [
+        "app/races/[slug]/page.tsx"
+      ],
+      "imports": [
+        "app/lib/format.ts",
+        "app/lib/raceDetail.ts"
+      ]
+    },
+    "app/components/TimelineItem.tsx": {
+      "importedBy": [
+        "app/components/KeyDates.tsx"
+      ],
+      "imports": [
+        "app/components/AddToCalendar.tsx",
+        "app/lib/format.ts",
+        "app/lib/raceDetail.ts"
+      ]
+    },
+    "app/components/TimezoneNote.tsx": {
+      "importedBy": [
+        "app/components/MyRacesSection.tsx",
+        "app/components/ResultsSection.tsx"
+      ],
+      "imports": []
+    },
+    "app/components/WeeksToTrain.tsx": {
+      "importedBy": [
+        "app/components/RaceRow.tsx"
+      ],
+      "imports": []
+    },
+    "app/globals.css": {
+      "importedBy": [
+        "app/layout.tsx"
+      ],
+      "imports": []
+    },
+    "app/layout.tsx": {
+      "importedBy": [],
+      "imports": [
+        "app/globals.css"
+      ]
+    },
+    "app/lib/filters.test.ts": {
+      "importedBy": [],
+      "imports": [
+        "app/lib/filters.ts"
+      ]
+    },
+    "app/lib/filters.ts": {
+      "importedBy": [
+        ".codeyam/isolation-props/_fixtures.ts",
+        "app/lib/races.ts",
+        "app/lib/raceList.test.ts",
+        "app/lib/filters.test.ts",
+        "app/lib/raceList.ts",
+        "app/api/races/route.ts",
+        "app/page.tsx",
+        "app/components/RaceList.tsx",
+        "app/components/HeroSearch.tsx",
+        "app/components/SortToggle.tsx",
+        "app/components/FilterChips.tsx",
+        "app/components/ResultsSection.tsx",
+        "app/components/ResultsHeader.tsx",
+        "app/components/FilterToolbar.tsx"
+      ],
+      "imports": []
+    },
+    "app/lib/format.test.ts": {
+      "importedBy": [],
+      "imports": [
+        "app/lib/format.ts"
+      ]
+    },
+    "app/lib/format.ts": {
+      "importedBy": [
+        "app/lib/raceCalendar.ts",
+        "app/lib/myRaces.ts",
+        "app/lib/format.test.ts",
+        "app/components/TimelineItem.tsx",
+        "app/components/SourcesPanel.tsx",
+        "app/components/RaceDayCell.tsx",
+        "app/components/HowToEnter.tsx",
+        "app/components/AtAGlance.tsx",
+        "app/components/RaceIdentity.tsx",
+        "app/components/NextDeadline.tsx"
+      ],
+      "imports": []
+    },
+    "app/lib/ics.test.ts": {
+      "importedBy": [],
+      "imports": [
+        "app/lib/ics.ts"
+      ]
+    },
+    "app/lib/ics.ts": {
+      "importedBy": [
+        "app/lib/raceCalendar.ts",
+        "app/lib/ics.test.ts",
+        "app/lib/raceCalendar.test.ts",
+        "app/api/races/[slug]/calendar/route.ts"
+      ],
+      "imports": []
+    },
+    "app/lib/loadEnv.ts": {
+      "importedBy": [
+        "vitest.config.ts",
+        "prisma/seed.ts",
+        "prisma.config.ts"
+      ],
+      "imports": []
+    },
+    "app/lib/myRaces.test.ts": {
+      "importedBy": [],
+      "imports": [
+        "app/lib/myRaces.ts",
+        "app/lib/raceList.ts",
+        "app/lib/savedRaces.ts"
+      ]
+    },
+    "app/lib/myRaces.ts": {
+      "importedBy": [
+        "app/lib/useRaceSummaries.ts",
+        "app/lib/myRaces.test.ts",
+        "app/api/races/summaries/route.ts",
+        "app/components/SavedRaceGroupHeading.tsx",
+        "app/components/SavedRaceItem.tsx",
+        "app/components/MyRacesList.tsx",
+        "app/components/GoneRaceNotice.tsx"
+      ],
+      "imports": [
+        "app/lib/format.ts",
+        "app/lib/raceList.ts",
+        "app/lib/savedRaces.ts"
+      ]
+    },
+    "app/lib/prisma.ts": {
+      "importedBy": [
+        "app/lib/races.ts",
+        "app/api/races/[slug]/calendar/route.ts"
+      ],
+      "imports": []
+    },
+    "app/lib/raceCalendar.test.ts": {
+      "importedBy": [],
+      "imports": [
+        "app/lib/ics.ts",
+        "app/lib/raceCalendar.ts"
+      ]
+    },
+    "app/lib/raceCalendar.ts": {
+      "importedBy": [
+        "app/lib/raceCalendar.test.ts",
+        "app/api/races/[slug]/calendar/route.ts",
+        "app/components/AddToCalendar.tsx"
+      ],
+      "imports": [
+        "app/lib/format.ts",
+        "app/lib/ics.ts",
+        "app/lib/raceList.ts"
+      ]
+    },
+    "app/lib/raceDetail.test.ts": {
+      "importedBy": [],
+      "imports": [
+        "app/lib/raceDetail.ts"
+      ]
+    },
+    "app/lib/raceDetail.ts": {
+      "importedBy": [
+        "app/lib/races.ts",
+        "app/lib/raceDetail.test.ts",
+        "app/races/[slug]/page.tsx",
+        "app/components/TimelineItem.tsx",
+        "app/components/SourcesPanel.tsx",
+        "app/components/AtAGlance.tsx",
+        "app/components/KeyDates.tsx"
+      ],
+      "imports": [
+        "app/lib/raceList.ts"
+      ]
+    },
+    "app/lib/raceList.test.ts": {
+      "importedBy": [],
+      "imports": [
+        "app/lib/filters.ts",
+        "app/lib/raceList.ts"
+      ]
+    },
+    "app/lib/raceList.ts": {
+      "importedBy": [
+        ".codeyam/isolation-props/_fixtures.ts",
+        "app/lib/races.ts",
+        "app/lib/raceCalendar.ts",
+        "app/lib/raceList.test.ts",
+        "app/lib/raceDetail.ts",
+        "app/lib/useRaceSummaries.ts",
+        "app/lib/myRaces.ts",
+        "app/lib/myRaces.test.ts",
+        "app/components/RaceRow.tsx",
+        "app/components/RaceList.tsx",
+        "app/components/SavedRaceItem.tsx",
+        "app/components/ResultsSection.tsx",
+        "app/components/SavedRaceGroup.tsx"
+      ],
+      "imports": [
+        "app/lib/filters.ts"
+      ]
+    },
+    "app/lib/races.ts": {
+      "importedBy": [
+        "app/api/races/summaries/route.ts",
+        "app/api/races/route.ts",
+        "app/page.tsx",
+        "app/races/[slug]/page.tsx"
+      ],
+      "imports": [
+        "app/lib/prisma.ts",
+        "app/lib/filters.ts",
+        "app/lib/raceDetail.ts",
+        "app/lib/raceList.ts"
+      ]
+    },
+    "app/lib/savedRaces.test.ts": {
+      "importedBy": [],
+      "imports": [
+        "app/lib/savedRaces.ts"
+      ]
+    },
+    "app/lib/savedRaces.ts": {
+      "importedBy": [
+        "app/lib/useSaveStatus.ts",
+        "app/lib/savedRaces.test.ts",
+        "app/lib/useSavedRaces.ts",
+        "app/lib/myRaces.ts",
+        "app/lib/myRaces.test.ts",
+        "app/components/SavedRaceGroupHeading.tsx",
+        "app/components/RaceNote.tsx",
+        "app/components/SavedRaceItem.tsx",
+        "app/components/SaveRaceButton.tsx",
+        "app/components/SaveMenu.tsx",
+        "app/components/GoneRaceNotice.tsx",
+        "app/components/SavedRaceGroup.tsx"
+      ],
+      "imports": []
+    },
+    "app/lib/useRaceSummaries.test.tsx": {
+      "importedBy": [],
+      "imports": [
+        "app/lib/useRaceSummaries.ts"
+      ]
+    },
+    "app/lib/useRaceSummaries.ts": {
+      "importedBy": [
+        "app/lib/useRaceSummaries.test.tsx",
+        "app/components/MyRacesList.tsx"
+      ],
+      "imports": [
+        "app/lib/myRaces.ts",
+        "app/lib/raceList.ts"
+      ]
+    },
+    "app/lib/useSaveStatus.test.tsx": {
+      "importedBy": [],
+      "imports": [
+        "app/lib/useSaveStatus.ts"
+      ]
+    },
+    "app/lib/useSaveStatus.ts": {
+      "importedBy": [
+        "app/lib/useSaveStatus.test.tsx",
+        "app/components/SaveRaceButton.tsx"
+      ],
+      "imports": [
+        "app/lib/savedRaces.ts"
+      ]
+    },
+    "app/lib/useSavedRaces.test.tsx": {
+      "importedBy": [],
+      "imports": [
+        "app/lib/useSavedRaces.ts"
+      ]
+    },
+    "app/lib/useSavedRaces.ts": {
+      "importedBy": [
+        "app/lib/useSavedRaces.test.tsx",
+        "app/components/MyRacesList.tsx"
+      ],
+      "imports": [
+        "app/lib/savedRaces.ts"
+      ]
+    },
+    "app/my-races/page.tsx": {
+      "importedBy": [],
+      "imports": [
+        "app/components/MyRacesSection.tsx",
+        "app/components/PageShell.tsx",
+        "app/components/SiteFooter.tsx",
+        "app/components/SiteHeader.tsx"
+      ]
+    },
+    "app/page.tsx": {
+      "importedBy": [],
+      "imports": [
+        "app/components/Hero.tsx",
+        "app/components/HeroSearch.tsx",
+        "app/components/PageShell.tsx",
+        "app/components/ResultsSection.tsx",
+        "app/components/SiteFooter.tsx",
+        "app/components/SiteHeader.tsx",
+        "app/lib/filters.ts",
+        "app/lib/races.ts"
+      ]
+    },
+    "app/races/[slug]/not-found.tsx": {
+      "importedBy": [],
+      "imports": [
+        "app/components/PageShell.tsx",
+        "app/components/RaceNotFound.tsx",
+        "app/components/SiteFooter.tsx",
+        "app/components/SiteHeader.tsx"
+      ]
+    },
+    "app/races/[slug]/page.tsx": {
+      "importedBy": [],
+      "imports": [
+        "app/components/AtAGlance.tsx",
+        "app/components/BackLink.tsx",
+        "app/components/CourseNote.tsx",
+        "app/components/HowToEnter.tsx",
+        "app/components/KeyDates.tsx",
+        "app/components/NoUpcomingEdition.tsx",
+        "app/components/PageShell.tsx",
+        "app/components/RaceDetailBody.tsx",
+        "app/components/RaceHero.tsx",
+        "app/components/RaceTitle.tsx",
+        "app/components/SiteFooter.tsx",
+        "app/components/SiteHeader.tsx",
+        "app/components/SourcesPanel.tsx",
+        "app/lib/raceDetail.ts",
+        "app/lib/races.ts"
+      ]
+    },
+    "app/scenario/[slug]/page.tsx": {
+      "importedBy": [],
+      "imports": []
+    },
+    "eslint.config.mjs": {
+      "importedBy": [],
+      "imports": []
+    },
+    "next.config.ts": {
+      "importedBy": [],
+      "imports": []
+    },
+    "postcss.config.mjs": {
+      "importedBy": [],
+      "imports": []
+    },
+    "prisma.config.ts": {
+      "importedBy": [],
+      "imports": [
+        "app/lib/loadEnv.ts"
+      ]
+    },
+    "prisma/race-data.json": {
+      "importedBy": [
+        "prisma/seed.ts"
+      ],
+      "imports": []
+    },
+    "prisma/seed.ts": {
+      "importedBy": [],
+      "imports": [
+        "app/lib/loadEnv.ts",
+        "prisma/race-data.json"
+      ]
+    },
+    "scripts/build-app.mjs": {
+      "importedBy": [],
+      "imports": []
+    },
+    "vitest.config.ts": {
+      "importedBy": [],
+      "imports": [
+        "app/lib/loadEnv.ts"
+      ]
+    }
+  },
+  "lastUpdated": "2026-11-04T20:03:36Z"
 }
