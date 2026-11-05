@@ -719,16 +719,21 @@
       "reason": "Most races still have no announced registration opening date, so runners planning ahead can't tell when to be ready.",
       "severity": 3,
       "source": "feature-synthesis",
-      "status": "pending",
+      "status": "written",
+      "planSlug": "follow-a-race-until-its-registration-opening-date-is-announced",
       "proposedAt": "2026-11-05T14:35:14.957481698+00:00",
       "kind": "feature",
       "sightings": 1,
+      "decidedAt": "2026-11-05T14:41:02Z",
+      "sightingsAtDecision": 1,
       "evidenceIds": [
         "obs-d57f8bac499d",
         "obs-352015877879"
       ],
       "evidenceSessions": 2,
-      "ideaRank": 1
+      "ideaRank": 1,
+      "offeredCount": 1,
+      "lastOfferedAt": "2026-11-05T14:35:28.543766338+00:00"
     },
     {
       "id": "stored-race-prices-have-drifted-from-organizer-pages",
@@ -747,6 +752,8 @@
       ],
       "evidenceSessions": 1,
       "ideaRank": 1,
+      "offeredCount": 1,
+      "lastOfferedAt": "2026-11-05T14:35:28.543766338+00:00",
       "theme": {
         "lane": "app",
         "score": 481,
