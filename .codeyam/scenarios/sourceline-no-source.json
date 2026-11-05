@@ -1,0 +1,12 @@
+{
+  "name": "SourceLine - No Source",
+  "id": "cd2fa7b6-1d23-4460-beb5-db2d7ea56181",
+  "url": "/isolated-components/SourceLine?s=NoSource",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "SourceLine",
+  "scenarioType": "component",
+  "description": "No official source on file and never checked."
+}

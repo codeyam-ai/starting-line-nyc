@@ -1,7 +1,7 @@
 // The race page's view of one race: the registration timeline with
 // past/next state, plain-language entry info, and the links it shows.
 // Pure — the database read lives in races.ts.
-import { milestoneEnd } from '@/app/lib/raceList';
+import { isStale, milestoneEnd } from '@/app/lib/raceList';
 
 export const REPO_URL = 'https://github.com/nseldeib/starting-line-nyc';
 
@@ -24,6 +24,10 @@ export type TimelineEntry = {
   timeKnown: boolean;
   tentative: boolean;
   note: string | null;
+  // The official page this date came from and when it was checked: the
+  // date's own, else the edition's.
+  sourceUrl: string | null;
+  lastVerifiedAt: string | null;
   state: 'past' | 'next' | 'upcoming';
 };
 
@@ -40,21 +44,53 @@ export function registrationHasOpened(registrationStatus: string): boolean {
   return OPENED_STATUSES.has(registrationStatus);
 }
 
-type MilestoneInput = { id: number; kind: string; at: Date; timeKnown: boolean; tentative: boolean; note: string | null };
+type MilestoneInput = {
+  id: number;
+  kind: string;
+  at: Date;
+  timeKnown: boolean;
+  tentative: boolean;
+  note: string | null;
+  sourceUrl?: string | null;
+  lastVerifiedAt?: Date | null;
+};
+
+type EditionSource = { sourceUrl: string | null; lastVerifiedAt: Date | null };
 
 // Milestones in date order with race day last; the first not-yet-passed entry is "next".
+// Each entry carries its own source, else the edition's.
 export function buildTimeline(
   milestones: MilestoneInput[],
   raceDate: Date | null,
   raceDateTentative: boolean,
   now: Date,
   raceTimeKnown = true,
+  source: EditionSource = { sourceUrl: null, lastVerifiedAt: null },
 ): TimelineEntry[] {
+  const editionSource = { sourceUrl: source.sourceUrl, lastVerifiedAt: source.lastVerifiedAt?.toISOString() ?? null };
   const rows: Omit<TimelineEntry, 'state'>[] = [...milestones]
     .sort((a, b) => a.at.getTime() - b.at.getTime())
-    .map((m) => ({ id: m.id, kind: m.kind, at: m.at.toISOString(), timeKnown: m.timeKnown, tentative: m.tentative, note: m.note }));
+    .map((m) => ({
+      id: m.id,
+      kind: m.kind,
+      at: m.at.toISOString(),
+      timeKnown: m.timeKnown,
+      tentative: m.tentative,
+      note: m.note,
+      ...(m.sourceUrl
+        ? { sourceUrl: m.sourceUrl, lastVerifiedAt: m.lastVerifiedAt?.toISOString() ?? null }
+        : editionSource),
+    }));
   if (raceDate) {
-    rows.push({ id: null, kind: 'race_day', at: raceDate.toISOString(), timeKnown: raceTimeKnown, tentative: raceDateTentative, note: null });
+    rows.push({
+      id: null,
+      kind: 'race_day',
+      at: raceDate.toISOString(),
+      timeKnown: raceTimeKnown,
+      tentative: raceDateTentative,
+      note: null,
+      ...editionSource,
+    });
   }
   let nextFound = false;
   return rows.map((r) => {
@@ -86,6 +122,20 @@ export function officialLink(
   if (edition.registrationUrl) return { href: edition.registrationUrl, label: 'Register on the official site' };
   const href = edition.sourceUrl ?? organizerUrl;
   return href ? { href, label: 'Visit the official site' } : null;
+}
+
+// What the Sources panel shows for the edition on screen: its source, when it
+// was checked, and whether that check is old. Null when there is no edition.
+export function editionSources(
+  edition: EditionSource | null | undefined,
+  now: Date,
+): { sourceUrl: string | null; lastVerifiedAt: string | null; stale: boolean } | null {
+  if (!edition) return null;
+  return {
+    sourceUrl: edition.sourceUrl,
+    lastVerifiedAt: edition.lastVerifiedAt?.toISOString() ?? null,
+    stale: isStale(edition.lastVerifiedAt, now),
+  };
 }
 
 export function sourceHost(url: string | null): string | null {

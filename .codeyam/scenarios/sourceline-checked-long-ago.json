@@ -1,0 +1,12 @@
+{
+  "name": "SourceLine - Checked Long Ago",
+  "id": "3a66a148-dc5c-4d94-9018-45d9b5713f09",
+  "url": "/isolated-components/SourceLine?s=CheckedLongAgo",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "SourceLine",
+  "scenarioType": "component",
+  "description": "A race row's source line when the details were last checked more than 30 days ago: amber, 'may be out of date'."
+}

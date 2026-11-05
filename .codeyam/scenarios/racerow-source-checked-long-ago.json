@@ -1,0 +1,12 @@
+{
+  "name": "RaceRow - Source Checked Long Ago",
+  "id": "f9f1ece6-c0ab-4117-89d4-accb20b18f07",
+  "url": "/isolated-components/RaceRow?s=SourceCheckedLongAgo",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "RaceRow",
+  "scenarioType": "component",
+  "description": "The same row on Thanksgiving 2026, when its Oct 26 check is over 30 days old: the source line turns amber and says may be out of date."
+}

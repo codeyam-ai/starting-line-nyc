@@ -85,4 +85,8 @@ model RegistrationMilestone {
   timeKnown Boolean     @default(true)
   tentative Boolean     @default(false)
   note      String?
+  // The official page this date came from and when it was last checked;
+  // null = falls back to the edition's sourceUrl / lastVerifiedAt.
+  sourceUrl      String?
+  lastVerifiedAt DateTime?
 }

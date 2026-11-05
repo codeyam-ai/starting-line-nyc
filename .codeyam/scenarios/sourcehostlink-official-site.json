@@ -1,0 +1,12 @@
+{
+  "name": "SourceHostLink - Official site",
+  "id": "5f2e8521-6443-4ece-8d9c-e6593757e827",
+  "url": "/isolated-components/SourceHostLink?s=OfficialSite",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "SourceHostLink",
+  "scenarioType": "component",
+  "description": "The SourceHostLink component."
+}

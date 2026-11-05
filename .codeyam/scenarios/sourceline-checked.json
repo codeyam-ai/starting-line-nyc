@@ -1,0 +1,12 @@
+{
+  "name": "SourceLine - Checked",
+  "id": "47d1b564-8244-4e6f-93ec-91d00b3e3a00",
+  "url": "/isolated-components/SourceLine?s=Checked",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "SourceLine",
+  "scenarioType": "component",
+  "description": "A key date's official source link and the date it was checked."
+}

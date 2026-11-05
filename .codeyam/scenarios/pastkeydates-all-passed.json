@@ -1,0 +1,12 @@
+{
+  "name": "PastKeyDates - All passed",
+  "id": "0be3a444-9776-48b9-b844-91c214748639",
+  "url": "/isolated-components/PastKeyDates?s=AllPassed",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "PastKeyDates",
+  "scenarioType": "component",
+  "description": "The PastKeyDates component."
+}

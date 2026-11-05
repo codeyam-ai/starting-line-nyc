@@ -197,6 +197,15 @@ img.thumb { display: block; object-fit: cover; }
 .pill { display: inline-block; margin-left: 8px; padding: 0 8px; border-radius: 999px; background: var(--route); color: var(--on-ink); font-size: 12px; font-weight: 700; vertical-align: 2px; }
 .sources .report { display: inline-block; margin-top: 14px; font-weight: 600; color: var(--route-ink); border-bottom: 1px solid currentColor; }
 .sources a:not(.report) { color: var(--route-ink); border-bottom: 1px solid currentColor; }
+
+/* where a detail came from, and when it was last checked */
+.src { margin-top: 4px; font-size: 13.5px; color: var(--muted); }
+.src a { color: var(--muted); border-bottom: 1px solid currentColor; }
+.src a:hover { color: var(--route-ink); }
+.row .src a { position: relative; z-index: 1; }
+.src.is-stale { color: #8A5A12; }
+.stale { margin: 0 0 12px; background: #FFF4D6; border-left: 3px solid #B7791F; border-radius: 4px; padding: 8px 12px; font-size: 14.5px; color: var(--ink); }
+.past-edition + .timeline { margin-top: 24px; }
 .race-missing { margin-top: 40px; }
 
 /* season teaser */

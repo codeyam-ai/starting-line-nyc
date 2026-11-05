@@ -1,6 +1,8 @@
 import { describe, expect, it } from 'vitest';
 import {
+  checkedPhrase,
   etDate,
+  formatCheckedDate,
   formatDay,
   formatDistance,
   formatEt,
@@ -127,5 +129,34 @@ describe('milestoneLabel', () => {
   it('falls back to the raw kind', () => {
     expect(milestoneLabel('something_new')).toBe('something_new');
     expect(milestoneLabel('something_new', true)).toBe('something_new');
+  });
+});
+
+describe('formatCheckedDate', () => {
+  // A check date reads as a short month, day and year.
+  it('formats as a short date', () => {
+    expect(formatCheckedDate('2026-10-28T15:00:00Z')).toBe('Oct 28, 2026');
+  });
+
+  // The date is in Eastern Time, so an evening check stays on its ET day.
+  it('uses the Eastern Time day', () => {
+    expect(formatCheckedDate('2026-10-29T02:00:00Z')).toBe('Oct 28, 2026');
+  });
+
+  // Date objects work the same as ISO strings.
+  it('accepts a Date', () => {
+    expect(formatCheckedDate(new Date('2026-01-05T17:00:00Z'))).toBe('Jan 5, 2026');
+  });
+});
+
+describe('checkedPhrase', () => {
+  // A recent check reads plainly.
+  it('reads plainly when fresh', () => {
+    expect(checkedPhrase('2026-10-28T15:00:00Z', false)).toBe('checked Oct 28, 2026');
+  });
+
+  // An old check warns it may be out of date.
+  it('warns when stale', () => {
+    expect(checkedPhrase('2026-10-28T15:00:00Z', true)).toBe('last checked Oct 28, 2026 — may be out of date');
   });
 });

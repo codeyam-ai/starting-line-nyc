@@ -7,7 +7,10 @@ export default function RaceIdentity({
   elevationGainFt,
   organizer,
   href,
+  children,
 }: {
+  // Extra lines under the meta row (e.g. where the details come from).
+  children?: React.ReactNode;
   name: string;
   terrain: string;
   distanceMiles: number;
@@ -32,6 +35,7 @@ export default function RaceIdentity({
         <span>{formatDistance(distanceMiles, elevationGainFt)}</span>
         <span className="org">{organizer}</span>
       </div>
+      {children}
     </div>
   );
 }

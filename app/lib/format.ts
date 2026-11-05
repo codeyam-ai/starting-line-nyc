@@ -84,6 +84,19 @@ export function formatLongDay(iso: string | Date): string {
   }).format(new Date(iso));
 }
 
+// A "last checked" date: "Oct 28, 2026", in Eastern Time.
+export function formatCheckedDate(iso: string | Date): string {
+  return new Intl.DateTimeFormat('en-US', { timeZone: TZ, month: 'short', day: 'numeric', year: 'numeric' }).format(
+    new Date(iso),
+  );
+}
+
+// How a check date reads next to a source: plain when recent, a warning when old.
+export function checkedPhrase(iso: string | Date, stale: boolean): string {
+  const date = formatCheckedDate(iso);
+  return stale ? `last checked ${date} — may be out of date` : `checked ${date}`;
+}
+
 // The time of day only when the organizer actually stated one.
 export function formatWhen(iso: string | Date, timeKnown: boolean): string {
   return timeKnown ? formatEt(iso) : `${formatDay(iso)} (time not stated)`;

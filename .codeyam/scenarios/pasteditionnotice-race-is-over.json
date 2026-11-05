@@ -1,0 +1,12 @@
+{
+  "name": "PastEditionNotice - Race Is Over",
+  "id": "c85c2a79-ba70-4526-9bfb-36012b6ca0ba",
+  "url": "/isolated-components/PastEditionNotice?s=RaceIsOver",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "PastEditionNotice",
+  "scenarioType": "component",
+  "description": "Great Gobble 5K on Thanksgiving 2026: the 2026 race is over, its dates stay visible marked passed, each with its source, and the 2027 date is not announced."
+}

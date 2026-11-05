@@ -1,0 +1,12 @@
+{
+  "name": "StaleNotice - Never Checked",
+  "id": "e0ebfe15-d977-40f9-95fa-b022d5c8f41a",
+  "url": "/isolated-components/StaleNotice?s=NeverChecked",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "StaleNotice",
+  "scenarioType": "component",
+  "description": "Warning that details have never been checked against the official site."
+}

@@ -1,0 +1,12 @@
+{
+  "name": "RaceOverNotice - Race is over",
+  "id": "00b9609e-400d-4b57-98f6-3f606172ae76",
+  "url": "/isolated-components/RaceOverNotice?s=RaceIsOver",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "RaceOverNotice",
+  "scenarioType": "component",
+  "description": "The RaceOverNotice component."
+}

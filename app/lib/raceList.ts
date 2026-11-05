@@ -11,6 +11,8 @@ export type EditionRecord = {
   registrationStatus: string;
   entryMethod: string;
   isSample: boolean;
+  sourceUrl?: string | null;
+  lastVerifiedAt?: Date | null;
   milestones: MilestoneRecord[];
 };
 
@@ -43,6 +45,9 @@ export type RaceListItem = {
   registrationStatus: string;
   entryMethod: string;
   isSample: boolean;
+  // Where this edition's details come from and when they were last checked.
+  sourceUrl: string | null;
+  lastVerifiedAt: string | null;
   nextMilestone: { kind: string; at: string; timeKnown: boolean; tentative: boolean } | null;
   // When this edition's registration opens; null when not announced.
   registrationOpens: string | null;
@@ -60,6 +65,25 @@ export function upcomingEdition<E extends { year: number; raceDate: Date | null 
 ): E | null {
   const sorted = [...editions].sort((a, b) => a.year - b.year);
   return sorted.find((e) => !e.raceDate || e.raceDate >= now) ?? null;
+}
+
+// The most recent edition whose race day has passed — shown when there is no
+// upcoming edition, so a finished race stays visible as over, never as next.
+export function latestPastEdition<E extends { year: number; raceDate: Date | null }>(
+  editions: E[],
+  now: Date,
+): E | null {
+  const past = editions.filter((e) => e.raceDate && e.raceDate < now).sort((a, b) => b.year - a.year);
+  return past[0] ?? null;
+}
+
+// Details last checked more than this many days ago are flagged as possibly out of date.
+export const STALE_AFTER_DAYS = 30;
+
+// True when the details were never checked, or last checked more than STALE_AFTER_DAYS ago.
+export function isStale(lastVerifiedAt: string | Date | null | undefined, now: Date, days = STALE_AFTER_DAYS): boolean {
+  if (!lastVerifiedAt) return true;
+  return now.getTime() - new Date(lastVerifiedAt).getTime() > days * MS_PER_DAY;
 }
 
 // A deadline with no stated time is stored at noon ET on its day; it stays
@@ -113,6 +137,8 @@ export function toListItem(race: RaceRecord, now: Date): RaceListItem | null {
     registrationStatus: edition.registrationStatus,
     entryMethod: edition.entryMethod,
     isSample: edition.isSample,
+    sourceUrl: edition.sourceUrl ?? null,
+    lastVerifiedAt: edition.lastVerifiedAt?.toISOString() ?? null,
     nextMilestone: next
       ? { kind: next.kind, at: next.at.toISOString(), timeKnown: next.timeKnown, tentative: next.tentative }
       : null,

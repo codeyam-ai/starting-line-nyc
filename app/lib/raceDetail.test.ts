@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import {
   REPO_URL,
   buildTimeline,
+  editionSources,
   entryMethod,
   nextDeadline,
   officialLink,
@@ -51,6 +52,53 @@ describe('buildTimeline', () => {
   it('keeps a date-only deadline for today as next', () => {
     const t = buildTimeline([m(1, 'price_increase', '2026-10-26T16:00:00Z', false)], null, false, NOW);
     expect(t[0].state).toBe('next');
+  });
+
+  // With no source passed, every entry has no source.
+  it('leaves source empty when none is given', () => {
+    const t = buildTimeline([m(1, 'price_increase', '2026-11-09T17:00:00Z')], new Date('2026-12-13T13:00:00Z'), false, NOW);
+    expect(t.map((e) => [e.sourceUrl, e.lastVerifiedAt])).toEqual([
+      [null, null],
+      [null, null],
+    ]);
+  });
+
+  // Dates without their own source, race day included, fall back to the edition source.
+  it('falls back to the edition source', () => {
+    const source = { sourceUrl: 'https://nyrr.org/half', lastVerifiedAt: new Date('2026-10-28T15:00:00Z') };
+    const t = buildTimeline(
+      [m(1, 'price_increase', '2026-11-09T17:00:00Z')],
+      new Date('2026-12-13T13:00:00Z'),
+      false,
+      NOW,
+      true,
+      source,
+    );
+    expect(t).toHaveLength(2);
+    for (const e of t) {
+      expect(e).toMatchObject({ sourceUrl: 'https://nyrr.org/half', lastVerifiedAt: '2026-10-28T15:00:00.000Z' });
+    }
+  });
+
+  // A date with its own source keeps it instead of the edition source.
+  it('prefers the date own source', () => {
+    const source = { sourceUrl: 'https://nyrr.org/half', lastVerifiedAt: new Date('2026-10-28T15:00:00Z') };
+    const own = {
+      ...m(1, 'price_increase', '2026-11-09T17:00:00Z'),
+      sourceUrl: 'https://nyrr.org/prices',
+      lastVerifiedAt: new Date('2026-09-01T15:00:00Z'),
+    };
+    expect(buildTimeline([own], null, false, NOW, true, source)[0]).toMatchObject({
+      sourceUrl: 'https://nyrr.org/prices',
+      lastVerifiedAt: '2026-09-01T15:00:00.000Z',
+    });
+  });
+
+  // A date with its own source but no check date does not borrow the edition check date.
+  it('keeps a missing check date on a date with its own source', () => {
+    const source = { sourceUrl: 'https://nyrr.org/half', lastVerifiedAt: new Date('2026-10-28T15:00:00Z') };
+    const own = { ...m(1, 'price_increase', '2026-11-09T17:00:00Z'), sourceUrl: 'https://nyrr.org/prices', lastVerifiedAt: null };
+    expect(buildTimeline([own], null, false, NOW, true, source)[0].lastVerifiedAt).toBeNull();
   });
 
   // With no race date and no milestones the timeline is empty.
@@ -156,6 +204,8 @@ const entry = (kind: string) => ({
   timeKnown: true,
   tentative: false,
   note: null,
+  sourceUrl: null,
+  lastVerifiedAt: null,
   state: 'upcoming' as const,
 });
 
@@ -199,5 +249,39 @@ describe('registrationHasOpened', () => {
   it('is false for an unknown status', () => {
     expect(registrationHasOpened('')).toBe(false);
     expect(registrationHasOpened('something_new')).toBe(false);
+  });
+});
+
+describe('editionSources', () => {
+  const CHECKED = new Date('2026-10-28T15:00:00Z');
+
+  // No edition at all means no sources panel.
+  it('returns null without an edition', () => {
+    expect(editionSources(null, NOW)).toBeNull();
+    expect(editionSources(undefined, NOW)).toBeNull();
+  });
+
+  // A recent check passes through as an ISO date and is not stale.
+  it('passes a recent check through', () => {
+    expect(editionSources({ sourceUrl: 'https://nyrr.org', lastVerifiedAt: CHECKED }, NOW)).toEqual({
+      sourceUrl: 'https://nyrr.org',
+      lastVerifiedAt: '2026-10-28T15:00:00.000Z',
+      stale: false,
+    });
+  });
+
+  // A check more than 30 days old is flagged stale.
+  it('flags an old check as stale', () => {
+    const later = new Date('2026-12-15T00:00:00Z');
+    expect(editionSources({ sourceUrl: 'https://nyrr.org', lastVerifiedAt: CHECKED }, later)?.stale).toBe(true);
+  });
+
+  // Never checked counts as stale, with no check date.
+  it('flags a never-checked edition as stale', () => {
+    expect(editionSources({ sourceUrl: null, lastVerifiedAt: null }, NOW)).toEqual({
+      sourceUrl: null,
+      lastVerifiedAt: null,
+      stale: true,
+    });
   });
 });

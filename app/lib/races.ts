@@ -6,6 +6,7 @@ import type { RaceFilters } from '@/app/lib/filters';
 import { buildTimeline } from '@/app/lib/raceDetail';
 import {
   filterAndSortRaces,
+  latestPastEdition,
   summarizeSavedRaces,
   upcomingEdition,
   weeksToTrain,
@@ -29,7 +30,24 @@ export async function findRaceSummaries(slugs: string[], now = new Date()): Prom
   return summarizeSavedRaces(slugs, races, now);
 }
 
-// One race for its page: the upcoming edition and its timeline.
+type StoredEdition = {
+  raceDate: Date | null;
+  raceDateTentative: boolean;
+  raceTimeKnown: boolean;
+  sourceUrl: string | null;
+  lastVerifiedAt: Date | null;
+  milestones: Parameters<typeof buildTimeline>[0];
+};
+
+function editionTimeline(edition: StoredEdition, now: Date) {
+  return buildTimeline(edition.milestones, edition.raceDate, edition.raceDateTentative, now, edition.raceTimeKnown, {
+    sourceUrl: edition.sourceUrl,
+    lastVerifiedAt: edition.lastVerifiedAt,
+  });
+}
+
+// One race for its page: the upcoming edition and its timeline, or — when
+// none is upcoming — the most recent finished edition, shown as over.
 export async function findRaceDetail(slug: string, now = new Date()) {
   const race = await prisma.race.findUnique({
     where: { slug },
@@ -37,11 +55,14 @@ export async function findRaceDetail(slug: string, now = new Date()) {
   });
   if (!race) return null;
   const edition = upcomingEdition(race.editions, now);
+  const pastEdition = edition ? null : latestPastEdition(race.editions, now);
   return {
     race,
     edition,
+    pastEdition,
     weeksToTrain: edition ? weeksToTrain(edition.raceDate, now) : null,
-    timeline: edition ? buildTimeline(edition.milestones, edition.raceDate, edition.raceDateTentative, now, edition.raceTimeKnown) : [],
+    timeline: edition ? editionTimeline(edition, now) : [],
+    pastTimeline: pastEdition ? editionTimeline(pastEdition, now) : [],
   };
 }
 

@@ -67,7 +67,9 @@
       { "name": "at", "type": "string", "required": true },
       { "name": "timeKnown", "type": "boolean", "required": true },
       { "name": "tentative", "type": "boolean", "required": true },
-      { "name": "note", "type": "string", "required": false }
+      { "name": "note", "type": "string", "required": false },
+      { "name": "sourceUrl", "type": "string", "required": false, "description": "Official page this date came from; falls back to the edition source." },
+      { "name": "lastVerifiedAt", "type": "string", "required": false, "description": "When this date was last checked; falls back to the edition check date." }
     ]
   }
 ]

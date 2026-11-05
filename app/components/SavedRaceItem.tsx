@@ -32,7 +32,7 @@ export default function SavedRaceItem({
   const change = registrationChange(saved, race.registrationStatus);
   return (
     <div className="mr-item">
-      <RaceRow race={race} urgent={isUrgent(m?.at, now, m?.timeKnown)} alwaysOfferCalendar />
+      <RaceRow race={race} urgent={isUrgent(m?.at, now, m?.timeKnown)} alwaysOfferCalendar now={now} />
       {change && <RegistrationChanged from={change.from} to={change.to} />}
       {note}
     </div>

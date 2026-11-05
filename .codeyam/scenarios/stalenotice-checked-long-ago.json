@@ -1,0 +1,12 @@
+{
+  "name": "StaleNotice - Checked Long Ago",
+  "id": "1c62e6e4-f7a3-4a36-b436-4483d5fe1484",
+  "url": "/isolated-components/StaleNotice?s=CheckedLongAgo",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "StaleNotice",
+  "scenarioType": "component",
+  "description": "Warning that details were last checked Oct 26, 2026, more than 30 days ago."
+}

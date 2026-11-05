@@ -91,11 +91,20 @@
       "runner": "tests"
     },
     {
+      "description": "Dates without their own source, race day included, fall back to the edition source.",
+      "file": "app/lib/raceDetail.test.ts",
+      "format": "vitest",
+      "key": "buildTimeline › falls back to the edition source",
+      "line": 67,
+      "registeredAt": "2026-11-05T00:57:51Z",
+      "runner": "tests"
+    },
+    {
       "description": "With no race date and no milestones the timeline is empty.",
       "file": "app/lib/raceDetail.test.ts",
       "format": "vitest",
       "key": "buildTimeline › is empty when nothing is announced",
-      "line": 57,
+      "line": 105,
       "registeredAt": "2026-10-26T21:01:51Z",
       "runner": "tests"
     },
@@ -104,8 +113,26 @@
       "file": "app/lib/raceDetail.test.ts",
       "format": "vitest",
       "key": "buildTimeline › keeps a date-only deadline for today as next",
-      "line": 51,
+      "line": 52,
       "registeredAt": "2026-10-26T21:01:51Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A date with its own source but no check date does not borrow the edition check date.",
+      "file": "app/lib/raceDetail.test.ts",
+      "format": "vitest",
+      "key": "buildTimeline › keeps a missing check date on a date with its own source",
+      "line": 98,
+      "registeredAt": "2026-11-05T00:57:51Z",
+      "runner": "tests"
+    },
+    {
+      "description": "With no source passed, every entry has no source.",
+      "file": "app/lib/raceDetail.test.ts",
+      "format": "vitest",
+      "key": "buildTimeline › leaves source empty when none is given",
+      "line": 58,
+      "registeredAt": "2026-11-05T00:57:51Z",
       "runner": "tests"
     },
     {
@@ -113,8 +140,17 @@
       "file": "app/lib/raceDetail.test.ts",
       "format": "vitest",
       "key": "buildTimeline › marks past, next and upcoming",
-      "line": 40,
+      "line": 41,
       "registeredAt": "2026-10-26T21:01:51Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A date with its own source keeps it instead of the edition source.",
+      "file": "app/lib/raceDetail.test.ts",
+      "format": "vitest",
+      "key": "buildTimeline › prefers the date own source",
+      "line": 84,
+      "registeredAt": "2026-11-05T00:57:51Z",
       "runner": "tests"
     },
     {
@@ -122,7 +158,7 @@
       "file": "app/lib/raceDetail.test.ts",
       "format": "vitest",
       "key": "buildTimeline › sorts milestones by date and appends race day",
-      "line": 28,
+      "line": 29,
       "registeredAt": "2026-10-26T21:01:51Z",
       "runner": "tests"
     },
@@ -133,6 +169,24 @@
       "key": "calendarFileName › names next, race day and milestone files",
       "line": 121,
       "registeredAt": "2026-10-26T21:01:51Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A recent check reads plainly.",
+      "file": "app/lib/format.test.ts",
+      "format": "vitest",
+      "key": "checkedPhrase › reads plainly when fresh",
+      "line": 154,
+      "registeredAt": "2026-11-05T00:57:51Z",
+      "runner": "tests"
+    },
+    {
+      "description": "An old check warns it may be out of date.",
+      "file": "app/lib/format.test.ts",
+      "format": "vitest",
+      "key": "checkedPhrase › warns when stale",
+      "line": 159,
+      "registeredAt": "2026-11-05T00:57:51Z",
       "runner": "tests"
     },
     {
@@ -190,11 +244,47 @@
       "runner": "tests"
     },
     {
+      "description": "Never checked counts as stale, with no check date.",
+      "file": "app/lib/raceDetail.test.ts",
+      "format": "vitest",
+      "key": "editionSources › flags a never-checked edition as stale",
+      "line": 280,
+      "registeredAt": "2026-11-05T00:57:51Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A check more than 30 days old is flagged stale.",
+      "file": "app/lib/raceDetail.test.ts",
+      "format": "vitest",
+      "key": "editionSources › flags an old check as stale",
+      "line": 274,
+      "registeredAt": "2026-11-05T00:57:51Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A recent check passes through as an ISO date and is not stale.",
+      "file": "app/lib/raceDetail.test.ts",
+      "format": "vitest",
+      "key": "editionSources › passes a recent check through",
+      "line": 265,
+      "registeredAt": "2026-11-05T00:57:51Z",
+      "runner": "tests"
+    },
+    {
+      "description": "No edition at all means no sources panel.",
+      "file": "app/lib/raceDetail.test.ts",
+      "format": "vitest",
+      "key": "editionSources › returns null without an edition",
+      "line": 259,
+      "registeredAt": "2026-11-05T00:57:51Z",
+      "runner": "tests"
+    },
+    {
       "description": "Known methods get a plain-language title and explanation.",
       "file": "app/lib/raceDetail.test.ts",
       "format": "vitest",
       "key": "entryMethod › explains known entry methods",
-      "line": 87,
+      "line": 135,
       "registeredAt": "2026-10-26T21:01:51Z",
       "runner": "tests"
     },
@@ -203,7 +293,7 @@
       "file": "app/lib/raceDetail.test.ts",
       "format": "vitest",
       "key": "entryMethod › falls back to the raw method",
-      "line": 93,
+      "line": 141,
       "registeredAt": "2026-10-26T21:01:51Z",
       "runner": "tests"
     },
@@ -212,7 +302,7 @@
       "file": "app/lib/format.test.ts",
       "format": "vitest",
       "key": "etDate › gives the ET calendar date",
-      "line": 17,
+      "line": 19,
       "registeredAt": "2026-10-26T21:01:51Z",
       "runner": "tests"
     },
@@ -248,7 +338,7 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "filterAndSortRaces › applies distance and six month window by default",
-      "line": 328,
+      "line": 347,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -257,7 +347,7 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "filterAndSortRaces › filters by status chips",
-      "line": 350,
+      "line": 369,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -266,7 +356,7 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "filterAndSortRaces › filters by terrain and by search text across name, place and organizer",
-      "line": 343,
+      "line": 362,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -275,7 +365,7 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "filterAndSortRaces › matches ultras beyond marathon distance",
-      "line": 338,
+      "line": 357,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -284,7 +374,7 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "filterAndSortRaces › returns everything with any distance and any time",
-      "line": 333,
+      "line": 352,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -316,11 +406,38 @@
       "runner": "tests"
     },
     {
+      "description": "Date objects work the same as ISO strings.",
+      "file": "app/lib/format.test.ts",
+      "format": "vitest",
+      "key": "formatCheckedDate › accepts a Date",
+      "line": 147,
+      "registeredAt": "2026-11-05T00:57:51Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A check date reads as a short month, day and year.",
+      "file": "app/lib/format.test.ts",
+      "format": "vitest",
+      "key": "formatCheckedDate › formats as a short date",
+      "line": 137,
+      "registeredAt": "2026-11-05T00:57:51Z",
+      "runner": "tests"
+    },
+    {
+      "description": "The date is in Eastern Time, so an evening check stays on its ET day.",
+      "file": "app/lib/format.test.ts",
+      "format": "vitest",
+      "key": "formatCheckedDate › uses the Eastern Time day",
+      "line": 142,
+      "registeredAt": "2026-11-05T00:57:51Z",
+      "runner": "tests"
+    },
+    {
       "description": "Days are shown in New York time, which can differ from the UTC date.",
       "file": "app/lib/format.test.ts",
       "format": "vitest",
       "key": "formatDay › formats in Eastern Time even across a UTC date boundary",
-      "line": 49,
+      "line": 51,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -329,7 +446,7 @@
       "file": "app/lib/format.test.ts",
       "format": "vitest",
       "key": "formatDistance › appends elevation gain",
-      "line": 96,
+      "line": 98,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -338,7 +455,7 @@
       "file": "app/lib/format.test.ts",
       "format": "vitest",
       "key": "formatDistance › formats miles",
-      "line": 90,
+      "line": 92,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -347,7 +464,7 @@
       "file": "app/lib/format.test.ts",
       "format": "vitest",
       "key": "formatEt › joins day and time",
-      "line": 69,
+      "line": 71,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -356,7 +473,7 @@
       "file": "app/lib/format.test.ts",
       "format": "vitest",
       "key": "formatLongDay › spells out weekday, month and year",
-      "line": 25,
+      "line": 27,
       "registeredAt": "2026-10-26T21:01:51Z",
       "runner": "tests"
     },
@@ -365,7 +482,7 @@
       "file": "app/lib/format.test.ts",
       "format": "vitest",
       "key": "formatPrice › formats cents as dollars",
-      "line": 40,
+      "line": 42,
       "registeredAt": "2026-10-26T21:01:51Z",
       "runner": "tests"
     },
@@ -374,7 +491,7 @@
       "file": "app/lib/format.test.ts",
       "format": "vitest",
       "key": "formatTime › formats standard time with a lowercase meridiem and ET",
-      "line": 57,
+      "line": 59,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -383,7 +500,7 @@
       "file": "app/lib/format.test.ts",
       "format": "vitest",
       "key": "formatTime › handles daylight saving time",
-      "line": 62,
+      "line": 64,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -392,7 +509,7 @@
       "file": "app/lib/format.test.ts",
       "format": "vitest",
       "key": "formatWhen › shows the time only when it is known",
-      "line": 32,
+      "line": 34,
       "registeredAt": "2026-10-26T21:01:51Z",
       "runner": "tests"
     },
@@ -586,11 +703,65 @@
       "runner": "tests"
     },
     {
+      "description": "ISO strings work the same as dates.",
+      "file": "app/lib/raceList.test.ts",
+      "format": "vitest",
+      "key": "isStale › accepts an ISO string",
+      "line": 433,
+      "registeredAt": "2026-11-05T00:57:51Z",
+      "runner": "tests"
+    },
+    {
+      "description": "The threshold can be overridden.",
+      "file": "app/lib/raceList.test.ts",
+      "format": "vitest",
+      "key": "isStale › honours a custom threshold",
+      "line": 439,
+      "registeredAt": "2026-11-05T00:57:51Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A check 29 days ago is fresh.",
+      "file": "app/lib/raceList.test.ts",
+      "format": "vitest",
+      "key": "isStale › is false at 29 days",
+      "line": 412,
+      "registeredAt": "2026-11-05T00:57:51Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Exactly 30 days is still fresh; only older than 30 days is stale.",
+      "file": "app/lib/raceList.test.ts",
+      "format": "vitest",
+      "key": "isStale › is false at exactly 30 days",
+      "line": 417,
+      "registeredAt": "2026-11-05T00:57:51Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A check 31 days ago is stale.",
+      "file": "app/lib/raceList.test.ts",
+      "format": "vitest",
+      "key": "isStale › is true at 31 days",
+      "line": 422,
+      "registeredAt": "2026-11-05T00:57:51Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Never checked is always stale.",
+      "file": "app/lib/raceList.test.ts",
+      "format": "vitest",
+      "key": "isStale › is true when never checked",
+      "line": 427,
+      "registeredAt": "2026-11-05T00:57:51Z",
+      "runner": "tests"
+    },
+    {
       "description": "Later deadlines, past deadlines and missing deadlines are not urgent.",
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "isUrgent › is false beyond three weeks, in the past, or missing",
-      "line": 140,
+      "line": 142,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -599,7 +770,7 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "isUrgent › is true within three weeks",
-      "line": 134,
+      "line": 136,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -608,8 +779,44 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "isUrgent › keeps a date-only deadline urgent until its ET day ends",
-      "line": 148,
+      "line": 150,
       "registeredAt": "2026-10-26T21:01:51Z",
+      "runner": "tests"
+    },
+    {
+      "description": "An undated edition is never treated as past.",
+      "file": "app/lib/raceList.test.ts",
+      "format": "vitest",
+      "key": "latestPastEdition › ignores editions without a race date",
+      "line": 391,
+      "registeredAt": "2026-11-05T00:57:51Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Of several past editions, the most recent year wins regardless of order.",
+      "file": "app/lib/raceList.test.ts",
+      "format": "vitest",
+      "key": "latestPastEdition › picks the most recent past year",
+      "line": 396,
+      "registeredAt": "2026-11-05T00:57:51Z",
+      "runner": "tests"
+    },
+    {
+      "description": "With no editions there is nothing past.",
+      "file": "app/lib/raceList.test.ts",
+      "format": "vitest",
+      "key": "latestPastEdition › returns null for no editions",
+      "line": 381,
+      "registeredAt": "2026-11-05T00:57:51Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Only future editions means nothing past.",
+      "file": "app/lib/raceList.test.ts",
+      "format": "vitest",
+      "key": "latestPastEdition › returns null when every edition is upcoming",
+      "line": 386,
+      "registeredAt": "2026-11-05T00:57:51Z",
       "runner": "tests"
     },
     {
@@ -617,7 +824,7 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "milestoneEnd › extends date-only milestones to the end of the day",
-      "line": 157,
+      "line": 159,
       "registeredAt": "2026-10-26T21:01:51Z",
       "runner": "tests"
     },
@@ -626,7 +833,7 @@
       "file": "app/lib/format.test.ts",
       "format": "vitest",
       "key": "milestoneLabel › always calls race day Race day",
-      "line": 116,
+      "line": 118,
       "registeredAt": "2026-11-04T18:31:31Z",
       "runner": "tests"
     },
@@ -635,7 +842,7 @@
       "file": "app/lib/format.test.ts",
       "format": "vitest",
       "key": "milestoneLabel › falls back to the present label when no past wording exists",
-      "line": 122,
+      "line": 124,
       "registeredAt": "2026-11-04T18:31:31Z",
       "runner": "tests"
     },
@@ -644,7 +851,7 @@
       "file": "app/lib/format.test.ts",
       "format": "vitest",
       "key": "milestoneLabel › falls back to the raw kind",
-      "line": 83,
+      "line": 85,
       "registeredAt": "2026-11-04T18:31:31Z",
       "runner": "tests"
     },
@@ -653,7 +860,7 @@
       "file": "app/lib/format.test.ts",
       "format": "vitest",
       "key": "milestoneLabel › uses the past-tense label for passed milestones",
-      "line": 109,
+      "line": 111,
       "registeredAt": "2026-11-04T18:31:31Z",
       "runner": "tests"
     },
@@ -662,7 +869,7 @@
       "file": "app/lib/format.test.ts",
       "format": "vitest",
       "key": "milestoneLabel › uses the present-tense label by default",
-      "line": 103,
+      "line": 105,
       "registeredAt": "2026-11-04T18:31:31Z",
       "runner": "tests"
     },
@@ -671,7 +878,7 @@
       "file": "app/lib/format.test.ts",
       "format": "vitest",
       "key": "milestoneVerb › falls back to the raw kind",
-      "line": 83,
+      "line": 85,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -680,7 +887,7 @@
       "file": "app/lib/format.test.ts",
       "format": "vitest",
       "key": "milestoneVerb › maps known kinds to verbs",
-      "line": 76,
+      "line": 78,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -716,7 +923,7 @@
       "file": "app/lib/raceDetail.test.ts",
       "format": "vitest",
       "key": "nextDeadline › skips past entries and race day",
-      "line": 64,
+      "line": 112,
       "registeredAt": "2026-10-26T21:01:51Z",
       "runner": "tests"
     },
@@ -725,7 +932,7 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "nextMilestone with date-only deadlines › keeps today as next until the day ends",
-      "line": 166,
+      "line": 168,
       "registeredAt": "2026-10-26T21:01:51Z",
       "runner": "tests"
     },
@@ -734,7 +941,7 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "nextMilestone › returns null when nothing is upcoming",
-      "line": 113,
+      "line": 115,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -743,7 +950,7 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "nextMilestone › returns the earliest future milestone",
-      "line": 107,
+      "line": 109,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -752,7 +959,7 @@
       "file": "app/lib/raceDetail.test.ts",
       "format": "vitest",
       "key": "officialLink › falls back to the source then the organizer",
-      "line": 108,
+      "line": 156,
       "registeredAt": "2026-10-26T21:01:51Z",
       "runner": "tests"
     },
@@ -761,7 +968,7 @@
       "file": "app/lib/raceDetail.test.ts",
       "format": "vitest",
       "key": "officialLink › prefers the registration link",
-      "line": 100,
+      "line": 148,
       "registeredAt": "2026-10-26T21:01:51Z",
       "runner": "tests"
     },
@@ -770,7 +977,7 @@
       "file": "app/lib/raceDetail.test.ts",
       "format": "vitest",
       "key": "openingDateUnknown › is false when registration opening is listed",
-      "line": 174,
+      "line": 224,
       "registeredAt": "2026-11-04T18:31:31Z",
       "runner": "tests"
     },
@@ -779,7 +986,7 @@
       "file": "app/lib/raceDetail.test.ts",
       "format": "vitest",
       "key": "openingDateUnknown › is false when the lottery opening is listed",
-      "line": 179,
+      "line": 229,
       "registeredAt": "2026-11-04T18:31:31Z",
       "runner": "tests"
     },
@@ -788,7 +995,7 @@
       "file": "app/lib/raceDetail.test.ts",
       "format": "vitest",
       "key": "openingDateUnknown › is true for an empty timeline",
-      "line": 164,
+      "line": 214,
       "registeredAt": "2026-11-04T18:31:31Z",
       "runner": "tests"
     },
@@ -797,7 +1004,7 @@
       "file": "app/lib/raceDetail.test.ts",
       "format": "vitest",
       "key": "openingDateUnknown › is true when only non-opening dates are listed",
-      "line": 169,
+      "line": 219,
       "registeredAt": "2026-11-04T18:31:31Z",
       "runner": "tests"
     },
@@ -806,7 +1013,7 @@
       "file": "app/lib/raceDetail.test.ts",
       "format": "vitest",
       "key": "pageUrlFrom › defaults to http on localhost",
-      "line": 135,
+      "line": 183,
       "registeredAt": "2026-10-26T21:01:51Z",
       "runner": "tests"
     },
@@ -815,7 +1022,7 @@
       "file": "app/lib/raceDetail.test.ts",
       "format": "vitest",
       "key": "pageUrlFrom › uses forwarded host and protocol",
-      "line": 129,
+      "line": 177,
       "registeredAt": "2026-10-26T21:01:51Z",
       "runner": "tests"
     },
@@ -1085,7 +1292,7 @@
       "file": "app/lib/raceDetail.test.ts",
       "format": "vitest",
       "key": "registrationHasOpened › is false before registration opens",
-      "line": 193,
+      "line": 243,
       "registeredAt": "2026-11-04T18:31:31Z",
       "runner": "tests"
     },
@@ -1094,7 +1301,7 @@
       "file": "app/lib/raceDetail.test.ts",
       "format": "vitest",
       "key": "registrationHasOpened › is false for an unknown status",
-      "line": 199,
+      "line": 249,
       "registeredAt": "2026-11-04T18:31:31Z",
       "runner": "tests"
     },
@@ -1103,7 +1310,7 @@
       "file": "app/lib/raceDetail.test.ts",
       "format": "vitest",
       "key": "registrationHasOpened › is true for statuses after registration opened",
-      "line": 186,
+      "line": 236,
       "registeredAt": "2026-11-04T18:31:31Z",
       "runner": "tests"
     },
@@ -1112,7 +1319,7 @@
       "file": "app/lib/raceDetail.test.ts",
       "format": "vitest",
       "key": "reportIssueUrl › pre-fills a GitHub issue",
-      "line": 143,
+      "line": 191,
       "registeredAt": "2026-10-26T21:01:51Z",
       "runner": "tests"
     },
@@ -1202,7 +1409,7 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "sortRaces › breaks full ties by name",
-      "line": 302,
+      "line": 321,
       "registeredAt": "2026-11-02T19:06:41Z",
       "runner": "tests"
     },
@@ -1211,7 +1418,7 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "sortRaces › orders races with no opening date by race day at the end",
-      "line": 274,
+      "line": 293,
       "registeredAt": "2026-11-02T19:06:41Z",
       "runner": "tests"
     },
@@ -1220,7 +1427,7 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "sortRaces › places already open races between upcoming and unannounced",
-      "line": 249,
+      "line": 268,
       "registeredAt": "2026-11-02T19:06:41Z",
       "runner": "tests"
     },
@@ -1229,7 +1436,7 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "sortRaces › puts upcoming registration openings first, soonest first",
-      "line": 239,
+      "line": 258,
       "registeredAt": "2026-11-02T19:06:41Z",
       "runner": "tests"
     },
@@ -1238,7 +1445,7 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "sortRaces › returns a new array and leaves the input untouched",
-      "line": 308,
+      "line": 327,
       "registeredAt": "2026-11-02T19:06:41Z",
       "runner": "tests"
     },
@@ -1247,7 +1454,7 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "sortRaces › sorts by distance shortest first with race day as tie break",
-      "line": 291,
+      "line": 310,
       "registeredAt": "2026-11-02T19:06:41Z",
       "runner": "tests"
     },
@@ -1256,7 +1463,7 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "sortRaces › sorts by next deadline with unknown last",
-      "line": 220,
+      "line": 239,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -1265,7 +1472,7 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "sortRaces › sorts by race day with unknown last",
-      "line": 229,
+      "line": 248,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -1274,7 +1481,7 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "sortRaces › treats lottery open and waitlist as already enterable",
-      "line": 264,
+      "line": 283,
       "registeredAt": "2026-11-02T19:06:41Z",
       "runner": "tests"
     },
@@ -1283,7 +1490,7 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "sortRaces › uses the passed in time to decide which openings are ahead",
-      "line": 284,
+      "line": 303,
       "registeredAt": "2026-11-02T19:06:41Z",
       "runner": "tests"
     },
@@ -1292,7 +1499,7 @@
       "file": "app/lib/raceDetail.test.ts",
       "format": "vitest",
       "key": "sourceHost › strips www and handles missing or bad URLs",
-      "line": 120,
+      "line": 168,
       "registeredAt": "2026-10-26T21:01:51Z",
       "runner": "tests"
     },
@@ -1337,7 +1544,7 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "summarizeSavedRaces › keeps the requested slug order",
-      "line": 69,
+      "line": 71,
       "registeredAt": "2026-11-02T16:34:16.083605723+00:00",
       "runner": "tests"
     },
@@ -1346,7 +1553,7 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "summarizeSavedRaces › marks a race with no upcoming edition and keeps its name",
-      "line": 58,
+      "line": 60,
       "registeredAt": "2026-11-02T16:34:16.083605723+00:00",
       "runner": "tests"
     },
@@ -1355,7 +1562,7 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "summarizeSavedRaces › marks an unknown slug as not listed",
-      "line": 64,
+      "line": 66,
       "registeredAt": "2026-11-02T16:34:16.083605723+00:00",
       "runner": "tests"
     },
@@ -1364,7 +1571,7 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "summarizeSavedRaces › summarizes a listed race as its list item",
-      "line": 52,
+      "line": 54,
       "registeredAt": "2026-11-02T16:34:16.083605723+00:00",
       "runner": "tests"
     },
@@ -1373,8 +1580,17 @@
       "file": "app/lib/raceDetail.test.ts",
       "format": "vitest",
       "key": "timelineCalendarHref › builds race day and milestone links",
-      "line": 78,
+      "line": 126,
       "registeredAt": "2026-10-26T21:01:51Z",
+      "runner": "tests"
+    },
+    {
+      "description": "The row carries the edition source and its check date.",
+      "file": "app/lib/raceList.test.ts",
+      "format": "vitest",
+      "key": "toListItem › carries the edition source and check date",
+      "line": 212,
+      "registeredAt": "2026-11-05T00:57:51Z",
       "runner": "tests"
     },
     {
@@ -1382,7 +1598,7 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "toListItem › flattens the upcoming edition into a list item",
-      "line": 177,
+      "line": 179,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -1391,7 +1607,7 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "toListItem › keeps the earliest registration opening, past or future",
-      "line": 193,
+      "line": 195,
       "registeredAt": "2026-11-02T19:06:41Z",
       "runner": "tests"
     },
@@ -1400,7 +1616,7 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "toListItem › returns null when the race has no upcoming edition",
-      "line": 210,
+      "line": 229,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -1409,8 +1625,17 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "toListItem › sets registration opens to null when no opening is announced",
-      "line": 205,
+      "line": 207,
       "registeredAt": "2026-11-02T19:06:41Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Without a source on file, both fields are null.",
+      "file": "app/lib/raceList.test.ts",
+      "format": "vitest",
+      "key": "toListItem › sets source fields to null when absent",
+      "line": 224,
+      "registeredAt": "2026-11-05T00:57:51Z",
       "runner": "tests"
     },
     {
@@ -1436,7 +1661,7 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "upcomingEdition › picks the earliest upcoming year regardless of input order",
-      "line": 91,
+      "line": 93,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -1445,7 +1670,7 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "upcomingEdition › returns null when every edition is past",
-      "line": 100,
+      "line": 102,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -1454,7 +1679,7 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "upcomingEdition › skips editions whose race day has passed",
-      "line": 77,
+      "line": 79,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -1463,7 +1688,7 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "upcomingEdition › treats an unannounced date as upcoming",
-      "line": 86,
+      "line": 88,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -1499,7 +1724,7 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "weeksToTrain › returns null for an unknown date",
-      "line": 127,
+      "line": 129,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -1508,7 +1733,7 @@
       "file": "app/lib/raceList.test.ts",
       "format": "vitest",
       "key": "weeksToTrain › rounds down to whole weeks",
-      "line": 121,
+      "line": 123,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },

@@ -2,7 +2,9 @@ import { describe, expect, it } from 'vitest';
 import { DEFAULT_FILTERS, type RaceFilters } from '@/app/lib/filters';
 import {
   filterAndSortRaces,
+  isStale,
   isUrgent,
+  latestPastEdition,
   milestoneEnd,
   nextMilestone,
   sortRaces,
@@ -206,6 +208,23 @@ describe('toListItem', () => {
     expect(toListItem(race({ slug: 'r' }), NOW)?.registrationOpens).toBeNull();
   });
 
+  // The row carries the edition source and its check date.
+  it('carries the edition source and check date', () => {
+    const r = withEdition(race({ slug: 'r' }), {
+      sourceUrl: 'https://nyrr.org/half',
+      lastVerifiedAt: d('2026-10-28T15:00:00Z'),
+    });
+    expect(toListItem(r, NOW)).toMatchObject({
+      sourceUrl: 'https://nyrr.org/half',
+      lastVerifiedAt: '2026-10-28T15:00:00.000Z',
+    });
+  });
+
+  // Without a source on file, both fields are null.
+  it('sets source fields to null when absent', () => {
+    expect(toListItem(race({ slug: 'r' }), NOW)).toMatchObject({ sourceUrl: null, lastVerifiedAt: null });
+  });
+
   // A race with no upcoming edition is left off the list.
   it('returns null when the race has no upcoming edition', () => {
     expect(toListItem(withEdition(race({ slug: 'old' }), { raceDate: d('2026-01-01T12:00:00Z') }), NOW)).toBeNull();
@@ -352,5 +371,72 @@ describe('filterAndSortRaces', () => {
     expect(run({ status: ['opening_soon'] })).toEqual(['soon-half']);
     expect(run({ status: ['open'] })).toEqual(['half', 'trail-half']);
     expect(run({ status: ['train12'] })).toEqual(['half', 'lottery-half', 'trail-half']);
+  });
+});
+
+describe('latestPastEdition', () => {
+  const ed = (year: number, raceDate: string | null) => ({ year, raceDate: raceDate ? d(raceDate) : null });
+
+  // With no editions there is nothing past.
+  it('returns null for no editions', () => {
+    expect(latestPastEdition([], NOW)).toBeNull();
+  });
+
+  // Only future editions means nothing past.
+  it('returns null when every edition is upcoming', () => {
+    expect(latestPastEdition([ed(2027, '2027-01-24T12:00:00Z')], NOW)).toBeNull();
+  });
+
+  // An undated edition is never treated as past.
+  it('ignores editions without a race date', () => {
+    expect(latestPastEdition([ed(2026, null)], NOW)).toBeNull();
+  });
+
+  // Of several past editions, the most recent year wins regardless of order.
+  it('picks the most recent past year', () => {
+    const list = [
+      ed(2024, '2024-11-03T12:00:00Z'),
+      ed(2026, '2026-03-15T12:00:00Z'),
+      ed(2025, '2025-03-16T12:00:00Z'),
+      ed(2027, '2027-03-14T12:00:00Z'),
+    ];
+    expect(latestPastEdition(list, NOW)?.year).toBe(2026);
+  });
+});
+
+describe('isStale', () => {
+  const DAY = 24 * 60 * 60 * 1000;
+  const ago = (days: number) => new Date(NOW.getTime() - days * DAY);
+
+  // A check 29 days ago is fresh.
+  it('is false at 29 days', () => {
+    expect(isStale(ago(29), NOW)).toBe(false);
+  });
+
+  // Exactly 30 days is still fresh; only older than 30 days is stale.
+  it('is false at exactly 30 days', () => {
+    expect(isStale(ago(30), NOW)).toBe(false);
+  });
+
+  // A check 31 days ago is stale.
+  it('is true at 31 days', () => {
+    expect(isStale(ago(31), NOW)).toBe(true);
+  });
+
+  // Never checked is always stale.
+  it('is true when never checked', () => {
+    expect(isStale(null, NOW)).toBe(true);
+    expect(isStale(undefined, NOW)).toBe(true);
+  });
+
+  // ISO strings work the same as dates.
+  it('accepts an ISO string', () => {
+    expect(isStale(ago(31).toISOString(), NOW)).toBe(true);
+    expect(isStale(ago(1).toISOString(), NOW)).toBe(false);
+  });
+
+  // The threshold can be overridden.
+  it('honours a custom threshold', () => {
+    expect(isStale(ago(8), NOW, 7)).toBe(true);
   });
 });

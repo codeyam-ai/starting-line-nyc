@@ -39,3 +39,17 @@ export const escarpmentTimeline = buildTimeline(
   [ms(18, "registration_closes", "2027-07-13T16:00:00Z", false, "Or when 275 entries are reached, whichever comes first")],
   new Date("2027-07-25T13:00:00Z"), false, TODAY,
 );
+
+// Great Gobble 5K as its page looks on Thanksgiving 2026 (Nov 26): the 2026
+// race was run on Nov 21, every date has passed, and the details were last
+// checked Oct 26 — more than 30 days earlier.
+export const THANKSGIVING = new Date("2026-11-26T15:00:00Z");
+export const greatGobbleSource = { sourceUrl: "https://nycruns.com/race/nycruns-great-gobble-5k", lastVerifiedAt: new Date("2026-10-26T20:00:00Z") };
+export const greatGobblePastTimeline = buildTimeline(
+  [
+    ms(3, "price_increase", "2026-10-26T16:00:00Z", false, "Rises to $65 (non-member)"),
+    ms(4, "price_increase", "2026-11-16T17:00:00Z", false, "Rises to $75 (non-member)"),
+    ms(5, "registration_closes", "2026-11-20T17:00:00Z", false, "Or earlier if it sells out"),
+  ],
+  new Date("2026-11-21T14:00:00Z"), false, THANKSGIVING, true, greatGobbleSource,
+);

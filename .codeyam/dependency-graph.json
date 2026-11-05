@@ -294,7 +294,8 @@
       "importedBy": [],
       "imports": [
         "app/components/RaceRow.tsx::__file_root__",
-        ".codeyam/isolation-props/_fixtures.ts::__file_root__"
+        ".codeyam/isolation-props/_fixtures.ts::__file_root__",
+        ".codeyam/isolation-props/_raceDetail.ts::__file_root__"
       ],
       "name": "__file_root__"
     },
@@ -324,6 +325,27 @@
       ],
       "name": "__file_root__"
     },
+    ".codeyam/isolation-props/SourcesPanel.ts::__file_root__": {
+      "filePath": ".codeyam/isolation-props/SourcesPanel.ts",
+      "importedBy": [],
+      "imports": [
+        "app/components/SourcesPanel.tsx::__file_root__"
+      ],
+      "name": "__file_root__"
+    },
+    ".codeyam/isolation-props/TimelineItem.ts::__file_root__": {
+      "filePath": ".codeyam/isolation-props/TimelineItem.ts",
+      "importedBy": [],
+      "imports": [
+        "app/components/TimelineItem.tsx::__file_root__",
+        ".codeyam/isolation-props/_raceDetail.ts::bigBearTimeline",
+        ".codeyam/isolation-props/_raceDetail.ts::centralParkTimelineDec10",
+        ".codeyam/isolation-props/_raceDetail.ts::escarpmentTimeline",
+        ".codeyam/isolation-props/_raceDetail.ts::greatGobblePastTimeline",
+        ".codeyam/isolation-props/_raceDetail.ts::statenIslandTimeline"
+      ],
+      "name": "__file_root__"
+    },
     ".codeyam/isolation-props/_fixtures.ts::__file_root__": {
       "filePath": ".codeyam/isolation-props/_fixtures.ts",
       "importedBy": [],
@@ -333,32 +355,13 @@
       ],
       "name": "__file_root__"
     },
-    ".codeyam/isolation-props/_raceDetail.ts::bigBearTimeline": {
+    ".codeyam/isolation-props/_raceDetail.ts::__file_root__": {
       "filePath": ".codeyam/isolation-props/_raceDetail.ts",
-      "importedBy": [
-        ".codeyam/isolation-props/AtAGlance.ts::__file_root__",
-        ".codeyam/isolation-props/KeyDates.ts::__file_root__"
+      "importedBy": [],
+      "imports": [
+        "app/lib/raceDetail.ts::buildTimeline"
       ],
-      "imports": [],
-      "name": "bigBearTimeline"
-    },
-    ".codeyam/isolation-props/_raceDetail.ts::centralParkTimelineDec10": {
-      "filePath": ".codeyam/isolation-props/_raceDetail.ts",
-      "importedBy": [
-        ".codeyam/isolation-props/AtAGlance.ts::__file_root__",
-        ".codeyam/isolation-props/KeyDates.ts::__file_root__"
-      ],
-      "imports": [],
-      "name": "centralParkTimelineDec10"
-    },
-    ".codeyam/isolation-props/_raceDetail.ts::escarpmentTimeline": {
-      "filePath": ".codeyam/isolation-props/_raceDetail.ts",
-      "importedBy": [
-        ".codeyam/isolation-props/AtAGlance.ts::__file_root__",
-        ".codeyam/isolation-props/KeyDates.ts::__file_root__"
-      ],
-      "imports": [],
-      "name": "escarpmentTimeline"
+      "name": "__file_root__"
     },
     ".codeyam/scenario-check-attribution.js::__file_root__": {
       "filePath": ".codeyam/scenario-check-attribution.js",
@@ -704,6 +707,34 @@
       "imports": [],
       "name": "OpeningDateUnknown"
     },
+    "app/components/PastEditionNotice.tsx::__file_root__": {
+      "filePath": "app/components/PastEditionNotice.tsx",
+      "importedBy": [],
+      "imports": [
+        "app/components/PastKeyDates.tsx::PastKeyDates",
+        "app/components/RaceOverNotice.tsx::RaceOverNotice",
+        "app/lib/raceDetail.ts::TimelineEntry"
+      ],
+      "name": "__file_root__"
+    },
+    "app/components/PastKeyDates.tsx::PastKeyDates": {
+      "filePath": "app/components/PastKeyDates.tsx",
+      "importedBy": [
+        "app/components/PastEditionNotice.tsx::__file_root__"
+      ],
+      "imports": [],
+      "name": "PastKeyDates"
+    },
+    "app/components/PastKeyDates.tsx::__file_root__": {
+      "filePath": "app/components/PastKeyDates.tsx",
+      "importedBy": [],
+      "imports": [
+        "app/components/TimelineItem.tsx::TimelineItem",
+        "app/lib/raceDetail.ts::TimelineEntry",
+        "app/lib/raceDetail.ts::timelineCalendarHref"
+      ],
+      "name": "__file_root__"
+    },
     "app/components/RaceDayCell.tsx::__file_root__": {
       "filePath": "app/components/RaceDayCell.tsx",
       "importedBy": [],
@@ -759,6 +790,22 @@
       ],
       "name": "__file_root__"
     },
+    "app/components/RaceOverNotice.tsx::RaceOverNotice": {
+      "filePath": "app/components/RaceOverNotice.tsx",
+      "importedBy": [
+        "app/components/PastEditionNotice.tsx::__file_root__"
+      ],
+      "imports": [],
+      "name": "RaceOverNotice"
+    },
+    "app/components/RaceOverNotice.tsx::__file_root__": {
+      "filePath": "app/components/RaceOverNotice.tsx",
+      "importedBy": [],
+      "imports": [
+        "app/lib/format.ts::formatLongDay"
+      ],
+      "name": "__file_root__"
+    },
     "app/components/RaceRow.tsx::RaceRow": {
       "filePath": "app/components/RaceRow.tsx",
       "importedBy": [
@@ -777,8 +824,10 @@
         "app/components/RaceIdentity.tsx::RaceIdentity",
         "app/components/RaceThumb.tsx::RaceThumb",
         "app/components/SaveRaceButton.tsx::SaveRaceButton",
+        "app/components/SourceLine.tsx::SourceLine",
         "app/components/WeeksToTrain.tsx::WeeksToTrain",
-        "app/lib/raceList.ts::RaceListItem"
+        "app/lib/raceList.ts::RaceListItem",
+        "app/lib/raceList.ts::isStale"
       ],
       "name": "__file_root__"
     },
@@ -948,12 +997,49 @@
       ],
       "name": "__file_root__"
     },
+    "app/components/SourceHostLink.tsx::__file_root__": {
+      "filePath": "app/components/SourceHostLink.tsx",
+      "importedBy": [],
+      "imports": [
+        "app/lib/raceDetail.ts::sourceHost"
+      ],
+      "name": "__file_root__"
+    },
+    "app/components/SourceLine.tsx::__file_root__": {
+      "filePath": "app/components/SourceLine.tsx",
+      "importedBy": [],
+      "imports": [
+        "app/components/SourceHostLink.tsx::SourceHostLink",
+        "app/lib/format.ts::checkedPhrase",
+        "app/lib/raceDetail.ts::sourceHost"
+      ],
+      "name": "__file_root__"
+    },
     "app/components/SourcesPanel.tsx::__file_root__": {
       "filePath": "app/components/SourcesPanel.tsx",
       "importedBy": [],
       "imports": [
-        "app/lib/format.ts::formatDay",
+        "app/components/SourceHostLink.tsx::SourceHostLink",
+        "app/components/StaleNotice.tsx::StaleNotice",
+        "app/lib/format.ts::formatCheckedDate",
         "app/lib/raceDetail.ts::sourceHost"
+      ],
+      "name": "__file_root__"
+    },
+    "app/components/StaleNotice.tsx::StaleNotice": {
+      "filePath": "app/components/StaleNotice.tsx",
+      "importedBy": [
+        "app/components/SourcesPanel.tsx::__file_root__"
+      ],
+      "imports": [],
+      "name": "StaleNotice"
+    },
+    "app/components/StaleNotice.tsx::__file_root__": {
+      "filePath": "app/components/StaleNotice.tsx",
+      "importedBy": [],
+      "imports": [
+        "app/lib/format.ts::formatCheckedDate",
+        "app/lib/raceList.ts::__file_root__"
       ],
       "name": "__file_root__"
     },
@@ -970,6 +1056,7 @@
       "importedBy": [],
       "imports": [
         "app/components/AddToCalendar.tsx::AddToCalendar",
+        "app/components/SourceLine.tsx::SourceLine",
         "app/lib/format.ts::formatWhen",
         "app/lib/format.ts::milestoneLabel",
         "app/lib/raceDetail.ts::TimelineEntry"
@@ -1130,7 +1217,9 @@
       "filePath": "app/lib/format.test.ts",
       "importedBy": [],
       "imports": [
+        "app/lib/format.ts::checkedPhrase",
         "app/lib/format.ts::etDate",
+        "app/lib/format.ts::formatCheckedDate",
         "app/lib/format.ts::formatDay",
         "app/lib/format.ts::formatDistance",
         "app/lib/format.ts::formatEt",
@@ -1153,6 +1242,15 @@
       "imports": [],
       "name": "__file_root__"
     },
+    "app/lib/format.ts::checkedPhrase": {
+      "filePath": "app/lib/format.ts",
+      "importedBy": [
+        "app/lib/format.test.ts::__file_root__",
+        "app/components/SourceLine.tsx::__file_root__"
+      ],
+      "imports": [],
+      "name": "checkedPhrase"
+    },
     "app/lib/format.ts::etDate": {
       "filePath": "app/lib/format.ts",
       "importedBy": [
@@ -1161,11 +1259,20 @@
       "imports": [],
       "name": "etDate"
     },
+    "app/lib/format.ts::formatCheckedDate": {
+      "filePath": "app/lib/format.ts",
+      "importedBy": [
+        "app/lib/format.test.ts::__file_root__",
+        "app/components/StaleNotice.tsx::__file_root__",
+        "app/components/SourcesPanel.tsx::__file_root__"
+      ],
+      "imports": [],
+      "name": "formatCheckedDate"
+    },
     "app/lib/format.ts::formatDay": {
       "filePath": "app/lib/format.ts",
       "importedBy": [
         "app/lib/format.test.ts::__file_root__",
-        "app/components/SourcesPanel.tsx::__file_root__",
         "app/components/RaceDayCell.tsx::__file_root__",
         "app/components/AtAGlance.tsx::__file_root__",
         "app/components/NextDeadline.tsx::__file_root__"
@@ -1194,7 +1301,8 @@
     "app/lib/format.ts::formatLongDay": {
       "filePath": "app/lib/format.ts",
       "importedBy": [
-        "app/lib/format.test.ts::__file_root__"
+        "app/lib/format.test.ts::__file_root__",
+        "app/components/RaceOverNotice.tsx::__file_root__"
       ],
       "imports": [],
       "name": "formatLongDay"
@@ -1497,6 +1605,7 @@
       "imports": [
         "app/lib/raceDetail.ts::__file_root__",
         "app/lib/raceDetail.ts::buildTimeline",
+        "app/lib/raceDetail.ts::editionSources",
         "app/lib/raceDetail.ts::entryMethod",
         "app/lib/raceDetail.ts::nextDeadline",
         "app/lib/raceDetail.ts::officialLink",
@@ -1512,9 +1621,11 @@
     "app/lib/raceDetail.ts::TimelineEntry": {
       "filePath": "app/lib/raceDetail.ts",
       "importedBy": [
+        "app/components/PastKeyDates.tsx::__file_root__",
         "app/components/TimelineItem.tsx::__file_root__",
         "app/components/AtAGlance.tsx::__file_root__",
-        "app/components/KeyDates.tsx::__file_root__"
+        "app/components/KeyDates.tsx::__file_root__",
+        "app/components/PastEditionNotice.tsx::__file_root__"
       ],
       "imports": [],
       "name": "TimelineEntry"
@@ -1523,9 +1634,18 @@
       "filePath": "app/lib/raceDetail.ts",
       "importedBy": [],
       "imports": [
+        "app/lib/raceList.ts::isStale",
         "app/lib/raceList.ts::milestoneEnd"
       ],
       "name": "__file_root__"
+    },
+    "app/lib/raceDetail.ts::editionSources": {
+      "filePath": "app/lib/raceDetail.ts",
+      "importedBy": [
+        "app/races/[slug]/page.tsx::__file_root__"
+      ],
+      "imports": [],
+      "name": "editionSources"
     },
     "app/lib/raceDetail.ts::entryMethod": {
       "filePath": "app/lib/raceDetail.ts",
@@ -1586,7 +1706,9 @@
     "app/lib/raceDetail.ts::sourceHost": {
       "filePath": "app/lib/raceDetail.ts",
       "importedBy": [
-        "app/components/SourcesPanel.tsx::__file_root__"
+        "app/components/SourcesPanel.tsx::__file_root__",
+        "app/components/SourceLine.tsx::__file_root__",
+        "app/components/SourceHostLink.tsx::__file_root__"
       ],
       "imports": [],
       "name": "sourceHost"
@@ -1594,6 +1716,7 @@
     "app/lib/raceDetail.ts::timelineCalendarHref": {
       "filePath": "app/lib/raceDetail.ts",
       "importedBy": [
+        "app/components/PastKeyDates.tsx::__file_root__",
         "app/components/KeyDates.tsx::__file_root__"
       ],
       "imports": [],
@@ -1607,7 +1730,9 @@
         "app/lib/filters.ts::__file_root__",
         "app/lib/raceList.ts::RaceRecord",
         "app/lib/raceList.ts::filterAndSortRaces",
+        "app/lib/raceList.ts::isStale",
         "app/lib/raceList.ts::isUrgent",
+        "app/lib/raceList.ts::latestPastEdition",
         "app/lib/raceList.ts::milestoneEnd",
         "app/lib/raceList.ts::nextMilestone",
         "app/lib/raceList.ts::sortRaces",
@@ -1642,13 +1767,23 @@
     },
     "app/lib/raceList.ts::__file_root__": {
       "filePath": "app/lib/raceList.ts",
-      "importedBy": [],
+      "importedBy": [
+        "app/components/StaleNotice.tsx::__file_root__"
+      ],
       "imports": [
         "app/lib/filters.ts::RaceFilters",
         "app/lib/filters.ts::SortKey",
         "app/lib/filters.ts::__file_root__"
       ],
       "name": "__file_root__"
+    },
+    "app/lib/raceList.ts::isStale": {
+      "filePath": "app/lib/raceList.ts",
+      "importedBy": [
+        "app/components/RaceRow.tsx::__file_root__"
+      ],
+      "imports": [],
+      "name": "isStale"
     },
     "app/lib/raceList.ts::isUrgent": {
       "filePath": "app/lib/raceList.ts",
@@ -1669,6 +1804,7 @@
         "app/lib/raceList.ts::RaceListItem",
         "app/lib/raceList.ts::SavedRaceSummary",
         "app/lib/raceList.ts::filterAndSortRaces",
+        "app/lib/raceList.ts::latestPastEdition",
         "app/lib/raceList.ts::summarizeSavedRaces",
         "app/lib/raceList.ts::upcomingEdition",
         "app/lib/raceList.ts::weeksToTrain"
@@ -1984,12 +2120,14 @@
         "app/components/KeyDates.tsx::KeyDates",
         "app/components/NoUpcomingEdition.tsx::NoUpcomingEdition",
         "app/components/PageShell.tsx::PageShell",
+        "app/components/PastEditionNotice.tsx::PastEditionNotice",
         "app/components/RaceDetailBody.tsx::RaceDetailBody",
         "app/components/RaceHero.tsx::RaceHero",
         "app/components/RaceTitle.tsx::RaceTitle",
         "app/components/SiteFooter.tsx::SiteFooter",
         "app/components/SiteHeader.tsx::SiteHeader",
         "app/components/SourcesPanel.tsx::SourcesPanel",
+        "app/lib/raceDetail.ts::editionSources",
         "app/lib/raceDetail.ts::entryMethod",
         "app/lib/raceDetail.ts::nextDeadline",
         "app/lib/raceDetail.ts::officialLink",
@@ -2197,7 +2335,8 @@
       "importedBy": [],
       "imports": [
         "app/components/RaceRow.tsx",
-        ".codeyam/isolation-props/_fixtures.ts"
+        ".codeyam/isolation-props/_fixtures.ts",
+        ".codeyam/isolation-props/_raceDetail.ts"
       ]
     },
     ".codeyam/isolation-props/ResultsSection.ts": {
@@ -2220,6 +2359,19 @@
         ".codeyam/isolation-props/_fixtures.ts"
       ]
     },
+    ".codeyam/isolation-props/SourcesPanel.ts": {
+      "importedBy": [],
+      "imports": [
+        "app/components/SourcesPanel.tsx"
+      ]
+    },
+    ".codeyam/isolation-props/TimelineItem.ts": {
+      "importedBy": [],
+      "imports": [
+        "app/components/TimelineItem.tsx",
+        ".codeyam/isolation-props/_raceDetail.ts"
+      ]
+    },
     ".codeyam/isolation-props/_fixtures.ts": {
       "importedBy": [
         ".codeyam/isolation-props/FilterChips.ts",
@@ -2227,9 +2379,9 @@
         ".codeyam/isolation-props/Hero.ts",
         ".codeyam/isolation-props/HeroSearch.ts",
         ".codeyam/isolation-props/RaceList.ts",
-        ".codeyam/isolation-props/RaceRow.ts",
         ".codeyam/isolation-props/ResultsSection.ts",
-        ".codeyam/isolation-props/SortToggle.ts"
+        ".codeyam/isolation-props/SortToggle.ts",
+        ".codeyam/isolation-props/RaceRow.ts"
       ],
       "imports": [
         "app/lib/filters.ts",
@@ -2239,9 +2391,13 @@
     ".codeyam/isolation-props/_raceDetail.ts": {
       "importedBy": [
         ".codeyam/isolation-props/AtAGlance.ts",
-        ".codeyam/isolation-props/KeyDates.ts"
+        ".codeyam/isolation-props/KeyDates.ts",
+        ".codeyam/isolation-props/RaceRow.ts",
+        ".codeyam/isolation-props/TimelineItem.ts"
       ],
-      "imports": []
+      "imports": [
+        "app/lib/raceDetail.ts"
+      ]
     },
     ".codeyam/scenario-check-attribution.js": {
       "importedBy": [
@@ -2557,6 +2713,25 @@
       ],
       "imports": []
     },
+    "app/components/PastEditionNotice.tsx": {
+      "importedBy": [
+        "app/races/[slug]/page.tsx"
+      ],
+      "imports": [
+        "app/components/PastKeyDates.tsx",
+        "app/components/RaceOverNotice.tsx",
+        "app/lib/raceDetail.ts"
+      ]
+    },
+    "app/components/PastKeyDates.tsx": {
+      "importedBy": [
+        "app/components/PastEditionNotice.tsx"
+      ],
+      "imports": [
+        "app/components/TimelineItem.tsx",
+        "app/lib/raceDetail.ts"
+      ]
+    },
     "app/components/RaceDayCell.tsx": {
       "importedBy": [
         "app/components/RaceRow.tsx"
@@ -2613,6 +2788,14 @@
         "app/lib/savedRaces.ts"
       ]
     },
+    "app/components/RaceOverNotice.tsx": {
+      "importedBy": [
+        "app/components/PastEditionNotice.tsx"
+      ],
+      "imports": [
+        "app/lib/format.ts"
+      ]
+    },
     "app/components/RaceRow.tsx": {
       "importedBy": [
         ".codeyam/isolation-props/RaceRow.ts",
@@ -2625,6 +2808,7 @@
         "app/components/RaceIdentity.tsx",
         "app/components/RaceThumb.tsx",
         "app/components/SaveRaceButton.tsx",
+        "app/components/SourceLine.tsx",
         "app/components/WeeksToTrain.tsx",
         "app/lib/raceList.ts"
       ]
@@ -2779,21 +2963,56 @@
         "app/lib/filters.ts"
       ]
     },
-    "app/components/SourcesPanel.tsx": {
+    "app/components/SourceHostLink.tsx": {
       "importedBy": [
-        "app/races/[slug]/page.tsx"
+        "app/components/SourcesPanel.tsx",
+        "app/components/SourceLine.tsx"
       ],
       "imports": [
+        "app/lib/raceDetail.ts"
+      ]
+    },
+    "app/components/SourceLine.tsx": {
+      "importedBy": [
+        "app/components/RaceRow.tsx",
+        "app/components/TimelineItem.tsx"
+      ],
+      "imports": [
+        "app/components/SourceHostLink.tsx",
         "app/lib/format.ts",
         "app/lib/raceDetail.ts"
       ]
     },
+    "app/components/SourcesPanel.tsx": {
+      "importedBy": [
+        ".codeyam/isolation-props/SourcesPanel.ts",
+        "app/races/[slug]/page.tsx"
+      ],
+      "imports": [
+        "app/components/SourceHostLink.tsx",
+        "app/components/StaleNotice.tsx",
+        "app/lib/format.ts",
+        "app/lib/raceDetail.ts"
+      ]
+    },
+    "app/components/StaleNotice.tsx": {
+      "importedBy": [
+        "app/components/SourcesPanel.tsx"
+      ],
+      "imports": [
+        "app/lib/format.ts",
+        "app/lib/raceList.ts"
+      ]
+    },
     "app/components/TimelineItem.tsx": {
       "importedBy": [
+        ".codeyam/isolation-props/TimelineItem.ts",
+        "app/components/PastKeyDates.tsx",
         "app/components/KeyDates.tsx"
       ],
       "imports": [
         "app/components/AddToCalendar.tsx",
+        "app/components/SourceLine.tsx",
         "app/lib/format.ts",
         "app/lib/raceDetail.ts"
       ]
@@ -2859,8 +3078,11 @@
         "app/lib/raceCalendar.ts",
         "app/lib/myRaces.ts",
         "app/lib/format.test.ts",
+        "app/components/RaceOverNotice.tsx",
+        "app/components/StaleNotice.tsx",
         "app/components/TimelineItem.tsx",
         "app/components/SourcesPanel.tsx",
+        "app/components/SourceLine.tsx",
         "app/components/RaceDayCell.tsx",
         "app/components/HowToEnter.tsx",
         "app/components/AtAGlance.tsx",
@@ -2950,13 +3172,18 @@
     },
     "app/lib/raceDetail.ts": {
       "importedBy": [
+        ".codeyam/isolation-props/_raceDetail.ts",
         "app/lib/races.ts",
         "app/lib/raceDetail.test.ts",
         "app/races/[slug]/page.tsx",
+        "app/components/PastKeyDates.tsx",
         "app/components/TimelineItem.tsx",
         "app/components/SourcesPanel.tsx",
+        "app/components/SourceLine.tsx",
         "app/components/AtAGlance.tsx",
-        "app/components/KeyDates.tsx"
+        "app/components/SourceHostLink.tsx",
+        "app/components/KeyDates.tsx",
+        "app/components/PastEditionNotice.tsx"
       ],
       "imports": [
         "app/lib/raceList.ts"
@@ -2981,6 +3208,7 @@
         "app/lib/myRaces.test.ts",
         "app/components/RaceRow.tsx",
         "app/components/RaceList.tsx",
+        "app/components/StaleNotice.tsx",
         "app/components/SavedRaceItem.tsx",
         "app/components/ResultsSection.tsx",
         "app/components/SavedRaceGroup.tsx"
@@ -3113,6 +3341,7 @@
         "app/components/KeyDates.tsx",
         "app/components/NoUpcomingEdition.tsx",
         "app/components/PageShell.tsx",
+        "app/components/PastEditionNotice.tsx",
         "app/components/RaceDetailBody.tsx",
         "app/components/RaceHero.tsx",
         "app/components/RaceTitle.tsx",
@@ -3169,5 +3398,5 @@
       ]
     }
   },
-  "lastUpdated": "2026-11-04T20:03:36Z"
+  "lastUpdated": "2026-11-05T14:23:50Z"
 }

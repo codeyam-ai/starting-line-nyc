@@ -1,0 +1,30 @@
+{
+  "surface": "RacePage",
+  "surface_kind": "component",
+  "states": [
+    {
+      "dimension": "edition",
+      "value": "true",
+      "rationale": "source-derived state edition=true",
+      "status": "covered"
+    },
+    {
+      "dimension": "edition",
+      "value": "false",
+      "rationale": "source-derived state edition=false",
+      "status": "covered"
+    },
+    {
+      "dimension": "source",
+      "value": "true",
+      "rationale": "source-derived state source=true",
+      "status": "covered"
+    },
+    {
+      "dimension": "source",
+      "value": "false",
+      "rationale": "source-derived state source=false",
+      "status": "covered"
+    }
+  ]
+}

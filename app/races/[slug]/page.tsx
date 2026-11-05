@@ -7,13 +7,21 @@ import HowToEnter from '@/app/components/HowToEnter';
 import KeyDates from '@/app/components/KeyDates';
 import NoUpcomingEdition from '@/app/components/NoUpcomingEdition';
 import PageShell from '@/app/components/PageShell';
+import PastEditionNotice from '@/app/components/PastEditionNotice';
 import RaceDetailBody from '@/app/components/RaceDetailBody';
 import RaceHero from '@/app/components/RaceHero';
 import RaceTitle from '@/app/components/RaceTitle';
 import SiteFooter from '@/app/components/SiteFooter';
 import SiteHeader from '@/app/components/SiteHeader';
 import SourcesPanel from '@/app/components/SourcesPanel';
-import { entryMethod, nextDeadline, officialLink, pageUrlFrom, reportIssueUrl } from '@/app/lib/raceDetail';
+import {
+  editionSources,
+  entryMethod,
+  nextDeadline,
+  officialLink,
+  pageUrlFrom,
+  reportIssueUrl,
+} from '@/app/lib/raceDetail';
 import { findRaceDetail } from '@/app/lib/races';
 
 export const dynamic = 'force-dynamic';
@@ -22,10 +30,13 @@ export default async function RacePage({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const detail = await findRaceDetail(slug);
   if (!detail) notFound();
-  const { race, edition, timeline, weeksToTrain } = detail;
+  const { race, edition, pastEdition, timeline, pastTimeline, weeksToTrain } = detail;
   const entry = edition ? entryMethod(edition.entryMethod) : null;
   const calendarBase = `/api/races/${race.slug}/calendar`;
-  const reportHref = reportIssueUrl(race, edition?.year ?? null, pageUrlFrom(await headers(), race.slug));
+  const shown = edition ?? pastEdition;
+  const reportHref = reportIssueUrl(race, shown?.year ?? null, pageUrlFrom(await headers(), race.slug));
+  const source = editionSources(shown, new Date());
+  const sources = source && <SourcesPanel {...source} reportHref={reportHref} />;
 
   return (
     <PageShell>
@@ -74,15 +85,24 @@ export default async function RacePage({ params }: { params: Promise<{ slug: str
                   raceDayCalendarHref={edition.raceDate ? `${calendarBase}?event=raceday` : null}
                 />
                 {race.courseNote && <CourseNote text={race.courseNote} />}
-                <SourcesPanel
-                  sourceUrl={edition.sourceUrl}
-                  lastVerifiedAt={edition.lastVerifiedAt?.toISOString() ?? null}
-                  reportHref={reportHref}
-                />
+                {sources}
               </>
             }
           />
         </>
+      ) : pastEdition?.raceDate ? (
+        <RaceDetailBody
+          main={
+            <PastEditionNotice
+              year={pastEdition.year}
+              raceDate={pastEdition.raceDate.toISOString()}
+              timeline={pastTimeline}
+              calendarBase={calendarBase}
+              organizerUrl={race.organizer.websiteUrl}
+            />
+          }
+          aside={sources}
+        />
       ) : (
         <NoUpcomingEdition organizerUrl={race.organizer.websiteUrl} />
       )}

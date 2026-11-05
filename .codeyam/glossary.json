@@ -369,6 +369,28 @@
     }
   },
   {
+    "description": "Shown on a race page when the latest edition is over: says the race is over and lists that year's key dates, composing RaceOverNotice and PastKeyDates.",
+    "filePath": "app/components/PastEditionNotice.tsx",
+    "name": "PastEditionNotice",
+    "scenarios": [
+      "pasteditionnotice-race-is-over"
+    ],
+    "tags": [
+      "race-detail"
+    ]
+  },
+  {
+    "description": "A finished edition's key dates, kept for reference and labelled with their year so they are never read as next year's.",
+    "filePath": "app/components/PastKeyDates.tsx",
+    "name": "PastKeyDates",
+    "scenarios": [
+      "pastkeydates-all-passed"
+    ],
+    "tags": [
+      "race-detail"
+    ]
+  },
+  {
     "description": "Race day in ET with location, marking tentative or not-yet-announced dates.",
     "filePath": "app/components/RaceDayCell.tsx",
     "name": "RaceDayCell",
@@ -452,6 +474,18 @@
     ],
     "tags": [
       "saved-races"
+    ]
+  },
+  {
+    "description": "Says the latest edition has been run and when, that next year's date isn't announced yet, and links to the organizer when a site is known.",
+    "filePath": "app/components/RaceOverNotice.tsx",
+    "name": "RaceOverNotice",
+    "scenarios": [
+      "raceovernotice-race-is-over",
+      "raceovernotice-no-organizer-site"
+    ],
+    "tags": [
+      "race-detail"
     ]
   },
   {
@@ -708,12 +742,48 @@
     ]
   },
   {
+    "description": "Link to an official source page, labelled with the site's host name.",
+    "filePath": "app/components/SourceHostLink.tsx",
+    "name": "SourceHostLink",
+    "scenarios": [
+      "sourcehostlink-official-site"
+    ],
+    "tags": [
+      "race-detail"
+    ]
+  },
+  {
+    "description": "One-line source credit for a date or race row: the official site link and when it was last checked, flagged when the check is old, or a note when no official source is on file.",
+    "filePath": "app/components/SourceLine.tsx",
+    "name": "SourceLine",
+    "scenarios": [
+      "sourceline-checked",
+      "sourceline-checked-long-ago",
+      "sourceline-no-source"
+    ],
+    "tags": [
+      "race-detail"
+    ]
+  },
+  {
     "description": "Official source link, last-checked date, a note that unconfirmed details are left out, and the Report a missing or wrong detail link.",
     "filePath": "app/components/SourcesPanel.tsx",
     "name": "SourcesPanel",
     "scenarios": [
       "sourcespanel-no-source",
       "sourcespanel-verified"
+    ],
+    "tags": [
+      "race-detail"
+    ]
+  },
+  {
+    "description": "Warning that a race's details were checked long ago or never checked, so they may be out of date.",
+    "filePath": "app/components/StaleNotice.tsx",
+    "name": "StaleNotice",
+    "scenarios": [
+      "stalenotice-checked-long-ago",
+      "stalenotice-never-checked"
     ],
     "tags": [
       "race-detail"
@@ -802,6 +872,15 @@
     "testFile": "app/lib/raceCalendar.test.ts"
   },
   {
+    "description": "How a last-checked date reads next to a source: 'checked Oct 28, 2026' when recent, 'last checked Oct 28, 2026 — may be out of date' when stale.",
+    "filePath": "app/lib/format.ts",
+    "name": "checkedPhrase",
+    "tags": [
+      "race-detail"
+    ],
+    "testFile": "app/lib/format.test.ts"
+  },
+  {
     "description": "Compares two list items by the chosen sort key: next deadline, race day, registration opens, or distance. Returns 0 for a tie so sortRaces can fall back to race day and then name.",
     "filePath": "app/lib/raceList.ts",
     "name": "compareBy",
@@ -809,6 +888,27 @@
       "race-list-sort"
     ],
     "testFile": "app/lib/raceList.test.ts"
+  },
+  {
+    "description": "What the race page's Sources panel shows for the edition on screen: its source URL, the ISO check date, and whether the check is stale. Null when there is no edition.",
+    "filePath": "app/lib/raceDetail.ts",
+    "name": "editionSources",
+    "tags": [
+      "race-detail"
+    ],
+    "testFile": "app/lib/raceDetail.test.ts"
+  },
+  {
+    "description": "Builds a stored edition timeline by passing its milestones, race date and source to buildTimeline.",
+    "filePath": "app/lib/races.ts",
+    "name": "editionTimeline",
+    "tags": [
+      "race-detail"
+    ],
+    "untestabilityReason": {
+      "justification": "one-line passthrough to buildTimeline, which is unit tested",
+      "kind": "trivial-wrapper"
+    }
   },
   {
     "description": "Plain-language title and explanation for an entry method (open, lottery, qualifying standard, charity, membership), falling back to the raw value.",
@@ -856,7 +956,7 @@
     "testFile": "app/lib/filters.test.ts"
   },
   {
-    "description": "Loads one race with its organizer, editions and milestones and builds its upcoming edition, weeks to train and timeline.",
+    "description": "Loads one race with its organizer, editions and milestones and builds its upcoming edition, weeks to train and timeline — or, when none is upcoming, its latest past edition and that timeline.",
     "filePath": "app/lib/races.ts",
     "name": "findRaceDetail",
     "tags": [
@@ -890,6 +990,15 @@
       "justification": "database read only; all filtering logic is in filterAndSortRaces, which is unit tested",
       "kind": "platform-glue"
     }
+  },
+  {
+    "description": "Formats a last-checked date as a short Eastern Time date, e.g. 'Oct 28, 2026'.",
+    "filePath": "app/lib/format.ts",
+    "name": "formatCheckedDate",
+    "tags": [
+      "race-detail"
+    ],
+    "testFile": "app/lib/format.test.ts"
   },
   {
     "description": "Formats a date as weekday, month and day in America/New_York.",
@@ -1027,6 +1136,16 @@
     "testFile": "app/lib/savedRaces.test.ts"
   },
   {
+    "description": "True when race details were never checked, or last checked more than STALE_AFTER_DAYS (30) days ago; drives the 'may be out of date' warnings.",
+    "filePath": "app/lib/raceList.ts",
+    "name": "isStale",
+    "tags": [
+      "race-detail",
+      "race-discovery"
+    ],
+    "testFile": "app/lib/raceList.test.ts"
+  },
+  {
     "description": "True when a deadline falls within the next three weeks, which highlights it and offers Add to calendar.",
     "filePath": "app/lib/raceList.ts",
     "name": "isUrgent",
@@ -1043,6 +1162,15 @@
       "justification": "codeyam template build script, unchanged",
       "kind": "scaffold"
     }
+  },
+  {
+    "description": "The most recent edition whose race date has already passed, so a finished race keeps showing that year's dates instead of disappearing.",
+    "filePath": "app/lib/raceList.ts",
+    "name": "latestPastEdition",
+    "tags": [
+      "race-detail"
+    ],
+    "testFile": "app/lib/raceList.test.ts"
   },
   {
     "description": "Replaces the development database contents with the labelled sample races from prisma/sample-data.json.",

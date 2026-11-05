@@ -3,18 +3,21 @@ import RaceDayCell from '@/app/components/RaceDayCell';
 import RaceIdentity from '@/app/components/RaceIdentity';
 import RaceThumb from '@/app/components/RaceThumb';
 import SaveRaceButton from '@/app/components/SaveRaceButton';
+import SourceLine from '@/app/components/SourceLine';
 import WeeksToTrain from '@/app/components/WeeksToTrain';
-import type { RaceListItem } from '@/app/lib/raceList';
+import { isStale, type RaceListItem } from '@/app/lib/raceList';
 
 // alwaysOfferCalendar: My Races offers Add to calendar for any dated deadline, not only urgent ones.
 export default function RaceRow({
   race,
   urgent,
   alwaysOfferCalendar = false,
+  now = new Date(),
 }: {
   race: RaceListItem;
   urgent: boolean;
   alwaysOfferCalendar?: boolean;
+  now?: Date;
 }) {
   return (
     <div className="row">
@@ -26,7 +29,14 @@ export default function RaceRow({
         elevationGainFt={race.elevationGainFt}
         organizer={race.organizer}
         href={`/races/${race.slug}`}
-      />
+      >
+        <SourceLine
+          sourceUrl={race.sourceUrl}
+          lastVerifiedAt={race.lastVerifiedAt}
+          stale={isStale(race.lastVerifiedAt, now)}
+          label="From"
+        />
+      </RaceIdentity>
       <RaceDayCell raceDate={race.raceDate} tentative={race.raceDateTentative} locationName={race.locationName} />
       <NextDeadline
         status={race.registrationStatus}

@@ -1,0 +1,12 @@
+{
+  "name": "RaceOverNotice - No organizer site",
+  "id": "3ff167ae-ee48-4ced-a045-eb8e31ede321",
+  "url": "/isolated-components/RaceOverNotice?s=NoOrganizerSite",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "RaceOverNotice",
+  "scenarioType": "component",
+  "description": "The RaceOverNotice component."
+}

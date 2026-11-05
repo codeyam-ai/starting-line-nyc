@@ -1,0 +1,12 @@
+{
+  "name": "TimelineItem - With Source",
+  "id": "d1c375b6-bfd9-49e3-98ce-e2a3a6eab8f0",
+  "url": "/isolated-components/TimelineItem?s=WithSource",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "TimelineItem",
+  "scenarioType": "component",
+  "description": "A passed key date (Great Gobble registration closed) with its own Source line and check date."
+}

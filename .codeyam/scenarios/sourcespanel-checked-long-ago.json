@@ -1,0 +1,12 @@
+{
+  "name": "SourcesPanel - Checked Long Ago",
+  "id": "668be0d3-ac91-4869-b913-9bf88479d8d9",
+  "url": "/isolated-components/SourcesPanel?s=CheckedLongAgo",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "componentName": "SourcesPanel",
+  "scenarioType": "component",
+  "description": "The race page's Sources panel with the 'May be out of date' warning above the source link."
+}
