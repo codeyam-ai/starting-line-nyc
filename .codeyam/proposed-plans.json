@@ -710,6 +710,95 @@
       "sightings": 1,
       "decidedAt": "2026-11-02T19:34:10Z",
       "sightingsAtDecision": 1
+    },
+    {
+      "id": "follow-a-race-until-its-registration-opening-date-is-announced",
+      "title": "Follow a race until its registration opening date is announced",
+      "mode": "ui",
+      "body": "## Who benefits\nRunners planning their season who want to enter a race the moment registration opens, especially popular races that sell out.\n\n## Evidence\n- obs-d57f8bac499d (More ways to sort the race list): only 4 seeded races had a registration-opens date, so sorting by opening date left most races grouped at the end.\n- obs-352015877879 (Real registration-opening dates for every race): after researching every race, 17 of 24 organizers still had not published an opening date, so a runner still can't tell when to be ready.\n\n## Smallest useful version\nOn a saved race with no announced opening date, show \"Opening date not announced yet\", plus what is known (for example, last year's opening date as a labelled hint). Show a \"newly announced\" badge in My Races when a date appears after the race was saved. This reuses the existing \"changed since you saved\" notice.\n\n## Case against\nIt overlaps the deferred Reminders deliverable, which would notify rather than show a badge. Its value depends on someone rechecking organizer sites often enough to catch announcements, and today there is no automated refresh. Last year's date as a hint could mislead if organizers change their schedule.",
+      "reason": "Most races still have no announced registration opening date, so runners planning ahead can't tell when to be ready.",
+      "severity": 3,
+      "source": "feature-synthesis",
+      "status": "pending",
+      "proposedAt": "2026-11-05T14:35:14.957481698+00:00",
+      "kind": "feature",
+      "sightings": 1,
+      "evidenceIds": [
+        "obs-d57f8bac499d",
+        "obs-352015877879"
+      ],
+      "evidenceSessions": 2,
+      "ideaRank": 1
+    },
+    {
+      "id": "stored-race-prices-have-drifted-from-organizer-pages",
+      "title": "Stored race prices have drifted from organizer pages",
+      "mode": "backend",
+      "body": "## Root cause\nRace data is a hand-verified snapshot in prisma/race-data.json. Organizers changed their price tiers after the last check, and nothing re-verifies or flags the stored schedule, so the race pages keep showing the old tiers as current.\n\n## Evidence\nfnd-b945703ca96b (wrong-result) and fnd-c7f5b6fc4daa. On HEAD 5eade58 the stale values are still stored: prisma/race-data.json:980 (Brooklyn Experience Half, 'Rises to $165', tier date 2026-10-28; the site shows Dec 17 / Jan 27), prisma/race-data.json:1133 (Jersey City Marathon, '$200 to $225 after Dec 31'; the site shows $220 to $225 after Nov 30), prisma/race-data.json:1142 (Jersey City Half, '$150 to $180 after Dec 31'; the site shows $175 to $180 after Nov 30).\n\n## Smallest fix\nUpdate those three price schedules from the organizer pages and bump their lastVerifiedAt.\n\n## Cost of leaving it\nRunners see wrong prices and wrong price-rise deadlines. The Jersey City increases happen a month earlier than shown, so someone waiting for the 'Dec 31' deadline pays more.",
+      "reason": "Three race pages show price schedules that no longer match the organizers' sites.",
+      "source": "debt-synthesis",
+      "status": "pending",
+      "proposedAt": "2026-11-05T14:35:14.957481698+00:00",
+      "kind": "tech-debt",
+      "sightings": 1,
+      "evidenceIds": [
+        "fnd-b945703ca96b",
+        "fnd-c7f5b6fc4daa"
+      ],
+      "evidenceSessions": 1,
+      "ideaRank": 1,
+      "theme": {
+        "lane": "app",
+        "score": 481,
+        "verifiedAt": "5eade58"
+      }
+    },
+    {
+      "id": "blank-screenshots-slip-past-capture-checks",
+      "title": "Blank screenshots slip past capture checks",
+      "mode": "backend",
+      "body": "## Root cause\nThe capture pipeline's blank-page judgement does not reliably detect what is actually painted. Blank isolated-component frames passed register as successful, and a photo drawn as a CSS background was reported as blank. The check looks at the wrong signal (DOM/content heuristics rather than rendered pixels).\n\n## Evidence\nfnd-4470fa0930a2: three new component screenshots were blank and register still reported success. fnd-7f5a2660203f: a photo thumbnail drawn as a CSS background was reported as a blank page. Not verified against codeyam-editor source, which is not in this repository.\n\n## Smallest fix\nBase the blank check on the rendered screenshot's pixel variance, so a capture is judged blank only when its pixels are uniform.\n\n## Cost of leaving it\nBlank captures get committed as evidence (a false green), and valid captures get flagged, wasting investigation time.",
+      "reason": "Blank captures are accepted as successes, and real images can be called blank.",
+      "source": "codeyam-improvement",
+      "status": "pending",
+      "proposedAt": "2026-11-05T14:35:14.957481698+00:00",
+      "kind": "tech-debt",
+      "sightings": 1,
+      "evidenceIds": [
+        "fnd-4470fa0930a2",
+        "fnd-7f5a2660203f"
+      ],
+      "evidenceSessions": 2,
+      "ideaRank": 2,
+      "theme": {
+        "lane": "codeyam-improvement",
+        "score": 191,
+        "notVerified": true
+      }
+    },
+    {
+      "id": "scenario-time-and-seed-state-gets-lost-or-mangled",
+      "title": "Scenario time and seed state gets lost or mangled",
+      "mode": "backend",
+      "body": "## Root cause\nScenario state that should persist across operations (the pinned clock, relative-time tokens, the sandbox database) is rebuilt or rewritten by operations that should leave it alone: token expansion truncates to a date, re-registration replaces the whole scenario including its clock block, and a test run resets the sandbox database.\n\n## Evidence\nfnd-977c38d5479a: @today+377h expanded to a midnight date, shifting deadline times. fnd-b55899033c8a: re-registering a scenario to refresh its seed dropped its pinned clock, surfacing only at reconcile as 31 date-drift findings. fnd-1fe8c89b915d: the preview rendered 0 races after a test run until the scenario was re-registered. Not verified against codeyam-editor source, which is not in this repository.\n\n## Smallest fix\nHave register merge into an existing scenario, keeping fields the payload omits (clock in particular), and keep hours in relative-time expansion.\n\n## Cost of leaving it\nScenarios silently render the wrong time or empty data, which is found late at reconcile and fixed by hand.",
+      "reason": "Scenario clocks, relative dates and sandbox data don't survive routine operations.",
+      "source": "codeyam-improvement",
+      "status": "pending",
+      "proposedAt": "2026-11-05T14:35:14.957481698+00:00",
+      "kind": "tech-debt",
+      "sightings": 1,
+      "evidenceIds": [
+        "fnd-977c38d5479a",
+        "fnd-b55899033c8a",
+        "fnd-1fe8c89b915d"
+      ],
+      "evidenceSessions": 5,
+      "ideaRank": 1,
+      "theme": {
+        "lane": "codeyam-improvement",
+        "score": 686,
+        "notVerified": true
+      }
     }
   ],
   "rounds": [
@@ -1036,6 +1125,11 @@
       "at": "2026-11-04T20:04:38.523244717+00:00",
       "feature": "Real registration-opening dates for every race",
       "notes": "Resumed at reconcile after a context reset. The only audit drift was a lost clock pin on one home scenario; restoring it produced a pixel-identical capture. Full suite: 177/177 passed. Pushed to main. Price mismatches on three races are re…"
+    },
+    {
+      "at": "2026-11-05T14:35:14.957481698+00:00",
+      "feature": "Source links, freshness warnings and past editions",
+      "notes": "Resumed at reconcile after a context reset. Reconcile needed glossary entries for 6 new visual components, then a recapture of 6 dependency-stale component screenshots (3 changed, 3 identical). Finalize passed (202 tests) and the feature w…"
     }
   ],
   "syntheses": [
@@ -1052,6 +1146,63 @@
         "obs-e8f49b043382"
       ],
       "notes": "All 8 observations since the last pass concern the development environment (blank Live Preview, GitHub repo creation in Codespaces, a taken repo name) or the user queuing plans themselves; none describes an unmet need of a Starting Line runner, so no app feature cluster clears the bar."
+    },
+    {
+      "at": "2026-11-05T14:35:14.957481698+00:00",
+      "consumedIds": [
+        "obs-8ad4577d3afa",
+        "obs-56891b427c3c",
+        "obs-d57f8bac499d",
+        "obs-352015877879",
+        "obs-7deef4a78746"
+      ],
+      "keptIds": [
+        "follow-a-race-until-its-registration-opening-date-is-announced"
+      ],
+      "notes": "Clustered the 5 new observations. The registration-opening-date gap is backed by two sessions. Data going stale within a week (obs-7deef4a78746) came from one session, is partly addressed by this cycle's freshness warnings, and is folded into the app debt theme on stale stored data instead. The two editor-pane observations are about CodeYam, not the app."
+    },
+    {
+      "at": "2026-11-05T14:35:14.957481698+00:00",
+      "lane": "app",
+      "consumedIds": [
+        "fnd-b945703ca96b",
+        "fnd-c7f5b6fc4daa",
+        "fnd-ab0fa5fc95b1"
+      ],
+      "keptIds": [
+        "stored-race-prices-have-drifted-from-organizer-pages"
+      ],
+      "notes": "One wrong-result finding with a corroborating duplicate. Checked against prisma/race-data.json on HEAD."
+    },
+    {
+      "at": "2026-11-05T14:35:14.957481698+00:00",
+      "lane": "codeyam-improvement",
+      "consumedIds": [
+        "fnd-62cb78542330",
+        "fnd-977c38d5479a",
+        "fnd-1c059e3a75f8",
+        "fnd-1fe8c89b915d",
+        "fnd-4314a1ce49d8",
+        "fnd-1bab79629b52",
+        "fnd-7f5a2660203f",
+        "fnd-50439aa97cd7",
+        "fnd-b8b61af554f0",
+        "fnd-0e40ea2fc94d",
+        "fnd-27b299e48697",
+        "fnd-58b01cff3429",
+        "fnd-4470fa0930a2",
+        "fnd-f47e6cc5cd0c",
+        "fnd-bd6ea3cb5600",
+        "fnd-9717481dd082",
+        "fnd-b55899033c8a",
+        "fnd-1d17cb4e3967",
+        "fnd-52aec8387b54"
+      ],
+      "keptIds": [
+        "blank-screenshots-slip-past-capture-checks",
+        "scenario-time-and-seed-state-gets-lost-or-mangled"
+      ],
+      "notes": "Grouped 19 findings (17 unread plus 2 from this session). Admitted two themes with multi-finding evidence. The rest are single sightings (terminal copy, worktree commits, docs gaps, gate sequencing), left as findings for now."
     }
   ]
 }
