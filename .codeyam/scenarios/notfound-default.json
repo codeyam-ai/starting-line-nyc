@@ -6,6 +6,9 @@
     "Desktop"
   ],
   "mocks": {},
+  "clock": {
+    "now": "2026-11-02T18:25:53Z"
+  },
   "componentName": "NotFound",
   "scenarioType": "component",
   "description": "The full not-found page for an unknown race address: header, message, Show all races, footer."

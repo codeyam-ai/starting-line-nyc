@@ -6,6 +6,9 @@
     "Desktop"
   ],
   "mocks": {},
+  "clock": {
+    "now": "2026-11-02T18:25:53Z"
+  },
   "componentName": "RegistrationChanged",
   "scenarioType": "component",
   "description": "The note that registration went from Open to Sold out since the race was saved."

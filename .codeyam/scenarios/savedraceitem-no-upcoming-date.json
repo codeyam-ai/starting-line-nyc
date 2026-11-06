@@ -6,6 +6,9 @@
     "Desktop"
   ],
   "mocks": {},
+  "clock": {
+    "now": "2026-11-02T18:25:53Z"
+  },
   "componentName": "SavedRaceItem",
   "scenarioType": "component",
   "description": "A saved race with no upcoming edition: the notice, Remove button, and the kept note."

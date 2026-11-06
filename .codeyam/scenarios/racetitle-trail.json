@@ -6,6 +6,9 @@
     "Desktop"
   ],
   "mocks": {},
+  "clock": {
+    "now": "2026-11-02T18:25:53Z"
+  },
   "componentName": "RaceTitle",
   "scenarioType": "component",
   "description": "RaceTitle for a trail race: terrain pill, title-case name, organizer and place."

@@ -6,6 +6,9 @@
     "Desktop"
   ],
   "mocks": {},
+  "clock": {
+    "now": "2026-11-02T19:24:01Z"
+  },
   "componentName": "SortToggle",
   "scenarioType": "component",
   "description": "SortToggle in its race day state, using the real researched race data."

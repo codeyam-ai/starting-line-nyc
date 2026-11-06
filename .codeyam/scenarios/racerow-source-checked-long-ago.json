@@ -6,6 +6,9 @@
     "Desktop"
   ],
   "mocks": {},
+  "clock": {
+    "now": "2026-11-05T14:24:16Z"
+  },
   "componentName": "RaceRow",
   "scenarioType": "component",
   "description": "The same row on Thanksgiving 2026, when its Oct 26 check is over 30 days old: the source line turns amber and says may be out of date."

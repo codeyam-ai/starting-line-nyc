@@ -6,6 +6,9 @@
     "Desktop"
   ],
   "mocks": {},
+  "clock": {
+    "now": "2026-11-04T20:03:54Z"
+  },
   "browserState": {
     "localStorage": {
       "starting-line:saved-races": "{\"nycruns-great-gobble-5k\": {\"status\": \"considering\", \"savedAt\": \"2026-10-22T14:00:00.000Z\"}}"

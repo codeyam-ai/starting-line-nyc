@@ -1,0 +1,31 @@
+{
+  "provenAt": "2026-11-06T23:09:02Z",
+  "slug": "one-of-46-component-screenshots-kept-an-older-capture-showing-the-next-js-dev-badge",
+  "paths": [],
+  "runScope": [
+    "next.config.ts",
+    "next.config.test.ts"
+  ],
+  "neuters": [
+    {
+      "file": "next.config.ts",
+      "find": "  devIndicators: false,",
+      "replace": ""
+    }
+  ],
+  "tests": {
+    "hides the Next.js dev badge so scenario captures stay clean": {
+      "withoutFix": "fail",
+      "withFix": "pass",
+      "established": {
+        "kind": "measured"
+      }
+    }
+  },
+  "proof": {
+    "verdict": "proven",
+    "flipped": [
+      "hides the Next.js dev badge so scenario captures stay clean"
+    ]
+  }
+}

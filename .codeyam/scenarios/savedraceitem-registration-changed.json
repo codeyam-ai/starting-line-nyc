@@ -6,6 +6,9 @@
     "Desktop"
   ],
   "mocks": {},
+  "clock": {
+    "now": "2026-11-05T14:24:16Z"
+  },
   "componentName": "SavedRaceItem",
   "scenarioType": "component",
   "description": "A saved race whose registration opened since it was saved: the race row, the change note, and the runner's note."

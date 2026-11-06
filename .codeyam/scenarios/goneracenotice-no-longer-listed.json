@@ -6,6 +6,9 @@
     "Desktop"
   ],
   "mocks": {},
+  "clock": {
+    "now": "2026-11-02T18:25:53Z"
+  },
   "componentName": "GoneRaceNotice",
   "scenarioType": "component",
   "description": "A saved race that is no longer listed on Starting Line, with a Remove button."

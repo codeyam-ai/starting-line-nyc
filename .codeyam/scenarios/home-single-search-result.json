@@ -6,6 +6,9 @@
     "Desktop"
   ],
   "mocks": {},
+  "clock": {
+    "now": "2026-11-05T14:24:16Z"
+  },
   "seed": {
     "organizer": [
       {

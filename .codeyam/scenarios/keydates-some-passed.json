@@ -6,6 +6,9 @@
     "Desktop"
   ],
   "mocks": {},
+  "clock": {
+    "now": "2026-11-05T14:24:16Z"
+  },
   "componentName": "KeyDates",
   "scenarioType": "component",
   "description": "KeyDates with some dates passed: passed dates read in the past tense, plus the Opening date not announced row because no opening date is published."

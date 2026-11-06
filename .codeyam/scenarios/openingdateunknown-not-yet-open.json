@@ -6,6 +6,9 @@
     "Desktop"
   ],
   "mocks": {},
+  "clock": {
+    "now": "2026-11-04T20:03:54Z"
+  },
   "componentName": "OpeningDateUnknown",
   "scenarioType": "component",
   "description": "Key-dates row for a race whose organizer hasn't published when registration opens."

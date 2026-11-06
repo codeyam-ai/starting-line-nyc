@@ -6,6 +6,9 @@
     "Desktop"
   ],
   "mocks": {},
+  "clock": {
+    "now": "2026-11-02T18:25:53Z"
+  },
   "componentName": "SaveRaceButton",
   "scenarioType": "component",
   "description": "SaveRaceButton in its default state, using the real researched race data."

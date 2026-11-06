@@ -6,6 +6,9 @@
     "Desktop"
   ],
   "mocks": {},
+  "clock": {
+    "now": "2026-11-05T14:24:16Z"
+  },
   "componentName": "SourceLine",
   "scenarioType": "component",
   "description": "A key date's official source link and the date it was checked."

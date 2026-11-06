@@ -6,6 +6,9 @@
     "Desktop"
   ],
   "mocks": {},
+  "clock": {
+    "now": "2026-11-04T20:03:54Z"
+  },
   "componentName": "KeyDates",
   "scenarioType": "component",
   "description": "KeyDates with no dates published: shows the Opening date not announced row."

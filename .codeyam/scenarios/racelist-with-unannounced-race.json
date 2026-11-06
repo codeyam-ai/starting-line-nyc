@@ -6,6 +6,9 @@
     "Desktop"
   ],
   "mocks": {},
+  "clock": {
+    "now": "2026-11-05T14:24:16Z"
+  },
   "componentName": "RaceList",
   "scenarioType": "component",
   "description": "RaceList in its with unannounced race state, using the real researched race data."

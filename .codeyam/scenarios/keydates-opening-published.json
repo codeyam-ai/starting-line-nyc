@@ -6,6 +6,9 @@
     "Desktop"
   ],
   "mocks": {},
+  "clock": {
+    "now": "2026-11-05T14:24:16Z"
+  },
   "componentName": "KeyDates",
   "scenarioType": "component",
   "description": "Staten Island Half: the organizer published when registration opened, so the list shows Registration opened with that date and no Opening date not announced row."

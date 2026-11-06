@@ -6,6 +6,9 @@
     "Desktop"
   ],
   "mocks": {},
+  "clock": {
+    "now": "2026-11-05T14:24:16Z"
+  },
   "componentName": "SourceLine",
   "scenarioType": "component",
   "description": "A race row's source line when the details were last checked more than 30 days ago: amber, 'may be out of date'."

@@ -6,6 +6,9 @@
     "Desktop"
   ],
   "mocks": {},
+  "clock": {
+    "now": "2026-11-02T18:25:53Z"
+  },
   "componentName": "SavedRaceGroupHeading",
   "scenarioType": "component",
   "description": "An Interested group heading with a plural count of 3 races."

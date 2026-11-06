@@ -6,6 +6,9 @@
     "Desktop"
   ],
   "mocks": {},
+  "clock": {
+    "now": "2026-11-05T14:24:16Z"
+  },
   "componentName": "RaceRow",
   "scenarioType": "component",
   "description": "A race list row with its official source and checked date under the organizer."

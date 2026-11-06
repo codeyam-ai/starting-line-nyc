@@ -6,6 +6,9 @@
     "Desktop"
   ],
   "mocks": {},
+  "clock": {
+    "now": "2026-11-05T14:24:16Z"
+  },
   "componentName": "PastEditionNotice",
   "scenarioType": "component",
   "description": "Great Gobble 5K on Thanksgiving 2026: the 2026 race is over, its dates stay visible marked passed, each with its source, and the 2027 date is not announced."

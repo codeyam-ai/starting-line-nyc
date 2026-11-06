@@ -6,6 +6,9 @@
     "Desktop"
   ],
   "mocks": {},
+  "clock": {
+    "now": "2026-11-02T18:25:53Z"
+  },
   "componentName": "OfficialLinkButton",
   "scenarioType": "component",
   "description": "OfficialLinkButton in its visit site state, using the real researched race data."

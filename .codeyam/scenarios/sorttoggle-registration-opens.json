@@ -6,6 +6,9 @@
     "Desktop"
   ],
   "mocks": {},
+  "clock": {
+    "now": "2026-11-02T19:24:01Z"
+  },
   "componentName": "SortToggle",
   "scenarioType": "component",
   "description": "The sort control with the new Registration opens option selected, shown alongside all four sort options."

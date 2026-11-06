@@ -6,6 +6,9 @@
     "Desktop"
   ],
   "mocks": {},
+  "clock": {
+    "now": "2026-11-05T14:24:16Z"
+  },
   "componentName": "TimelineItem",
   "scenarioType": "component",
   "description": "TimelineItem in its race day state, using the real researched race data."

@@ -6,6 +6,9 @@
     "Desktop"
   ],
   "mocks": {},
+  "clock": {
+    "now": "2026-11-05T14:24:16Z"
+  },
   "browserState": {
     "localStorage": {
       "starting-line:saved-races": "{\"nycruns-big-apple-half-marathon\": {\"status\": \"considering\", \"savedAt\": \"2026-10-01T14:00:00.000Z\", \"registrationAtSave\": \"opening_soon\", \"note\": \"Waiting to hear about the work trip that weekend.\"}}"

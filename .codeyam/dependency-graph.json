@@ -2181,6 +2181,22 @@
       ],
       "name": "__file_root__"
     },
+    "next.config.test.ts::__file_root__": {
+      "filePath": "next.config.test.ts",
+      "importedBy": [],
+      "imports": [
+        "next.config.ts::__file_root__"
+      ],
+      "name": "__file_root__"
+    },
+    "next.config.ts::__file_root__": {
+      "filePath": "next.config.ts",
+      "importedBy": [
+        "next.config.test.ts::__file_root__"
+      ],
+      "imports": [],
+      "name": "__file_root__"
+    },
     "prisma.config.ts::__file_root__": {
       "filePath": "prisma.config.ts",
       "importedBy": [],
@@ -3429,8 +3445,16 @@
       "importedBy": [],
       "imports": []
     },
-    "next.config.ts": {
+    "next.config.test.ts": {
       "importedBy": [],
+      "imports": [
+        "next.config.ts"
+      ]
+    },
+    "next.config.ts": {
+      "importedBy": [
+        "next.config.test.ts"
+      ],
       "imports": []
     },
     "postcss.config.mjs": {
@@ -3475,5 +3499,5 @@
       ]
     }
   },
-  "lastUpdated": "2026-11-06T22:26:43Z"
+  "lastUpdated": "2026-11-06T23:45:59Z"
 }

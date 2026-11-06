@@ -6,6 +6,9 @@
     "Desktop"
   ],
   "mocks": {},
+  "clock": {
+    "now": "2026-11-02T18:25:53Z"
+  },
   "componentName": "AtAGlance",
   "scenarioType": "component",
   "description": "AtAGlance in its qualifier not open state, using the real researched race data."

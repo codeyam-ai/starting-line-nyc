@@ -6,6 +6,9 @@
     "Desktop"
   ],
   "mocks": {},
+  "clock": {
+    "now": "2026-10-26T19:48:50Z"
+  },
   "componentName": "Logo",
   "scenarioType": "component",
   "description": "Logo in its default state, using the real researched race data."

@@ -6,6 +6,9 @@
     "Desktop"
   ],
   "mocks": {},
+  "clock": {
+    "now": "2026-11-02T18:25:53Z"
+  },
   "componentName": "MyRacesEmpty",
   "scenarioType": "component",
   "description": "What a runner sees with nothing saved yet: a short explanation and a Browse races button."

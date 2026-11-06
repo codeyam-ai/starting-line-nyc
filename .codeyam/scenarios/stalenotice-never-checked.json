@@ -6,6 +6,9 @@
     "Desktop"
   ],
   "mocks": {},
+  "clock": {
+    "now": "2026-11-05T14:24:16Z"
+  },
   "componentName": "StaleNotice",
   "scenarioType": "component",
   "description": "Warning that details have never been checked against the official site."

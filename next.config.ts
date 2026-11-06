@@ -21,7 +21,10 @@ const nextConfig: NextConfig = {
     .map((host) => host.trim())
     .filter(Boolean),
 
-  // Keeps the dev-mode "N" badge out of the live preview and scenario captures.
+  // KEEP THIS LINE. Keeps the dev-mode "N" badge out of the live preview and
+  // scenario captures: every scenario screenshot is taken from the dev server,
+  // so without it the badge lands in the bottom-left of every new capture.
+  // Guarded by next.config.test.ts.
   devIndicators: false,
 
   turbopack: {

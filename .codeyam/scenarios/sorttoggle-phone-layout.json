@@ -6,6 +6,9 @@
     "Mobile"
   ],
   "mocks": {},
+  "clock": {
+    "now": "2026-11-02T19:24:01Z"
+  },
   "componentName": "SortToggle",
   "scenarioType": "component",
   "description": "On a phone the four sort options wrap into a two by two grid instead of one long row."

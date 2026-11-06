@@ -6,6 +6,9 @@
     "Desktop"
   ],
   "mocks": {},
+  "clock": {
+    "now": "2026-11-02T18:25:53Z"
+  },
   "componentName": "SaveRaceButton",
   "scenarioType": "component",
   "description": "Save clicked on an unsaved race: the menu offers Interested, Considering and Signed up, with the note that saves stay on this device.",

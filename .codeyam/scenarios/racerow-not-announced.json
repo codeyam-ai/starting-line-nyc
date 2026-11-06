@@ -6,6 +6,9 @@
     "Desktop"
   ],
   "mocks": {},
+  "clock": {
+    "now": "2026-11-02T18:25:53Z"
+  },
   "componentName": "RaceRow",
   "scenarioType": "component",
   "description": "RaceRow in its not announced state with sample race data."

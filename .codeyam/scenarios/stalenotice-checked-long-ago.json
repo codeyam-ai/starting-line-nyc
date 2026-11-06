@@ -6,6 +6,9 @@
     "Desktop"
   ],
   "mocks": {},
+  "clock": {
+    "now": "2026-11-05T14:24:16Z"
+  },
   "componentName": "StaleNotice",
   "scenarioType": "component",
   "description": "Warning that details were last checked Oct 26, 2026, more than 30 days ago."

@@ -6,6 +6,9 @@
     "Desktop"
   ],
   "mocks": {},
+  "clock": {
+    "now": "2026-10-26T21:49:54Z"
+  },
   "componentName": "RaceThumb",
   "scenarioType": "component",
   "description": "RaceThumb in its photo state, using the real researched race data."

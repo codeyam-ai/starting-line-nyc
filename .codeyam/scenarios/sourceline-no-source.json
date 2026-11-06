@@ -6,6 +6,9 @@
     "Desktop"
   ],
   "mocks": {},
+  "clock": {
+    "now": "2026-11-05T14:24:16Z"
+  },
   "componentName": "SourceLine",
   "scenarioType": "component",
   "description": "No official source on file and never checked."

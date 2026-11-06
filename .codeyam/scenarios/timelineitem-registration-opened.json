@@ -6,6 +6,9 @@
     "Desktop"
   ],
   "mocks": {},
+  "clock": {
+    "now": "2026-11-05T14:24:16Z"
+  },
   "componentName": "TimelineItem",
   "scenarioType": "component",
   "description": "A passed registration opening reads in the past tense: Registration opened."

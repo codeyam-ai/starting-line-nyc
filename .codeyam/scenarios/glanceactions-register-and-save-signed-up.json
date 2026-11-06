@@ -6,6 +6,9 @@
     "Desktop"
   ],
   "mocks": {},
+  "clock": {
+    "now": "2026-11-02T18:25:53Z"
+  },
   "browserState": {
     "localStorage": {
       "starting-line:saved-races": "{\"nycruns-brooklyn-experience-half-marathon\":{\"status\":\"signed-up\",\"savedAt\":\"2026-10-20T14:00:00.000Z\"}}"

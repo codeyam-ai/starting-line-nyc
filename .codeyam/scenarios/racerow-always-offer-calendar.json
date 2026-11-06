@@ -6,6 +6,9 @@
     "Desktop"
   ],
   "mocks": {},
+  "clock": {
+    "now": "2026-11-05T14:24:16Z"
+  },
   "componentName": "RaceRow",
   "scenarioType": "component",
   "description": "A race row as My Races shows it: Add to calendar offered even though the deadline is not urgent."

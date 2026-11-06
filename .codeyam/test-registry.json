@@ -973,6 +973,15 @@
       "runner": "tests"
     },
     {
+      "description": "Fails if devIndicators is removed from next.config.ts or set to anything but false, so the Next.js dev badge never reaches the live preview or scenario screenshots",
+      "file": "next.config.test.ts",
+      "format": "vitest",
+      "key": "next.config › hides the Next.js dev badge so scenario captures stay clean",
+      "line": 9,
+      "registeredAt": "2026-11-06T23:09:13Z",
+      "runner": "tests"
+    },
+    {
       "description": "The first non-past registration date is the next deadline; race day never is.",
       "file": "app/lib/raceDetail.test.ts",
       "format": "vitest",

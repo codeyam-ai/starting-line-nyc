@@ -6,6 +6,9 @@
     "Desktop"
   ],
   "mocks": {},
+  "clock": {
+    "now": "2026-11-02T18:25:53Z"
+  },
   "componentName": "MyRacesLoading",
   "scenarioType": "component",
   "description": "The placeholder line while saved races and their details load."

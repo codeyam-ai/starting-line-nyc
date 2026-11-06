@@ -6,6 +6,9 @@
     "Desktop"
   ],
   "mocks": {},
+  "clock": {
+    "now": "2026-11-05T14:24:16Z"
+  },
   "componentName": "SavedRaceGroup",
   "scenarioType": "component",
   "description": "The Considering group with two races, soonest first, one flagged as changed since saved."

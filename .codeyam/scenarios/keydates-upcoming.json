@@ -6,6 +6,9 @@
     "Desktop"
   ],
   "mocks": {},
+  "clock": {
+    "now": "2026-11-05T14:24:16Z"
+  },
   "componentName": "KeyDates",
   "scenarioType": "component",
   "description": "KeyDates with only upcoming dates for an open race whose opening date was never published."

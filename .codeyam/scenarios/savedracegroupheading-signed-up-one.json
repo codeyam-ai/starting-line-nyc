@@ -6,6 +6,9 @@
     "Desktop"
   ],
   "mocks": {},
+  "clock": {
+    "now": "2026-11-02T18:25:53Z"
+  },
   "componentName": "SavedRaceGroupHeading",
   "scenarioType": "component",
   "description": "A Signed up group heading with a singular count of 1 race."
