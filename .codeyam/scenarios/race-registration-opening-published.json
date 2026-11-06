@@ -548,9 +548,9 @@
         "entryNote": "Registration closes the day before the race, or earlier if it reaches capacity.",
         "id": 5,
         "isSample": false,
-        "lastVerifiedAt": "2026-10-26T20:00:00.000Z",
-        "priceCents": 15500,
-        "priceNote": "Non-member price through Oct 28 (members $139.50). Then $165 through Dec 17; later prices are not listed yet.",
+        "lastVerifiedAt": "2026-11-06T15:00:00.000Z",
+        "priceCents": 16000,
+        "priceNote": "Non-member price through Dec 17 (members $144). Then $170 through Jan 27 (members $153); later prices are not listed yet.",
         "raceDate": "2027-04-25T11:00:00.000Z",
         "raceDateTentative": false,
         "raceId": 5,
@@ -789,9 +789,9 @@
         "entryNote": "Open registration on RunSignup. Organizer says the race sold out the past two years and expects to sell out again. The 2027 race is a 2028 Boston Marathon qualifying event. Ages 18-99. 7:00 AM start. $25 fees each for deferral (until Mar 21, 2027), switching distance, or transfer. No registration close date or charity bib program is published.",
         "id": 20,
         "isSample": false,
-        "lastVerifiedAt": "2026-10-28T12:00:00.000Z",
-        "priceCents": 20000,
-        "priceNote": "Marathon $200 until Dec 31, 2026 11:59 PM EST. The struck-through $225 is the later price. Fees may be extra.",
+        "lastVerifiedAt": "2026-11-06T15:00:00.000Z",
+        "priceCents": 22000,
+        "priceNote": "Marathon $220 until Nov 30, 2026 11:59 PM EST. The struck-through $225 is the later price. Fees may be extra.",
         "raceDate": "2027-04-18T11:00:00.000Z",
         "raceDateTentative": false,
         "raceId": 20,
@@ -805,9 +805,9 @@
         "entryNote": "Open registration on RunSignup, run alongside the marathon. Organizer says the races sold out the past two years and expects another sellout. 7:00 AM start. $25 fees each for deferral, switching distance, or transfer. No registration close date is published.",
         "id": 21,
         "isSample": false,
-        "lastVerifiedAt": "2026-10-28T12:00:00.000Z",
-        "priceCents": 15000,
-        "priceNote": "Half marathon $150 until Dec 31, 2026 11:59 PM EST. The struck-through $180 is the later price. Fees may be extra.",
+        "lastVerifiedAt": "2026-11-06T15:00:00.000Z",
+        "priceCents": 17500,
+        "priceNote": "Half marathon $175 until Nov 30, 2026 11:59 PM EST. The later price isn't published yet. Fees may be extra.",
         "raceDate": "2027-04-18T11:00:00.000Z",
         "raceDateTentative": false,
         "raceId": 21,
@@ -984,11 +984,11 @@
         "timeKnown": false
       },
       {
-        "at": "2026-10-28T16:00:00.000Z",
+        "at": "2026-12-17T17:00:00.000Z",
         "editionId": 5,
         "id": 14,
         "kind": "price_increase",
-        "note": "Rises to $165 (non-member)",
+        "note": "Rises to $170 (non-member) after Dec 17",
         "tentative": false,
         "timeKnown": false
       },
@@ -1137,20 +1137,20 @@
         "timeKnown": true
       },
       {
-        "at": "2027-01-01T04:59:00.000Z",
+        "at": "2026-12-01T04:59:00.000Z",
         "editionId": 20,
         "id": 31,
         "kind": "price_increase",
-        "note": "Price rises from $200 to $225 after Dec 31, 2026 11:59 PM EST",
+        "note": "Price rises from $220 to $225 after Nov 30, 2026 11:59 PM EST",
         "tentative": false,
         "timeKnown": true
       },
       {
-        "at": "2027-01-01T04:59:00.000Z",
+        "at": "2026-12-01T04:59:00.000Z",
         "editionId": 21,
         "id": 32,
         "kind": "price_increase",
-        "note": "Price rises from $150 to $180 after Dec 31, 2026 11:59 PM EST",
+        "note": "Price rises from $175 after Nov 30, 2026 11:59 PM EST (new price not published)",
         "tentative": false,
         "timeKnown": true
       },
@@ -1180,6 +1180,15 @@
         "note": "Start of the registration period on RunSignup",
         "tentative": false,
         "timeKnown": true
+      },
+      {
+        "at": "2027-01-27T17:00:00.000Z",
+        "editionId": 5,
+        "id": 36,
+        "kind": "price_increase",
+        "note": "Rises after Jan 27; new price not listed yet",
+        "tentative": false,
+        "timeKnown": false
       }
     ]
   },

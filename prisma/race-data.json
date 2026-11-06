@@ -539,11 +539,11 @@
    "registrationStatus": "open",
    "entryMethod": "open",
    "entryNote": "Registration closes the day before the race, or earlier if it reaches capacity.",
-   "priceCents": 15500,
-   "priceNote": "Non-member price through Oct 28 (members $139.50). Then $165 through Dec 17; later prices are not listed yet.",
+   "priceCents": 16000,
+   "priceNote": "Non-member price through Dec 17 (members $144). Then $170 through Jan 27 (members $153); later prices are not listed yet.",
    "registrationUrl": "https://nycruns.com/register-race?race=nycruns-brooklyn-experience-half-marathon",
    "sourceUrl": "https://nycruns.com/race/nycruns-brooklyn-experience-half-marathon",
-   "lastVerifiedAt": "2026-10-26T20:00:00.000Z",
+   "lastVerifiedAt": "2026-11-06T15:00:00.000Z",
    "isSample": false
   },
   {
@@ -780,11 +780,11 @@
    "registrationStatus": "open",
    "entryMethod": "open",
    "entryNote": "Open registration on RunSignup. Organizer says the race sold out the past two years and expects to sell out again. The 2027 race is a 2028 Boston Marathon qualifying event. Ages 18-99. 7:00 AM start. $25 fees each for deferral (until Mar 21, 2027), switching distance, or transfer. No registration close date or charity bib program is published.",
-   "priceCents": 20000,
-   "priceNote": "Marathon $200 until Dec 31, 2026 11:59 PM EST. The struck-through $225 is the later price. Fees may be extra.",
+   "priceCents": 22000,
+   "priceNote": "Marathon $220 until Nov 30, 2026 11:59 PM EST. The struck-through $225 is the later price. Fees may be extra.",
    "registrationUrl": "https://runsignup.com/Race/Register/?raceId=129526",
    "sourceUrl": "https://runsignup.com/Race/NJ/JerseyCity/TheJerseyCityMarathon",
-   "lastVerifiedAt": "2026-10-28T12:00:00.000Z",
+   "lastVerifiedAt": "2026-11-06T15:00:00.000Z",
    "isSample": false
   },
   {
@@ -796,11 +796,11 @@
    "registrationStatus": "open",
    "entryMethod": "open",
    "entryNote": "Open registration on RunSignup, run alongside the marathon. Organizer says the races sold out the past two years and expects another sellout. 7:00 AM start. $25 fees each for deferral, switching distance, or transfer. No registration close date is published.",
-   "priceCents": 15000,
-   "priceNote": "Half marathon $150 until Dec 31, 2026 11:59 PM EST. The struck-through $180 is the later price. Fees may be extra.",
+   "priceCents": 17500,
+   "priceNote": "Half marathon $175 until Nov 30, 2026 11:59 PM EST. The later price isn't published yet. Fees may be extra.",
    "registrationUrl": "https://runsignup.com/Race/Register/?raceId=129526",
    "sourceUrl": "https://runsignup.com/Race/NJ/JerseyCity/TheJerseyCityMarathon",
-   "lastVerifiedAt": "2026-10-28T12:00:00.000Z",
+   "lastVerifiedAt": "2026-11-06T15:00:00.000Z",
    "isSample": false
   },
   {
@@ -974,10 +974,10 @@
    "id": 14,
    "editionId": 5,
    "kind": "price_increase",
-   "at": "2026-10-28T16:00:00.000Z",
+   "at": "2026-12-17T17:00:00.000Z",
    "timeKnown": false,
    "tentative": false,
-   "note": "Rises to $165 (non-member)"
+   "note": "Rises to $170 (non-member) after Dec 17"
   },
   {
    "id": 15,
@@ -1127,19 +1127,19 @@
    "id": 31,
    "editionId": 20,
    "kind": "price_increase",
-   "at": "2027-01-01T04:59:00.000Z",
+   "at": "2026-12-01T04:59:00.000Z",
    "timeKnown": true,
    "tentative": false,
-   "note": "Price rises from $200 to $225 after Dec 31, 2026 11:59 PM EST"
+   "note": "Price rises from $220 to $225 after Nov 30, 2026 11:59 PM EST"
   },
   {
    "id": 32,
    "editionId": 21,
    "kind": "price_increase",
-   "at": "2027-01-01T04:59:00.000Z",
+   "at": "2026-12-01T04:59:00.000Z",
    "timeKnown": true,
    "tentative": false,
-   "note": "Price rises from $150 to $180 after Dec 31, 2026 11:59 PM EST"
+   "note": "Price rises from $175 after Nov 30, 2026 11:59 PM EST (new price not published)"
   },
   {
    "id": 33,
@@ -1167,6 +1167,15 @@
    "timeKnown": true,
    "tentative": false,
    "note": "Start of the registration period on RunSignup"
+  },
+  {
+   "id": 36,
+   "editionId": 5,
+   "kind": "price_increase",
+   "at": "2027-01-27T17:00:00.000Z",
+   "timeKnown": false,
+   "tentative": false,
+   "note": "Rises after Jan 27; new price not listed yet"
   }
  ]
 }

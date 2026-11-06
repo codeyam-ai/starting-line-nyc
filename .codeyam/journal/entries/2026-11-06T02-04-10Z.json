@@ -1,0 +1,403 @@
+{
+  "timestamp": "2026-11-06T02:04:10Z",
+  "title": "Correct out-of-date race prices",
+  "type": "feature",
+  "userRequest": "## Root cause\nRace data is a hand-verified snapshot in prisma/race-data.json. Organizers changed their price tiers after the last check, and nothing re-verifies or flags the stored schedule, so the race pages keep showing the old tiers as current.\n\n## Evidence\nfnd-b945703ca96b (wrong-result) and fnd-c7f5b6fc4daa. On HEAD 5eade58 the stale values are still stored: prisma/race-data.json:980 (Brooklyn Experience Half, 'Rises to $165', tier date 2026-10-28; the site shows Dec 17 / Jan 27), prisma/race-data.json:1133 (Jersey City Marathon, '$200 to $225 after Dec 31'; the site shows $220 to $225 after Nov 30), prisma/race-data.json:1142 (Jersey City Half, '$150 to $180 after Dec 31'; the site shows $175 to $180 after Nov 30).\n\n## Smallest fix\nUpdate those three price schedules from the organizer pages and bump their lastVerifiedAt.\n\n## Cost of leaving it\nRunners see wrong prices and wrong price-rise deadlines. The Jersey City increases happen a month earlier than shown, so someone waiting for the 'Dec 31' deadline pays more.\n\n## Re-checked on 2026-11-06 (organizer pages)\n- Jersey City Marathon (runsignup.com/Race/NJ/JerseyCity/TheJerseyCityMarathon): $220, struck-through $225; \"Price increases after November 30, 2026 at 11:59pm EST\".\n- Jersey City Half (same page): $175; \"Price increases after November 30, 2026 at 11:59pm EST\". The later price is NOT published (the earlier $180 is no longer shown), so we don't state one.\n- Brooklyn Experience Half (nycruns.com/race/nycruns-brooklyn-experience-half-marathon): members $144 / non-members $160 through December 17; $153 / $170 through January 27. Prices after Jan 27 are not listed.\n\n## Implementation\nMode: UI (the corrected prices show on the race pages, and the user asked for refreshed screenshots).\n\n1. `prisma/race-data.json`\n   - Edition 20 (Jersey City Marathon): priceCents 22000; priceNote \"Marathon $220 until Nov 30, 2026 11:59 PM EST. The struck-through $225 is the later price. Fees may be extra.\"; lastVerifiedAt 2026-11-06.\n   - Milestone 31: at 2026-12-01T04:59:00.000Z (Nov 30 11:59 PM EST), note \"Price rises from $220 to $225 after Nov 30, 2026 11:59 PM EST\".\n   - Edition 21 (Jersey City Half): priceCents 17500; priceNote \"Half marathon $175 until Nov 30, 2026 11:59 PM EST. The later price isn't published yet. Fees may be extra.\"; lastVerifiedAt 2026-11-06.\n   - Milestone 32: at 2026-12-01T04:59:00.000Z, note \"Price rises from $175 after Nov 30, 2026 11:59 PM EST (new price not published)\".\n   - Edition 5 (Brooklyn Experience Half): priceCents 16000; priceNote \"Non-member price through Dec 17 (members $144). Then $170 through Jan 27 (members $153); later prices are not listed yet.\"; lastVerifiedAt 2026-11-06.\n   - Milestone 14: price_increase on Dec 17 (date only, timeKnown false), note \"Rises to $170 (non-member)\". Add a date-only price_increase milestone after Jan 27, note \"Price rises after Jan 27; new price not listed yet\".\n2. Scenario seeds that embed copies of this data (about 25 scenarios): apply the same values, re-register each one, and keep any pinned clock (re-registering has dropped clocks before).\n3. Recapture the affected screenshots.\n\n## Tests\nA data-consistency test over `prisma/race-data.json`: for these three editions, the stored price matches the price named in the note and the price-increase milestone date matches the date in the note. This is a regression guard against the drift recurring silently.",
+  "description": "Re-checked three races against their organizer pages and corrected the stored prices, price notes, price-rise dates and last-verified dates (all marked checked Nov 6, 2026), and added the Brooklyn Half price rise after Jan 27. The Jersey City Half no longer publishes its later price, so the app now leaves that price unstated instead of showing the $180 the plan proposed. A new data test guards the corrected values, and a Jersey City Marathon race-page scenario shows $220 rising to $225 after Nov 30. Scope: this cycle maintains the information-quality and sample-data deliverables (both already delivered); no deliverable was newly delivered or deferred. Reminders stays deferred, as the user decided earlier.",
+  "modifiedFiles": [
+    {
+      "path": ".codeyam/dependency-graph.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/per-test-evidence.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/plans/completed/stored-race-prices-have-drifted-from-organizer-pages.md",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/plans/stored-race-prices-have-drifted-from-organizer-pages.md",
+      "status": "deleted"
+    },
+    {
+      "path": ".codeyam/scenarios/home-all-distances-next-12-months.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/home-half-marathons-next-6-months.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/home-lottery-races-only.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/home-phone-layout.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/home-races-saved-on-this-device.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/home-single-search-result.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/home-sorted-by-distance.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/home-sorted-by-registration-opening.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/my-races-no-saved-races.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/my-races-one-saved-race.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/my-races-phone-layout.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/my-races-race-details-failed-to-load.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/my-races-removing-a-race-no-longer-listed.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/my-races-saved-across-all-statuses.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/myraceslist-default.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/myraceslist-remove-unlisted-race.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/myracessection-default.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/race-big-bear-squatch-north.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/race-escarpment-trail-run.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/race-great-gobble-5k.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/race-phone-layout.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/race-registration-opening-published.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/race-saved-as-considering.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/.capture-pipeline.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/home-all-distances-next-12-months--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/home-half-marathons-next-6-months--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/home-lottery-races-only--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/home-phone-layout--mobile.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/home-races-saved-on-this-device--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/home-single-search-result--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/home-sorted-by-distance--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/home-sorted-by-registration-opening--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/home-sorted-by-registration-opening--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/my-races-no-saved-races--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/my-races-one-saved-race--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/my-races-phone-layout--mobile.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/my-races-race-details-failed-to-load--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/my-races-removing-a-race-no-longer-listed--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/my-races-saved-across-all-statuses--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/my-races-saved-across-all-statuses--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/myraceslist-default--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/myraceslist-default--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/myraceslist-remove-unlisted-race--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/myraceslist-remove-unlisted-race--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/myracessection-default--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/myracessection-default--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/race-big-bear-squatch-north--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/race-escarpment-trail-run--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/race-great-gobble-5k--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/race-phone-layout--mobile.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/race-registration-opening-published--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/race-saved-as-considering--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/test-cache.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/test-cache/all.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/test-cache/blobs/12495cdee1da79f4c011e7556d4983925af3ca96faf2352a63eb00adff86d37e.json",
+      "status": "deleted"
+    },
+    {
+      "path": ".codeyam/test-cache/blobs/9fd260ab1594bcd1554911e8842f64a95bc0443a2e894da460fa55b393034766.json",
+      "status": "deleted"
+    },
+    {
+      "path": ".codeyam/test-registry.json",
+      "status": "modified"
+    },
+    {
+      "path": "prisma/race-data.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/coverage-plan/howtoenter.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/race-jersey-city-marathon.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/race-jersey-city-marathon--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/race-jersey-city-marathon--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/state/red-proofs/stored-race-prices-have-drifted-from-organizer-pages.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/test-cache/blobs/0e8fd6e4f23a188ca08b7b7073629faf10ddac695e1ca176e36211ab544eab01.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/test-cache/blobs/63715fb4da1c369d45122c8da49dc970a1a00276763528f0f017fff1c9d5053b.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/test-cache/blobs/af30465ec834453aa0bb129e72c507c8ff6b5b375da5f7057062c3c3947f8574.json",
+      "status": "added"
+    },
+    {
+      "path": "prisma/raceData.test.ts",
+      "status": "added"
+    }
+  ],
+  "scenarioScreenshots": [
+    {
+      "name": "Home - All Distances Next 12 Months",
+      "screenshotPath": "home-all-distances-next-12-months--desktop.png"
+    },
+    {
+      "name": "Home - Half Marathons Next 6 Months",
+      "screenshotPath": "home-half-marathons-next-6-months--desktop.png"
+    },
+    {
+      "name": "Home - Lottery Races Only",
+      "screenshotPath": "home-lottery-races-only--desktop.png"
+    },
+    {
+      "name": "Home - Phone Layout",
+      "screenshotPath": "home-phone-layout--mobile.png"
+    },
+    {
+      "name": "Home - Races Saved On This Device",
+      "screenshotPath": "home-races-saved-on-this-device--desktop.png"
+    },
+    {
+      "name": "Home - Single Search Result",
+      "screenshotPath": "home-single-search-result--desktop.png"
+    },
+    {
+      "name": "Home - Sorted By Distance",
+      "screenshotPath": "home-sorted-by-distance--desktop.png"
+    },
+    {
+      "name": "Home - Sorted By Registration Opening",
+      "screenshotPath": "home-sorted-by-registration-opening--desktop.png"
+    },
+    {
+      "name": "My Races - No Saved Races",
+      "screenshotPath": "my-races-no-saved-races--desktop.png"
+    },
+    {
+      "name": "My Races - One Saved Race",
+      "screenshotPath": "my-races-one-saved-race--desktop.png"
+    },
+    {
+      "name": "My Races - Phone Layout",
+      "screenshotPath": "my-races-phone-layout--mobile.png"
+    },
+    {
+      "name": "My Races - Race Details Failed To Load",
+      "screenshotPath": "my-races-race-details-failed-to-load--desktop.png"
+    },
+    {
+      "name": "My Races - Removing A Race No Longer Listed",
+      "screenshotPath": "my-races-removing-a-race-no-longer-listed--desktop.png"
+    },
+    {
+      "name": "My Races - Saved Across All Statuses",
+      "screenshotPath": "my-races-saved-across-all-statuses--desktop.png"
+    },
+    {
+      "name": "Race - Big Bear Squatch North",
+      "screenshotPath": "race-big-bear-squatch-north--desktop.png"
+    },
+    {
+      "name": "Race - Escarpment Trail Run",
+      "screenshotPath": "race-escarpment-trail-run--desktop.png"
+    },
+    {
+      "name": "Race - Great Gobble 5K",
+      "screenshotPath": "race-great-gobble-5k--desktop.png"
+    },
+    {
+      "name": "Race - Jersey City Marathon",
+      "screenshotPath": "race-jersey-city-marathon--desktop.png"
+    },
+    {
+      "name": "Race - Phone Layout",
+      "screenshotPath": "race-phone-layout--mobile.png"
+    },
+    {
+      "name": "Race - Registration Opening Published",
+      "screenshotPath": "race-registration-opening-published--desktop.png"
+    },
+    {
+      "name": "Race - Saved As Considering",
+      "screenshotPath": "race-saved-as-considering--desktop.png"
+    },
+    {
+      "name": "MyRacesList - Default",
+      "screenshotPath": "myraceslist-default--desktop.png"
+    },
+    {
+      "name": "MyRacesList - Remove Unlisted Race",
+      "screenshotPath": "myraceslist-remove-unlisted-race--desktop.png"
+    },
+    {
+      "name": "MyRacesSection - Default",
+      "screenshotPath": "myracessection-default--desktop.png"
+    }
+  ],
+  "testResults": {
+    "total": 8,
+    "passed": 8,
+    "failed": 0,
+    "runners": [
+      {
+        "name": "tests",
+        "total": 8,
+        "passed": 8
+      }
+    ]
+  }
+}

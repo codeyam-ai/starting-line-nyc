@@ -1,0 +1,30 @@
+{
+  "surface": "HowToEnter",
+  "surface_kind": "component",
+  "states": [
+    {
+      "dimension": "raceDayCalendarHref",
+      "value": "true",
+      "rationale": "source-derived state raceDayCalendarHref=true",
+      "status": "covered"
+    },
+    {
+      "dimension": "raceDayCalendarHref",
+      "value": "false",
+      "rationale": "source-derived state raceDayCalendarHref=false",
+      "status": "covered"
+    },
+    {
+      "dimension": "entryNote",
+      "value": "true",
+      "rationale": "source-derived state entryNote=true",
+      "status": "covered"
+    },
+    {
+      "dimension": "entryNote",
+      "value": "false",
+      "rationale": "source-derived state entryNote=false",
+      "status": "covered"
+    }
+  ]
+}

@@ -1252,6 +1252,78 @@
       "runner": "tests"
     },
     {
+      "description": "Brooklyn rises after Dec 17 and again after Jan 27, both date-only.",
+      "file": "prisma/raceData.test.ts",
+      "format": "vitest",
+      "key": "re-checked price-increase milestones › dates the Brooklyn increases to the days in the note",
+      "line": 73,
+      "registeredAt": "2026-11-06T01:56:09Z",
+      "runner": "tests"
+    },
+    {
+      "description": "The Jersey City increases land at Nov 30, 11:59 PM Eastern.",
+      "file": "prisma/raceData.test.ts",
+      "format": "vitest",
+      "key": "re-checked price-increase milestones › dates the Jersey City increases to the Nov 30 deadline",
+      "line": 81,
+      "registeredAt": "2026-11-06T01:56:09Z",
+      "runner": "tests"
+    },
+    {
+      "description": "The marathon names its later price; the half does not state one.",
+      "file": "prisma/raceData.test.ts",
+      "format": "vitest",
+      "key": "re-checked price-increase milestones › names a later price only where the organizer publishes it",
+      "line": 93,
+      "registeredAt": "2026-11-06T01:56:09Z",
+      "runner": "tests"
+    },
+    {
+      "description": "The Brooklyn note names the member price and the next price step.",
+      "file": "prisma/raceData.test.ts",
+      "format": "vitest",
+      "key": "re-checked race prices › describes the Brooklyn price steps",
+      "line": 46,
+      "registeredAt": "2026-11-06T01:56:09Z",
+      "runner": "tests"
+    },
+    {
+      "description": "None of the replaced prices or deadlines survive in the notes.",
+      "file": "prisma/raceData.test.ts",
+      "format": "vitest",
+      "key": "re-checked race prices › drops the old prices and deadlines",
+      "line": 61,
+      "registeredAt": "2026-11-06T01:56:09Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Every re-checked edition carries the re-check date.",
+      "file": "prisma/raceData.test.ts",
+      "format": "vitest",
+      "key": "re-checked race prices › marks the editions as verified on the re-check date",
+      "line": 54,
+      "registeredAt": "2026-11-06T01:56:09Z",
+      "runner": "tests"
+    },
+    {
+      "description": "The Jersey City price notes quote the same amount the edition stores.",
+      "file": "prisma/raceData.test.ts",
+      "format": "vitest",
+      "key": "re-checked race prices › quotes the stored price in the Jersey City notes",
+      "line": 37,
+      "registeredAt": "2026-11-06T01:56:09Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Each edition stores the price its organizer page lists today.",
+      "file": "prisma/raceData.test.ts",
+      "format": "vitest",
+      "key": "re-checked race prices › stores the current organizer price",
+      "line": 30,
+      "registeredAt": "2026-11-06T01:56:09Z",
+      "runner": "tests"
+    },
+    {
       "description": "A changed status reads as labels, before and after.",
       "file": "app/lib/myRaces.test.ts",
       "format": "vitest",

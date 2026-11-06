@@ -1,0 +1,49 @@
+{
+  "provenAt": "2026-11-06T01:56:00Z",
+  "slug": "stored-race-prices-have-drifted-from-organizer-pages",
+  "paths": [
+    "prisma/race-data.json"
+  ],
+  "runScope": [
+    "prisma/race-data.json"
+  ],
+  "tests": {
+    "dates the Brooklyn increases to the days in the note": {
+      "withoutFix": "fail",
+      "withFix": "pass",
+      "established": {
+        "kind": "measured"
+      }
+    },
+    "dates the Jersey City increases to the Nov 30 deadline": {
+      "withoutFix": "fail",
+      "withFix": "pass",
+      "established": {
+        "kind": "measured"
+      }
+    },
+    "drops the old prices and deadlines": {
+      "withoutFix": "fail",
+      "withFix": "pass",
+      "established": {
+        "kind": "measured"
+      }
+    },
+    "stores the current organizer price": {
+      "withoutFix": "fail",
+      "withFix": "pass",
+      "established": {
+        "kind": "measured"
+      }
+    }
+  },
+  "proof": {
+    "verdict": "proven",
+    "flipped": [
+      "stores the current organizer price",
+      "drops the old prices and deadlines",
+      "dates the Jersey City increases to the Nov 30 deadline",
+      "dates the Brooklyn increases to the days in the note"
+    ]
+  }
+}

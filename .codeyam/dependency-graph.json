@@ -2148,9 +2148,20 @@
     "prisma/race-data.json::__file_root__": {
       "filePath": "prisma/race-data.json",
       "importedBy": [
+        "prisma/raceData.test.ts::__file_root__",
         "prisma/seed.ts::__file_root__"
       ],
       "imports": [],
+      "name": "__file_root__"
+    },
+    "prisma/raceData.test.ts::__file_root__": {
+      "filePath": "prisma/raceData.test.ts",
+      "importedBy": [],
+      "imports": [
+        "prisma/race-data.json::__file_root__",
+        "app/lib/format.ts::etDate",
+        "app/lib/format.ts::formatPrice"
+      ],
       "name": "__file_root__"
     },
     "prisma/seed.ts::__file_root__": {
@@ -3075,6 +3086,7 @@
     },
     "app/lib/format.ts": {
       "importedBy": [
+        "prisma/raceData.test.ts",
         "app/lib/raceCalendar.ts",
         "app/lib/myRaces.ts",
         "app/lib/format.test.ts",
@@ -3376,9 +3388,17 @@
     },
     "prisma/race-data.json": {
       "importedBy": [
+        "prisma/raceData.test.ts",
         "prisma/seed.ts"
       ],
       "imports": []
+    },
+    "prisma/raceData.test.ts": {
+      "importedBy": [],
+      "imports": [
+        "prisma/race-data.json",
+        "app/lib/format.ts"
+      ]
     },
     "prisma/seed.ts": {
       "importedBy": [],
@@ -3398,5 +3418,5 @@
       ]
     }
   },
-  "lastUpdated": "2026-11-05T14:23:50Z"
+  "lastUpdated": "2026-11-06T02:06:18Z"
 }

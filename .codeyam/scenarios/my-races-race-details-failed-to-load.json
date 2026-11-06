@@ -218,9 +218,9 @@
         "entryNote": "Registration closes the day before the race, or earlier if it reaches capacity.",
         "id": 5,
         "isSample": false,
-        "lastVerifiedAt": "2026-10-26T20:00:00.000Z",
-        "priceCents": 15500,
-        "priceNote": "Non-member price through Oct 28 (members $139.50). Then $165 through Dec 17; later prices are not listed yet.",
+        "lastVerifiedAt": "2026-11-06T15:00:00.000Z",
+        "priceCents": 16000,
+        "priceNote": "Non-member price through Dec 17 (members $144). Then $170 through Jan 27 (members $153); later prices are not listed yet.",
         "raceDate": "2027-04-25T11:00:00.000Z",
         "raceDateTentative": false,
         "raceId": 5,
@@ -381,11 +381,11 @@
         "timeKnown": false
       },
       {
-        "at": "2026-10-28T16:00:00.000Z",
+        "at": "2026-12-17T17:00:00.000Z",
         "editionId": 5,
         "id": 14,
         "kind": "price_increase",
-        "note": "Rises to $165 (non-member)",
+        "note": "Rises to $170 (non-member) after Dec 17",
         "tentative": false,
         "timeKnown": false
       },
@@ -422,6 +422,15 @@
         "id": 18,
         "kind": "registration_closes",
         "note": "Or when 275 entries are reached, whichever comes first",
+        "tentative": false,
+        "timeKnown": false
+      },
+      {
+        "at": "2027-01-27T17:00:00.000Z",
+        "editionId": 5,
+        "id": 36,
+        "kind": "price_increase",
+        "note": "Rises after Jan 27; new price not listed yet",
         "tentative": false,
         "timeKnown": false
       }
