@@ -1160,6 +1160,11 @@
       "at": "2026-11-06T21:41:54.836229208+00:00",
       "feature": "Real-database test for the saved-races lookup",
       "notes": "This was a test-only cycle: app/lib/races.db.test.ts covers findRaceSummaries against a temporary SQLite database created with prisma db push. Reconcile, journal, sync, finalize (225/225 tests) and push all passed on the first try. A known…"
+    },
+    {
+      "at": "2026-11-06T22:27:37.359901564+00:00",
+      "feature": "Phone demos of saving a race",
+      "notes": "Scenario-only cycle: two Mobile app scenarios (race-phone-save-menu-open, home-phone-races-saved) were added. No app source changed. Finalize ran the full suite with 225/225 passing, then the commit was pushed to main. Non-blocking advisor…"
     }
   ],
   "syntheses": [
