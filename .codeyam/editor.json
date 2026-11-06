@@ -383,6 +383,24 @@
         "**/package-lock.json"
       ],
       "name": "lockfile-sync"
+    },
+    {
+      "command": "npx eslint .",
+      "description": "ESLint with the Next.js core-web-vitals and TypeScript rules",
+      "excludePatterns": [
+        "**/node_modules/**",
+        ".codeyam/**"
+      ],
+      "filePatterns": [
+        "**/*.ts",
+        "**/*.tsx",
+        "**/*.js",
+        "**/*.jsx",
+        "**/*.mjs",
+        "eslint.config.mjs",
+        "package.json"
+      ],
+      "name": "eslint"
     }
   ],
   "testCacheIgnorePatterns": [

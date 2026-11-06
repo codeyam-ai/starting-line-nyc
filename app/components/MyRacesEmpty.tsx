@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function MyRacesEmpty() {
   return (
     <div className="empty">
@@ -5,9 +7,9 @@ export default function MyRacesEmpty() {
       <p>
         Tap Save on any race to keep it here with its registration dates and your notes. Saves stay on this device.
       </p>
-      <a className="btn btn-ink" href="/">
+      <Link className="btn btn-ink" href="/">
         Browse races
-      </a>
+      </Link>
     </div>
   );
 }

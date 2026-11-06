@@ -1,0 +1,395 @@
+{
+  "timestamp": "2026-11-06T14:32:13Z",
+  "title": "Fix the broken lint setup",
+  "type": "fix",
+  "userRequest": "## Summary\n\nLint cannot start. `eslint.config.mjs` imports `eslint-config-next/core-web-vitals` and `eslint-config-next/typescript`, but the installed `eslint-config-next` is v15 while the app runs Next 16, and ESLint fails with ERR_MODULE_NOT_FOUND before checking any file.\n\n## Key Decisions\n\n- Align `eslint-config-next` with the installed Next major version rather than rewriting the config by hand.\n\n## Implementation\n\n- Bump `eslint-config-next` in `package.json` to the version matching `next`.\n- Confirm `npx eslint` runs on `app/` and `.devcontainer/codeyam-preview-origin.test.ts`, then fix any findings.",
+  "description": "Lint runs again. The ESLint config package for Next.js was a major version behind the installed Next.js, so linting crashed before checking any file. It is now on the matching version, lint skips CodeYam's generated files, and lint runs as part of every build check. The few warnings it then raised were fixed: links between pages in the site header, the empty My Races message and the race-not-found page now use Next.js page links, and the filter chips mark the selected one as current instead of pressed. No screen looks different; all affected screenshots were recaptured and are pixel-identical.\n\nScope verdict: this was maintenance and delivered no product deliverable. Nothing new deferred. The one existing deferral, email/push reminders, stays deferred by the user's earlier decision. The duplicate plan about the template's lint setup is covered by this fix.",
+  "modifiedFiles": [
+    {
+      "path": ".codeyam/dependency-graph.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/editor.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/per-test-evidence.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/plans/fix-the-broken-lint-setup.md\t.codeyam/plans/completed/fix-the-broken-lint-setup.md",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/filterchips-default--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/filterchips-nothing-narrowing--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/filterchips-status-chips-on--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/filtertoolbar-default--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/filtertoolbar-lottery-sorted-by-race-day--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/home-all-distances-next-12-months--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/home-half-marathons-next-6-months--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/home-lottery-races-only--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/home-no-races-listed--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/home-phone-layout--mobile.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/home-races-saved-on-this-device--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/home-single-search-result--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/home-sorted-by-distance--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/home-sorted-by-registration-opening--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/my-races-no-saved-races--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/my-races-one-saved-race--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/my-races-phone-layout--mobile.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/my-races-race-details-failed-to-load--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/my-races-removing-a-race-no-longer-listed--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/my-races-saved-across-all-statuses--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/myracesempty-default--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/myraceslist-default--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/myraceslist-empty--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/myraceslist-remove-unlisted-race--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/myracessection-default--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/myracessection-empty--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/notfound-default--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/race-big-bear-squatch-north--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/race-escarpment-trail-run--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/race-great-gobble-5k--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/race-jersey-city-marathon--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/race-phone-layout--mobile.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/race-registration-opening-published--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/race-saved-as-considering--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/racenotfound-default--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/resultssection-default--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/resultssection-empty--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/siteheader-default--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/siteheader-my-races-active--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/test-cache.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/test-cache/all.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/test-cache/blobs/00234cd27794f584741996e2e77f42a508e17ca5435abe7e439d8d73105f8231.json",
+      "status": "deleted"
+    },
+    {
+      "path": "app/components/FilterChips.tsx",
+      "status": "modified"
+    },
+    {
+      "path": "app/components/MyRacesEmpty.tsx",
+      "status": "modified"
+    },
+    {
+      "path": "app/components/RaceNotFound.tsx",
+      "status": "modified"
+    },
+    {
+      "path": "app/components/SiteHeader.tsx",
+      "status": "modified"
+    },
+    {
+      "path": "eslint.config.mjs",
+      "status": "modified"
+    },
+    {
+      "path": "package-lock.json",
+      "status": "modified"
+    },
+    {
+      "path": "package.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/test-cache/blobs/a5fac42c41e7a22a9cd6610ee810b63fc9dccb42dae3d0c63dbadacd02af5d00.json",
+      "status": "added"
+    }
+  ],
+  "scenarioScreenshots": [
+    {
+      "name": "Home - All Distances Next 12 Months",
+      "screenshotPath": "home-all-distances-next-12-months--desktop.png"
+    },
+    {
+      "name": "Home - Half Marathons Next 6 Months",
+      "screenshotPath": "home-half-marathons-next-6-months--desktop.png"
+    },
+    {
+      "name": "Home - Lottery Races Only",
+      "screenshotPath": "home-lottery-races-only--desktop.png"
+    },
+    {
+      "name": "Home - No Races Listed",
+      "screenshotPath": "home-no-races-listed--desktop.png"
+    },
+    {
+      "name": "Home - Phone Layout",
+      "screenshotPath": "home-phone-layout--mobile.png"
+    },
+    {
+      "name": "Home - Races Saved On This Device",
+      "screenshotPath": "home-races-saved-on-this-device--desktop.png"
+    },
+    {
+      "name": "Home - Single Search Result",
+      "screenshotPath": "home-single-search-result--desktop.png"
+    },
+    {
+      "name": "Home - Sorted By Distance",
+      "screenshotPath": "home-sorted-by-distance--desktop.png"
+    },
+    {
+      "name": "Home - Sorted By Registration Opening",
+      "screenshotPath": "home-sorted-by-registration-opening--desktop.png"
+    },
+    {
+      "name": "My Races - No Saved Races",
+      "screenshotPath": "my-races-no-saved-races--desktop.png"
+    },
+    {
+      "name": "My Races - One Saved Race",
+      "screenshotPath": "my-races-one-saved-race--desktop.png"
+    },
+    {
+      "name": "My Races - Phone Layout",
+      "screenshotPath": "my-races-phone-layout--mobile.png"
+    },
+    {
+      "name": "My Races - Race Details Failed To Load",
+      "screenshotPath": "my-races-race-details-failed-to-load--desktop.png"
+    },
+    {
+      "name": "My Races - Removing A Race No Longer Listed",
+      "screenshotPath": "my-races-removing-a-race-no-longer-listed--desktop.png"
+    },
+    {
+      "name": "My Races - Saved Across All Statuses",
+      "screenshotPath": "my-races-saved-across-all-statuses--desktop.png"
+    },
+    {
+      "name": "Race - Big Bear Squatch North",
+      "screenshotPath": "race-big-bear-squatch-north--desktop.png"
+    },
+    {
+      "name": "Race - Escarpment Trail Run",
+      "screenshotPath": "race-escarpment-trail-run--desktop.png"
+    },
+    {
+      "name": "Race - Great Gobble 5K",
+      "screenshotPath": "race-great-gobble-5k--desktop.png"
+    },
+    {
+      "name": "Race - Jersey City Marathon",
+      "screenshotPath": "race-jersey-city-marathon--desktop.png"
+    },
+    {
+      "name": "Race - Phone Layout",
+      "screenshotPath": "race-phone-layout--mobile.png"
+    },
+    {
+      "name": "Race - Registration Opening Published",
+      "screenshotPath": "race-registration-opening-published--desktop.png"
+    },
+    {
+      "name": "Race - Saved As Considering",
+      "screenshotPath": "race-saved-as-considering--desktop.png"
+    },
+    {
+      "name": "FilterChips - Default",
+      "screenshotPath": "filterchips-default--desktop.png"
+    },
+    {
+      "name": "FilterChips - Nothing Narrowing",
+      "screenshotPath": "filterchips-nothing-narrowing--desktop.png"
+    },
+    {
+      "name": "FilterChips - Status Chips On",
+      "screenshotPath": "filterchips-status-chips-on--desktop.png"
+    },
+    {
+      "name": "FilterToolbar - Default",
+      "screenshotPath": "filtertoolbar-default--desktop.png"
+    },
+    {
+      "name": "FilterToolbar - Lottery Sorted By Race Day",
+      "screenshotPath": "filtertoolbar-lottery-sorted-by-race-day--desktop.png"
+    },
+    {
+      "name": "MyRacesEmpty - Default",
+      "screenshotPath": "myracesempty-default--desktop.png"
+    },
+    {
+      "name": "MyRacesList - Default",
+      "screenshotPath": "myraceslist-default--desktop.png"
+    },
+    {
+      "name": "MyRacesList - Empty",
+      "screenshotPath": "myraceslist-empty--desktop.png"
+    },
+    {
+      "name": "MyRacesList - Remove Unlisted Race",
+      "screenshotPath": "myraceslist-remove-unlisted-race--desktop.png"
+    },
+    {
+      "name": "MyRacesSection - Default",
+      "screenshotPath": "myracessection-default--desktop.png"
+    },
+    {
+      "name": "MyRacesSection - Empty",
+      "screenshotPath": "myracessection-empty--desktop.png"
+    },
+    {
+      "name": "NotFound - Default",
+      "screenshotPath": "notfound-default--desktop.png"
+    },
+    {
+      "name": "RaceNotFound - Default",
+      "screenshotPath": "racenotfound-default--desktop.png"
+    },
+    {
+      "name": "ResultsSection - Default",
+      "screenshotPath": "resultssection-default--desktop.png"
+    },
+    {
+      "name": "ResultsSection - Empty",
+      "screenshotPath": "resultssection-empty--desktop.png"
+    },
+    {
+      "name": "SiteHeader - Default",
+      "screenshotPath": "siteheader-default--desktop.png"
+    },
+    {
+      "name": "SiteHeader - My Races Active",
+      "screenshotPath": "siteheader-my-races-active--desktop.png"
+    }
+  ],
+  "testResults": {
+    "total": 210,
+    "passed": 210,
+    "failed": 0,
+    "runners": [
+      {
+        "name": "tests",
+        "total": 210,
+        "passed": 210
+      }
+    ]
+  }
+}

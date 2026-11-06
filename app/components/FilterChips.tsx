@@ -17,7 +17,7 @@ export default function FilterChips({ filters }: { filters: RaceFilters }) {
             key={k}
             className={on ? 'chip on' : 'chip'}
             href={filterHref(filters, { status: toggleStatus(filters.status, k) })}
-            aria-pressed={on}
+            aria-current={on ? 'true' : undefined}
           >
             {STATUS_CHIPS[k]}
             {on && <span className="x" aria-hidden="true">✕</span>}

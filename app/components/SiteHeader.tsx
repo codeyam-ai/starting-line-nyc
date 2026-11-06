@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Logo from '@/app/components/Logo';
 
 export default function SiteHeader({
@@ -9,28 +10,28 @@ export default function SiteHeader({
 }) {
   return (
     <header className="bar">
-      <a className="brand" href="/" aria-label="Starting Line home">
+      <Link className="brand" href="/" aria-label="Starting Line home">
         <Logo />
         <b>Starting Line</b>
-      </a>
+      </Link>
       <nav aria-label="Main">
-        <a className={active === 'races' ? 'on' : undefined} href="/">
+        <Link className={active === 'races' ? 'on' : undefined} href="/">
           Races
-        </a>
+        </Link>
         <a href={deadlinesHref}>Deadlines</a>
-        <a className={active === 'my-races' ? 'on' : undefined} href="/my-races">
+        <Link className={active === 'my-races' ? 'on' : undefined} href="/my-races">
           My Races
-        </a>
-        <a href="/#how-entry-works">How entry works</a>
+        </Link>
+        <Link href="/#how-entry-works">How entry works</Link>
       </nav>
       <div className="right">
-        <a className={active === 'my-races' ? 'mine-m on' : 'mine-m'} href="/my-races">
+        <Link className={active === 'my-races' ? 'mine-m on' : 'mine-m'} href="/my-races">
           My Races
-        </a>
-        <a href="/#season">Log in</a>
-        <a className="btn btn-ink btn-sm" href="/#season">
+        </Link>
+        <Link href="/#season">Log in</Link>
+        <Link className="btn btn-ink btn-sm" href="/#season">
           Sign up free
-        </a>
+        </Link>
       </div>
     </header>
   );

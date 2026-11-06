@@ -5,7 +5,8 @@ import nextTs from "eslint-config-next/typescript";
 const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
-  globalIgnores([".next/**", "out/**", "build/**", "next-env.d.ts"]),
+  // .codeyam/ holds generated CodeYam tooling, not app source.
+  globalIgnores([".next/**", "out/**", "build/**", "next-env.d.ts", ".codeyam/**"]),
 ]);
 
 export default eslintConfig;
