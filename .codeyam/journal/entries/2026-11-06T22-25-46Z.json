@@ -1,0 +1,79 @@
+{
+  "timestamp": "2026-11-06T22:25:46Z",
+  "title": "Phone demos of saving a race",
+  "type": "feature",
+  "userRequest": "## Summary\n\nThe plan listed a phone-layout demo; saving works on phones, but there is no phone-size demo of saved races yet.\n\nDisclosed at the approval gate: the built work differs from the plan here.",
+  "description": "Added two phone-size demos of saving races: the race page with the save menu open (Interested / Considering / Signed up), and the home page with several races already saved and their saved labels showing. No app code changed; these demos cover how saving looks on a phone, which had no demo before. Scope: no deliverable status changed this cycle (save-races and My Races were already delivered; this adds phone evidence for them). Still deferred: reminders for registration openings and deadlines, deferred earlier by the user.",
+  "modifiedFiles": [
+    {
+      "path": ".codeyam/dependency-graph.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/plans/completed/the-plan-listed-a-phone-layout-demo-saving-works-on-phones-but-there-is-no-phone-size-demo-of-saved-races-yet.md",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/plans/the-plan-listed-a-phone-layout-demo-saving-works-on-phones-but-there-is-no-phone-size-demo-of-saved-races-yet.md",
+      "status": "deleted"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/.capture-pipeline.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/coverage-plan/savemenu.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/coverage-plan/saveracebutton.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/home-phone-races-saved.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/race-phone-save-menu-open.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/home-phone-races-saved--mobile.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/home-phone-races-saved--mobile.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/race-phone-save-menu-open--mobile.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/race-phone-save-menu-open--mobile.png.hash",
+      "status": "added"
+    }
+  ],
+  "scenarioScreenshots": [
+    {
+      "name": "Home - Phone Races Saved",
+      "screenshotPath": "home-phone-races-saved--mobile.png"
+    },
+    {
+      "name": "Race - Phone Save Menu Open",
+      "screenshotPath": "race-phone-save-menu-open--mobile.png"
+    }
+  ],
+  "testResults": {
+    "total": 225,
+    "passed": 225,
+    "failed": 0,
+    "runners": [
+      {
+        "name": "tests",
+        "total": 225,
+        "passed": 225
+      }
+    ]
+  }
+}

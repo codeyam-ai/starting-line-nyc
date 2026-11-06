@@ -138,7 +138,7 @@ codeyam-editor start
 ```
 <!-- codeyam:run-and-edit:end -->
 
-<!-- codeyam:scenario-gallery:start d=61b721ea9c9d -->
+<!-- codeyam:scenario-gallery:start d=c97838561d14 -->
 ## Scenario gallery
 
 States captured as runnable scenarios with codeyam-editor:
@@ -185,9 +185,9 @@ The Big Apple Half on a phone: photo, facts and the key-dates timeline stack in 
 
 The default search (half marathons, next 6 months) on the real researched races, sorted by next deadline: upcoming price rises and registration closings in Eastern Time, with the nearest highlighted.
 
-### My Races - One Saved Race
+### Home - Phone Races Saved
 
-<img src=".codeyam/scenarios/screenshots/my-races-one-saved-race--desktop.png" alt="My Races - One Saved Race" width="280">
+<img src=".codeyam/scenarios/screenshots/home-phone-races-saved--mobile.png" alt="Home - Phone Races Saved" width="280">
 
-A runner who has saved a single race: one group, a singular race count, the registration-change note and their private note.
+The race list on a phone with three races saved in this browser: scrolled to the Big Apple Half, whose row (tinted by the hover) shows a ✓ Considering button beside the name instead of Save.
 <!-- codeyam:scenario-gallery:end -->

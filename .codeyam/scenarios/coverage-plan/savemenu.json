@@ -1,0 +1,30 @@
+{
+  "surface": "SaveMenu",
+  "surface_kind": "component",
+  "states": [
+    {
+      "dimension": "unavailable",
+      "value": "true",
+      "rationale": "source-derived state unavailable=true",
+      "status": "covered"
+    },
+    {
+      "dimension": "unavailable",
+      "value": "false",
+      "rationale": "source-derived state unavailable=false",
+      "status": "covered"
+    },
+    {
+      "dimension": "status",
+      "value": "true",
+      "rationale": "source-derived state status=true",
+      "status": "covered"
+    },
+    {
+      "dimension": "status",
+      "value": "false",
+      "rationale": "source-derived state status=false",
+      "status": "covered"
+    }
+  ]
+}
