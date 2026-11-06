@@ -1150,6 +1150,11 @@
       "at": "2026-11-06T14:34:54.534254814+00:00",
       "feature": "Lint works again",
       "notes": "Lint fix shipped (eslint-config-next 16 matches next 16, .codeyam ignored, eslint is now a staticCheck). Reconcile flagged 32 transitively-stale screenshots from the SiteHeader/link edits; all recaptured pixel-identical. Duplicate plan 'th…"
+    },
+    {
+      "at": "2026-11-06T18:22:15.753869047+00:00",
+      "feature": "\"Changed since you saved\" now works for older saved races",
+      "notes": "Resumed after /clear at Reconcile. Audit's only finding was 62 dependency-stale screenshots from the savedRaces/myRaces/MyRacesList edits; every recapture was pixel-identical. Full suite 222/222 green. Updated the my-races deliverable note…"
     }
   ],
   "syntheses": [
