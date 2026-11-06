@@ -671,7 +671,9 @@
         "app/components/SavedRaceGroup.tsx::SavedRaceGroup",
         "app/lib/myRaces.ts::allSummariesLoaded",
         "app/lib/myRaces.ts::groupSavedRaces",
+        "app/lib/myRaces.ts::listedRegistrationStatuses",
         "app/lib/myRaces.ts::summariesKey",
+        "app/lib/savedRaces.ts::recordRegistrationBaselines",
         "app/lib/useRaceSummaries.ts::useRaceSummaries",
         "app/lib/useSavedRaces.ts::useSavedRaces"
       ],
@@ -1396,6 +1398,7 @@
         "app/lib/myRaces.ts::goneRaceMessage",
         "app/lib/myRaces.ts::goneRaceName",
         "app/lib/myRaces.ts::groupSavedRaces",
+        "app/lib/myRaces.ts::listedRegistrationStatuses",
         "app/lib/myRaces.ts::parseSummarySlugs",
         "app/lib/myRaces.ts::raceDay",
         "app/lib/myRaces.ts::registrationChange",
@@ -1457,6 +1460,15 @@
       ],
       "imports": [],
       "name": "groupSavedRaces"
+    },
+    "app/lib/myRaces.ts::listedRegistrationStatuses": {
+      "filePath": "app/lib/myRaces.ts",
+      "importedBy": [
+        "app/lib/myRaces.test.ts::__file_root__",
+        "app/components/MyRacesList.tsx::__file_root__"
+      ],
+      "imports": [],
+      "name": "listedRegistrationStatuses"
     },
     "app/lib/myRaces.ts::parseSummarySlugs": {
       "filePath": "app/lib/myRaces.ts",
@@ -1844,11 +1856,13 @@
         "app/lib/savedRaces.ts::nameFromSlug",
         "app/lib/savedRaces.ts::parseSavedRaces",
         "app/lib/savedRaces.ts::readSavedRacesRaw",
+        "app/lib/savedRaces.ts::recordRegistrationBaselines",
         "app/lib/savedRaces.ts::setSaveNote",
         "app/lib/savedRaces.ts::setSaveStatus",
         "app/lib/savedRaces.ts::storageAvailable",
         "app/lib/savedRaces.ts::subscribeSavedRaces",
         "app/lib/savedRaces.ts::withNote",
+        "app/lib/savedRaces.ts::withRegistrationBaseline",
         "app/lib/savedRaces.ts::withSaveStatus"
       ],
       "name": "__file_root__"
@@ -1927,6 +1941,15 @@
       "imports": [],
       "name": "readSavedRacesRaw"
     },
+    "app/lib/savedRaces.ts::recordRegistrationBaselines": {
+      "filePath": "app/lib/savedRaces.ts",
+      "importedBy": [
+        "app/lib/savedRaces.test.ts::__file_root__",
+        "app/components/MyRacesList.tsx::__file_root__"
+      ],
+      "imports": [],
+      "name": "recordRegistrationBaselines"
+    },
     "app/lib/savedRaces.ts::setSaveNote": {
       "filePath": "app/lib/savedRaces.ts",
       "importedBy": [
@@ -1972,6 +1995,14 @@
       ],
       "imports": [],
       "name": "withNote"
+    },
+    "app/lib/savedRaces.ts::withRegistrationBaseline": {
+      "filePath": "app/lib/savedRaces.ts",
+      "importedBy": [
+        "app/lib/savedRaces.test.ts::__file_root__"
+      ],
+      "imports": [],
+      "name": "withRegistrationBaseline"
     },
     "app/lib/savedRaces.ts::withSaveStatus": {
       "filePath": "app/lib/savedRaces.ts",
@@ -2667,6 +2698,7 @@
         "app/components/MyRacesLoading.tsx",
         "app/components/SavedRaceGroup.tsx",
         "app/lib/myRaces.ts",
+        "app/lib/savedRaces.ts",
         "app/lib/useRaceSummaries.ts",
         "app/lib/useSavedRaces.ts"
       ]
@@ -3259,6 +3291,7 @@
         "app/components/SavedRaceGroupHeading.tsx",
         "app/components/RaceNote.tsx",
         "app/components/SavedRaceItem.tsx",
+        "app/components/MyRacesList.tsx",
         "app/components/SaveRaceButton.tsx",
         "app/components/SaveMenu.tsx",
         "app/components/GoneRaceNotice.tsx",
@@ -3418,5 +3451,5 @@
       ]
     }
   },
-  "lastUpdated": "2026-11-06T14:33:36Z"
+  "lastUpdated": "2026-11-06T18:20:54Z"
 }

@@ -83,6 +83,16 @@ export function parseSummarySlugs(param: string | null, max = MAX_SUMMARY_SLUGS)
   ].slice(0, max);
 }
 
+// slug → current registration status, for listed races only (a race with no
+// listing has no status to record).
+export function listedRegistrationStatuses(summaries: Record<string, SavedRaceSummary>): Record<string, string> {
+  const statuses: Record<string, string> = {};
+  for (const [slug, s] of Object.entries(summaries)) {
+    if (s.state === 'listed') statuses[slug] = s.race.registrationStatus;
+  }
+  return statuses;
+}
+
 // Every saved race has a summary loaded.
 export function allSummariesLoaded(
   saved: SavedRaces,

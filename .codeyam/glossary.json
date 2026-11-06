@@ -1173,6 +1173,15 @@
     "testFile": "app/lib/raceList.test.ts"
   },
   {
+    "description": "Pure: maps saved-race summaries to slug -> current registration status, for listed races only; races with no listing are left out rather than guessed.",
+    "filePath": "app/lib/myRaces.ts",
+    "name": "listedRegistrationStatuses",
+    "tags": [
+      "saved-races"
+    ],
+    "testFile": "app/lib/myRaces.test.ts"
+  },
+  {
     "description": "Replaces the development database contents with the labelled sample races from prisma/sample-data.json.",
     "filePath": "prisma/seed.ts",
     "name": "main",
@@ -1393,6 +1402,15 @@
     "testFile": "app/lib/savedRaces.test.ts"
   },
   {
+    "description": "Stores today's registration status as the starting point for older saves that have none, via update; writes and notifies only when something was filled, so My Races can call it on every summaries load without looping. Returns false when storage is unavailable.",
+    "filePath": "app/lib/savedRaces.ts",
+    "name": "recordRegistrationBaselines",
+    "tags": [
+      "saved-races"
+    ],
+    "testFile": "app/lib/savedRaces.test.ts"
+  },
+  {
     "description": "Registration status at save and now as labels, or null when unchanged or never recorded.",
     "filePath": "app/lib/myRaces.ts",
     "name": "registrationChange",
@@ -1583,7 +1601,7 @@
     "testFile": "app/lib/raceList.test.ts"
   },
   {
-    "description": "Applies a change to the saved races in browser storage and notifies listeners; false when storage is unavailable. Exercised through setSaveStatus and setSaveNote.",
+    "description": "Applies a change to the saved races in browser storage and notifies listeners; when the change returns the same object nothing is written and no event fires. False when storage is unavailable. Exercised through setSaveStatus, setSaveNote and recordRegistrationBaselines.",
     "filePath": "app/lib/savedRaces.ts",
     "name": "update",
     "tags": [
@@ -1640,6 +1658,15 @@
     "description": "Next saved set with a race's private note replaced; blank notes are dropped, unsaved races ignored.",
     "filePath": "app/lib/savedRaces.ts",
     "name": "withNote",
+    "tags": [
+      "saved-races"
+    ],
+    "testFile": "app/lib/savedRaces.test.ts"
+  },
+  {
+    "description": "Pure: returns the saved set with today's registration status filled in for any saved race that has none recorded (saves made before it was tracked). Never overwrites a recorded status, ignores slugs with no known status, and returns the same object when nothing needed filling.",
+    "filePath": "app/lib/savedRaces.ts",
+    "name": "withRegistrationBaseline",
     "tags": [
       "saved-races"
     ],

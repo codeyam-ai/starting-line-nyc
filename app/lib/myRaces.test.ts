@@ -4,6 +4,7 @@ import {
   goneRaceMessage,
   goneRaceName,
   groupSavedRaces,
+  listedRegistrationStatuses,
   parseSummarySlugs,
   raceDay,
   registrationChange,
@@ -201,5 +202,33 @@ describe('allSummariesLoaded', () => {
     expect(allSummariesLoaded({ a: save('interested') }, { a: listed('a', null), extra: listed('extra', null) })).toBe(
       true,
     );
+  });
+});
+
+describe('listedRegistrationStatuses', () => {
+  // Each listed race maps to its current registration status, keyed by slug.
+  it('maps listed races to their registration status', () => {
+    const closed: SavedRaceSummary = {
+      slug: 'b',
+      state: 'listed',
+      race: { slug: 'b', registrationStatus: 'closed' } as RaceListItem,
+    };
+    expect(listedRegistrationStatuses({ a: listed('a', null), b: closed })).toEqual({ a: 'open', b: 'closed' });
+  });
+
+  // A race with no listing has no status to record, so it is left out rather than guessed.
+  it('leaves out races that are not listed or have no upcoming date', () => {
+    expect(
+      listedRegistrationStatuses({
+        a: listed('a', null),
+        gone: { slug: 'gone', state: 'not-listed' },
+        past: { slug: 'past', state: 'no-upcoming', name: 'Past' },
+      }),
+    ).toEqual({ a: 'open' });
+  });
+
+  // No summaries means nothing to record.
+  it('returns an empty map for no summaries', () => {
+    expect(listedRegistrationStatuses({})).toEqual({});
   });
 });

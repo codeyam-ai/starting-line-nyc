@@ -79,7 +79,8 @@ export function withSaveStatus(
   const name = info.name ?? prev?.name;
   if (name) race.name = name;
   if (prev?.note) race.note = prev.note;
-  const atSave = prev ? prev.registrationAtSave : info.registrationStatus;
+  // An older save with nothing recorded starts tracking from this save.
+  const atSave = prev?.registrationAtSave ?? info.registrationStatus;
   if (atSave) race.registrationAtSave = atSave;
   next[slug] = race;
   return next;
@@ -94,6 +95,21 @@ export function withNote(saved: SavedRaces, slug: string, note: string): SavedRa
   if (note.trim()) race.note = note;
   else delete race.note;
   return { ...saved, [slug]: race };
+}
+
+// Returns the next saved set with today's registration status recorded for any
+// saved race that has none (saves made before it was recorded). Recorded values
+// are never overwritten; slugs not in statuses are left alone. Returns the same
+// object when nothing needed filling.
+export function withRegistrationBaseline(saved: SavedRaces, statuses: Record<string, string>): SavedRaces {
+  let next: SavedRaces | null = null;
+  for (const [slug, race] of Object.entries(saved)) {
+    const status = statuses[slug];
+    if (race.registrationAtSave || !status) continue;
+    next ??= { ...saved };
+    next[slug] = { ...race, registrationAtSave: status };
+  }
+  return next ?? saved;
 }
 
 function storage(): Storage | null {
@@ -113,11 +129,16 @@ export function readSavedRacesRaw(): string | null {
   }
 }
 
+// Applies change to the stored saves. When change returns the same object,
+// nothing is written and no change event fires. Returns false when storage is unavailable.
 function update(change: (saved: SavedRaces) => SavedRaces): boolean {
   const store = storage();
   if (!store) return false;
   try {
-    store.setItem(STORAGE_KEY, JSON.stringify(change(parseSavedRaces(store.getItem(STORAGE_KEY)))));
+    const saved = parseSavedRaces(store.getItem(STORAGE_KEY));
+    const next = change(saved);
+    if (next === saved) return true;
+    store.setItem(STORAGE_KEY, JSON.stringify(next));
   } catch {
     return false;
   }
@@ -129,6 +150,13 @@ function update(change: (saved: SavedRaces) => SavedRaces): boolean {
 // registration status at the first save. Returns false when storage is unavailable.
 export function setSaveStatus(slug: string, status: SaveStatus | null, info?: SaveRaceInfo): boolean {
   return update((saved) => withSaveStatus(saved, slug, status, new Date(), info));
+}
+
+// Records today's registration status as the starting point for older saves
+// that have none, so later changes show up. Writes only when something was filled.
+// Returns false when storage is unavailable.
+export function recordRegistrationBaselines(statuses: Record<string, string>): boolean {
+  return update((saved) => withRegistrationBaseline(saved, statuses));
 }
 
 // A readable name from a slug, for races saved before names were recorded.

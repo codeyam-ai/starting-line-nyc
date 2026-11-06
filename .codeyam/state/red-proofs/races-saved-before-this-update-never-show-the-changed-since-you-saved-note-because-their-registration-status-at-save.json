@@ -1,0 +1,51 @@
+{
+  "provenAt": "2026-11-06T17:57:46Z",
+  "slug": "races-saved-before-this-update-never-show-the-changed-since-you-saved-note-because-their-registration-status-at-save",
+  "paths": [],
+  "runScope": [
+    "app/lib/savedRaces.ts",
+    "app/lib/savedRaces.test.ts"
+  ],
+  "neuters": [
+    {
+      "file": "app/lib/savedRaces.ts",
+      "find": "prev?.registrationAtSave ?? info.registrationStatus",
+      "replace": "prev ? prev.registrationAtSave : info.registrationStatus"
+    },
+    {
+      "file": "app/lib/savedRaces.ts",
+      "find": "    if (next === saved) return true;\n",
+      "replace": ""
+    }
+  ],
+  "tests": {
+    "does not write or notify when nothing needs filling": {
+      "withoutFix": "fail",
+      "withFix": "pass",
+      "established": {
+        "kind": "measured"
+      }
+    },
+    "records the current registration status for an older save that has none": {
+      "withoutFix": "fail",
+      "withFix": "pass",
+      "established": {
+        "kind": "measured"
+      }
+    },
+    "skips the write for a race that is not saved and still reports success": {
+      "withoutFix": "fail",
+      "withFix": "pass",
+      "established": {
+        "kind": "measured"
+      }
+    }
+  },
+  "proof": {
+    "verdict": "proven",
+    "flipped": [
+      "does not write or notify when nothing needs filling",
+      "skips the write for a race that is not saved and still reports success"
+    ]
+  }
+}

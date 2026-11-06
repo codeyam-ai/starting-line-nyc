@@ -4,11 +4,13 @@ import {
   parseSavedRaces,
   nameFromSlug,
   readSavedRacesRaw,
+  recordRegistrationBaselines,
   setSaveNote,
   setSaveStatus,
   storageAvailable,
   subscribeSavedRaces,
   withNote,
+  withRegistrationBaseline,
   withSaveStatus,
 } from '@/app/lib/savedRaces';
 
@@ -219,5 +221,101 @@ describe('nameFromSlug', () => {
   // Stray dashes do not produce double spaces.
   it('ignores empty segments', () => {
     expect(nameFromSlug('-a--b-')).toBe('A B');
+  });
+});
+
+describe('withSaveStatus legacy save', () => {
+  const now = new Date('2026-11-06T12:00:00.000Z');
+
+  // A save made before registration status was recorded starts tracking from this status change.
+  it('records the current registration status for an older save that has none', () => {
+    const saved = { a: { status: 'interested' as const, savedAt: 's' } };
+    const next = withSaveStatus(saved, 'a', 'considering', now, { registrationStatus: 'open' });
+    expect(next.a.registrationAtSave).toBe('open');
+  });
+});
+
+describe('withRegistrationBaseline', () => {
+  // An older save without a recorded status gets today's status as its starting point.
+  it('fills a missing registration status', () => {
+    const saved = { a: { status: 'interested' as const, savedAt: 's' } };
+    expect(withRegistrationBaseline(saved, { a: 'open' }).a).toEqual({
+      status: 'interested',
+      savedAt: 's',
+      registrationAtSave: 'open',
+    });
+    expect(saved.a).toEqual({ status: 'interested', savedAt: 's' });
+  });
+
+  // A status recorded at save is the real baseline and must never be overwritten.
+  it('keeps a recorded registration status', () => {
+    const saved = { a: { status: 'interested' as const, savedAt: 's', registrationAtSave: 'not_announced' } };
+    expect(withRegistrationBaseline(saved, { a: 'open' })).toBe(saved);
+  });
+
+  // Races with no known current status are left alone rather than given an invented one.
+  it('leaves races with no known status alone', () => {
+    const saved = {
+      a: { status: 'interested' as const, savedAt: 's' },
+      b: { status: 'considering' as const, savedAt: 's' },
+    };
+    const next = withRegistrationBaseline(saved, { a: 'open', other: 'closed' });
+    expect(next.a.registrationAtSave).toBe('open');
+    expect(next.b).toBe(saved.b);
+    expect(next.other).toBeUndefined();
+  });
+
+  // Returning the same object when nothing changed lets callers skip a write, avoiding a re-render loop.
+  it('returns the same object when nothing needs filling', () => {
+    const saved = { a: { status: 'interested' as const, savedAt: 's' } };
+    expect(withRegistrationBaseline(saved, {})).toBe(saved);
+    expect(withRegistrationBaseline({}, { a: 'open' })).toEqual({});
+  });
+});
+
+describe('recordRegistrationBaselines', () => {
+  // Missing baselines are stored and listeners are told, so the list re-reads them.
+  it('stores filled baselines and notifies subscribers', () => {
+    const { store } = fakeWindow();
+    store.set(STORAGE_KEY, JSON.stringify({ a: { status: 'interested', savedAt: 's' } }));
+    const onChange = vi.fn();
+    const unsubscribe = subscribeSavedRaces(onChange);
+    expect(recordRegistrationBaselines({ a: 'open' })).toBe(true);
+    expect(parseSavedRaces(store.get(STORAGE_KEY) ?? null).a.registrationAtSave).toBe('open');
+    expect(onChange).toHaveBeenCalledTimes(1);
+    unsubscribe();
+  });
+
+  // Nothing to fill means no write and no event, otherwise the list's effect would loop.
+  it('does not write or notify when nothing needs filling', () => {
+    const { store, win } = fakeWindow();
+    const raw = JSON.stringify({ a: { status: 'interested', savedAt: 's', registrationAtSave: 'open' } });
+    store.set(STORAGE_KEY, raw);
+    const setItem = vi.spyOn(win.localStorage, 'setItem');
+    const onChange = vi.fn();
+    const unsubscribe = subscribeSavedRaces(onChange);
+    expect(recordRegistrationBaselines({ a: 'closed' })).toBe(true);
+    expect(setItem).not.toHaveBeenCalled();
+    expect(store.get(STORAGE_KEY)).toBe(raw);
+    expect(onChange).not.toHaveBeenCalled();
+    unsubscribe();
+  });
+
+  // Blocked storage reports failure instead of throwing.
+  it('reports failure when storage is blocked', () => {
+    fakeWindow({ blocked: true });
+    expect(recordRegistrationBaselines({ a: 'open' })).toBe(false);
+  });
+});
+
+describe('setSaveNote for an unsaved race', () => {
+  // A note for a race that isn't saved changes nothing, so nothing is written, yet storage still worked.
+  it('skips the write for a race that is not saved and still reports success', () => {
+    fakeWindow();
+    const onChange = vi.fn();
+    const unsubscribe = subscribeSavedRaces(onChange);
+    expect(setSaveNote('missing', 'x')).toBe(true);
+    expect(onChange).not.toHaveBeenCalled();
+    unsubscribe();
   });
 });
