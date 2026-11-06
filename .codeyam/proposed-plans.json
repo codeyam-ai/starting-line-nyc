@@ -1155,6 +1155,11 @@
       "at": "2026-11-06T18:22:15.753869047+00:00",
       "feature": "\"Changed since you saved\" now works for older saved races",
       "notes": "Resumed after /clear at Reconcile. Audit's only finding was 62 dependency-stale screenshots from the savedRaces/myRaces/MyRacesList edits; every recapture was pixel-identical. Full suite 222/222 green. Updated the my-races deliverable note…"
+    },
+    {
+      "at": "2026-11-06T21:41:54.836229208+00:00",
+      "feature": "Real-database test for the saved-races lookup",
+      "notes": "This was a test-only cycle: app/lib/races.db.test.ts covers findRaceSummaries against a temporary SQLite database created with prisma db push. Reconcile, journal, sync, finalize (225/225 tests) and push all passed on the first try. A known…"
     }
   ],
   "syntheses": [
