@@ -782,7 +782,7 @@
       "ideaRank": 2,
       "theme": {
         "lane": "codeyam-improvement",
-        "score": 191,
+        "score": 179,
         "notVerified": true
       }
     },
@@ -806,7 +806,7 @@
       "ideaRank": 1,
       "theme": {
         "lane": "codeyam-improvement",
-        "score": 686,
+        "score": 640,
         "notVerified": true
       }
     }
@@ -1165,6 +1165,11 @@
       "at": "2026-11-06T22:27:37.359901564+00:00",
       "feature": "Phone demos of saving a race",
       "notes": "Scenario-only cycle: two Mobile app scenarios (race-phone-save-menu-open, home-phone-races-saved) were added. No app source changed. Finalize ran the full suite with 225/225 passing, then the commit was pushed to main. Non-blocking advisor…"
+    },
+    {
+      "at": "2026-11-06T23:56:36.213707526+00:00",
+      "feature": "Guard against the Next.js dev badge in screenshots",
+      "notes": "Resumed at step 15 after a reset. Only audit drift was 157 dependency-stale screenshots from a comment edit to next.config.ts; recapture-stale cleared them (all identical). Finalize green: 226/226. Pushed to origin/main. Pre-existing gap: …"
     }
   ],
   "syntheses": [
@@ -1238,6 +1243,27 @@
         "scenario-time-and-seed-state-gets-lost-or-mangled"
       ],
       "notes": "Grouped 19 findings (17 unread plus 2 from this session). Admitted two themes with multi-finding evidence. The rest are single sightings (terminal copy, worktree commits, docs gaps, gate sequencing), left as findings for now."
+    },
+    {
+      "at": "2026-11-06T23:56:36.213707526+00:00",
+      "lane": "codeyam-improvement",
+      "consumedIds": [
+        "fnd-294fc4dd5905",
+        "fnd-e406472e8d81",
+        "fnd-84befe346722",
+        "fnd-8f0332a9c2b0",
+        "fnd-c5382066eda4",
+        "fnd-3333ff3d1da9",
+        "fnd-252249c8d2b9",
+        "fnd-999934fa7dee",
+        "fnd-c2116d605e2c"
+      ],
+      "keptIds": [
+        "scenario-time-and-seed-state-gets-lost-or-mangled",
+        "blank-screenshots-slip-past-capture-checks"
+      ],
+      "refused": 1,
+      "notes": "Other batch findings (tsc missing untracked file, sampled recapture sweep refused at finalize, stale step in context carry, wait-for unknown id, presentability keepers) are single-session time-lost/cosmetic and do not yet meet the admission bar; wait-for and presentability recur this session as new findings, so they should qualify next pass."
     }
   ]
 }
