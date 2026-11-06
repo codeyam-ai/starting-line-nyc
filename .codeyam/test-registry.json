@@ -406,6 +406,33 @@
       "runner": "tests"
     },
     {
+      "description": "A browser with no saved races asks with an empty list; the query must not fail on `in: []`.",
+      "file": "app/lib/races.db.test.ts",
+      "format": "vitest",
+      "key": "findRaceSummaries against a real database › returns an empty list when nothing is requested",
+      "line": 117,
+      "registeredAt": "2026-11-06T19:23:46Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Pins the query's include: the organizer name and the milestone-derived fields only exist if those relations are loaded, and each state needs real rows behind it.",
+      "file": "app/lib/races.db.test.ts",
+      "format": "vitest",
+      "key": "findRaceSummaries against a real database › returns one summary per requested slug, in request order, with relations loaded",
+      "line": 91,
+      "registeredAt": "2026-11-06T19:23:46Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A stored race nobody asked for must not leak into a browser's saved list.",
+      "file": "app/lib/races.db.test.ts",
+      "format": "vitest",
+      "key": "findRaceSummaries against a real database › returns only the requested races, not everything stored",
+      "line": 111,
+      "registeredAt": "2026-11-06T19:23:46Z",
+      "runner": "tests"
+    },
+    {
       "description": "Date objects work the same as ISO strings.",
       "file": "app/lib/format.test.ts",
       "format": "vitest",

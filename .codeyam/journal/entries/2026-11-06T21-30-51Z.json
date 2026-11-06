@@ -1,0 +1,77 @@
+{
+  "timestamp": "2026-11-06T21:30:51Z",
+  "title": "Real-database test for the saved-races lookup",
+  "type": "feature",
+  "userRequest": "## Summary\n\nThe lookup that reads saved races from the database has no test that runs it against a real database; the sorting and labelling it hands off to are tested.\n\nAt the approval gate for \"My Races page with notes and status changes\" the user approved the built work past this gap: it differs from what the plan asked for. Built from plan `my-races-page-with-notes-and-status-changes` (now at `.codeyam/plans/completed/my-races-page-with-notes-and-status-changes.md`).\n\nYou now have a My Races page that gathers every race you've saved, with your own notes and a heads-up when a race changes.\n\n## What you can now do\n- Open **My Races** from the header to see all your saved races in one place, grouped by upcoming and past\n- Add or edit a personal note on any saved race\n- Spot races whose date or status changed since you saved them\n- See a clear notice and remove a race that's no longer listed\n\nRead that plan and the code it changed before planning how to close the gap.",
+  "description": "Added app/lib/races.db.test.ts: three tests that run findRaceSummaries against a throwaway SQLite database built from the real Prisma schema, seeded with one organizer and three races. They check that each saved race comes back as one summary with its organizer, editions and milestones loaded, and that the sorting and labelling it hands off to receive the right data. No app code changed. The glossary entry for findRaceSummaries now points at this test file instead of saying it cannot be tested. Known gap, approved by the user: the tests do not check the race-slug filter on its own, because a later step filters by slug as well, so the output would be the same either way. Scope verdict: this was a test-coverage fix, so it delivered no new product feature. All 15 delivered deliverables stay delivered. Reminders is still deferred, as the user approved earlier (decidedBy: user). Nothing was deferred by the agent alone.",
+  "modifiedFiles": [
+    {
+      "path": ".codeyam/dependency-graph.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/glossary.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/per-test-evidence.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/plans/the-lookup-that-reads-saved-races-from-the-database-has-no-test-that-runs-it-against-a-real-database-the-sorting-and.md\t.codeyam/plans/completed/the-lookup-that-reads-saved-races-from-the-database-has-no-test-that-runs-it-against-a-real-database-the-sorting-and.md",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/test-cache.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/test-cache/all.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/test-cache/blobs/650b00151d1d857e905065bfd1946eec9ae0574d6b3e1b51babdb5ae352adfb0.json",
+      "status": "deleted"
+    },
+    {
+      "path": ".codeyam/test-cache/blobs/881b563ee7ce6d5048175c66a95eea54ba342fdde4e257f94d5c6912ba8a6bb3.json",
+      "status": "deleted"
+    },
+    {
+      "path": ".codeyam/test-registry.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/state/red-proofs/the-lookup-that-reads-saved-races-from-the-database-has-no-test-that-runs-it-against-a-real-database-the-sorting-and.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/test-cache/blobs/0eb0a03367b78f1c5be7d1d8c661f855cc29f2e5d8e60d8af3c1facc5c5b400c.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/test-cache/blobs/167cd3a9fb5245f90dc044af582ee12b5bfa65b38bd9f3271e6a2b82388b970f.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/test-cache/blobs/d1c63c99dfac0605928d34f1abe202d22f4dad6f10322f99a60781f31979d6d1.json",
+      "status": "added"
+    },
+    {
+      "path": "app/lib/races.db.test.ts",
+      "status": "added"
+    }
+  ],
+  "testResults": {
+    "total": 3,
+    "passed": 3,
+    "failed": 0,
+    "runners": [
+      {
+        "name": "tests",
+        "total": 3,
+        "passed": 3
+      }
+    ]
+  }
+}

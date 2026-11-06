@@ -974,10 +974,7 @@
     "tags": [
       "saved-races"
     ],
-    "untestabilityReason": {
-      "justification": "bare Prisma findMany; the shaping lives in summarizeSavedRaces, which is unit tested",
-      "kind": "platform-glue"
-    }
+    "testFile": "app/lib/races.db.test.ts"
   },
   {
     "description": "Loads every race with organizer, editions and milestones from the database and hands them to filterAndSortRaces.",

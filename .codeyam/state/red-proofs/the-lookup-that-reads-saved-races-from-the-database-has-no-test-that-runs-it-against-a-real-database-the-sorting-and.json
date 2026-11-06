@@ -1,0 +1,31 @@
+{
+  "provenAt": "2026-11-06T19:23:36Z",
+  "slug": "the-lookup-that-reads-saved-races-from-the-database-has-no-test-that-runs-it-against-a-real-database-the-sorting-and",
+  "paths": [],
+  "runScope": [
+    "app/lib/races.ts",
+    "app/lib/races.db.test.ts"
+  ],
+  "neuters": [
+    {
+      "file": "app/lib/races.ts",
+      "find": "where: { slug: { in: slugs } },\n    include: { organizer: true, editions: { include: { milestones: true } } },",
+      "replace": "where: { slug: { in: slugs } },\n    include: { organizer: true, editions: { include: { milestones: false } } },"
+    }
+  ],
+  "tests": {
+    "returns one summary per requested slug, in request order, with relations loaded": {
+      "withoutFix": "fail",
+      "withFix": "pass",
+      "established": {
+        "kind": "measured"
+      }
+    }
+  },
+  "proof": {
+    "verdict": "proven",
+    "flipped": [
+      "returns one summary per requested slug, in request order, with relations loaded"
+    ]
+  }
+}

@@ -1806,9 +1806,22 @@
       "imports": [],
       "name": "isUrgent"
     },
+    "app/lib/races.db.test.ts::__file_root__": {
+      "filePath": "app/lib/races.db.test.ts",
+      "importedBy": [],
+      "imports": [
+        "app/lib/races.ts::__file_root__",
+        "app/lib/prisma.ts::__file_root__",
+        "app/lib/races.ts::__file_root__"
+      ],
+      "name": "__file_root__"
+    },
     "app/lib/races.ts::__file_root__": {
       "filePath": "app/lib/races.ts",
-      "importedBy": [],
+      "importedBy": [
+        "app/lib/races.db.test.ts::__file_root__",
+        "app/lib/races.db.test.ts::__file_root__"
+      ],
       "imports": [
         "app/lib/prisma.ts::__file_root__",
         "app/lib/filters.ts::RaceFilters",
@@ -3185,6 +3198,7 @@
     "app/lib/prisma.ts": {
       "importedBy": [
         "app/lib/races.ts",
+        "app/lib/races.db.test.ts",
         "app/api/races/[slug]/calendar/route.ts"
       ],
       "imports": []
@@ -3261,8 +3275,18 @@
         "app/lib/filters.ts"
       ]
     },
+    "app/lib/races.db.test.ts": {
+      "importedBy": [],
+      "imports": [
+        "app/lib/races.ts",
+        "app/lib/prisma.ts",
+        "app/lib/races.ts"
+      ]
+    },
     "app/lib/races.ts": {
       "importedBy": [
+        "app/lib/races.db.test.ts",
+        "app/lib/races.db.test.ts",
         "app/api/races/summaries/route.ts",
         "app/api/races/route.ts",
         "app/page.tsx",
@@ -3451,5 +3475,5 @@
       ]
     }
   },
-  "lastUpdated": "2026-11-06T18:20:54Z"
+  "lastUpdated": "2026-11-06T21:31:45Z"
 }
