@@ -31,3 +31,7 @@ Add reminders to calendar events: when adding a registration date or race day, a
 ## Scenarios
 
 Default reminders for an opening date; custom reminder; deadline with no time stated (all-day); phone layout.
+
+## Merged in
+
+This plan also covers the deferred deliverable "Reminders for registration openings and deadlines with custom times and presets" (merged 2026-11-07). That plan asked for the same thing: reminders for openings and deadlines, with presets and custom times.
