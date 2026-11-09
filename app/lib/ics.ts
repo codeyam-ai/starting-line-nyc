@@ -13,6 +13,9 @@ export type CalendarEvent = {
   // When the organizer gave a date but no time: an all-day event on this
   // calendar date (YYYY-MM-DD, already in Eastern Time). Overrides start.
   allDayDate?: string;
+  // Reminders (VALARM), each a TRIGGER duration relative to the start, e.g.
+  // '-PT1440M'. The calendar app shows them; nothing is sent from here.
+  alarms?: { trigger: string; description: string }[];
 };
 
 function nextDay(ymd: string): string {
@@ -50,6 +53,13 @@ export function buildIcs(event: CalendarEvent): string {
     `SUMMARY:${icsEscape(event.title)}`,
     ...(event.location ? [`LOCATION:${icsEscape(event.location)}`] : []),
     ...(event.description ? [`DESCRIPTION:${icsEscape(event.description)}`] : []),
+    ...(event.alarms ?? []).flatMap((alarm) => [
+      'BEGIN:VALARM',
+      'ACTION:DISPLAY',
+      `DESCRIPTION:${icsEscape(alarm.description)}`,
+      `TRIGGER:${alarm.trigger}`,
+      'END:VALARM',
+    ]),
     'END:VEVENT',
     'END:VCALENDAR',
     '',

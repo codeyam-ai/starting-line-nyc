@@ -36,7 +36,9 @@ export default function NextDeadline({
       ) : (
         <div className="v quiet">Registration date to come</div>
       )}
-      {offerCalendar && <AddToCalendar href={calendarHref} />}
+      {offerCalendar && (
+        <AddToCalendar href={calendarHref} dateKind={milestone?.kind} timeKnown={milestone?.timeKnown} />
+      )}
     </div>
   );
 }

@@ -86,11 +86,11 @@
     {
       "id": "reminders",
       "text": "Reminders for registration openings and deadlines with custom times and presets",
-      "status": "deferred",
-      "resolvedAt": "2026-10-27T18:40:01.672378710+00:00",
-      "resolvedInFeature": null,
-      "planSlug": "reminders-for-registration-openings-and-deadlines-with-custom-times-and-presets",
-      "note": "Deferred at the race detail page plan gate; approved by the user.",
+      "status": "delivered",
+      "resolvedAt": "2026-11-09T22:30:16.973736620+00:00",
+      "resolvedInFeature": "Reminder presets on calendar events",
+      "planSlug": "reminder-presets-on-calendar-events",
+      "note": "Add to calendar menu lets you pick reminders before downloading: presets (at the time, 1 hour [timed events only], 1 day, 3 days, 1 week before) plus a custom 'N days before at a time (ET)'. Defaults: openings 1 day + at the time; race day 1 day; deadlines 3 days. Apple/Outlook .ics files carry them as alarms; Google Calendar links cannot carry reminders.",
       "decidedBy": "user"
     },
     {

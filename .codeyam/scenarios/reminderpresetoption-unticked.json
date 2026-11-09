@@ -1,0 +1,15 @@
+{
+  "name": "ReminderPresetOption - Unticked",
+  "id": "6b483215-57b3-441c-a9cc-6a0bc5cb3c54",
+  "url": "/isolated-components/ReminderPresetOption?s=Unticked",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "clock": {
+    "now": "2026-11-09T20:42:49Z"
+  },
+  "componentName": "ReminderPresetOption",
+  "scenarioType": "component",
+  "description": "An unticked 1 week before preset."
+}

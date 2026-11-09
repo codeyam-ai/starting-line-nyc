@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import type { CalendarEvent } from '@/app/lib/ics';
 import {
   calendarFileName,
+  calendarFormTarget,
   googleCalendarHref,
   googleCalendarUrl,
   raceCalendarEvent,
@@ -55,6 +56,7 @@ describe('raceCalendarEvent', () => {
     expect(result.event.title).toBe('Fred Lebow Manhattan Half (race day)');
     expect(result.event.start.toISOString()).toBe('2027-01-24T12:00:00.000Z');
     expect(result.event.durationMinutes).toBe(240);
+    expect(result.dateKind).toBe('race_day');
   });
 
   // A race day export is refused when the date has not been announced.
@@ -107,6 +109,13 @@ describe('raceCalendarEvent for one milestone', () => {
     if ('error' in r) throw new Error(r.error);
     expect(r.event.allDayDate).toBeUndefined();
     expect(r.event.start.toISOString()).toBe('2027-01-10T14:00:00.000Z');
+  });
+
+  // A milestone event reports its kind, which picks the default reminders.
+  it('reports the milestone kind as the date kind', () => {
+    const r = raceCalendarEvent(withIds, 3, NOW);
+    if ('error' in r) throw new Error(r.error);
+    expect(r.dateKind).toBe('charity_closes');
   });
 
   // Unknown or already-passed milestones are refused.
@@ -209,5 +218,24 @@ describe('googleCalendarHref', () => {
     expect(googleCalendarHref('/api/races/brooklyn-half/calendar?event=raceday')).toBe(
       '/api/races/brooklyn-half/calendar?event=raceday&target=google',
     );
+  });
+});
+
+describe('calendarFormTarget', () => {
+  // A bare link becomes the form action with nothing to carry.
+  it('splits a bare link into an action with no params', () => {
+    expect(calendarFormTarget('/api/races/brooklyn-half/calendar')).toEqual({
+      action: '/api/races/brooklyn-half/calendar',
+      params: [],
+    });
+  });
+
+  // A milestone or race-day query is carried as hidden fields, since a GET form drops the action's query.
+  it('carries the link query as hidden params', () => {
+    expect(calendarFormTarget('/api/races/brooklyn-half/calendar?milestone=4')).toEqual({
+      action: '/api/races/brooklyn-half/calendar',
+      params: [['milestone', '4']],
+    });
+    expect(calendarFormTarget('/api/races/brooklyn-half/calendar?event=raceday').params).toEqual([['event', 'raceday']]);
   });
 });

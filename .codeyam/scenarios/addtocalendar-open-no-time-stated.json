@@ -1,0 +1,21 @@
+{
+  "name": "AddToCalendar - Open No Time Stated",
+  "id": "156eeb5c-ae79-4a5d-8fed-c648bc35233b",
+  "url": "/isolated-components/AddToCalendar?s=OpenAllDay",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "clock": {
+    "now": "2026-11-09T20:42:49Z"
+  },
+  "componentName": "AddToCalendar",
+  "scenarioType": "component",
+  "description": "Menu opened for a date with no stated time: 1 hour before is not offered and a note says reminders go off at 9 am.",
+  "interactions": [
+    {
+      "action": "click",
+      "text": "Add to calendar"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "AllDayReminderNote - Default",
+  "id": "f30055e9-0831-4dd5-897d-9f915a988521",
+  "url": "/isolated-components/AllDayReminderNote?s=Default",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "clock": {
+    "now": "2026-11-09T20:42:49Z"
+  },
+  "componentName": "AllDayReminderNote",
+  "scenarioType": "component",
+  "description": "The note shown when no time is stated: reminders go off at 9 am."
+}

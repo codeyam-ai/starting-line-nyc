@@ -1,0 +1,21 @@
+{
+  "name": "AddToCalendar - Phone Open",
+  "id": "e7da24eb-cef5-4f27-987b-efbdbd8628cd",
+  "url": "/isolated-components/AddToCalendar?s=OpenOpening",
+  "dimensions": [
+    "Mobile"
+  ],
+  "mocks": {},
+  "clock": {
+    "now": "2026-11-09T20:43:15Z"
+  },
+  "componentName": "AddToCalendar",
+  "scenarioType": "component",
+  "description": "The open menu with the reminder picker on a phone-width screen.",
+  "interactions": [
+    {
+      "action": "click",
+      "text": "Add to calendar"
+    }
+  ]
+}

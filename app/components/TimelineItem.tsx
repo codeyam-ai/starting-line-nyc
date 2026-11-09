@@ -23,7 +23,9 @@ export default function TimelineItem({ entry, calendarHref }: { entry: TimelineE
         {entry.note && <div className="sub">{entry.note}</div>}
         <SourceLine sourceUrl={entry.sourceUrl} lastVerifiedAt={entry.lastVerifiedAt} />
 
-        {entry.state !== 'past' && <AddToCalendar href={calendarHref} />}
+        {entry.state !== 'past' && (
+          <AddToCalendar href={calendarHref} dateKind={entry.kind} timeKnown={entry.timeKnown} />
+        )}
       </div>
     </li>
   );

@@ -1,0 +1,15 @@
+{
+  "name": "ReminderPicker - Opening",
+  "id": "d9f7a55c-2fc9-4d65-a982-bcf6ca7a5c82",
+  "url": "/isolated-components/ReminderPicker?s=Opening",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "clock": {
+    "now": "2026-11-09T20:42:49Z"
+  },
+  "componentName": "ReminderPicker",
+  "scenarioType": "component",
+  "description": "All five presets with 1 day before and at the time ticked, plus the custom row."
+}

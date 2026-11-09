@@ -1,0 +1,15 @@
+{
+  "name": "ReminderPicker - No Time Stated",
+  "id": "56b81a9f-57c7-40ba-9251-a535f515cecb",
+  "url": "/isolated-components/ReminderPicker?s=NoTimeStated",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "clock": {
+    "now": "2026-11-09T20:42:49Z"
+  },
+  "componentName": "ReminderPicker",
+  "scenarioType": "component",
+  "description": "Presets without 1 hour before, 3 days before ticked, and the 9 am note."
+}

@@ -154,6 +154,24 @@
       "runner": "tests"
     },
     {
+      "description": "Without reminders there are no alarms.",
+      "file": "app/lib/ics.test.ts",
+      "format": "vitest",
+      "key": "buildIcs › writes no VALARM when there are no reminders",
+      "line": 81,
+      "registeredAt": "2026-11-09T20:40:10Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Each reminder becomes a display alarm inside the event, with escaped text.",
+      "file": "app/lib/ics.test.ts",
+      "format": "vitest",
+      "key": "buildIcs › writes one VALARM per reminder",
+      "line": 65,
+      "registeredAt": "2026-11-09T20:40:10Z",
+      "runner": "tests"
+    },
+    {
       "description": "Dates without their own source, race day included, fall back to the edition source.",
       "file": "app/lib/raceDetail.test.ts",
       "format": "vitest",
@@ -230,8 +248,26 @@
       "file": "app/lib/raceCalendar.test.ts",
       "format": "vitest",
       "key": "calendarFileName › names next, race day and milestone files",
-      "line": 121,
+      "line": 130,
       "registeredAt": "2026-10-26T21:01:51Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A milestone or race-day query is carried as hidden fields, since a GET form drops the action's query.",
+      "file": "app/lib/raceCalendar.test.ts",
+      "format": "vitest",
+      "key": "calendarFormTarget › carries the link query as hidden params",
+      "line": 234,
+      "registeredAt": "2026-11-09T20:40:10Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A bare link becomes the form action with nothing to carry.",
+      "file": "app/lib/raceCalendar.test.ts",
+      "format": "vitest",
+      "key": "calendarFormTarget › splits a bare link into an action with no params",
+      "line": 226,
+      "registeredAt": "2026-11-09T20:40:10Z",
       "runner": "tests"
     },
     {
@@ -250,6 +286,33 @@
       "key": "checkedPhrase › warns when stale",
       "line": 159,
       "registeredAt": "2026-11-05T00:57:51Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Ticked presets and the custom row are combined.",
+      "file": "app/lib/reminders.test.ts",
+      "format": "vitest",
+      "key": "chosenReminders › combines ticked presets with the custom reminder",
+      "line": 170,
+      "registeredAt": "2026-11-09T20:40:10Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Submitting the picker with nothing ticked means no reminders.",
+      "file": "app/lib/reminders.test.ts",
+      "format": "vitest",
+      "key": "chosenReminders › returns an empty list when nothing was ticked",
+      "line": 176,
+      "registeredAt": "2026-11-09T20:40:10Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A plain download link made no choice.",
+      "file": "app/lib/reminders.test.ts",
+      "format": "vitest",
+      "key": "chosenReminders › returns null without the picker marker",
+      "line": 165,
+      "registeredAt": "2026-11-09T20:40:10Z",
       "runner": "tests"
     },
     {
@@ -304,6 +367,78 @@
       "key": "codeyam-preview-origin.sh › runs every step and says which one failed",
       "line": 92,
       "registeredAt": "2026-10-27T14:35:03Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A day count and a time become an N-days-at-time token.",
+      "file": "app/lib/reminders.test.ts",
+      "format": "vitest",
+      "key": "customReminder › builds a token from days and time",
+      "line": 45,
+      "registeredAt": "2026-11-09T20:40:10Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A missing or malformed time falls back to 9 am.",
+      "file": "app/lib/reminders.test.ts",
+      "format": "vitest",
+      "key": "customReminder › defaults a bad or missing time to 09:00",
+      "line": 50,
+      "registeredAt": "2026-11-09T20:40:10Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Days must be a whole number from 1 to 90.",
+      "file": "app/lib/reminders.test.ts",
+      "format": "vitest",
+      "key": "customReminder › rejects zero, fractional and too-large day counts",
+      "line": 62,
+      "registeredAt": "2026-11-09T20:40:10Z",
+      "runner": "tests"
+    },
+    {
+      "description": "No day count means no custom reminder.",
+      "file": "app/lib/reminders.test.ts",
+      "format": "vitest",
+      "key": "customReminder › returns null when days are empty",
+      "line": 56,
+      "registeredAt": "2026-11-09T20:40:10Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Deadlines and any other kind remind three days ahead.",
+      "file": "app/lib/reminders.test.ts",
+      "format": "vitest",
+      "key": "defaultReminders › gives deadlines and unknown kinds a three-day reminder",
+      "line": 37,
+      "registeredAt": "2026-11-09T20:40:10Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Registration openings remind a day ahead and again at opening time.",
+      "file": "app/lib/reminders.test.ts",
+      "format": "vitest",
+      "key": "defaultReminders › gives openings a day-before and an at-the-time reminder",
+      "line": 22,
+      "registeredAt": "2026-11-09T20:40:10Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Race day reminds the day before.",
+      "file": "app/lib/reminders.test.ts",
+      "format": "vitest",
+      "key": "defaultReminders › gives race day a day-before reminder",
+      "line": 32,
+      "registeredAt": "2026-11-09T20:40:10Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Lottery openings count as openings too.",
+      "file": "app/lib/reminders.test.ts",
+      "format": "vitest",
+      "key": "defaultReminders › treats lottery openings like registration openings",
+      "line": 27,
+      "registeredAt": "2026-11-09T20:40:10Z",
       "runner": "tests"
     },
     {
@@ -644,7 +779,7 @@
       "file": "app/lib/raceCalendar.test.ts",
       "format": "vitest",
       "key": "googleCalendarHref › adds the Google target to a bare link",
-      "line": 198,
+      "line": 207,
       "registeredAt": "2026-10-27T16:24:46Z",
       "runner": "tests"
     },
@@ -653,7 +788,7 @@
       "file": "app/lib/raceCalendar.test.ts",
       "format": "vitest",
       "key": "googleCalendarHref › keeps an existing query",
-      "line": 205,
+      "line": 214,
       "registeredAt": "2026-10-27T16:24:46Z",
       "runner": "tests"
     },
@@ -662,7 +797,7 @@
       "file": "app/lib/raceCalendar.test.ts",
       "format": "vitest",
       "key": "googleCalendarUrl › carries the title, location and details",
-      "line": 172,
+      "line": 181,
       "registeredAt": "2026-10-27T16:24:46Z",
       "runner": "tests"
     },
@@ -671,7 +806,7 @@
       "file": "app/lib/raceCalendar.test.ts",
       "format": "vitest",
       "key": "googleCalendarUrl › encodes a date-only deadline as all day",
-      "line": 160,
+      "line": 169,
       "registeredAt": "2026-10-27T16:24:46Z",
       "runner": "tests"
     },
@@ -680,7 +815,7 @@
       "file": "app/lib/raceCalendar.test.ts",
       "format": "vitest",
       "key": "googleCalendarUrl › encodes a timed event in UTC",
-      "line": 149,
+      "line": 158,
       "registeredAt": "2026-10-27T16:24:46Z",
       "runner": "tests"
     },
@@ -689,7 +824,7 @@
       "file": "app/lib/raceCalendar.test.ts",
       "format": "vitest",
       "key": "googleCalendarUrl › keeps a summer start correct across daylight saving",
-      "line": 154,
+      "line": 163,
       "registeredAt": "2026-10-27T16:24:46Z",
       "runner": "tests"
     },
@@ -698,7 +833,7 @@
       "file": "app/lib/raceCalendar.test.ts",
       "format": "vitest",
       "key": "googleCalendarUrl › matches the event built for the ics file",
-      "line": 187,
+      "line": 196,
       "registeredAt": "2026-10-27T16:24:46Z",
       "runner": "tests"
     },
@@ -707,7 +842,7 @@
       "file": "app/lib/raceCalendar.test.ts",
       "format": "vitest",
       "key": "googleCalendarUrl › omits absent location and details",
-      "line": 180,
+      "line": 189,
       "registeredAt": "2026-10-27T16:24:46Z",
       "runner": "tests"
     },
@@ -716,7 +851,7 @@
       "file": "app/lib/raceCalendar.test.ts",
       "format": "vitest",
       "key": "googleCalendarUrl › points at the Google create-event page",
-      "line": 141,
+      "line": 150,
       "registeredAt": "2026-10-27T16:24:46Z",
       "runner": "tests"
     },
@@ -725,7 +860,7 @@
       "file": "app/lib/raceCalendar.test.ts",
       "format": "vitest",
       "key": "googleCalendarUrl › rolls an all-day end date over a month boundary",
-      "line": 166,
+      "line": 175,
       "registeredAt": "2026-10-27T16:24:46Z",
       "runner": "tests"
     },
@@ -1292,7 +1427,7 @@
       "file": "app/lib/raceCalendar.test.ts",
       "format": "vitest",
       "key": "raceCalendarEvent for one milestone › exports a date-only milestone as all day",
-      "line": 95,
+      "line": 97,
       "registeredAt": "2026-10-26T21:01:51Z",
       "runner": "tests"
     },
@@ -1301,7 +1436,7 @@
       "file": "app/lib/raceCalendar.test.ts",
       "format": "vitest",
       "key": "raceCalendarEvent for one milestone › exports a timed milestone at its time",
-      "line": 105,
+      "line": 107,
       "registeredAt": "2026-10-26T21:01:51Z",
       "runner": "tests"
     },
@@ -1310,8 +1445,17 @@
       "file": "app/lib/raceCalendar.test.ts",
       "format": "vitest",
       "key": "raceCalendarEvent for one milestone › refuses missing or past milestones",
-      "line": 113,
+      "line": 122,
       "registeredAt": "2026-10-26T21:01:51Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A milestone event reports its kind, which picks the default reminders.",
+      "file": "app/lib/raceCalendar.test.ts",
+      "format": "vitest",
+      "key": "raceCalendarEvent for one milestone › reports the milestone kind as the date kind",
+      "line": 115,
+      "registeredAt": "2026-11-09T20:40:10Z",
       "runner": "tests"
     },
     {
@@ -1319,7 +1463,7 @@
       "file": "app/lib/raceCalendar.test.ts",
       "format": "vitest",
       "key": "raceCalendarEvent › builds a race day event",
-      "line": 52,
+      "line": 53,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -1328,7 +1472,7 @@
       "file": "app/lib/raceCalendar.test.ts",
       "format": "vitest",
       "key": "raceCalendarEvent › builds the next milestone event",
-      "line": 33,
+      "line": 34,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -1337,7 +1481,7 @@
       "file": "app/lib/raceCalendar.test.ts",
       "format": "vitest",
       "key": "raceCalendarEvent › describes the time in ET with the official link and sample notice",
-      "line": 43,
+      "line": 44,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -1346,7 +1490,7 @@
       "file": "app/lib/raceCalendar.test.ts",
       "format": "vitest",
       "key": "raceCalendarEvent › refuses race day when the date is unannounced",
-      "line": 61,
+      "line": 63,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -1355,7 +1499,7 @@
       "file": "app/lib/raceCalendar.test.ts",
       "format": "vitest",
       "key": "raceCalendarEvent › refuses when no registration date is upcoming",
-      "line": 67,
+      "line": 69,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -1364,7 +1508,7 @@
       "file": "app/lib/raceCalendar.test.ts",
       "format": "vitest",
       "key": "raceCalendarEvent › refuses when there is no upcoming edition",
-      "line": 73,
+      "line": 75,
       "registeredAt": "2026-10-26T19:24:54.655006964+00:00",
       "runner": "tests"
     },
@@ -1567,12 +1711,174 @@
       "runner": "tests"
     },
     {
+      "description": "Each reminder becomes an alarm labeled with the event title.",
+      "file": "app/lib/reminders.test.ts",
+      "format": "vitest",
+      "key": "reminderAlarms › builds labeled alarms",
+      "line": 183,
+      "registeredAt": "2026-11-09T20:40:10Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Reminders with no valid trigger are left out.",
+      "file": "app/lib/reminders.test.ts",
+      "format": "vitest",
+      "key": "reminderAlarms › drops reminders that have no trigger",
+      "line": 191,
+      "registeredAt": "2026-11-09T20:40:10Z",
+      "runner": "tests"
+    },
+    {
+      "description": "No reminders, no alarms.",
+      "file": "app/lib/reminders.test.ts",
+      "format": "vitest",
+      "key": "reminderAlarms › returns no alarms for no reminders",
+      "line": 198,
+      "registeredAt": "2026-11-09T20:40:10Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Custom reminders read as days before at a 12-hour ET time.",
+      "file": "app/lib/reminders.test.ts",
+      "format": "vitest",
+      "key": "reminderLabel › labels custom reminders in plain language",
+      "line": 140,
+      "registeredAt": "2026-11-09T20:40:10Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Presets use their picker label.",
+      "file": "app/lib/reminders.test.ts",
+      "format": "vitest",
+      "key": "reminderLabel › labels presets",
+      "line": 134,
+      "registeredAt": "2026-11-09T20:40:10Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Anything else is shown as-is.",
+      "file": "app/lib/reminders.test.ts",
+      "format": "vitest",
+      "key": "reminderLabel › passes unknown tokens through",
+      "line": 146,
+      "registeredAt": "2026-11-09T20:40:10Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A date without a time drops one hour before.",
+      "file": "app/lib/reminders.test.ts",
+      "format": "vitest",
+      "key": "reminderPresetsFor › drops one hour before when no time is stated",
+      "line": 158,
+      "registeredAt": "2026-11-09T20:40:10Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A date with a time offers every preset.",
+      "file": "app/lib/reminders.test.ts",
+      "format": "vitest",
+      "key": "reminderPresetsFor › offers all presets when the time is known",
+      "line": 153,
+      "registeredAt": "2026-11-09T20:40:10Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A custom reminder on an all-day date counts from midnight.",
+      "file": "app/lib/reminders.test.ts",
+      "format": "vitest",
+      "key": "reminderTrigger › counts all-day custom reminders from midnight",
+      "line": 122,
+      "registeredAt": "2026-11-09T20:40:10Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Presets on a timed event count back from the start.",
+      "file": "app/lib/reminders.test.ts",
+      "format": "vitest",
+      "key": "reminderTrigger › counts presets back from a timed start",
+      "line": 95,
+      "registeredAt": "2026-11-09T20:40:10Z",
+      "runner": "tests"
+    },
+    {
+      "description": "On an all-day date, presets go off at 9 am ET.",
+      "file": "app/lib/reminders.test.ts",
+      "format": "vitest",
+      "key": "reminderTrigger › fires all-day presets at 9 am",
+      "line": 109,
+      "registeredAt": "2026-11-09T20:40:10Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A custom reminder fires N days before at that Eastern time.",
+      "file": "app/lib/reminders.test.ts",
+      "format": "vitest",
+      "key": "reminderTrigger › places a custom reminder at its Eastern time",
+      "line": 104,
+      "registeredAt": "2026-11-09T20:40:10Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Unknown tokens produce no trigger.",
+      "file": "app/lib/reminders.test.ts",
+      "format": "vitest",
+      "key": "reminderTrigger › returns null for an unknown token",
+      "line": 127,
+      "registeredAt": "2026-11-09T20:40:10Z",
+      "runner": "tests"
+    },
+    {
+      "description": "An hour before a date with no time is meaningless, so it is skipped.",
+      "file": "app/lib/reminders.test.ts",
+      "format": "vitest",
+      "key": "reminderTrigger › skips one hour before on an all-day date",
+      "line": 117,
+      "registeredAt": "2026-11-09T20:40:10Z",
+      "runner": "tests"
+    },
+    {
       "description": "The issue is pre-filled with the race, edition, page link and a label.",
       "file": "app/lib/raceDetail.test.ts",
       "format": "vitest",
       "key": "reportIssueUrl › pre-fills a GitHub issue",
       "line": 191,
       "registeredAt": "2026-10-26T21:01:51Z",
+      "runner": "tests"
+    },
+    {
+      "description": "At most six reminders are kept.",
+      "file": "app/lib/reminders.test.ts",
+      "format": "vitest",
+      "key": "resolveReminders › caps the list at six reminders",
+      "line": 87,
+      "registeredAt": "2026-11-09T20:40:10Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Unknown tokens and duplicates are dropped, order kept.",
+      "file": "app/lib/reminders.test.ts",
+      "format": "vitest",
+      "key": "resolveReminders › drops invalid and duplicate tokens",
+      "line": 82,
+      "registeredAt": "2026-11-09T20:40:10Z",
+      "runner": "tests"
+    },
+    {
+      "description": "An empty choice is a deliberate no reminders.",
+      "file": "app/lib/reminders.test.ts",
+      "format": "vitest",
+      "key": "resolveReminders › keeps an empty choice empty",
+      "line": 77,
+      "registeredAt": "2026-11-09T20:40:10Z",
+      "runner": "tests"
+    },
+    {
+      "description": "With no choice made, the kind's defaults apply.",
+      "file": "app/lib/reminders.test.ts",
+      "format": "vitest",
+      "key": "resolveReminders › uses the defaults when nothing was chosen",
+      "line": 72,
+      "registeredAt": "2026-11-09T20:40:10Z",
       "runner": "tests"
     },
     {

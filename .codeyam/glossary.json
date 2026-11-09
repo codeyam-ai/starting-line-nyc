@@ -5,10 +5,26 @@
     "name": "AddToCalendar",
     "scenarios": [
       "addtocalendar-closed",
-      "addtocalendar-open-deadline"
+      "addtocalendar-open-deadline",
+      "addtocalendar-open-opening",
+      "addtocalendar-open-no-time-stated",
+      "addtocalendar-custom-reminder",
+      "addtocalendar-phone-open"
     ],
     "tags": [
       "calendar"
+    ]
+  },
+  {
+    "description": "Note shown when the organizer gave no time: reminders go off at 9 am.",
+    "filePath": "app/components/AllDayReminderNote.tsx",
+    "name": "AllDayReminderNote",
+    "scenarios": [
+      "alldayremindernote-default"
+    ],
+    "tags": [
+      "calendar",
+      "calendar-reminders"
     ]
   },
   {
@@ -52,6 +68,19 @@
     ],
     "tags": [
       "race-detail"
+    ]
+  },
+  {
+    "description": "The custom reminder row: Also N days before at a chosen Eastern time, defaulting to 9:00.",
+    "filePath": "app/components/CustomReminderField.tsx",
+    "name": "CustomReminderField",
+    "scenarios": [
+      "customreminderfield-default",
+      "customreminderfield-filled"
+    ],
+    "tags": [
+      "calendar",
+      "calendar-reminders"
     ]
   },
   {
@@ -152,6 +181,18 @@
       "justification": "Remove only writes browser storage; the notice itself does not change, the parent list drops the race. That click is captured on MyRacesList - Remove Unlisted Race.",
       "kind": "interaction-not-capturable"
     }
+  },
+  {
+    "description": "The Google Calendar link in the add-to-calendar menu, with a note that Google uses the runner's usual notification settings since its link can't carry reminders.",
+    "filePath": "app/components/GoogleCalendarOption.tsx",
+    "name": "GoogleCalendarOption",
+    "scenarios": [
+      "googlecalendaroption-default"
+    ],
+    "tags": [
+      "calendar",
+      "calendar-reminders"
+    ]
   },
   {
     "description": "Central Park photo hero with credit, headline and lede, wrapping the race search.",
@@ -579,6 +620,44 @@
     ]
   },
   {
+    "description": "Plain GET form that downloads the .ics with the chosen reminders: carries the calendar link's query as hidden fields plus r=1, renders the reminder picker, the download button and the calendar-app note.",
+    "filePath": "app/components/ReminderForm.tsx",
+    "name": "ReminderForm",
+    "scenarios": [
+      "reminderform-race-day"
+    ],
+    "tags": [
+      "calendar",
+      "calendar-reminders"
+    ]
+  },
+  {
+    "description": "Fieldset of reminder presets with the date's defaults ticked, the custom days-and-time row, and the 9 am note when no time is stated.",
+    "filePath": "app/components/ReminderPicker.tsx",
+    "name": "ReminderPicker",
+    "scenarios": [
+      "reminderpicker-opening",
+      "reminderpicker-no-time-stated"
+    ],
+    "tags": [
+      "calendar",
+      "calendar-reminders"
+    ]
+  },
+  {
+    "description": "One reminder preset checkbox, such as 1 day before, in the reminder picker.",
+    "filePath": "app/components/ReminderPresetOption.tsx",
+    "name": "ReminderPresetOption",
+    "scenarios": [
+      "reminderpresetoption-ticked",
+      "reminderpresetoption-unticked"
+    ],
+    "tags": [
+      "calendar",
+      "calendar-reminders"
+    ]
+  },
+  {
     "description": "Results heading naming the distance and window, with the race count.",
     "filePath": "app/components/ResultsHeader.tsx",
     "name": "ResultsHeader",
@@ -869,7 +948,7 @@
     "testFile": "app/lib/myRaces.test.ts"
   },
   {
-    "description": "Builds a single-event .ics file in UTC that Google, Apple and Outlook calendars import.",
+    "description": "Builds a single-event .ics file in UTC that Google, Apple and Outlook calendars import, with one display VALARM per reminder when alarms are given.",
     "filePath": "app/lib/ics.ts",
     "name": "buildIcs",
     "tags": [
@@ -896,6 +975,16 @@
     "testFile": "app/lib/raceCalendar.test.ts"
   },
   {
+    "description": "Splits a calendar route link into a GET form action and the query pairs to carry as hidden inputs, since a GET form replaces the action's own query.",
+    "filePath": "app/lib/raceCalendar.ts",
+    "name": "calendarFormTarget",
+    "tags": [
+      "calendar",
+      "calendar-reminders"
+    ],
+    "testFile": "app/lib/raceCalendar.test.ts"
+  },
+  {
     "description": "How a last-checked date reads next to a source: 'checked Oct 28, 2026' when recent, 'last checked Oct 28, 2026 — may be out of date' when stale.",
     "filePath": "app/lib/format.ts",
     "name": "checkedPhrase",
@@ -905,6 +994,15 @@
     "testFile": "app/lib/format.test.ts"
   },
   {
+    "description": "Reads the reminder choice from a calendar request's query: null without the r marker so defaults apply, otherwise the ticked presets plus the custom reminder.",
+    "filePath": "app/lib/reminders.ts",
+    "name": "chosenReminders",
+    "tags": [
+      "calendar-reminders"
+    ],
+    "testFile": "app/lib/reminders.test.ts"
+  },
+  {
     "description": "Compares two list items by the chosen sort key: next deadline, race day, registration opens, or distance. Returns 0 for a tie so sortRaces can fall back to race day and then name.",
     "filePath": "app/lib/raceList.ts",
     "name": "compareBy",
@@ -912,6 +1010,24 @@
       "race-list-sort"
     ],
     "testFile": "app/lib/raceList.test.ts"
+  },
+  {
+    "description": "Builds a custom reminder token 'Nd@HH:MM' from the picker's days and Eastern time fields; null without a valid 1-90 day count, 09:00 when the time is missing or malformed.",
+    "filePath": "app/lib/reminders.ts",
+    "name": "customReminder",
+    "tags": [
+      "calendar-reminders"
+    ],
+    "testFile": "app/lib/reminders.test.ts"
+  },
+  {
+    "description": "The reminders a date starts with: openings get 1 day before plus at opening time, race day gets 1 day before, deadlines and everything else get 3 days before.",
+    "filePath": "app/lib/reminders.ts",
+    "name": "defaultReminders",
+    "tags": [
+      "calendar-reminders"
+    ],
+    "testFile": "app/lib/reminders.test.ts"
   },
   {
     "description": "What the race page's Sources panel shows for the edition on screen: its source URL, the ISO check date, and whether the check is stale. Null when there is no edition.",
@@ -951,6 +1067,15 @@
       "race-detail"
     ],
     "testFile": "app/lib/format.test.ts"
+  },
+  {
+    "description": "Minutes since midnight Eastern Time for an instant, so custom reminders land at the chosen ET clock time; used by reminderTrigger.",
+    "filePath": "app/lib/reminders.ts",
+    "name": "etMinutesOfDay",
+    "tags": [
+      "calendar-reminders"
+    ],
+    "testFile": "app/lib/reminders.test.ts"
   },
   {
     "description": "Fetches race summaries for a slug key and keys them by slug; rejects on a failed response.",
@@ -1176,6 +1301,15 @@
     "testFile": "app/lib/raceList.test.ts"
   },
   {
+    "description": "Whether a reminder token is a known preset or a well-formed custom token with 1-90 days; used by resolveReminders.",
+    "filePath": "app/lib/reminders.ts",
+    "name": "isValid",
+    "tags": [
+      "calendar-reminders"
+    ],
+    "testFile": "app/lib/reminders.test.ts"
+  },
+  {
     "description": "Template build helper that finds isolation route folders to exclude from production builds.",
     "filePath": "scripts/build-app.mjs",
     "name": "isolationDirs",
@@ -1246,6 +1380,15 @@
       "race-discovery"
     ],
     "testFile": "app/lib/format.test.ts"
+  },
+  {
+    "description": "Formats minutes relative to an event start as an .ics duration such as -PT1440M or PT0M; used by reminderTrigger.",
+    "filePath": "app/lib/reminders.ts",
+    "name": "minutesToTrigger",
+    "tags": [
+      "calendar-reminders"
+    ],
+    "testFile": "app/lib/reminders.test.ts"
   },
   {
     "description": "Readable race name from a slug, for saves made before names were recorded.",
@@ -1397,7 +1540,7 @@
     "testFile": "app/lib/filters.test.ts"
   },
   {
-    "description": "Chooses the calendar event for a race, its next registration milestone or race day, with an ET description, official link and sample-data notice; refuses when no date is known.",
+    "description": "Chooses the calendar event for a race, its next registration milestone or race day, with an ET description, official link and sample-data notice, and reports the date kind that picks default reminders; refuses when no date is known.",
     "filePath": "app/lib/raceCalendar.ts",
     "name": "raceCalendarEvent",
     "tags": [
@@ -1460,6 +1603,42 @@
     "testFile": "app/lib/raceDetail.test.ts"
   },
   {
+    "description": "Turns reminder tokens into .ics alarms with a trigger and a description naming the reminder and event title, dropping reminders with no valid trigger.",
+    "filePath": "app/lib/reminders.ts",
+    "name": "reminderAlarms",
+    "tags": [
+      "calendar-reminders"
+    ],
+    "testFile": "app/lib/reminders.test.ts"
+  },
+  {
+    "description": "Plain-language label for a reminder token, e.g. '1 day before' or '2 days before at 6:30 pm ET', used in the alarm text.",
+    "filePath": "app/lib/reminders.ts",
+    "name": "reminderLabel",
+    "tags": [
+      "calendar-reminders"
+    ],
+    "testFile": "app/lib/reminders.test.ts"
+  },
+  {
+    "description": "The reminder presets offered in the picker for a date; drops 1 hour before when the organizer stated no time.",
+    "filePath": "app/lib/reminders.ts",
+    "name": "reminderPresetsFor",
+    "tags": [
+      "calendar-reminders"
+    ],
+    "testFile": "app/lib/reminders.test.ts"
+  },
+  {
+    "description": "The .ics VALARM TRIGGER duration for a reminder relative to the event start. Timed events count back from the start; all-day events fire at 9 am ET and skip 1 hour before; custom reminders fire N days before at their ET time.",
+    "filePath": "app/lib/reminders.ts",
+    "name": "reminderTrigger",
+    "tags": [
+      "calendar-reminders"
+    ],
+    "testFile": "app/lib/reminders.test.ts"
+  },
+  {
     "description": "A pre-filled GitHub issue link for reporting a missing or wrong race detail, labelled race-data.",
     "filePath": "app/lib/raceDetail.ts",
     "name": "reportIssueUrl",
@@ -1467,6 +1646,15 @@
       "race-detail"
     ],
     "testFile": "app/lib/raceDetail.test.ts"
+  },
+  {
+    "description": "The reminders for one calendar request: the date's defaults when no choice was made, otherwise the chosen tokens with invalid and duplicate ones dropped, capped at six. An empty choice stays empty.",
+    "filePath": "app/lib/reminders.ts",
+    "name": "resolveReminders",
+    "tags": [
+      "calendar-reminders"
+    ],
+    "testFile": "app/lib/reminders.test.ts"
   },
   {
     "description": "Heading above the results, naming the distance and time window, for example Half marathons, next 6 months.",

@@ -1,6 +1,6 @@
 {
   "name": "AddToCalendar - Open Deadline",
-  "id": "a6cfcd3f-743f-401c-bdfb-f93ebfa0c355",
+  "id": "f23ff40c-01af-43a4-881b-6805f9f00ecb",
   "url": "/isolated-components/AddToCalendar?s=OpenDeadline",
   "dimensions": [
     "Desktop"
@@ -11,7 +11,7 @@
   },
   "componentName": "AddToCalendar",
   "scenarioType": "component",
-  "description": "Menu opened for a registration deadline: Google Calendar first, Apple / Outlook (.ics) second.",
+  "description": "Menu opened for a registration deadline: Google Calendar first, then the Apple / Outlook reminder picker with 3 days before ticked.",
   "interactions": [
     {
       "action": "click",

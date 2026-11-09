@@ -502,6 +502,9 @@
       "imports": [
         "app/lib/prisma.ts::__file_root__",
         "app/lib/ics.ts::buildIcs",
+        "app/lib/reminders.ts::chosenReminders",
+        "app/lib/reminders.ts::reminderAlarms",
+        "app/lib/reminders.ts::resolveReminders",
         "app/lib/raceCalendar.ts::CalendarEventKind",
         "app/lib/raceCalendar.ts::calendarFileName",
         "app/lib/raceCalendar.ts::googleCalendarUrl",
@@ -539,7 +542,24 @@
       "filePath": "app/components/AddToCalendar.tsx",
       "importedBy": [],
       "imports": [
-        "app/lib/raceCalendar.ts::googleCalendarHref"
+        "app/components/GoogleCalendarOption.tsx::GoogleCalendarOption",
+        "app/components/ReminderForm.tsx::ReminderForm"
+      ],
+      "name": "__file_root__"
+    },
+    "app/components/AllDayReminderNote.tsx::AllDayReminderNote": {
+      "filePath": "app/components/AllDayReminderNote.tsx",
+      "importedBy": [
+        "app/components/ReminderPicker.tsx::__file_root__"
+      ],
+      "imports": [],
+      "name": "AllDayReminderNote"
+    },
+    "app/components/AllDayReminderNote.tsx::__file_root__": {
+      "filePath": "app/components/AllDayReminderNote.tsx",
+      "importedBy": [],
+      "imports": [
+        "app/lib/reminders.ts::__file_root__"
       ],
       "name": "__file_root__"
     },
@@ -557,6 +577,14 @@
         "app/lib/raceDetail.ts::TimelineEntry"
       ],
       "name": "__file_root__"
+    },
+    "app/components/CustomReminderField.tsx::CustomReminderField": {
+      "filePath": "app/components/CustomReminderField.tsx",
+      "importedBy": [
+        "app/components/ReminderPicker.tsx::__file_root__"
+      ],
+      "imports": [],
+      "name": "CustomReminderField"
     },
     "app/components/FilterChips.tsx::FilterChips": {
       "filePath": "app/components/FilterChips.tsx",
@@ -636,6 +664,22 @@
       "imports": [
         "app/lib/myRaces.ts::goneRaceMessage",
         "app/lib/savedRaces.ts::setSaveStatus"
+      ],
+      "name": "__file_root__"
+    },
+    "app/components/GoogleCalendarOption.tsx::GoogleCalendarOption": {
+      "filePath": "app/components/GoogleCalendarOption.tsx",
+      "importedBy": [
+        "app/components/AddToCalendar.tsx::__file_root__"
+      ],
+      "imports": [],
+      "name": "GoogleCalendarOption"
+    },
+    "app/components/GoogleCalendarOption.tsx::__file_root__": {
+      "filePath": "app/components/GoogleCalendarOption.tsx",
+      "importedBy": [],
+      "imports": [
+        "app/lib/raceCalendar.ts::googleCalendarHref"
       ],
       "name": "__file_root__"
     },
@@ -899,6 +943,51 @@
       ],
       "imports": [],
       "name": "RegistrationChanged"
+    },
+    "app/components/ReminderForm.tsx::ReminderForm": {
+      "filePath": "app/components/ReminderForm.tsx",
+      "importedBy": [
+        "app/components/AddToCalendar.tsx::__file_root__"
+      ],
+      "imports": [],
+      "name": "ReminderForm"
+    },
+    "app/components/ReminderForm.tsx::__file_root__": {
+      "filePath": "app/components/ReminderForm.tsx",
+      "importedBy": [],
+      "imports": [
+        "app/components/ReminderPicker.tsx::ReminderPicker",
+        "app/lib/raceCalendar.ts::calendarFormTarget",
+        "app/lib/reminders.ts::defaultReminders",
+        "app/lib/reminders.ts::reminderPresetsFor"
+      ],
+      "name": "__file_root__"
+    },
+    "app/components/ReminderPicker.tsx::ReminderPicker": {
+      "filePath": "app/components/ReminderPicker.tsx",
+      "importedBy": [
+        "app/components/ReminderForm.tsx::__file_root__"
+      ],
+      "imports": [],
+      "name": "ReminderPicker"
+    },
+    "app/components/ReminderPicker.tsx::__file_root__": {
+      "filePath": "app/components/ReminderPicker.tsx",
+      "importedBy": [],
+      "imports": [
+        "app/components/AllDayReminderNote.tsx::AllDayReminderNote",
+        "app/components/CustomReminderField.tsx::CustomReminderField",
+        "app/components/ReminderPresetOption.tsx::ReminderPresetOption"
+      ],
+      "name": "__file_root__"
+    },
+    "app/components/ReminderPresetOption.tsx::ReminderPresetOption": {
+      "filePath": "app/components/ReminderPresetOption.tsx",
+      "importedBy": [
+        "app/components/ReminderPicker.tsx::__file_root__"
+      ],
+      "imports": [],
+      "name": "ReminderPresetOption"
     },
     "app/components/ResultsHeader.tsx::__file_root__": {
       "filePath": "app/components/ResultsHeader.tsx",
@@ -1630,6 +1719,7 @@
         "app/lib/ics.ts::CalendarEvent",
         "app/lib/raceCalendar.ts::CalendarRace",
         "app/lib/raceCalendar.ts::calendarFileName",
+        "app/lib/raceCalendar.ts::calendarFormTarget",
         "app/lib/raceCalendar.ts::googleCalendarHref",
         "app/lib/raceCalendar.ts::googleCalendarUrl",
         "app/lib/raceCalendar.ts::raceCalendarEvent"
@@ -1677,11 +1767,20 @@
       "imports": [],
       "name": "calendarFileName"
     },
+    "app/lib/raceCalendar.ts::calendarFormTarget": {
+      "filePath": "app/lib/raceCalendar.ts",
+      "importedBy": [
+        "app/lib/raceCalendar.test.ts::__file_root__",
+        "app/components/ReminderForm.tsx::__file_root__"
+      ],
+      "imports": [],
+      "name": "calendarFormTarget"
+    },
     "app/lib/raceCalendar.ts::googleCalendarHref": {
       "filePath": "app/lib/raceCalendar.ts",
       "importedBy": [
         "app/lib/raceCalendar.test.ts::__file_root__",
-        "app/components/AddToCalendar.tsx::__file_root__"
+        "app/components/GoogleCalendarOption.tsx::__file_root__"
       ],
       "imports": [],
       "name": "googleCalendarHref"
@@ -1953,6 +2052,69 @@
       ],
       "imports": [],
       "name": "findRaces"
+    },
+    "app/lib/reminders.test.ts::__file_root__": {
+      "filePath": "app/lib/reminders.test.ts",
+      "importedBy": [],
+      "imports": [
+        "app/lib/reminders.ts::chosenReminders",
+        "app/lib/reminders.ts::customReminder",
+        "app/lib/reminders.ts::defaultReminders",
+        "app/lib/reminders.ts::reminderAlarms",
+        "app/lib/reminders.ts::reminderLabel",
+        "app/lib/reminders.ts::reminderPresetsFor",
+        "app/lib/reminders.ts::reminderTrigger",
+        "app/lib/reminders.ts::resolveReminders"
+      ],
+      "name": "__file_root__"
+    },
+    "app/lib/reminders.ts::__file_root__": {
+      "filePath": "app/lib/reminders.ts",
+      "importedBy": [
+        "app/components/AllDayReminderNote.tsx::__file_root__"
+      ],
+      "imports": [],
+      "name": "__file_root__"
+    },
+    "app/lib/reminders.ts::chosenReminders": {
+      "filePath": "app/lib/reminders.ts",
+      "importedBy": [
+        "app/api/races/[slug]/calendar/route.ts::__file_root__"
+      ],
+      "imports": [],
+      "name": "chosenReminders"
+    },
+    "app/lib/reminders.ts::defaultReminders": {
+      "filePath": "app/lib/reminders.ts",
+      "importedBy": [
+        "app/components/ReminderForm.tsx::__file_root__"
+      ],
+      "imports": [],
+      "name": "defaultReminders"
+    },
+    "app/lib/reminders.ts::reminderAlarms": {
+      "filePath": "app/lib/reminders.ts",
+      "importedBy": [
+        "app/api/races/[slug]/calendar/route.ts::__file_root__"
+      ],
+      "imports": [],
+      "name": "reminderAlarms"
+    },
+    "app/lib/reminders.ts::reminderPresetsFor": {
+      "filePath": "app/lib/reminders.ts",
+      "importedBy": [
+        "app/components/ReminderForm.tsx::__file_root__"
+      ],
+      "imports": [],
+      "name": "reminderPresetsFor"
+    },
+    "app/lib/reminders.ts::resolveReminders": {
+      "filePath": "app/lib/reminders.ts",
+      "importedBy": [
+        "app/api/races/[slug]/calendar/route.ts::__file_root__"
+      ],
+      "imports": [],
+      "name": "resolveReminders"
     },
     "app/lib/savedRaces.test.ts::__file_root__": {
       "filePath": "app/lib/savedRaces.test.ts",
@@ -2659,6 +2821,7 @@
       "imports": [
         "app/lib/prisma.ts",
         "app/lib/ics.ts",
+        "app/lib/reminders.ts",
         "app/lib/raceCalendar.ts"
       ]
     },
@@ -2686,7 +2849,16 @@
         "app/components/NextDeadline.tsx"
       ],
       "imports": [
-        "app/lib/raceCalendar.ts"
+        "app/components/GoogleCalendarOption.tsx",
+        "app/components/ReminderForm.tsx"
+      ]
+    },
+    "app/components/AllDayReminderNote.tsx": {
+      "importedBy": [
+        "app/components/ReminderPicker.tsx"
+      ],
+      "imports": [
+        "app/lib/reminders.ts"
       ]
     },
     "app/components/AtAGlance.tsx": {
@@ -2710,6 +2882,12 @@
     "app/components/CourseNote.tsx": {
       "importedBy": [
         "app/races/[slug]/page.tsx"
+      ],
+      "imports": []
+    },
+    "app/components/CustomReminderField.tsx": {
+      "importedBy": [
+        "app/components/ReminderPicker.tsx"
       ],
       "imports": []
     },
@@ -2769,6 +2947,14 @@
       "imports": [
         "app/lib/myRaces.ts",
         "app/lib/savedRaces.ts"
+      ]
+    },
+    "app/components/GoogleCalendarOption.tsx": {
+      "importedBy": [
+        "app/components/AddToCalendar.tsx"
+      ],
+      "imports": [
+        "app/lib/raceCalendar.ts"
       ]
     },
     "app/components/Hero.tsx": {
@@ -3024,6 +3210,32 @@
     "app/components/RegistrationChanged.tsx": {
       "importedBy": [
         "app/components/SavedRaceItem.tsx"
+      ],
+      "imports": []
+    },
+    "app/components/ReminderForm.tsx": {
+      "importedBy": [
+        "app/components/AddToCalendar.tsx"
+      ],
+      "imports": [
+        "app/components/ReminderPicker.tsx",
+        "app/lib/raceCalendar.ts",
+        "app/lib/reminders.ts"
+      ]
+    },
+    "app/components/ReminderPicker.tsx": {
+      "importedBy": [
+        "app/components/ReminderForm.tsx"
+      ],
+      "imports": [
+        "app/components/AllDayReminderNote.tsx",
+        "app/components/CustomReminderField.tsx",
+        "app/components/ReminderPresetOption.tsx"
+      ]
+    },
+    "app/components/ReminderPresetOption.tsx": {
+      "importedBy": [
+        "app/components/ReminderPicker.tsx"
       ],
       "imports": []
     },
@@ -3371,7 +3583,8 @@
       "importedBy": [
         "app/lib/raceCalendar.test.ts",
         "app/api/races/[slug]/calendar/route.ts",
-        "app/components/AddToCalendar.tsx"
+        "app/components/GoogleCalendarOption.tsx",
+        "app/components/ReminderForm.tsx"
       ],
       "imports": [
         "app/lib/format.ts",
@@ -3455,6 +3668,21 @@
         "app/lib/raceDetail.ts",
         "app/lib/raceList.ts"
       ]
+    },
+    "app/lib/reminders.test.ts": {
+      "importedBy": [],
+      "imports": [
+        "app/lib/reminders.ts"
+      ]
+    },
+    "app/lib/reminders.ts": {
+      "importedBy": [
+        "app/lib/reminders.test.ts",
+        "app/api/races/[slug]/calendar/route.ts",
+        "app/components/AllDayReminderNote.tsx",
+        "app/components/ReminderForm.tsx"
+      ],
+      "imports": []
     },
     "app/lib/savedRaces.test.ts": {
       "importedBy": [],
@@ -3640,5 +3868,5 @@
       ]
     }
   },
-  "lastUpdated": "2026-11-09T16:26:14Z"
+  "lastUpdated": "2026-11-09T22:31:27Z"
 }

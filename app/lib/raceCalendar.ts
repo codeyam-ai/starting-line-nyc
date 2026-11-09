@@ -22,7 +22,9 @@ export type CalendarRace = {
 // 'next' = the next upcoming milestone; a number = that milestone's id.
 export type CalendarEventKind = 'next' | 'raceday' | number;
 
-export type CalendarEventResult = { event: CalendarEvent } | { error: string };
+// dateKind: the milestone kind ('registration_opens', 'deadline', …) or
+// 'race_day', which picks the default reminders.
+export type CalendarEventResult = { event: CalendarEvent; dateKind: string } | { error: string };
 
 const RACE_DAY_MINUTES = 240;
 const MILESTONE_MINUTES = 30;
@@ -36,6 +38,7 @@ export function raceCalendarEvent(race: CalendarRace, kind: CalendarEventKind, n
   let durationMinutes: number;
   let timeKnown = true;
   let note: string | null | undefined;
+  let dateKind = 'race_day';
   if (kind === 'raceday') {
     if (!edition.raceDate) return { error: 'Race date not announced' };
     title = `${race.name} (race day)`;
@@ -54,6 +57,7 @@ export function raceCalendarEvent(race: CalendarRace, kind: CalendarEventKind, n
     durationMinutes = MILESTONE_MINUTES;
     timeKnown = m.timeKnown;
     note = m.note;
+    dateKind = m.kind;
   }
 
   const description = [
@@ -76,6 +80,7 @@ export function raceCalendarEvent(race: CalendarRace, kind: CalendarEventKind, n
       stamp: now,
       ...(timeKnown ? {} : { allDayDate: etDate(start) }),
     },
+    dateKind,
   };
 }
 
@@ -103,6 +108,13 @@ export function googleCalendarUrl(event: CalendarEvent): string {
 // downloading the .ics, keeping any milestone or race-day query.
 export function googleCalendarHref(calendarHref: string): string {
   return `${calendarHref}${calendarHref.includes('?') ? '&' : '?'}target=google`;
+}
+
+// Splits a calendar link into a GET form's action and the query pairs it
+// must carry as hidden inputs (a form's own fields replace the action's query).
+export function calendarFormTarget(calendarHref: string): { action: string; params: [string, string][] } {
+  const url = new URL(calendarHref, 'http://local');
+  return { action: url.pathname, params: [...url.searchParams] };
 }
 
 export function calendarFileName(slug: string, kind: CalendarEventKind): string {

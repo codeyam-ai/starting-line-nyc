@@ -1,0 +1,15 @@
+{
+  "name": "ReminderPresetOption - Ticked",
+  "id": "a0bf7016-6fac-43ca-9a38-4dc62813023d",
+  "url": "/isolated-components/ReminderPresetOption?s=Ticked",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "clock": {
+    "now": "2026-11-09T20:42:49Z"
+  },
+  "componentName": "ReminderPresetOption",
+  "scenarioType": "component",
+  "description": "A ticked 1 day before preset."
+}

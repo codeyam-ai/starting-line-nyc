@@ -60,4 +60,26 @@ describe('buildIcs', () => {
     expect(ics).not.toContain('LOCATION:');
     expect(ics).not.toContain('DESCRIPTION:');
   });
+
+  // Each reminder becomes a display alarm inside the event, with escaped text.
+  it('writes one VALARM per reminder', () => {
+    const ics = buildIcs({
+      ...event,
+      alarms: [
+        { trigger: '-PT1440M', description: '1 day before: Half, opens' },
+        { trigger: 'PT0M', description: 'At the time: Half' },
+      ],
+    });
+    expect(ics).toContain(
+      'BEGIN:VALARM\r\nACTION:DISPLAY\r\nDESCRIPTION:1 day before: Half\\, opens\r\nTRIGGER:-PT1440M\r\nEND:VALARM\r\n',
+    );
+    expect(ics).toContain('TRIGGER:PT0M\r\nEND:VALARM\r\nEND:VEVENT\r\n');
+    expect(ics.match(/BEGIN:VALARM/g)).toHaveLength(2);
+  });
+
+  // Without reminders there are no alarms.
+  it('writes no VALARM when there are no reminders', () => {
+    expect(buildIcs(event)).not.toContain('VALARM');
+    expect(buildIcs({ ...event, alarms: [] })).not.toContain('VALARM');
+  });
 });

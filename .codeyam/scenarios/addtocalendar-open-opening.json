@@ -1,0 +1,21 @@
+{
+  "name": "AddToCalendar - Open Opening",
+  "id": "f6f20071-1c1c-4919-ac32-bb9fea2a7ad1",
+  "url": "/isolated-components/AddToCalendar?s=OpenOpening",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "clock": {
+    "now": "2026-11-09T20:42:49Z"
+  },
+  "componentName": "AddToCalendar",
+  "scenarioType": "component",
+  "description": "Menu opened for a registration opening: the default reminders, 1 day before and at the time, start ticked.",
+  "interactions": [
+    {
+      "action": "click",
+      "text": "Add to calendar"
+    }
+  ]
+}

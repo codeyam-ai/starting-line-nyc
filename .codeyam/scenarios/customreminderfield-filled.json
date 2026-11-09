@@ -1,0 +1,27 @@
+{
+  "name": "CustomReminderField - Filled",
+  "id": "47e9fef7-f8fc-47ac-b522-5d8c7bc844a9",
+  "url": "/isolated-components/CustomReminderField?s=Filled",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "clock": {
+    "now": "2026-11-09T20:42:49Z"
+  },
+  "componentName": "CustomReminderField",
+  "scenarioType": "component",
+  "description": "The custom reminder row filled in: 2 days before at 6:30 pm ET.",
+  "interactions": [
+    {
+      "action": "fill",
+      "selector": "input[name=customDays]",
+      "value": "2"
+    },
+    {
+      "action": "fill",
+      "selector": "input[name=customTime]",
+      "value": "18:30"
+    }
+  ]
+}

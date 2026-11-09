@@ -111,6 +111,24 @@ img.thumb { display: block; object-fit: cover; }
 .addcal-menu a { padding: 10px 12px; border-radius: 4px; font-size: 15px; font-weight: 600; color: var(--ink); }
 .addcal-menu a:first-child { color: var(--route-ink); }
 .addcal-menu a:hover, .addcal-menu a:focus-visible { background: var(--soft); }
+.addcal-menu { min-width: 380px; }
+/* Phones: open in place below the link at the column's width, so the menu
+   never runs off the right edge wherever the link sits. */
+@media (max-width: 480px) {
+  .addcal[open] { display: block; }
+  .addcal-menu { position: static; min-width: 0; width: auto; margin-top: 6px; }
+}
+.addcal-note { margin: 0; padding: 0 12px 8px; font-size: 13px; color: var(--muted); }
+.addcal-remind { border-top: 1px solid var(--rule); padding: 10px 12px 4px; display: flex; flex-direction: column; gap: 10px; }
+.addcal-remind fieldset { border: 0; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.addcal-remind legend { padding: 0 0 6px; font-size: 14px; font-weight: 700; color: var(--ink); }
+.addcal-opt { display: flex; align-items: center; gap: 8px; font-size: 14.5px; color: var(--ink); cursor: pointer; }
+.addcal-opt input { accent-color: var(--route-ink); width: 16px; height: 16px; }
+.addcal-custom { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; font-size: 14.5px; color: var(--ink); }
+.addcal-custom input { font: 500 14.5px var(--text); color: var(--ink); border: 1px solid var(--rule); border-radius: 4px; padding: 4px 6px; background: var(--paper); }
+.addcal-custom input[type='number'] { width: 52px; }
+.addcal-remind .addcal-note { padding: 0; }
+.addcal-remind .btn { align-self: flex-start; }
 .wk { font-family: var(--display); font-size: 26px; color: var(--ink); line-height: 1; }
 .wk small { display: block; font-family: var(--text); font-size: 13px; color: var(--muted); margin-top: 4px; }
 .seeall { display: flex; justify-content: center; margin-top: 22px; }

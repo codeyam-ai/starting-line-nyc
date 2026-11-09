@@ -1,0 +1,42 @@
+{
+  "surface": "NextDeadline",
+  "surface_kind": "component",
+  "states": [
+    {
+      "dimension": "milestone",
+      "value": "true",
+      "rationale": "source-derived state milestone=true",
+      "status": "planned"
+    },
+    {
+      "dimension": "milestone",
+      "value": "false",
+      "rationale": "source-derived state milestone=false",
+      "status": "covered"
+    },
+    {
+      "dimension": "offerCalendar",
+      "value": "true",
+      "rationale": "source-derived state offerCalendar=true",
+      "status": "planned"
+    },
+    {
+      "dimension": "offerCalendar",
+      "value": "false",
+      "rationale": "source-derived state offerCalendar=false",
+      "status": "covered"
+    },
+    {
+      "dimension": "alwaysOfferCalendar",
+      "value": "true",
+      "rationale": "source-derived state alwaysOfferCalendar=true",
+      "status": "covered"
+    },
+    {
+      "dimension": "alwaysOfferCalendar",
+      "value": "false",
+      "rationale": "source-derived state alwaysOfferCalendar=false",
+      "status": "covered"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "AddToCalendar - Custom Reminder",
+  "id": "efcda788-96c7-424e-9d07-ed7c06ac7df8",
+  "url": "/isolated-components/AddToCalendar?s=OpenCustom",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "clock": {
+    "now": "2026-11-09T20:42:49Z"
+  },
+  "componentName": "AddToCalendar",
+  "scenarioType": "component",
+  "description": "Menu opened with a custom reminder filled in: also 2 days before at 6:30 pm ET.",
+  "interactions": [
+    {
+      "action": "click",
+      "text": "Add to calendar"
+    },
+    {
+      "action": "fill",
+      "selector": "input[name=customDays]",
+      "value": "2"
+    },
+    {
+      "action": "fill",
+      "selector": "input[name=customTime]",
+      "value": "18:30"
+    }
+  ]
+}

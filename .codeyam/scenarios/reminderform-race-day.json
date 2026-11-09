@@ -1,0 +1,15 @@
+{
+  "name": "ReminderForm - Race Day",
+  "id": "a5a8e0b3-e603-44b8-9318-a99dd1276b05",
+  "url": "/isolated-components/ReminderForm?s=RaceDay",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "clock": {
+    "now": "2026-11-09T20:42:49Z"
+  },
+  "componentName": "ReminderForm",
+  "scenarioType": "component",
+  "description": "The .ics reminder form for race day: 1 day before ticked, the download button and the calendar-app note."
+}

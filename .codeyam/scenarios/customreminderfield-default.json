@@ -1,0 +1,15 @@
+{
+  "name": "CustomReminderField - Default",
+  "id": "ef6c3e8e-3f39-43ca-8687-a5e59d4874a3",
+  "url": "/isolated-components/CustomReminderField?s=Default",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "clock": {
+    "now": "2026-11-09T20:42:49Z"
+  },
+  "componentName": "CustomReminderField",
+  "scenarioType": "component",
+  "description": "The empty custom reminder row with the 9:00 default time."
+}

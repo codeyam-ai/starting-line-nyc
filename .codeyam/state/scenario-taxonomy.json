@@ -3,30 +3,29 @@
     "AddToCalendar": {
       "empty": {
         "status": "n-a",
-        "reason": "The menu always has the same two fixed options; it only renders when a date exists to add."
+        "reason": "Only rendered when a date exists to add; the menu always shows Google plus the reminder picker."
       },
       "single": {
         "status": "n-a",
-        "reason": "Exactly two fixed options; there is no list that varies in length."
+        "reason": "The preset list is fixed at four or five options, so there is no one-item list to show."
       },
       "typical": {
         "status": "added"
       },
       "many": {
         "status": "n-a",
-        "reason": "Option count is fixed at two; nothing can overflow."
+        "reason": "The preset list is fixed and short; the phone scenario shows it fitting the narrowest screen."
       },
       "loading": {
         "status": "n-a",
         "reason": "Pure links rendered on the server; no pending state in the component."
       },
       "edge": {
-        "status": "n-a",
-        "reason": "No variable text is displayed; labels are fixed and the link address is not shown."
+        "status": "added"
       },
       "error": {
         "status": "n-a",
-        "reason": "No data fetch in the component; a missing event is handled by the calendar route, not this menu."
+        "reason": "No fetch in the component; invalid custom reminders are dropped by the calendar route and unit-tested there."
       },
       "key-interaction": {
         "status": "added"

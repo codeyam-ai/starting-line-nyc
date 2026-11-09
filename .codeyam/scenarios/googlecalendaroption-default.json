@@ -1,0 +1,15 @@
+{
+  "name": "GoogleCalendarOption - Default",
+  "id": "dc77af87-c3e9-4141-b768-a94c14430f58",
+  "url": "/isolated-components/GoogleCalendarOption?s=Default",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "clock": {
+    "now": "2026-11-09T20:42:49Z"
+  },
+  "componentName": "GoogleCalendarOption",
+  "scenarioType": "component",
+  "description": "The Google Calendar link with the note that Google uses your usual notification settings."
+}
