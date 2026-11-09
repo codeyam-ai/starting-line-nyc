@@ -1170,6 +1170,11 @@
       "at": "2026-11-06T23:56:36.213707526+00:00",
       "feature": "Guard against the Next.js dev badge in screenshots",
       "notes": "Resumed at step 15 after a reset. Only audit drift was 157 dependency-stale screenshots from a comment edit to next.config.ts; recapture-stale cleared them (all identical). Finalize green: 226/226. Pushed to origin/main. Pre-existing gap: …"
+    },
+    {
+      "at": "2026-11-09T16:27:36.648468308+00:00",
+      "feature": "Photo credits for every photo shown",
+      "notes": "Resumed at Reconcile after a /clear. The audit was clean apart from 11 advisories about closed note-only plans, which I left closed on purpose. The test refresh, full finalize, commit and push all went through on the first try. Follow-ups:…"
     }
   ],
   "syntheses": [
