@@ -272,6 +272,15 @@
       ],
       "name": "__file_root__"
     },
+    ".codeyam/isolation-props/RaceHero.ts::__file_root__": {
+      "filePath": ".codeyam/isolation-props/RaceHero.ts",
+      "importedBy": [],
+      "imports": [
+        "app/components/RaceHero.tsx::__file_root__",
+        "app/components/RaceTitle.tsx::RaceTitle"
+      ],
+      "name": "__file_root__"
+    },
     ".codeyam/isolation-props/RaceIdentity.ts::__file_root__": {
       "filePath": ".codeyam/isolation-props/RaceIdentity.ts",
       "importedBy": [],
@@ -580,6 +589,22 @@
       ],
       "name": "__file_root__"
     },
+    "app/components/FooterPhotoCredits.tsx::FooterPhotoCredits": {
+      "filePath": "app/components/FooterPhotoCredits.tsx",
+      "importedBy": [
+        "app/components/SiteFooter.tsx::__file_root__"
+      ],
+      "imports": [],
+      "name": "FooterPhotoCredits"
+    },
+    "app/components/FooterPhotoCredits.tsx::__file_root__": {
+      "filePath": "app/components/FooterPhotoCredits.tsx",
+      "importedBy": [],
+      "imports": [
+        "app/lib/photos.ts::__file_root__"
+      ],
+      "name": "__file_root__"
+    },
     "app/components/GlanceActions.tsx::GlanceActions": {
       "filePath": "app/components/GlanceActions.tsx",
       "importedBy": [
@@ -611,6 +636,15 @@
       "imports": [
         "app/lib/myRaces.ts::goneRaceMessage",
         "app/lib/savedRaces.ts::setSaveStatus"
+      ],
+      "name": "__file_root__"
+    },
+    "app/components/Hero.tsx::__file_root__": {
+      "filePath": "app/components/Hero.tsx",
+      "importedBy": [],
+      "imports": [
+        "app/components/PhotoCredit.tsx::PhotoCredit",
+        "app/lib/photos.ts::__file_root__"
       ],
       "name": "__file_root__"
     },
@@ -737,11 +771,36 @@
       ],
       "name": "__file_root__"
     },
+    "app/components/PhotoCredit.tsx::PhotoCredit": {
+      "filePath": "app/components/PhotoCredit.tsx",
+      "importedBy": [
+        "app/components/RaceHero.tsx::__file_root__",
+        "app/components/Hero.tsx::__file_root__"
+      ],
+      "imports": [],
+      "name": "PhotoCredit"
+    },
+    "app/components/PhotoCredit.tsx::__file_root__": {
+      "filePath": "app/components/PhotoCredit.tsx",
+      "importedBy": [],
+      "imports": [
+        "app/lib/photos.ts::photoFor"
+      ],
+      "name": "__file_root__"
+    },
     "app/components/RaceDayCell.tsx::__file_root__": {
       "filePath": "app/components/RaceDayCell.tsx",
       "importedBy": [],
       "imports": [
         "app/lib/format.ts::formatDay"
+      ],
+      "name": "__file_root__"
+    },
+    "app/components/RaceHero.tsx::__file_root__": {
+      "filePath": "app/components/RaceHero.tsx",
+      "importedBy": [],
+      "imports": [
+        "app/components/PhotoCredit.tsx::PhotoCredit"
       ],
       "name": "__file_root__"
     },
@@ -971,6 +1030,14 @@
       ],
       "imports": [],
       "name": "SelectField"
+    },
+    "app/components/SiteFooter.tsx::__file_root__": {
+      "filePath": "app/components/SiteFooter.tsx",
+      "importedBy": [],
+      "imports": [
+        "app/components/FooterPhotoCredits.tsx::FooterPhotoCredits"
+      ],
+      "name": "__file_root__"
     },
     "app/components/SiteHeader.tsx::__file_root__": {
       "filePath": "app/components/SiteHeader.tsx",
@@ -1521,6 +1588,32 @@
       ],
       "imports": [],
       "name": "summariesUrl"
+    },
+    "app/lib/photos.test.ts::__file_root__": {
+      "filePath": "app/lib/photos.test.ts",
+      "importedBy": [],
+      "imports": [
+        "app/lib/photos.ts::__file_root__",
+        "app/lib/photos.ts::photoFor"
+      ],
+      "name": "__file_root__"
+    },
+    "app/lib/photos.ts::__file_root__": {
+      "filePath": "app/lib/photos.ts",
+      "importedBy": [
+        "app/components/Hero.tsx::__file_root__",
+        "app/components/FooterPhotoCredits.tsx::__file_root__"
+      ],
+      "imports": [],
+      "name": "__file_root__"
+    },
+    "app/lib/photos.ts::photoFor": {
+      "filePath": "app/lib/photos.ts",
+      "importedBy": [
+        "app/components/PhotoCredit.tsx::__file_root__"
+      ],
+      "imports": [],
+      "name": "photoFor"
     },
     "app/lib/prisma.ts::__file_root__": {
       "filePath": "app/lib/prisma.ts",
@@ -2389,6 +2482,13 @@
         "app/components/NextDeadline.tsx"
       ]
     },
+    ".codeyam/isolation-props/RaceHero.ts": {
+      "importedBy": [],
+      "imports": [
+        "app/components/RaceHero.tsx",
+        "app/components/RaceTitle.tsx"
+      ]
+    },
     ".codeyam/isolation-props/RaceIdentity.ts": {
       "importedBy": [],
       "imports": [
@@ -2639,6 +2739,14 @@
         "app/lib/filters.ts"
       ]
     },
+    "app/components/FooterPhotoCredits.tsx": {
+      "importedBy": [
+        "app/components/SiteFooter.tsx"
+      ],
+      "imports": [
+        "app/lib/photos.ts"
+      ]
+    },
     "app/components/GlanceActions.tsx": {
       "importedBy": [
         "app/components/AtAGlance.tsx"
@@ -2668,7 +2776,10 @@
         ".codeyam/isolation-props/Hero.ts",
         "app/page.tsx"
       ],
-      "imports": []
+      "imports": [
+        "app/components/PhotoCredit.tsx",
+        "app/lib/photos.ts"
+      ]
     },
     "app/components/HeroSearch.tsx": {
       "importedBy": [
@@ -2804,6 +2915,15 @@
         "app/lib/raceDetail.ts"
       ]
     },
+    "app/components/PhotoCredit.tsx": {
+      "importedBy": [
+        "app/components/RaceHero.tsx",
+        "app/components/Hero.tsx"
+      ],
+      "imports": [
+        "app/lib/photos.ts"
+      ]
+    },
     "app/components/RaceDayCell.tsx": {
       "importedBy": [
         "app/components/RaceRow.tsx"
@@ -2820,9 +2940,12 @@
     },
     "app/components/RaceHero.tsx": {
       "importedBy": [
+        ".codeyam/isolation-props/RaceHero.ts",
         "app/races/[slug]/page.tsx"
       ],
-      "imports": []
+      "imports": [
+        "app/components/PhotoCredit.tsx"
+      ]
     },
     "app/components/RaceIdentity.tsx": {
       "importedBy": [
@@ -2893,6 +3016,7 @@
     },
     "app/components/RaceTitle.tsx": {
       "importedBy": [
+        ".codeyam/isolation-props/RaceHero.ts",
         "app/races/[slug]/page.tsx"
       ],
       "imports": []
@@ -3013,7 +3137,9 @@
         "app/races/[slug]/page.tsx",
         "app/races/[slug]/not-found.tsx"
       ],
-      "imports": []
+      "imports": [
+        "app/components/FooterPhotoCredits.tsx"
+      ]
     },
     "app/components/SiteHeader.tsx": {
       "importedBy": [
@@ -3210,6 +3336,21 @@
         "app/lib/raceList.ts",
         "app/lib/savedRaces.ts"
       ]
+    },
+    "app/lib/photos.test.ts": {
+      "importedBy": [],
+      "imports": [
+        "app/lib/photos.ts"
+      ]
+    },
+    "app/lib/photos.ts": {
+      "importedBy": [
+        "app/lib/photos.test.ts",
+        "app/components/PhotoCredit.tsx",
+        "app/components/Hero.tsx",
+        "app/components/FooterPhotoCredits.tsx"
+      ],
+      "imports": []
     },
     "app/lib/prisma.ts": {
       "importedBy": [
@@ -3499,5 +3640,5 @@
       ]
     }
   },
-  "lastUpdated": "2026-11-06T23:45:59Z"
+  "lastUpdated": "2026-11-09T16:26:14Z"
 }

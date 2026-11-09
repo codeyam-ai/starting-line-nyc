@@ -152,6 +152,7 @@ img.thumb { display: block; object-fit: cover; }
 .race-hero.plain { min-height: 220px; }
 .race-hero.plain::before { display: none; }
 .race-hero .credit { position: absolute; right: 16px; top: 12px; font-size: 12px; color: rgba(255,255,255,0.85); }
+.credit a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
 .race-hero-in { position: relative; padding: 0 40px 64px; width: 100%; }
 .race-title { color: var(--ink); }
 .race-title h1 { margin-top: 12px; font-family: var(--display); font-weight: 400; color: inherit; font-size: 58px; line-height: 1.02; letter-spacing: -0.02em; max-width: 20ch; text-wrap: balance; }

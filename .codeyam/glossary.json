@@ -91,6 +91,17 @@
     ]
   },
   {
+    "description": "Footer line crediting exactly the photos the site shows, one underlined Commons link per author with its license, taken from the single photo list.",
+    "filePath": "app/components/FooterPhotoCredits.tsx",
+    "name": "FooterPhotoCredits",
+    "scenarios": [
+      "footerphotocredits-default"
+    ],
+    "tags": [
+      "race-discovery"
+    ]
+  },
+  {
     "description": "Summaries route: race summaries for the saved slugs in the query, unknown slugs reported as not listed.",
     "filePath": "app/api/races/summaries/route.ts",
     "name": "GET",
@@ -388,6 +399,19 @@
     ],
     "tags": [
       "race-detail"
+    ]
+  },
+  {
+    "description": "Credit line shown over a hero photo: 'Photo: <author>, <license>' linked to the photo's Wikimedia Commons page, looked up from the single photo list. Renders nothing when there is no photo or the photo is unlisted.",
+    "filePath": "app/components/PhotoCredit.tsx",
+    "name": "PhotoCredit",
+    "scenarios": [
+      "photocredit-race-photo",
+      "photocredit-home-hero-photo"
+    ],
+    "tags": [
+      "race-detail",
+      "race-discovery"
     ]
   },
   {
@@ -1352,6 +1376,16 @@
       "saved-races"
     ],
     "testFile": "app/lib/myRaces.test.ts"
+  },
+  {
+    "description": "Looks up the credit for an image path in the single photo list PHOTOS: author, license and Wikimedia Commons page. Returns null for no path or an unlisted path, so a photo is never credited by guesswork.",
+    "filePath": "app/lib/photos.ts",
+    "name": "photoFor",
+    "tags": [
+      "race-detail",
+      "race-discovery"
+    ],
+    "testFile": "app/lib/photos.test.ts"
   },
   {
     "description": "Returns a query value when it is one of the allowed options, otherwise the default; used by parseFilters.",

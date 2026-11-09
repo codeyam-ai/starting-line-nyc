@@ -42,7 +42,6 @@
         "name": "Go Nuts for Donuts 10K",
         "organizerId": 1,
         "photoAlt": "Colonels Row on Governors Island, by the start and finish",
-        "photoCredit": "Brian W. Schaller, Free Art License",
         "photoUrl": "/images/governors-island-colonels-row.jpg",
         "slug": "nycruns-go-nuts-for-donuts-10k",
         "terrain": "road"
@@ -57,7 +56,6 @@
         "name": "Great Gobble 5K",
         "organizerId": 1,
         "photoAlt": "Runners on the Prospect Park drive",
-        "photoCredit": null,
         "photoUrl": "/images/prospect-park-drive.jpg",
         "slug": "nycruns-great-gobble-5k",
         "terrain": "road"
@@ -72,7 +70,6 @@
         "name": "Big Apple Half Marathon",
         "organizerId": 1,
         "photoAlt": "Runners on the Central Park drive",
-        "photoCredit": "Mike Peel, CC BY-SA 4.0",
         "photoUrl": "/images/central-park-drive.jpg",
         "slug": "nycruns-big-apple-half-marathon",
         "terrain": "road"
@@ -87,7 +84,6 @@
         "name": "Central Park Half Marathon",
         "organizerId": 1,
         "photoAlt": "Runners on the Central Park drive",
-        "photoCredit": "Mike Peel, CC BY-SA 4.0",
         "photoUrl": "/images/central-park-drive.jpg",
         "slug": "nycruns-central-park-half-marathon",
         "terrain": "road"
@@ -102,7 +98,6 @@
         "name": "Brooklyn Experience Half Marathon",
         "organizerId": 1,
         "photoAlt": "Runners on the Prospect Park drive",
-        "photoCredit": null,
         "photoUrl": "/images/prospect-park-drive.jpg",
         "slug": "nycruns-brooklyn-experience-half-marathon",
         "terrain": "road"
@@ -117,7 +112,6 @@
         "name": "Big Bear Squatch North Half Marathon",
         "organizerId": 2,
         "photoAlt": "The Ramapo-Dunderberg Trail through forest in Harriman State Park",
-        "photoCredit": "Daniel Case, CC BY-SA 4.0",
         "photoUrl": "/images/harriman-ramapo-dunderberg-trail.jpg",
         "slug": "big-bear-squatch-north-half",
         "terrain": "trail"
@@ -132,7 +126,6 @@
         "name": "Escarpment Trail Run",
         "organizerId": 3,
         "photoAlt": "The view from the Catskill Mountain House site at North-South Lake, near the finish",
-        "photoCredit": "Mwanner, CC BY-SA 3.0",
         "photoUrl": "/images/catskill-mountain-house-view.jpg",
         "slug": "escarpment-trail-run",
         "terrain": "trail"

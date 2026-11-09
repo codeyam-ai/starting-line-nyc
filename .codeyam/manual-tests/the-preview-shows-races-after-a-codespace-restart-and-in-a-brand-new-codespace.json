@@ -1,0 +1,34 @@
+{
+  "expected": "Both previews load the home page with a list of races, not an empty page or an error.",
+  "generatedFrom": {
+    "base": "fded23dc155f82e09c20985d35674cd466df9248",
+    "commits": [
+      {
+        "sha": "003fdae61ec058da12fd4d2720dd49607640261b",
+        "subject": "fix: Codespaces Live Preview origin fix"
+      },
+      {
+        "sha": "5651798689801af860aa6202311eb1611ed03676",
+        "subject": "fix: Codespaces Live Preview loads from the forwarded app port"
+      }
+    ],
+    "generatedAt": "2026-11-07T00:26:35Z",
+    "head": "003fdae61ec058da12fd4d2720dd49607640261b"
+  },
+  "id": "the-preview-shows-races-after-a-codespace-restart-and-in-a-brand-new-codespace",
+  "intent": "The start-up script creates the dev database and starts the preview, but its tests use stand-in commands. Only a real restart and a fresh codespace show whether the preview comes up with races. This also settles whether the missing dev database was what left the preview empty before.",
+  "schemaVersion": 1,
+  "status": "pending",
+  "steps": [
+    "Stop this codespace and start it again from GitHub",
+    "Wait for the start-up script to finish, then open the live preview",
+    "Create a brand-new codespace from main and open its live preview"
+  ],
+  "surface": {
+    "barrier": "real-process",
+    "barrierDetail": "Needs a real codespace stop/start and a fresh codespace build, which only GitHub Codespaces can do.",
+    "kind": "no-ui-surface",
+    "note": "Covers the codespace start-up script; no scenario can show a real restart."
+  },
+  "title": "The preview shows races after a codespace restart and in a brand-new codespace"
+}

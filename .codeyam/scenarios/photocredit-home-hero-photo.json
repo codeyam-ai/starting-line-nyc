@@ -1,0 +1,15 @@
+{
+  "name": "PhotoCredit - Home Hero Photo",
+  "id": "5f2beacf-2e5b-4d1d-83d5-978464472191",
+  "url": "/isolated-components/PhotoCredit?s=HomeHeroPhoto",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "clock": {
+    "now": "2026-11-07T01:03:52Z"
+  },
+  "componentName": "PhotoCredit",
+  "scenarioType": "component",
+  "description": "The credit line over the home page hero: 'Photo: Mike Peel, CC BY-SA 4.0' linked to its Commons page."
+}

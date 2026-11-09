@@ -20,7 +20,9 @@ races grouped by status, soonest first, with a private note for each and a flag
 when a race's registration status has changed since you saved it.
 
 Photos are from Wikimedia Commons, used under the licences credited in the
-site footer.
+site footer and over each photo. To add a photo, put it in `public/images/` and
+add its author, licence and Commons page to `app/lib/photos.ts`; a test fails if
+any photo the site shows has no credit.
 
 ### Run it
 

@@ -42,7 +42,7 @@ export default async function RacePage({ params }: { params: Promise<{ slug: str
     <PageShell>
       <SiteHeader deadlinesHref="/?distance=any&when=any" />
       <BackLink href="/" label="All races" />
-      <RaceHero photoUrl={race.photoUrl} photoAlt={race.photoAlt} photoCredit={race.photoCredit}>
+      <RaceHero photoUrl={race.photoUrl} photoAlt={race.photoAlt}>
         <RaceTitle
           name={race.name}
           terrain={race.terrain}

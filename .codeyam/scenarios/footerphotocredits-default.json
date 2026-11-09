@@ -1,0 +1,15 @@
+{
+  "name": "FooterPhotoCredits - Default",
+  "id": "83fa50fe-ed38-4bc5-8728-7e6d866bbdf0",
+  "url": "/isolated-components/FooterPhotoCredits?s=Default",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "clock": {
+    "now": "2026-11-07T01:04:03Z"
+  },
+  "componentName": "FooterPhotoCredits",
+  "scenarioType": "component",
+  "description": "Footer credits naming exactly the five photos the site shows, each author linked to its Commons page with its license."
+}

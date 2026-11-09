@@ -8,11 +8,11 @@ type Props = ComponentProps<typeof Component>;
 // Scenario data for this component's isolation route.
 export const scenarios: Record<string, Props> = {
   WithPhoto: {
-    photoUrl: "/images/harriman-ramapo-dunderberg-trail.jpg", photoAlt: "The Ramapo-Dunderberg Trail through forest in Harriman State Park", photoCredit: "Daniel Case, CC BY-SA 4.0",
+    photoUrl: "/images/harriman-ramapo-dunderberg-trail.jpg", photoAlt: "The Ramapo-Dunderberg Trail through forest in Harriman State Park",
     children: createElement(RaceTitle, { name: "Big Bear Squatch North Half Marathon", terrain: "trail", organizer: "Sassquad & NY-NJ Trail Conference", place: "Anthony Wayne Recreation Area, Harriman State Park, Bear Mountain, NY" }),
   },
   NoPhoto: {
-    photoUrl: null, photoAlt: null, photoCredit: null,
+    photoUrl: null, photoAlt: null,
     children: createElement(RaceTitle, { name: "Brooklyn Experience Half Marathon", terrain: "road", organizer: "NYCRUNS", place: "North Brooklyn to Prospect Park, Brooklyn" }),
   },
 };

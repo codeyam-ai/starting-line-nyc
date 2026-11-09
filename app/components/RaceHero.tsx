@@ -1,14 +1,14 @@
+import PhotoCredit from '@/app/components/PhotoCredit';
+
 // Full-width header: a licensed photo of the race's place (or a plain ink
-// band when there is none) with the race title over it.
+// band when there is none) with the race title over it and its credit.
 export default function RaceHero({
   photoUrl,
   photoAlt,
-  photoCredit,
   children,
 }: {
   photoUrl: string | null;
   photoAlt: string | null;
-  photoCredit: string | null;
   children: React.ReactNode;
 }) {
   return (
@@ -18,7 +18,7 @@ export default function RaceHero({
       style={photoUrl ? { backgroundImage: `url('${photoUrl}')` } : undefined}
     >
       {photoUrl && <span className="sr">{photoAlt}</span>}
-      {photoCredit && <p className="credit">Photo: {photoCredit}</p>}
+      <PhotoCredit path={photoUrl} />
       <div className="race-hero-in">{children}</div>
     </section>
   );

@@ -1,0 +1,39 @@
+{
+  "provenAt": "2026-11-07T01:02:41Z",
+  "slug": "race-dates-and-deadlines-are-sample-data-not-verified-against-organizers-photo-credits-were-copied-from-the-mockup-and",
+  "paths": [],
+  "runScope": [
+    "app/lib/photos.ts",
+    "app/lib/photos.test.ts"
+  ],
+  "neuters": [
+    {
+      "file": "app/lib/photos.ts",
+      "find": "path: '/images/catskill-mountain-house-view.jpg'",
+      "replace": "path: '/images/catskill-uncredited.jpg'"
+    }
+  ],
+  "tests": {
+    "credits every image file in public/images": {
+      "withoutFix": "fail",
+      "withFix": "pass",
+      "established": {
+        "kind": "measured"
+      }
+    },
+    "credits every photo a race shows": {
+      "withoutFix": "fail",
+      "withFix": "pass",
+      "established": {
+        "kind": "measured"
+      }
+    }
+  },
+  "proof": {
+    "verdict": "proven",
+    "flipped": [
+      "credits every photo a race shows",
+      "credits every image file in public/images"
+    ]
+  }
+}

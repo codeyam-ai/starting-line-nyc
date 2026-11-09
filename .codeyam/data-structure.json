@@ -13,7 +13,7 @@
   },
   {
     "name": "Race",
-    "description": "A recurring race (the event itself, independent of year). Photo fields hold licensed photos only; a null photoUrl shows a distance tile.",
+    "description": "A recurring race (the event itself, independent of year). Photo fields hold licensed photos only; a null photoUrl shows a distance tile. The credit for a photo (photographer, license, Commons page) lives in the app photo list keyed by photoUrl, not on the race.",
     "category": "datastore",
     "order": 1,
     "fields": [
@@ -27,7 +27,6 @@
       { "name": "area", "type": "string", "required": true },
       { "name": "photoUrl", "type": "string", "required": false },
       { "name": "photoAlt", "type": "string", "required": false },
-      { "name": "photoCredit", "type": "string", "required": false },
       { "name": "courseNote", "type": "string", "required": false },
       { "name": "organizerId", "type": "number", "required": true }
     ]

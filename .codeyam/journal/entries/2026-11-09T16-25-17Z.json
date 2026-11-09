@@ -1,0 +1,663 @@
+{
+  "timestamp": "2026-11-09T16:25:17Z",
+  "title": "Photo credits for every photo shown",
+  "type": "feature",
+  "userRequest": "## Summary\n\nGive every photo the site shows its own correct credit, linked to where it came\nfrom, and make the footer credit exactly the photos in use.\n\n**Race dates: already done.** All 24 races were checked against their organizers'\nown pages, and each shows its source link and when it was last checked\n(26 Oct to 6 Nov). Nothing left to build for that half of the title.\n\n## What is wrong today\n\n- The Prospect Park photo (Great Gobble 5K, Brooklyn Experience Half) has no credit.\n- The footer credits seven photographers, a list copied from the mockup. Only four\n  of them took a photo the site shows; Jim Henderson and ScubaBear68 took none of\n  them, and Epicgenius, who took the Prospect Park photo, is credited only by luck.\n- The home hero's credit is typed into the page by hand.\n- Two image files are never shown (`breakneck-ridge.jpg`, `nyc-half-manhattan.jpg`).\n\n## Where each photo came from (matched against Wikimedia Commons)\n\n| Photo | Photographer | License | Used on |\n|---|---|---|---|\n| Central Park drive (NYC Marathon 2017) | Mike Peel | CC BY-SA 4.0 | Home hero, Big Apple Half, Central Park Half |\n| Prospect Park drive | Epicgenius | CC BY-SA 4.0 | Great Gobble 5K, Brooklyn Experience Half |\n| Colonels Row, Governors Island | Brian W. Schaller | Free Art License | Go Nuts for Donuts 10K |\n| Ramapo-Dunderberg Trail, Harriman | Daniel Case | CC BY-SA 4.0 | Big Bear Squatch North Half |\n| Catskill Mountain House view | Mwanner | CC BY-SA 3.0 | Escarpment Trail Run |\n\n## What changes\n\n- One list of the site's photos, each with photographer, license and its Commons\n  page. Races point at a photo; the credit comes from that list, so a race can't\n  show a photo without its credit.\n- Race page and home page heroes: \"Photo: <name>, <license>\", linking to the\n  photo's Commons page.\n- Footer: credits exactly the photos the site shows, each linked, built from the\n  same list.\n- Remove the two unused image files and the hand-typed credits.\n\n## Tests\n\n- Every race photo has an entry in the photo list, and every entry is a real file\n  that the site uses.\n- Every image file in the site's images folder is in the photo list.\n- The footer shows one linked credit per photo in use, and none for unused ones.\n- The race hero shows the linked credit, and no credit when a race has no photo.\n\n## Scenarios\n\nFooter with the corrected credits; race page with the Prospect Park photo and its\nnew credit; race page with no photo (no credit line); phone layout of the hero\ncredit.",
+  "description": "Every photo on the site now carries a credit from one shared list (app/lib/photos.ts). The hero shows its own credit, and the footer lists credits for every photo on the page through a new FooterPhotoCredits component. The old per-race photoCredit database column was removed so a credit cannot drift away from its photo, and the README says where to add a credit for a new photo. Scope verdict: this cycle extends the information-quality and visual-direction deliverables, which were already delivered. Nothing was newly delivered or deferred. Reminders stays deferred, a choice the user made at an earlier gate. No deferral was made by the agent. Open note: the local dev.db still has the old photoCredit column, because dropping it needs a data-loss confirmation that was not given.",
+  "modifiedFiles": [
+    {
+      "path": ".codeyam/data-structure.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/dependency-graph.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/glossary.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/isolation-props/RaceHero.ts",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/per-test-evidence.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/plans/completed/race-dates-and-deadlines-are-sample-data-not-verified-against-organizers-photo-credits-were-copied-from-the-mockup-and.md",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/plans/race-dates-and-deadlines-are-sample-data-not-verified-against-organizers-photo-credits-were-copied-from-the-mockup-and.md",
+      "status": "deleted"
+    },
+    {
+      "path": ".codeyam/scenarios/home-all-distances-next-12-months.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/home-half-marathons-next-6-months.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/home-lottery-races-only.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/home-phone-layout.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/home-phone-races-saved.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/home-races-saved-on-this-device.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/home-single-search-result.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/home-sorted-by-distance.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/home-sorted-by-registration-opening.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/my-races-no-saved-races.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/my-races-one-saved-race.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/my-races-phone-layout.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/my-races-race-details-failed-to-load.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/my-races-removing-a-race-no-longer-listed.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/my-races-saved-across-all-statuses.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/myraceslist-default.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/myraceslist-remove-unlisted-race.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/myracessection-default.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/race-big-bear-squatch-north.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/race-escarpment-trail-run.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/race-great-gobble-5k.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/race-jersey-city-marathon.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/race-phone-layout.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/race-phone-save-menu-open.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/race-registration-opening-published.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/race-saved-as-considering.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/.capture-pipeline.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/hero-default--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/hero-default--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/home-all-distances-next-12-months--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/home-all-distances-next-12-months--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/home-half-marathons-next-6-months--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/home-half-marathons-next-6-months--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/home-lottery-races-only--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/home-lottery-races-only--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/home-no-races-listed--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/home-no-races-listed--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/home-phone-layout--mobile.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/home-phone-layout--mobile.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/home-phone-races-saved--mobile.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/home-races-saved-on-this-device--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/home-races-saved-on-this-device--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/home-single-search-result--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/home-single-search-result--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/home-sorted-by-distance--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/home-sorted-by-distance--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/home-sorted-by-registration-opening--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/home-sorted-by-registration-opening--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/my-races-no-saved-races--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/my-races-no-saved-races--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/my-races-one-saved-race--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/my-races-one-saved-race--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/my-races-phone-layout--mobile.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/my-races-race-details-failed-to-load--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/my-races-race-details-failed-to-load--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/my-races-removing-a-race-no-longer-listed--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/my-races-removing-a-race-no-longer-listed--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/my-races-saved-across-all-statuses--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/myraceslist-default--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/myraceslist-remove-unlisted-race--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/myracessection-default--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/notfound-default--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/notfound-default--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/race-big-bear-squatch-north--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/race-big-bear-squatch-north--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/race-escarpment-trail-run--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/race-escarpment-trail-run--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/race-great-gobble-5k--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/race-great-gobble-5k--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/race-jersey-city-marathon--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/race-phone-layout--mobile.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/race-phone-layout--mobile.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/race-phone-save-menu-open--mobile.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/race-registration-opening-published--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/race-saved-as-considering--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/race-saved-as-considering--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/racehero-no-photo--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/racehero-with-photo--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/racehero-with-photo--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/sitefooter-default--desktop.png",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/sitefooter-default--desktop.png.hash",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/state/finalize-debt.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/test-cache.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/test-cache/all.json",
+      "status": "modified"
+    },
+    {
+      "path": ".codeyam/test-cache/blobs/de1530375a363accab97664deab9199dc79070ddb03681bb1148f93b2cd1e4e0.json",
+      "status": "deleted"
+    },
+    {
+      "path": ".codeyam/test-cache/blobs/ec02b077503839e061be3b339cd3c90f7327ab305e6a7f9db57d03b97d495b90.json",
+      "status": "deleted"
+    },
+    {
+      "path": ".codeyam/test-registry.json",
+      "status": "modified"
+    },
+    {
+      "path": "README.md",
+      "status": "modified"
+    },
+    {
+      "path": "app/components/Hero.tsx",
+      "status": "modified"
+    },
+    {
+      "path": "app/components/RaceHero.tsx",
+      "status": "modified"
+    },
+    {
+      "path": "app/components/SiteFooter.tsx",
+      "status": "modified"
+    },
+    {
+      "path": "app/globals.css",
+      "status": "modified"
+    },
+    {
+      "path": "app/races/[slug]/page.tsx",
+      "status": "modified"
+    },
+    {
+      "path": "prisma/race-data.json",
+      "status": "modified"
+    },
+    {
+      "path": "prisma/schema.prisma",
+      "status": "modified"
+    },
+    {
+      "path": "public/images/breakneck-ridge.jpg",
+      "status": "deleted"
+    },
+    {
+      "path": "public/images/nyc-half-manhattan.jpg",
+      "status": "deleted"
+    },
+    {
+      "path": ".codeyam/isolation-props/FooterPhotoCredits.ts",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/isolation-props/PhotoCredit.ts",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/manual-tests/the-preview-shows-races-after-a-codespace-restart-and-in-a-brand-new-codespace.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/coverage-plan/footerphotocredits.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/coverage-plan/photocredit.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/footerphotocredits-default.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/photocredit-home-hero-photo.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/photocredit-race-photo.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/footerphotocredits-default--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/footerphotocredits-default--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/photocredit-home-hero-photo--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/photocredit-home-hero-photo--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/photocredit-race-photo--desktop.png",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/scenarios/screenshots/photocredit-race-photo--desktop.png.hash",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/state/red-proofs/race-dates-and-deadlines-are-sample-data-not-verified-against-organizers-photo-credits-were-copied-from-the-mockup-and.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/test-cache/blobs/7b21556a8b435aa3bc691495e00b5e91f6c1368c5a2e3960737be1bd282e5fe2.json",
+      "status": "added"
+    },
+    {
+      "path": ".codeyam/test-cache/blobs/fa22eeb642f165af52afbdd638ff8e8a9b3b6cdc507686f9fb4cadd8d22806c1.json",
+      "status": "added"
+    },
+    {
+      "path": "app/components/FooterPhotoCredits.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/components/PhotoCredit.tsx",
+      "status": "added"
+    },
+    {
+      "path": "app/lib/photos.test.ts",
+      "status": "added"
+    },
+    {
+      "path": "app/lib/photos.ts",
+      "status": "added"
+    }
+  ],
+  "scenarioScreenshots": [
+    {
+      "name": "Home - All Distances Next 12 Months",
+      "screenshotPath": "home-all-distances-next-12-months--desktop.png"
+    },
+    {
+      "name": "Home - Half Marathons Next 6 Months",
+      "screenshotPath": "home-half-marathons-next-6-months--desktop.png"
+    },
+    {
+      "name": "Home - Lottery Races Only",
+      "screenshotPath": "home-lottery-races-only--desktop.png"
+    },
+    {
+      "name": "Home - No Races Listed",
+      "screenshotPath": "home-no-races-listed--desktop.png"
+    },
+    {
+      "name": "Home - Phone Layout",
+      "screenshotPath": "home-phone-layout--mobile.png"
+    },
+    {
+      "name": "Home - Phone Races Saved",
+      "screenshotPath": "home-phone-races-saved--mobile.png"
+    },
+    {
+      "name": "Home - Races Saved On This Device",
+      "screenshotPath": "home-races-saved-on-this-device--desktop.png"
+    },
+    {
+      "name": "Home - Single Search Result",
+      "screenshotPath": "home-single-search-result--desktop.png"
+    },
+    {
+      "name": "Home - Sorted By Distance",
+      "screenshotPath": "home-sorted-by-distance--desktop.png"
+    },
+    {
+      "name": "Home - Sorted By Registration Opening",
+      "screenshotPath": "home-sorted-by-registration-opening--desktop.png"
+    },
+    {
+      "name": "My Races - No Saved Races",
+      "screenshotPath": "my-races-no-saved-races--desktop.png"
+    },
+    {
+      "name": "My Races - One Saved Race",
+      "screenshotPath": "my-races-one-saved-race--desktop.png"
+    },
+    {
+      "name": "My Races - Phone Layout",
+      "screenshotPath": "my-races-phone-layout--mobile.png"
+    },
+    {
+      "name": "My Races - Race Details Failed To Load",
+      "screenshotPath": "my-races-race-details-failed-to-load--desktop.png"
+    },
+    {
+      "name": "My Races - Removing A Race No Longer Listed",
+      "screenshotPath": "my-races-removing-a-race-no-longer-listed--desktop.png"
+    },
+    {
+      "name": "My Races - Saved Across All Statuses",
+      "screenshotPath": "my-races-saved-across-all-statuses--desktop.png"
+    },
+    {
+      "name": "Race - Big Bear Squatch North",
+      "screenshotPath": "race-big-bear-squatch-north--desktop.png"
+    },
+    {
+      "name": "Race - Escarpment Trail Run",
+      "screenshotPath": "race-escarpment-trail-run--desktop.png"
+    },
+    {
+      "name": "Race - Great Gobble 5K",
+      "screenshotPath": "race-great-gobble-5k--desktop.png"
+    },
+    {
+      "name": "Race - Jersey City Marathon",
+      "screenshotPath": "race-jersey-city-marathon--desktop.png"
+    },
+    {
+      "name": "Race - Phone Layout",
+      "screenshotPath": "race-phone-layout--mobile.png"
+    },
+    {
+      "name": "Race - Phone Save Menu Open",
+      "screenshotPath": "race-phone-save-menu-open--mobile.png"
+    },
+    {
+      "name": "Race - Registration Opening Published",
+      "screenshotPath": "race-registration-opening-published--desktop.png"
+    },
+    {
+      "name": "Race - Saved As Considering",
+      "screenshotPath": "race-saved-as-considering--desktop.png"
+    },
+    {
+      "name": "FooterPhotoCredits - Default",
+      "screenshotPath": "footerphotocredits-default--desktop.png"
+    },
+    {
+      "name": "Hero - Default",
+      "screenshotPath": "hero-default--desktop.png"
+    },
+    {
+      "name": "MyRacesList - Default",
+      "screenshotPath": "myraceslist-default--desktop.png"
+    },
+    {
+      "name": "MyRacesList - Remove Unlisted Race",
+      "screenshotPath": "myraceslist-remove-unlisted-race--desktop.png"
+    },
+    {
+      "name": "MyRacesSection - Default",
+      "screenshotPath": "myracessection-default--desktop.png"
+    },
+    {
+      "name": "NotFound - Default",
+      "screenshotPath": "notfound-default--desktop.png"
+    },
+    {
+      "name": "PhotoCredit - Home Hero Photo",
+      "screenshotPath": "photocredit-home-hero-photo--desktop.png"
+    },
+    {
+      "name": "PhotoCredit - Race Photo",
+      "screenshotPath": "photocredit-race-photo--desktop.png"
+    },
+    {
+      "name": "RaceHero - No Photo",
+      "screenshotPath": "racehero-no-photo--desktop.png"
+    },
+    {
+      "name": "RaceHero - With Photo",
+      "screenshotPath": "racehero-with-photo--desktop.png"
+    },
+    {
+      "name": "SiteFooter - Default",
+      "screenshotPath": "sitefooter-default--desktop.png"
+    }
+  ],
+  "testResults": {
+    "total": 236,
+    "passed": 236,
+    "failed": 0,
+    "runners": [
+      {
+        "name": "tests",
+        "total": 236,
+        "passed": 236
+      }
+    ]
+  }
+}

@@ -1,6 +1,69 @@
 {
   "tests": [
     {
+      "description": "Every image file shipped in public/images has a credit.",
+      "file": "app/lib/photos.test.ts",
+      "format": "vitest",
+      "key": "PHOTOS › credits every image file in public/images",
+      "line": 59,
+      "registeredAt": "2026-11-07T01:02:59Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Every race photo has a credit, so no photo can appear uncredited.",
+      "file": "app/lib/photos.test.ts",
+      "format": "vitest",
+      "key": "PHOTOS › credits every photo a race shows",
+      "line": 36,
+      "registeredAt": "2026-11-07T01:02:59Z",
+      "runner": "tests"
+    },
+    {
+      "description": "The home page hero photo is credited too.",
+      "file": "app/lib/photos.test.ts",
+      "format": "vitest",
+      "key": "PHOTOS › credits the home hero photo",
+      "line": 42,
+      "registeredAt": "2026-11-07T01:02:59Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Each credit names an author, a license and a Wikimedia Commons file page, once per photo.",
+      "file": "app/lib/photos.test.ts",
+      "format": "vitest",
+      "key": "PHOTOS › has a complete Commons credit for each photo",
+      "line": 65,
+      "registeredAt": "2026-11-07T01:02:59Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Every credited photo is actually shown somewhere, so the footer credits nothing extra.",
+      "file": "app/lib/photos.test.ts",
+      "format": "vitest",
+      "key": "PHOTOS › lists only photos that are shown",
+      "line": 47,
+      "registeredAt": "2026-11-07T01:02:59Z",
+      "runner": "tests"
+    },
+    {
+      "description": "The hero background in the stylesheet is the same photo the hero credits.",
+      "file": "app/lib/photos.test.ts",
+      "format": "vitest",
+      "key": "PHOTOS › matches the hero background image in globals.css",
+      "line": 75,
+      "registeredAt": "2026-11-07T01:02:59Z",
+      "runner": "tests"
+    },
+    {
+      "description": "Every credited photo exists in public/images.",
+      "file": "app/lib/photos.test.ts",
+      "format": "vitest",
+      "key": "PHOTOS › points at image files that exist",
+      "line": 53,
+      "registeredAt": "2026-11-07T01:02:59Z",
+      "runner": "tests"
+    },
+    {
       "description": "The default sort is one of the offered sorts.",
       "file": "app/lib/filters.test.ts",
       "format": "vitest",
@@ -1195,6 +1258,33 @@
       "key": "parseSummarySlugs › splits trims and dedupes",
       "line": 179,
       "registeredAt": "2026-11-02T16:32:32Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A race with no photo gets no credit.",
+      "file": "app/lib/photos.test.ts",
+      "format": "vitest",
+      "key": "photoFor › returns null for a missing path",
+      "line": 22,
+      "registeredAt": "2026-11-07T01:02:59Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A path that is not in the list is never credited by guesswork.",
+      "file": "app/lib/photos.test.ts",
+      "format": "vitest",
+      "key": "photoFor › returns null for an unlisted path",
+      "line": 29,
+      "registeredAt": "2026-11-07T01:02:59Z",
+      "runner": "tests"
+    },
+    {
+      "description": "A known image path returns that photo's credit.",
+      "file": "app/lib/photos.test.ts",
+      "format": "vitest",
+      "key": "photoFor › returns the credit for a listed photo",
+      "line": 14,
+      "registeredAt": "2026-11-07T01:02:59Z",
       "runner": "tests"
     },
     {

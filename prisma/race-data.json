@@ -115,7 +115,6 @@
    "area": "Manhattan",
    "photoUrl": "/images/governors-island-colonels-row.jpg",
    "photoAlt": "Colonels Row on Governors Island, by the start and finish",
-   "photoCredit": "Brian W. Schaller, Free Art License",
    "courseNote": "Two loops around Governors Island with views of New York Harbor and Lower Manhattan; start and finish near the Festival Area. USATF-certified.",
    "organizerId": 1
   },
@@ -130,7 +129,6 @@
    "area": "Brooklyn",
    "photoUrl": "/images/prospect-park-drive.jpg",
    "photoAlt": "Runners on the Prospect Park drive",
-   "photoCredit": null,
    "courseNote": "Just under one full loop of Prospect Park, finishing with a sprint up Center Drive. Benefits the YMCA of Greater New York. USATF-certified.",
    "organizerId": 1
   },
@@ -145,7 +143,6 @@
    "area": "Manhattan",
    "photoUrl": "/images/central-park-drive.jpg",
    "photoAlt": "Runners on the Central Park drive",
-   "photoCredit": "Mike Peel, CC BY-SA 4.0",
    "courseNote": "A multi-loop course around Central Park; full course details are posted closer to race day. USATF-certified.",
    "organizerId": 1
   },
@@ -160,7 +157,6 @@
    "area": "Manhattan",
    "photoUrl": "/images/central-park-drive.jpg",
    "photoAlt": "Runners on the Central Park drive",
-   "photoCredit": "Mike Peel, CC BY-SA 4.0",
    "courseNote": "A 13.1-mile wintry tour of Central Park on a looped course; details are posted closer to race day. USATF-certified.",
    "organizerId": 1
   },
@@ -175,7 +171,6 @@
    "area": "Brooklyn",
    "photoUrl": "/images/prospect-park-drive.jpg",
    "photoAlt": "Runners on the Prospect Park drive",
-   "photoCredit": null,
    "courseNote": "Starts in North Brooklyn, runs along the East River waterfront under the Williamsburg, Manhattan and Brooklyn Bridges, then up Fulton Street and Flatbush Avenue to finish in Prospect Park. Wave starts 7:00 to 9:40 AM. USATF-certified.",
    "organizerId": 1
   },
@@ -190,7 +185,6 @@
    "area": "Bear Mountain, NY",
    "photoUrl": "/images/harriman-ramapo-dunderberg-trail.jpg",
    "photoAlt": "The Ramapo-Dunderberg Trail through forest in Harriman State Park",
-   "photoCredit": "Daniel Case, CC BY-SA 4.0",
    "courseNote": "A lollipop course in Harriman State Park with over 2,600 ft of climbing. Also offered the same day: a 10K (1,400 ft) and a 10K ruck. 6-hour cutoff; the course closes at 3:00 PM.",
    "organizerId": 2
   },
@@ -205,7 +199,6 @@
    "area": "Catskills, NY",
    "photoUrl": "/images/catskill-mountain-house-view.jpg",
    "photoAlt": "The view from the Catskill Mountain House site at North-South Lake, near the finish",
-   "photoCredit": "Mwanner, CC BY-SA 3.0",
    "courseNote": "Point to point from the Elm Ridge parking lot in Windham to North/South Lake in Haines Falls: 30 km (18.6 mi) with about 4,800 ft of climbing and hard aid-station cutoffs (6-hour limit). The 50th edition; wave starts 9:00 to 10:35 AM.",
    "organizerId": 3
   },
@@ -220,7 +213,6 @@
    "area": "Windham, NY",
    "photoUrl": null,
    "photoAlt": null,
-   "photoCredit": null,
    "courseNote": "Point-to-point 53-mile ultramarathon through the Catskills starting at 591 Big Hollow Rd, Windham, on the northern Black Dome Trail and then the Long Path from Acra Point to downtown Phoenicia. Organizer: \"approximately 15,000 ft. of climbing\"; rocky, precipitous terrain that gets progressively harder; up to 3-4 hours between aid stations.",
    "organizerId": 4
   },
@@ -235,7 +227,6 @@
    "area": "New Paltz, NY",
    "photoUrl": null,
    "photoAlt": null,
-   "photoCredit": null,
    "courseNote": "50 miles on wide carriage roads through forests and over ridgelines of the Shawangunk Mountains; 18-hour cutoff. Also offered: 26.2-mile trail marathon and 2-, 3- or 4-person relays.",
    "organizerId": 5
   },
@@ -250,7 +241,6 @@
    "area": "South Orange, NJ",
    "photoUrl": null,
    "photoAlt": null,
-   "photoCredit": null,
    "courseNote": "Approximately 10-mile trail loop from the Summit Field picnic area (12 Bear Lane); 50 miles = five loops. Also 50K, 20M and 10M. 12-hour limit; must start last loop by 4:30 PM; headlamp required.",
    "organizerId": 6
   },
@@ -265,7 +255,6 @@
    "area": "Bloomfield, CT",
    "photoUrl": null,
    "photoAlt": null,
-   "photoCredit": null,
    "courseNote": "Three loops of roughly 10.5-11 miles, about half technical single track on the Metacomet Trail and the rest double-track. 9-hour cutoff. Cupless race. A 17K (one loop) is also offered.",
    "organizerId": 7
   },
@@ -280,7 +269,6 @@
    "area": "Staten Island",
    "photoUrl": null,
    "photoAlt": null,
-   "photoCredit": null,
    "courseNote": "3 x 16.6-mile loops on a 16+ mile course with minimal road crossings and lots of single track through Blood Root Valley, High Rock Park, La Tourette Park and the Field of Dreams. Starts at 501 Brielle Ave. 13-hour cutoff (7 PM); last-lap cutoff 3:00 PM at Nature Center. Also 50K and half marathon. Benefits the Greenbelt Conservancy.",
    "organizerId": 8
   },
@@ -295,7 +283,6 @@
    "area": "Brooklyn",
    "photoUrl": null,
    "photoAlt": null,
-   "photoCredit": null,
    "courseNote": "Starts at Center Drive and finishes at Harry's Wall in Prospect Park (organizer shows a map only, no written route).",
    "organizerId": 9
   },
@@ -310,7 +297,6 @@
    "area": "Brooklyn",
    "photoUrl": null,
    "photoAlt": null,
-   "photoCredit": null,
    "courseNote": "Three full loops of Prospect Park solo, or a 3-person relay with each runner doing one ~3.33-mile loop. USATF-certified course.",
    "organizerId": 9
   },
@@ -325,7 +311,6 @@
    "area": "Bronx",
    "photoUrl": null,
    "photoAlt": null,
-   "photoCredit": null,
    "courseNote": "3 loops of Van Cortlandt Park's cross-country course, in the back hills and around the flats.",
    "organizerId": 10
   },
@@ -340,7 +325,6 @@
    "area": "Queens",
    "photoUrl": null,
    "photoAlt": null,
-   "photoCredit": null,
    "courseNote": null,
    "organizerId": 11
   },
@@ -355,7 +339,6 @@
    "area": "Tarrytown, NY",
    "photoUrl": null,
    "photoAlt": null,
-   "photoCredit": null,
    "courseNote": "Out-and-back on the Hudson riverwalk from Losee Field to Kingsland Park, toward the Sleepy Hollow lighthouse.",
    "organizerId": 12
   },
@@ -370,7 +353,6 @@
    "area": "Staten Island",
    "photoUrl": null,
    "photoAlt": null,
-   "photoCredit": null,
    "courseNote": "Multi-loop boardwalk course along the waterfront at South Beach.",
    "organizerId": 13
   },
@@ -385,7 +367,6 @@
    "area": "Jersey City, NJ",
    "photoUrl": null,
    "photoAlt": null,
-   "photoCredit": null,
    "courseNote": "Hilly urban course (~1,137 ft gain, steep hills) with views of Manhattan; not USATF certified and not an exact distance. Open roads: expect red lights.",
    "organizerId": 14
   },
@@ -400,7 +381,6 @@
    "area": "Jersey City, NJ",
    "photoUrl": null,
    "photoAlt": null,
-   "photoCredit": null,
    "courseNote": "Through the neighborhoods of Jersey City, starting at Newport. Organizer says the course is USATF-certified and sanctioned, and is 'subject to change for 2027 race'.",
    "organizerId": 15
   },
@@ -415,7 +395,6 @@
    "area": "Jersey City, NJ",
    "photoUrl": null,
    "photoAlt": null,
-   "photoCredit": null,
    "courseNote": "Through the neighborhoods of Jersey City, starting at Newport. Organizer says the course is 'subject to change for 2027 race'.",
    "organizerId": 15
   },
@@ -430,7 +409,6 @@
    "area": "East Meadow, NY",
    "photoUrl": null,
    "photoAlt": null,
-   "photoCredit": null,
    "courseNote": null,
    "organizerId": 16
   },
@@ -445,7 +423,6 @@
    "area": "Queens",
    "photoUrl": null,
    "photoAlt": null,
-   "photoCredit": null,
    "courseNote": "New street course in Long Island City for 2026, the first year of this course. Expect street closures. The course map is published only as an image.",
    "organizerId": 11
   },
@@ -460,7 +437,6 @@
    "area": "Elka Park, NY",
    "photoUrl": null,
    "photoAlt": null,
-   "photoCredit": null,
    "courseNote": "About 100 miles from Huckleberry Point Trailhead to Belleayre Resort. Crosses four NYS Wilderness Areas, summits 12 of the 33 Catskill High Peaks, and includes the full Devil's Path. Extremely technical terrain. The organizer gives both 25,000+ ft and 27,000+ ft of gain.",
    "organizerId": 17
   }

@@ -43,7 +43,6 @@ model Race {
   area           String // e.g. "Manhattan", "Hudson Valley"
   photoUrl       String? // licensed photo only; null shows the distance tile
   photoAlt       String?
-  photoCredit    String?
   courseNote     String? // course description, as the organizer states it
   organizerId    Int
   organizer      Organizer     @relation(fields: [organizerId], references: [id])
