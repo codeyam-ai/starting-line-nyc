@@ -1175,6 +1175,16 @@
       "at": "2026-11-09T16:27:36.648468308+00:00",
       "feature": "Photo credits for every photo shown",
       "notes": "Resumed at Reconcile after a /clear. The audit was clean apart from 11 advisories about closed note-only plans, which I left closed on purpose. The test refresh, full finalize, commit and push all went through on the first try. Follow-ups:…"
+    },
+    {
+      "at": "2026-11-09T22:32:53.573561139+00:00",
+      "feature": "Reminder presets on calendar events",
+      "notes": "Steps 22-28 ran cleanly in one pass: refreshed the single vitest partition (270 pass), registry had no drift, sync was a no-op, finalize passed all phases reusing the green cache, commit bba98a0 pushed to main. Resolved the 'reminders' del…"
+    },
+    {
+      "at": "2026-11-09T22:33:19.015097239+00:00",
+      "feature": "Reminder presets on calendar events",
+      "notes": "Steps 22-28 ran cleanly in one pass: refreshed the single vitest partition (270 pass), registry had no drift, sync was a no-op, finalize passed all phases reusing the green cache, commit bba98a0 pushed to main. Resolved the 'reminders' del…"
     }
   ],
   "syntheses": [
