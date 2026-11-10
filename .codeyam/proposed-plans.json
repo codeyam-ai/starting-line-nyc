@@ -754,7 +754,6 @@
         "fnd-c7f5b6fc4daa"
       ],
       "evidenceSessions": 1,
-      "ideaRank": 1,
       "offeredCount": 1,
       "lastOfferedAt": "2026-11-05T14:35:28.543766338+00:00",
       "theme": {
@@ -779,10 +778,10 @@
         "fnd-7f5a2660203f"
       ],
       "evidenceSessions": 2,
-      "ideaRank": 2,
+      "ideaRank": 4,
       "theme": {
         "lane": "codeyam-improvement",
-        "score": 179,
+        "score": 149,
         "notVerified": true
       }
     },
@@ -806,7 +805,77 @@
       "ideaRank": 1,
       "theme": {
         "lane": "codeyam-improvement",
-        "score": 640,
+        "score": 533,
+        "notVerified": true
+      }
+    },
+    {
+      "id": "code-that-joins-tested-pieces-together-has-no-test-of-its-own",
+      "title": "Code that joins tested pieces together has no test of its own",
+      "mode": "backend",
+      "body": "## Root cause\nThe project tests pure helpers in app/lib thoroughly, but the thin layers that call them, an API route and a component effect, have no test that exercises the call. A wrong argument, a missing await or a dropped header in that glue would pass the whole suite.\n\n## Evidence\n- fnd-19427ceb0f91 / fnd-ea3951fd8e4f (Reminder presets, 2026-11-09): no test calls the calendar route end to end. The route is app/api/races/[slug]/calendar/route.ts:20 and no *.test.* file under app/api exists on HEAD.\n- fnd-240dba60a77b (Changed since you saved, 2026-11-06): the My Races list records starting registration statuses on load at app/components/MyRacesList.tsx:21-22 (recordRegistrationBaselines), and no test renders MyRacesList to show it happens.\n\n## Smallest fix\nAdd one route test that calls the calendar GET with a seeded race and a reminder preset and asserts the .ics body and headers, and one component test that renders MyRacesList with summaries and asserts recordRegistrationBaselines stored the statuses.\n\n## Cost of leaving it\nThe calendar download and the 'changed since you saved' notice can break silently on a refactor of either side; only a manual check or a screenshot would catch it, and the calendar file is not screenshotted at all.",
+      "reason": "Two sessions found the same shape: each part is unit-tested, but the place that wires them together is not, so a broken hook-up would pass every test.",
+      "source": "debt-synthesis",
+      "status": "pending",
+      "proposedAt": "2026-11-10T16:21:56.638059928+00:00",
+      "kind": "tech-debt",
+      "sightings": 1,
+      "evidenceIds": [
+        "fnd-240dba60a77b",
+        "fnd-19427ceb0f91",
+        "fnd-ea3951fd8e4f"
+      ],
+      "evidenceSessions": 2,
+      "ideaRank": 1,
+      "theme": {
+        "lane": "app",
+        "score": 179,
+        "verifiedAt": "b2870bc"
+      }
+    },
+    {
+      "id": "audit-says-it-failed-when-only-advisories-remain",
+      "title": "Audit says it failed when only advisories remain",
+      "mode": "backend",
+      "body": "## Root cause\nThe audit's passed flag is false whenever any finding exists, including advisory-only ones, and the summary line appends a generic 'run the printed refresh-tests --partition <name>' instruction even when no partition is stale and the findings are COMPLETED_PLAN_NEVER_LANDED_ADVISORY rows for plans the user closed on purpose.\n\n## Evidence\nfnd-aa0c5f5c09e0 (Photo credits), fnd-b65c29cb3953 and fnd-6574f06b5d0c (Reminder presets), and again this session at Reconcile and in session-finalize. The producing code is in codeyam-editor's audit summary, which is not in this workspace, so no file:line can be quoted here.\n\n## Smallest fix\nReport passed:true (or a distinct 'advisories' status) when every finding is advisory, print the refresh-tests line only when cacheFreshness has a stale partition and name it, and let a deliberately closed note-only plan be marked as such so the hollow-plan heuristic stops flagging it.\n\n## Cost of leaving it\nEvery session spends time deciding whether a red audit is real, and the printed fix commands would re-queue plans the user chose to close.",
+      "reason": "Three sessions in a row got passed:false with nothing blocking, plus a fix instruction that names no partition and does not apply.",
+      "source": "codeyam-improvement",
+      "status": "pending",
+      "proposedAt": "2026-11-10T16:21:56.638059928+00:00",
+      "kind": "tech-debt",
+      "sightings": 1,
+      "evidenceIds": [
+        "fnd-aa0c5f5c09e0",
+        "fnd-b65c29cb3953",
+        "fnd-6574f06b5d0c"
+      ],
+      "evidenceSessions": 2,
+      "ideaRank": 3,
+      "theme": {
+        "lane": "codeyam-improvement",
+        "score": 383,
+        "notVerified": true
+      }
+    },
+    {
+      "id": "completion-step-writes-a-file-its-own-commit-guard-then-refuses",
+      "title": "Completion step writes a file its own commit guard then refuses",
+      "mode": "backend",
+      "body": "## Root cause\nfeature-complete writes .codeyam/manual-test-candidates.jsonl from the approval deviations, but the tracked-paths guard for its state commit has no rule for that file, so the editor refuses a file it just created.\n\n## Evidence\nfnd-6684927f872f (Reminder presets, 2026-11-09). The project worked around it in commit ede1133 by gitignoring the file. The producing code is in codeyam-editor, not in this workspace, so no file:line can be quoted here.\n\n## Smallest fix\nEither list manual-test-candidates.jsonl in the editor's own ignore block or give the tracked-paths guard a rule for it, and test feature-complete with non-empty approval deviations.\n\n## Cost of leaving it\nAny project that hits it is blocked at the very last step and has to make an out-of-workflow commit that then owes another full check.",
+      "reason": "A blocked finding: feature-complete could not commit its own state without a hand-made .gitignore change and a second sync and finalize.",
+      "source": "codeyam-improvement",
+      "status": "pending",
+      "proposedAt": "2026-11-10T16:21:56.638059928+00:00",
+      "kind": "tech-debt",
+      "sightings": 1,
+      "evidenceIds": [
+        "fnd-6684927f872f"
+      ],
+      "evidenceSessions": 1,
+      "ideaRank": 2,
+      "theme": {
+        "lane": "codeyam-improvement",
+        "score": 386,
         "notVerified": true
       }
     }
@@ -1185,6 +1254,11 @@
       "at": "2026-11-09T22:33:19.015097239+00:00",
       "feature": "Reminder presets on calendar events",
       "notes": "Steps 22-28 ran cleanly in one pass: refreshed the single vitest partition (270 pass), registry had no drift, sync was a no-op, finalize passed all phases reusing the green cache, commit bba98a0 pushed to main. Resolved the 'reminders' del…"
+    },
+    {
+      "at": "2026-11-10T16:21:56.638059928+00:00",
+      "feature": "\"1 week to train\" reads correctly",
+      "notes": "Small copy fix: weeksToTrainLabel in app/lib/raceList.ts picks singular/plural; WeeksToTrain.tsx uses it; new weekstotrain-one-week scenario. Resumed at Reconcile after /clear; audit was advisory-only, finalize reused the green cache (34s)…"
     }
   ],
   "syntheses": [
@@ -1279,6 +1353,42 @@
       ],
       "refused": 1,
       "notes": "Other batch findings (tsc missing untracked file, sampled recapture sweep refused at finalize, stale step in context carry, wait-for unknown id, presentability keepers) are single-session time-lost/cosmetic and do not yet meet the admission bar; wait-for and presentability recur this session as new findings, so they should qualify next pass."
+    },
+    {
+      "at": "2026-11-10T16:21:56.638059928+00:00",
+      "lane": "app",
+      "consumedIds": [
+        "fnd-240dba60a77b",
+        "fnd-465574c28d31",
+        "fnd-d5acaa663fd5",
+        "fnd-19427ceb0f91",
+        "fnd-f7d54073cc9c",
+        "fnd-45330a96f4c0",
+        "fnd-ea3951fd8e4f",
+        "fnd-da4ddf159d7a"
+      ],
+      "keptIds": [
+        "code-that-joins-tested-pieces-together-has-no-test-of-its-own"
+      ],
+      "notes": "Not admitted: '1 weeks to train' (fnd-f7d54073cc9c, fnd-da4ddf159d7a) is fixed on HEAD by this cycle's weeksToTrainLabel. 'Scenario captures depend on the real clock' (fnd-d5acaa663fd5, fnd-45330a96f4c0) is two copies from one session, cosmetic, and captures now pin the clock on first capture. The dev.db photoCredit column (fnd-465574c28d31) is a single cosmetic local-only finding."
+    },
+    {
+      "at": "2026-11-10T16:21:56.638059928+00:00",
+      "lane": "codeyam-improvement",
+      "consumedIds": [
+        "fnd-aa0c5f5c09e0",
+        "fnd-b65c29cb3953",
+        "fnd-6574f06b5d0c",
+        "fnd-6684927f872f",
+        "fnd-48355b998060"
+      ],
+      "keptIds": [
+        "audit-says-it-failed-when-only-advisories-remain",
+        "completion-step-writes-a-file-its-own-commit-guard-then-refuses",
+        "scenario-time-and-seed-state-gets-lost-or-mangled",
+        "blank-screenshots-slip-past-capture-checks"
+      ],
+      "notes": "Reaffirmed both existing themes: this session did not exercise seeding or blank-capture paths, so there is no evidence either way."
     }
   ]
 }
