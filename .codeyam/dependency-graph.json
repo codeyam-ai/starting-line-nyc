@@ -355,6 +355,14 @@
       ],
       "name": "__file_root__"
     },
+    ".codeyam/isolation-props/WeeksToTrain.ts::__file_root__": {
+      "filePath": ".codeyam/isolation-props/WeeksToTrain.ts",
+      "importedBy": [],
+      "imports": [
+        "app/components/WeeksToTrain.tsx::__file_root__"
+      ],
+      "name": "__file_root__"
+    },
     ".codeyam/isolation-props/_fixtures.ts::__file_root__": {
       "filePath": ".codeyam/isolation-props/_fixtures.ts",
       "importedBy": [],
@@ -1230,6 +1238,14 @@
       "imports": [],
       "name": "TimezoneNote"
     },
+    "app/components/WeeksToTrain.tsx::__file_root__": {
+      "filePath": "app/components/WeeksToTrain.tsx",
+      "importedBy": [],
+      "imports": [
+        "app/lib/raceList.ts::weeksToTrainLabel"
+      ],
+      "name": "__file_root__"
+    },
     "app/globals.css::__file_root__": {
       "filePath": "app/globals.css",
       "importedBy": [
@@ -1943,7 +1959,8 @@
         "app/lib/raceList.ts::summarizeSavedRaces",
         "app/lib/raceList.ts::toListItem",
         "app/lib/raceList.ts::upcomingEdition",
-        "app/lib/raceList.ts::weeksToTrain"
+        "app/lib/raceList.ts::weeksToTrain",
+        "app/lib/raceList.ts::weeksToTrainLabel"
       ],
       "name": "__file_root__"
     },
@@ -1997,6 +2014,14 @@
       ],
       "imports": [],
       "name": "isUrgent"
+    },
+    "app/lib/raceList.ts::weeksToTrainLabel": {
+      "filePath": "app/lib/raceList.ts",
+      "importedBy": [
+        "app/components/WeeksToTrain.tsx::__file_root__"
+      ],
+      "imports": [],
+      "name": "weeksToTrainLabel"
     },
     "app/lib/races.db.test.ts::__file_root__": {
       "filePath": "app/lib/races.db.test.ts",
@@ -2703,6 +2728,12 @@
       "imports": [
         "app/components/TimelineItem.tsx",
         ".codeyam/isolation-props/_raceDetail.ts"
+      ]
+    },
+    ".codeyam/isolation-props/WeeksToTrain.ts": {
+      "importedBy": [],
+      "imports": [
+        "app/components/WeeksToTrain.tsx"
       ]
     },
     ".codeyam/isolation-props/_fixtures.ts": {
@@ -3436,9 +3467,12 @@
     },
     "app/components/WeeksToTrain.tsx": {
       "importedBy": [
+        ".codeyam/isolation-props/WeeksToTrain.ts",
         "app/components/RaceRow.tsx"
       ],
-      "imports": []
+      "imports": [
+        "app/lib/raceList.ts"
+      ]
     },
     "app/globals.css": {
       "importedBy": [
@@ -3637,6 +3671,7 @@
         "app/components/RaceRow.tsx",
         "app/components/RaceList.tsx",
         "app/components/StaleNotice.tsx",
+        "app/components/WeeksToTrain.tsx",
         "app/components/SavedRaceItem.tsx",
         "app/components/ResultsSection.tsx",
         "app/components/SavedRaceGroup.tsx"
@@ -3868,5 +3903,5 @@
       ]
     }
   },
-  "lastUpdated": "2026-11-09T22:31:27Z"
+  "lastUpdated": "2026-11-10T16:10:58Z"
 }

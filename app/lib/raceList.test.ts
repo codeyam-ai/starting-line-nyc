@@ -12,6 +12,7 @@ import {
   toListItem,
   upcomingEdition,
   weeksToTrain,
+  weeksToTrainLabel,
   type RaceRecord,
 } from '@/app/lib/raceList';
 
@@ -128,6 +129,24 @@ describe('weeksToTrain', () => {
   // An unknown race date gives no week count.
   it('returns null for an unknown date', () => {
     expect(weeksToTrain(null, NOW)).toBeNull();
+  });
+});
+
+describe('weeksToTrainLabel', () => {
+  // A single week reads in the singular.
+  it('says week for exactly one week', () => {
+    expect(weeksToTrainLabel(1)).toBe('week to train');
+  });
+
+  // Any other count reads in the plural.
+  it('says weeks for other counts', () => {
+    expect(weeksToTrainLabel(2)).toBe('weeks to train');
+    expect(weeksToTrainLabel(12)).toBe('weeks to train');
+  });
+
+  // Zero weeks left is still plural.
+  it('says weeks for zero', () => {
+    expect(weeksToTrainLabel(0)).toBe('weeks to train');
   });
 });
 

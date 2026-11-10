@@ -1,0 +1,15 @@
+{
+  "name": "WeeksToTrain - One Week",
+  "id": "c751f5a9-cf9a-4ec7-bb1a-321f6dae3bcf",
+  "url": "/isolated-components/WeeksToTrain?s=One%20Week",
+  "dimensions": [
+    "Desktop"
+  ],
+  "mocks": {},
+  "clock": {
+    "now": "2026-11-09T22:52:34Z"
+  },
+  "componentName": "WeeksToTrain",
+  "scenarioType": "component",
+  "description": "A race exactly one week out: the caption reads in the singular, \"1 week to train\"."
+}

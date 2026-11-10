@@ -1,0 +1,30 @@
+{
+  "provenAt": "2026-11-09T22:51:10Z",
+  "paths": [],
+  "runScope": [
+    "app/lib/raceList.ts",
+    "app/lib/raceList.test.ts"
+  ],
+  "neuters": [
+    {
+      "file": "app/lib/raceList.ts",
+      "find": "weeks === 1 ? 'week to train'",
+      "replace": "false ? 'week to train'"
+    }
+  ],
+  "tests": {
+    "says week for exactly one week": {
+      "withoutFix": "fail",
+      "withFix": "pass",
+      "established": {
+        "kind": "measured"
+      }
+    }
+  },
+  "proof": {
+    "verdict": "proven",
+    "flipped": [
+      "says week for exactly one week"
+    ]
+  }
+}

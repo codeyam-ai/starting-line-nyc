@@ -172,7 +172,7 @@
   },
   "buildTimeline › falls back to the edition source": {
     "file": "app/lib/raceDetail.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -181,7 +181,7 @@
   },
   "buildTimeline › is empty when nothing is announced": {
     "file": "app/lib/raceDetail.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -190,7 +190,7 @@
   },
   "buildTimeline › keeps a date-only deadline for today as next": {
     "file": "app/lib/raceDetail.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -199,7 +199,7 @@
   },
   "buildTimeline › keeps a missing check date on a date with its own source": {
     "file": "app/lib/raceDetail.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -208,7 +208,7 @@
   },
   "buildTimeline › leaves source empty when none is given": {
     "file": "app/lib/raceDetail.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -217,7 +217,7 @@
   },
   "buildTimeline › marks past, next and upcoming": {
     "file": "app/lib/raceDetail.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -226,7 +226,7 @@
   },
   "buildTimeline › prefers the date own source": {
     "file": "app/lib/raceDetail.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -235,7 +235,7 @@
   },
   "buildTimeline › sorts milestones by date and appends race day": {
     "file": "app/lib/raceDetail.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -244,7 +244,7 @@
   },
   "calendarFileName › names next, race day and milestone files": {
     "file": "app/lib/raceCalendar.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -253,7 +253,7 @@
   },
   "calendarFormTarget › carries the link query as hidden params": {
     "file": "app/lib/raceCalendar.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -262,7 +262,7 @@
   },
   "calendarFormTarget › splits a bare link into an action with no params": {
     "file": "app/lib/raceCalendar.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -442,7 +442,7 @@
   },
   "editionSources › flags a never-checked edition as stale": {
     "file": "app/lib/raceDetail.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -451,7 +451,7 @@
   },
   "editionSources › flags an old check as stale": {
     "file": "app/lib/raceDetail.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -460,7 +460,7 @@
   },
   "editionSources › passes a recent check through": {
     "file": "app/lib/raceDetail.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -469,7 +469,7 @@
   },
   "editionSources › returns null without an edition": {
     "file": "app/lib/raceDetail.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -478,7 +478,7 @@
   },
   "entryMethod › explains known entry methods": {
     "file": "app/lib/raceDetail.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -487,7 +487,7 @@
   },
   "entryMethod › falls back to the raw method": {
     "file": "app/lib/raceDetail.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -532,7 +532,7 @@
   },
   "filterAndSortRaces › applies distance and six month window by default": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -541,7 +541,7 @@
   },
   "filterAndSortRaces › filters by status chips": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -550,7 +550,7 @@
   },
   "filterAndSortRaces › filters by terrain and by search text across name, place and organizer": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -559,7 +559,7 @@
   },
   "filterAndSortRaces › matches ultras beyond marathon distance": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -568,7 +568,7 @@
   },
   "filterAndSortRaces › returns everything with any distance and any time": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -604,7 +604,7 @@
   },
   "findRaceSummaries against a real database › returns an empty list when nothing is requested": {
     "file": "app/lib/races.db.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -613,7 +613,7 @@
   },
   "findRaceSummaries against a real database › returns one summary per requested slug, in request order, with relations loaded": {
     "file": "app/lib/races.db.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -622,7 +622,7 @@
   },
   "findRaceSummaries against a real database › returns only the requested races, not everything stored": {
     "file": "app/lib/races.db.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -775,7 +775,7 @@
   },
   "googleCalendarHref › adds the Google target to a bare link": {
     "file": "app/lib/raceCalendar.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -784,7 +784,7 @@
   },
   "googleCalendarHref › keeps an existing query": {
     "file": "app/lib/raceCalendar.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -793,7 +793,7 @@
   },
   "googleCalendarUrl › carries the title, location and details": {
     "file": "app/lib/raceCalendar.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -802,7 +802,7 @@
   },
   "googleCalendarUrl › encodes a date-only deadline as all day": {
     "file": "app/lib/raceCalendar.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -811,7 +811,7 @@
   },
   "googleCalendarUrl › encodes a timed event in UTC": {
     "file": "app/lib/raceCalendar.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -820,7 +820,7 @@
   },
   "googleCalendarUrl › keeps a summer start correct across daylight saving": {
     "file": "app/lib/raceCalendar.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -829,7 +829,7 @@
   },
   "googleCalendarUrl › matches the event built for the ics file": {
     "file": "app/lib/raceCalendar.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -838,7 +838,7 @@
   },
   "googleCalendarUrl › omits absent location and details": {
     "file": "app/lib/raceCalendar.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -847,7 +847,7 @@
   },
   "googleCalendarUrl › points at the Google create-event page": {
     "file": "app/lib/raceCalendar.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -856,7 +856,7 @@
   },
   "googleCalendarUrl › rolls an all-day end date over a month boundary": {
     "file": "app/lib/raceCalendar.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -928,7 +928,7 @@
   },
   "isStale › accepts an ISO string": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -937,7 +937,7 @@
   },
   "isStale › honours a custom threshold": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -946,7 +946,7 @@
   },
   "isStale › is false at 29 days": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -955,7 +955,7 @@
   },
   "isStale › is false at exactly 30 days": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -964,7 +964,7 @@
   },
   "isStale › is true at 31 days": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -973,7 +973,7 @@
   },
   "isStale › is true when never checked": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -982,7 +982,7 @@
   },
   "isUrgent › is false beyond three weeks, in the past, or missing": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -991,7 +991,7 @@
   },
   "isUrgent › is true within three weeks": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -1000,7 +1000,7 @@
   },
   "isUrgent › keeps a date-only deadline urgent until its ET day ends": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -1009,7 +1009,7 @@
   },
   "latestPastEdition › ignores editions without a race date": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -1018,7 +1018,7 @@
   },
   "latestPastEdition › picks the most recent past year": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -1027,7 +1027,7 @@
   },
   "latestPastEdition › returns null for no editions": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -1036,7 +1036,7 @@
   },
   "latestPastEdition › returns null when every edition is upcoming": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -1072,7 +1072,7 @@
   },
   "milestoneEnd › extends date-only milestones to the end of the day": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -1180,7 +1180,7 @@
   },
   "nextDeadline › skips past entries and race day": {
     "file": "app/lib/raceDetail.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -1189,7 +1189,7 @@
   },
   "nextMilestone with date-only deadlines › keeps today as next until the day ends": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -1198,7 +1198,7 @@
   },
   "nextMilestone › returns null when nothing is upcoming": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -1207,7 +1207,7 @@
   },
   "nextMilestone › returns the earliest future milestone": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -1216,7 +1216,7 @@
   },
   "officialLink › falls back to the source then the organizer": {
     "file": "app/lib/raceDetail.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -1225,7 +1225,7 @@
   },
   "officialLink › prefers the registration link": {
     "file": "app/lib/raceDetail.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -1234,7 +1234,7 @@
   },
   "openingDateUnknown › is false when registration opening is listed": {
     "file": "app/lib/raceDetail.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -1243,7 +1243,7 @@
   },
   "openingDateUnknown › is false when the lottery opening is listed": {
     "file": "app/lib/raceDetail.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -1252,7 +1252,7 @@
   },
   "openingDateUnknown › is true for an empty timeline": {
     "file": "app/lib/raceDetail.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -1261,7 +1261,7 @@
   },
   "openingDateUnknown › is true when only non-opening dates are listed": {
     "file": "app/lib/raceDetail.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -1270,7 +1270,7 @@
   },
   "pageUrlFrom › defaults to http on localhost": {
     "file": "app/lib/raceDetail.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -1279,7 +1279,7 @@
   },
   "pageUrlFrom › uses forwarded host and protocol": {
     "file": "app/lib/raceDetail.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -1423,7 +1423,7 @@
   },
   "raceCalendarEvent for one milestone › exports a date-only milestone as all day": {
     "file": "app/lib/raceCalendar.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -1432,7 +1432,7 @@
   },
   "raceCalendarEvent for one milestone › exports a timed milestone at its time": {
     "file": "app/lib/raceCalendar.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -1441,7 +1441,7 @@
   },
   "raceCalendarEvent for one milestone › refuses missing or past milestones": {
     "file": "app/lib/raceCalendar.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -1450,7 +1450,7 @@
   },
   "raceCalendarEvent for one milestone › reports the milestone kind as the date kind": {
     "file": "app/lib/raceCalendar.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -1459,7 +1459,7 @@
   },
   "raceCalendarEvent › builds a race day event": {
     "file": "app/lib/raceCalendar.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -1468,7 +1468,7 @@
   },
   "raceCalendarEvent › builds the next milestone event": {
     "file": "app/lib/raceCalendar.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -1477,7 +1477,7 @@
   },
   "raceCalendarEvent › describes the time in ET with the official link and sample notice": {
     "file": "app/lib/raceCalendar.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -1486,7 +1486,7 @@
   },
   "raceCalendarEvent › refuses race day when the date is unannounced": {
     "file": "app/lib/raceCalendar.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -1495,7 +1495,7 @@
   },
   "raceCalendarEvent › refuses when no registration date is upcoming": {
     "file": "app/lib/raceCalendar.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -1504,7 +1504,7 @@
   },
   "raceCalendarEvent › refuses when there is no upcoming edition": {
     "file": "app/lib/raceCalendar.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -1684,7 +1684,7 @@
   },
   "registrationHasOpened › is false before registration opens": {
     "file": "app/lib/raceDetail.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -1693,7 +1693,7 @@
   },
   "registrationHasOpened › is false for an unknown status": {
     "file": "app/lib/raceDetail.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -1702,7 +1702,7 @@
   },
   "registrationHasOpened › is true for statuses after registration opened": {
     "file": "app/lib/raceDetail.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -1837,7 +1837,7 @@
   },
   "reportIssueUrl › pre-fills a GitHub issue": {
     "file": "app/lib/raceDetail.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -1972,7 +1972,7 @@
   },
   "sortRaces › breaks full ties by name": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -1981,7 +1981,7 @@
   },
   "sortRaces › orders races with no opening date by race day at the end": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -1990,7 +1990,7 @@
   },
   "sortRaces › places already open races between upcoming and unannounced": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -1999,7 +1999,7 @@
   },
   "sortRaces › puts upcoming registration openings first, soonest first": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -2008,7 +2008,7 @@
   },
   "sortRaces › returns a new array and leaves the input untouched": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -2017,7 +2017,7 @@
   },
   "sortRaces › sorts by distance shortest first with race day as tie break": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -2026,7 +2026,7 @@
   },
   "sortRaces › sorts by next deadline with unknown last": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -2035,7 +2035,7 @@
   },
   "sortRaces › sorts by race day with unknown last": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -2044,7 +2044,7 @@
   },
   "sortRaces › treats lottery open and waitlist as already enterable": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -2053,7 +2053,7 @@
   },
   "sortRaces › uses the passed in time to decide which openings are ahead": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -2062,7 +2062,7 @@
   },
   "sourceHost › strips www and handles missing or bad URLs": {
     "file": "app/lib/raceDetail.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -2107,7 +2107,7 @@
   },
   "summarizeSavedRaces › keeps the requested slug order": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -2116,7 +2116,7 @@
   },
   "summarizeSavedRaces › marks a race with no upcoming edition and keeps its name": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -2125,7 +2125,7 @@
   },
   "summarizeSavedRaces › marks an unknown slug as not listed": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -2134,7 +2134,7 @@
   },
   "summarizeSavedRaces › summarizes a listed race as its list item": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -2143,7 +2143,7 @@
   },
   "timelineCalendarHref › builds race day and milestone links": {
     "file": "app/lib/raceDetail.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -2152,7 +2152,7 @@
   },
   "toListItem › carries the edition source and check date": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -2161,7 +2161,7 @@
   },
   "toListItem › flattens the upcoming edition into a list item": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -2170,7 +2170,7 @@
   },
   "toListItem › keeps the earliest registration opening, past or future": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -2179,7 +2179,7 @@
   },
   "toListItem › returns null when the race has no upcoming edition": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -2188,7 +2188,7 @@
   },
   "toListItem › sets registration opens to null when no opening is announced": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -2197,7 +2197,7 @@
   },
   "toListItem › sets source fields to null when absent": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -2224,7 +2224,7 @@
   },
   "upcomingEdition › picks the earliest upcoming year regardless of input order": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -2233,7 +2233,7 @@
   },
   "upcomingEdition › returns null when every edition is past": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -2242,7 +2242,7 @@
   },
   "upcomingEdition › skips editions whose race day has passed": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -2251,7 +2251,7 @@
   },
   "upcomingEdition › treats an unannounced date as upcoming": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -2287,7 +2287,7 @@
   },
   "weeksToTrain › returns null for an unknown date": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
@@ -2296,11 +2296,38 @@
   },
   "weeksToTrain › rounds down to whole weeks": {
     "file": "app/lib/raceList.test.ts",
-    "lastRunAt": "2026-11-09T22:29:30.647Z",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
     "lastRunKind": "changed",
     "lastStatus": "pass",
     "statusRing": [
       "pass|full|2026-10-27T19:32:46.825Z"
+    ]
+  },
+  "weeksToTrainLabel › says week for exactly one week": {
+    "file": "app/lib/raceList.test.ts",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
+    "lastRunKind": "changed",
+    "lastStatus": "pass",
+    "statusRing": [
+      "pass|changed|2026-11-09T22:51:53.893Z"
+    ]
+  },
+  "weeksToTrainLabel › says weeks for other counts": {
+    "file": "app/lib/raceList.test.ts",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
+    "lastRunKind": "changed",
+    "lastStatus": "pass",
+    "statusRing": [
+      "pass|changed|2026-11-09T22:51:53.893Z"
+    ]
+  },
+  "weeksToTrainLabel › says weeks for zero": {
+    "file": "app/lib/raceList.test.ts",
+    "lastRunAt": "2026-11-09T22:51:53.893Z",
+    "lastRunKind": "changed",
+    "lastStatus": "pass",
+    "statusRing": [
+      "pass|changed|2026-11-09T22:51:53.893Z"
     ]
   },
   "withNote › drops a blank note": {

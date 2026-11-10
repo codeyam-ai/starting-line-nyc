@@ -104,6 +104,11 @@ export function weeksToTrain(raceDate: Date | null, now: Date): number | null {
   return raceDate ? Math.floor((raceDate.getTime() - now.getTime()) / (7 * MS_PER_DAY)) : null;
 }
 
+// Caption under a week count: singular for exactly one week, plural otherwise.
+export function weeksToTrainLabel(weeks: number): string {
+  return weeks === 1 ? 'week to train' : 'weeks to train';
+}
+
 // True when a deadline is within the next three weeks (and not past).
 export function isUrgent(at: string | null | undefined, now: Date, timeKnown = true): boolean {
   if (!at) return false;

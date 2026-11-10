@@ -923,7 +923,8 @@
     "filePath": "app/components/WeeksToTrain.tsx",
     "name": "WeeksToTrain",
     "scenarios": [
-      "weekstotrain-default"
+      "weekstotrain-default",
+      "weekstotrain-one-week"
     ],
     "tags": [
       "race-discovery"
@@ -1859,6 +1860,15 @@
     "description": "Whole weeks from now until race day, rounded down; null when the race date is unknown.",
     "filePath": "app/lib/raceList.ts",
     "name": "weeksToTrain",
+    "tags": [
+      "race-discovery"
+    ],
+    "testFile": "app/lib/raceList.test.ts"
+  },
+  {
+    "description": "Caption under a weeks-to-train count: \"week to train\" for exactly one week, \"weeks to train\" otherwise.",
+    "filePath": "app/lib/raceList.ts",
+    "name": "weeksToTrainLabel",
     "tags": [
       "race-discovery"
     ],
