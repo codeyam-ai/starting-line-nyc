@@ -405,6 +405,8 @@
   ],
   "testCacheIgnorePatterns": [
     "**/*.md",
+    "DATABASE.md",
+    "vercel.json",
     ".devcontainer/**",
     ".gitattributes",
     ".gitignore",

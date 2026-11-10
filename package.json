@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "postinstall": "playwright install chromium",
+    "postinstall": "[ -n \"$VERCEL\" ] || playwright install chromium",
     "setup": "npm install && npm run db:push && npm run db:seed",
     "dev": "next dev --turbopack -H 127.0.0.1",
     "build": "node scripts/build-app.mjs",

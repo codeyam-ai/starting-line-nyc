@@ -4,6 +4,13 @@ const nextConfig: NextConfig = {
   // Required: better-sqlite3 is a native module that can't be bundled
   serverExternalPackages: ['better-sqlite3'],
 
+  // Required for hosting (Vercel): ship the SQLite race database with every
+  // server route. The file is built during the hosting build (see vercel.json)
+  // and only read at runtime, so a read-only server filesystem is fine.
+  outputFileTracingIncludes: {
+    '/**': ['./dev.db'],
+  },
+
   // Dev only — KEEP THIS LINE. CodeYam never serves the preview from the
   // origin this dev server binds: it serves it from the editor host, or from
   // a dedicated preview host. Next.js blocks cross-origin access to dev
